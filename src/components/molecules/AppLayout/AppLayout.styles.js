@@ -45,12 +45,15 @@ export const TopBar = styled.div`
   align-items: center;
   box-sizing: border-box;
   display: flex;
+  position: relative;
   width: 100vw;
 
   ${(props) => css`
     color: ${props.theme.colors.black._100};
     background-color: ${props.theme.colors.black._700};
+    box-shadow: ${props.theme.shadows.level3};
     height: ${props.theme.components.appLayout.topbar.height};
+    z-index: 10;
 
     ${paddingProperties(props)}
   `}

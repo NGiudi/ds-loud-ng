@@ -25,6 +25,7 @@ export { ProgressBar } from "./components/atoms";
 export { Text } from "./components/atoms";
 
 /* molecules components */
+export { AppLayout } from "./components/molecules";
 export { StepsBar } from "./components/molecules";
 
 /* layout components */
