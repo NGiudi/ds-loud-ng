@@ -1,4 +1,4 @@
-import { getTimeObject } from "../time";
+import { getTimeObject } from "../clock";
 
 const neutral = {
   days: 0,

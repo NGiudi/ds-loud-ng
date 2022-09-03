@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import { getTimeObject, formatClock } from "../../../utils/time/time";
+import { getTimeObject, formatClock } from "../../../utils/time/clock";
 
 export const Countdown = (props) => {
   const { endTime, formatTime, onFinish, showZero } = props;
