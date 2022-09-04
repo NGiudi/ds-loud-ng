@@ -1,4 +1,5 @@
 import appLayout from "./appLayout";
+import avatar from "./avatar";
 import button from "./button";
 import dropdown from "./dropdown";
 import icon from "./icon";
@@ -12,6 +13,7 @@ import title from "./title";
 
 const components = {
   appLayout,
+  avatar,
   button,
   dropdown,
   icon,

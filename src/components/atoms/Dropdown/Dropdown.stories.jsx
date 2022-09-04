@@ -9,7 +9,7 @@ import {
   Image,
   Text,
   ThemeDS,
-} from "../../../index";
+} from "../../../";
 
 /* imagen */
 import argentina from "../../../../assets/countries flag/argentina.png";

@@ -10,6 +10,7 @@ export { Columns } from "./components/layout";
 export { ThemeDS } from "./components/layout";
 
 /* atoms components */
+export { Avatar } from "./components/atoms";
 export { Button } from "./components/atoms";
 export { Countdown } from "./components/atoms";
 export { Dropdown } from "./components/atoms";

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* components */
-import { Panel } from "../../../../../index";
+import { Panel } from "../../../../../";
 
 /* styles */
 import { PanelWrapper, TriangleWrapper } from "./DropdownPanel.styles";

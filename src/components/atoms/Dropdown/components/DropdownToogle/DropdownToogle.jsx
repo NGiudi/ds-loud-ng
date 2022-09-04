@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Icon } from "../../../../../index";
+import { Icon } from "../../../../../";
 
 /* styles */
 import { ContentWrapper, ToogleWrapper } from "./DropdownToogle.styles";
