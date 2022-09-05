@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Avatar, ThemeDS } from "../../../";
+import { Avatar, Text, ThemeDS } from "../../../";
 /* 
 import perfil from "../assets/img/foto_perfil.jpg";
 import ojo from "../assets/img/foto_ojo.jpg";
@@ -33,13 +33,21 @@ const story = {
 export const DinamicExample = (args) => {
   return (
     <ThemeDS>
-      <Avatar {...args} />
+      <Avatar {...args}>
+        <Avatar margin="t-10 x-50" size="lg" />
+        <div style={{ textAlign: "center" }}>
+          <Text margin="y-20" size="lg" weight="semibold">
+            Nicolás Giudice
+          </Text>
+        </div>
+      </Avatar>
     </ThemeDS>
   );
 };
 
 DinamicExample.args = {
   isButton: true,
+  placeholderWord: "N",
 };
 
 export default story;

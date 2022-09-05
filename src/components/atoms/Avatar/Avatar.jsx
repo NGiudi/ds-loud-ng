@@ -3,55 +3,68 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 /* import components. */
-import { Text } from "../../../";
+import { Panel, Text } from "../../../";
 
 /* import styles.*/
-import { WordWrapper, Wrapper, Image } from "./Avatar.styles";
+import Styles from "./Avatar.styles";
 
-//TODO: add panel content.
 export const Avatar = (props) => {
   const { img, isButton, placeholderWord, size } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
   const handleAvatarClick = () => {
-    setIsOpen((prev) => !prev);
+    if (isButton) {
+      setIsOpen((prev) => !prev);
+    }
   };
 
   const renderContent = () => {
     if (img) {
-      return <Image src={img} alt="roberto_foto_perfil" />;
+      return <Styles.Image src={img} alt="roberto_foto_perfil" />;
     }
 
     return (
-      <WordWrapper size={size}>
+      <Styles.WordWrapper size={size}>
         <Text size={size}>{placeholderWord[0]}</Text>
-      </WordWrapper>
+      </Styles.WordWrapper>
     );
   };
 
   return (
-    <Wrapper
-      isButton={isButton}
-      isSelected={isOpen}
-      onClick={handleAvatarClick}
-      size={size}
-    >
-      {renderContent()}
-    </Wrapper>
+    <Styles.Wrapper margin={props.margin}>
+      <Styles.AvatarWrapper
+        isButton={isButton}
+        isSelected={isOpen}
+        onClick={handleAvatarClick}
+        size={size}
+      >
+        {renderContent()}
+      </Styles.AvatarWrapper>
+
+      {isOpen && (
+        <Styles.PanelWrapper margin="t-8">
+          <Panel width="200px">{props.children}</Panel>
+        </Styles.PanelWrapper>
+      )}
+    </Styles.Wrapper>
   );
 };
 
 Avatar.propTypes = {
+  children: PropTypes.node,
   img: PropTypes.string,
   isButton: PropTypes.bool,
+  margin: PropTypes.string,
   placeholderWord: PropTypes.string,
   size: PropTypes.oneOf(["sm", "md", "lg"]),
 };
 
 Avatar.defaultProps = {
+  children: null,
   img: null,
   isButton: false,
+  margin: "a-0",
   placeholderWord: "L",
   size: "md",
 };

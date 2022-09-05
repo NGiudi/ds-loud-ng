@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 
-export const Wrapper = styled.div`
+import { marginProperties } from "../../../utils/styles";
+
+const AvatarWrapper = styled.div`
   border-radius: 50%;
   border-style: solid;
   overflow: hidden;
@@ -22,12 +24,22 @@ export const Wrapper = styled.div`
     `}
 `;
 
-export const Image = styled.img`
+const Image = styled.img`
   height: 100%;
   width: 100%;
 `;
 
-export const WordWrapper = styled.div`
+const PanelWrapper = styled.div`
+  left: 0;
+  position: absolute;
+  top: 100%;
+
+  ${(props) => css`
+    ${marginProperties(props)}
+  `}
+`;
+
+const WordWrapper = styled.div`
   align-items: center;
   border-radius: 50%;
   display: flex;
@@ -40,3 +52,21 @@ export const WordWrapper = styled.div`
       background-color: ${props.theme.colors.orange._700};
     `}
 `;
+
+const Wrapper = styled.div`
+  position: relative;
+
+  ${(props) => css`
+    ${marginProperties(props)}
+  `}
+`;
+
+const Styles = {
+  AvatarWrapper,
+  Image,
+  PanelWrapper,
+  WordWrapper,
+  Wrapper,
+};
+
+export default Styles;
