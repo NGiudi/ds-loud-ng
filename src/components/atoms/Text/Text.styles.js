@@ -2,8 +2,7 @@ import styled, { css } from "styled-components";
 
 import { marginProperties, paddingProperties } from "../../../utils/styles";
 
-/* components styles */
-export const TextWrapper = styled.p`
+const TextWrapper = styled.p`
   ${(props) =>
     css`
       font-family: "Roboto", sans-serif;
@@ -16,3 +15,9 @@ export const TextWrapper = styled.p`
       ${paddingProperties(props)}
     `};
 `;
+
+const Styles = {
+  TextWrapper,
+};
+
+export default Styles;

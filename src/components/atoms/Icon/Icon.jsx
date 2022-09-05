@@ -2,15 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* import styles. */
-import { IconItem, IconWrapper } from "./Icon.styles";
+import Styles from "./Icon.styles";
 
 export const Icon = (props) => {
   const { color, icon, size } = props;
 
   return (
-    <IconWrapper {...props}>
-      <IconItem color={color} icon={icon} local_size={size} />
-    </IconWrapper>
+    <Styles.IconWrapper {...props}>
+      <Styles.IconItem color={color} icon={icon} local_size={size} />
+    </Styles.IconWrapper>
   );
 };
 

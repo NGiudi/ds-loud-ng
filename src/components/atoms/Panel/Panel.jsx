@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Icon } from "../../../";
 
 /* import styles. */
-import { ContentWrapper, PanelWrapper, PositionWrapper } from "./Panel.styles";
+import Styles from "./Panel.styles";
 
 /* import utils */
 import { getWrapperOptionsFilter } from "./utils/propsFilter";
@@ -19,15 +19,17 @@ export const Panel = (props) => {
   const wrapperOptions = getWrapperOptionsFilter(props);
 
   return (
-    <PanelWrapper {...wrapperOptions}>
-      <PositionWrapper align={align}>
+    <Styles.PanelWrapper {...wrapperOptions}>
+      <Styles.PositionWrapper align={align}>
         {props.type !== "neutral" && (
           <Icon icon={icons.fontawesome[props.type]} margin="r-16" />
         )}
 
-        <ContentWrapper margin="t-4">{props.children}</ContentWrapper>
-      </PositionWrapper>
-    </PanelWrapper>
+        <Styles.ContentWrapper margin="t-4">
+          {props.children}
+        </Styles.ContentWrapper>
+      </Styles.PositionWrapper>
+    </Styles.PanelWrapper>
   );
 };
 

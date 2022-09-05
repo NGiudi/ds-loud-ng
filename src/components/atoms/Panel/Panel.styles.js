@@ -2,8 +2,16 @@ import styled, { css } from "styled-components";
 
 import { marginProperties, paddingProperties } from "../../../utils/styles";
 
-/* components styles */
-export const PanelWrapper = styled.div`
+const ContentWrapper = styled.div`
+  flex-grow: 1;
+
+  ${(props) =>
+    css`
+      ${marginProperties(props)}
+    `}
+`;
+
+const PanelWrapper = styled.div`
   border-radius: 4px;
   display: flex;
   position: relative;
@@ -19,16 +27,7 @@ export const PanelWrapper = styled.div`
     `}
 `;
 
-export const ContentWrapper = styled.div`
-  flex-grow: 1;
-
-  ${(props) =>
-    css`
-      ${marginProperties(props)}
-    `}
-`;
-
-export const PositionWrapper = styled.div`
+const PositionWrapper = styled.div`
   display: flex;
   flex-grow: 1;
 
@@ -37,3 +36,11 @@ export const PositionWrapper = styled.div`
       align-items: ${props.align};
     `}
 `;
+
+const Styles = {
+  ContentWrapper,
+  PanelWrapper,
+  PositionWrapper,
+};
+
+export default Styles;

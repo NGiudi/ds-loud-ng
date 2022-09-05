@@ -2,8 +2,17 @@ import styled, { css } from "styled-components";
 
 import { marginProperties } from "../../../utils/styles";
 
-/* components styles */
-export const ProgressBarWrapper = styled.div`
+const BarWrapper = styled.div`
+  ${(props) =>
+    css`
+      background-color: ${props.theme.colors.orange._700};
+      height: ${props.size &&
+      props.theme.components.progressBar.height[props.size]};
+      width: ${props.porcent ? props.porcent : "0%"};
+    `}
+`;
+
+const ProgressBarWrapper = styled.div`
   overflow: hidden;
   width: 100%;
 
@@ -17,12 +26,9 @@ export const ProgressBarWrapper = styled.div`
     `}
 `;
 
-export const BarWrapper = styled.div`
-  ${(props) =>
-    css`
-      background-color: ${props.theme.colors.orange._700};
-      height: ${props.size &&
-      props.theme.components.progressBar.height[props.size]};
-      width: ${props.porcent ? props.porcent : "0%"};
-    `}
-`;
+const Styles = {
+  BarWrapper,
+  ProgressBarWrapper,
+};
+
+export default Styles;

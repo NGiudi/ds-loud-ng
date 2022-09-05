@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 
-export const ButtonsWrapper = styled.div`
+const ButtonsWrapper = styled.div`
   text-align: right;
 `;
 
-export const CloseBtnWrapper = styled.div`
+const CloseBtnWrapper = styled.div`
   position: absolute;
 
   ${(props) =>
@@ -14,7 +14,7 @@ export const CloseBtnWrapper = styled.div`
     `}
 `;
 
-export const Overlay = styled.div`
+const Overlay = styled.div`
   align-items: center;
   backdrop-filter: blur(1px);
   background-color: rgba(0, 0, 0, 0.35); //TODO: agregar color al theme.
@@ -26,7 +26,7 @@ export const Overlay = styled.div`
   width: 100%;
 `;
 
-export const PanelWrapper = styled.div`
+const PanelWrapper = styled.div`
   margin: auto;
   width: 100%;
 
@@ -36,3 +36,12 @@ export const PanelWrapper = styled.div`
       padding: 0 ${props.theme.components.modal.panel.marginX};
     `}
 `;
+
+const Styles = {
+  ButtonsWrapper,
+  CloseBtnWrapper,
+  Overlay,
+  PanelWrapper,
+};
+
+export default Styles;

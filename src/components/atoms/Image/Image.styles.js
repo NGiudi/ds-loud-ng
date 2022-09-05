@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 import { marginProperties } from "../../../utils/styles";
 
-export const ImageStyles = styled.img`
+const ImageStyles = styled.img`
   display: block;
 
   ${(props) =>
@@ -14,7 +14,7 @@ export const ImageStyles = styled.img`
     `};
 `;
 
-export const WithoutImage = styled.div`
+const WithoutImage = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
@@ -28,3 +28,10 @@ export const WithoutImage = styled.div`
       ${marginProperties(props, "a-0")}
     `};
 `;
+
+const Styles = {
+  ImageStyles,
+  WithoutImage,
+};
+
+export default Styles;

@@ -4,7 +4,7 @@ import { ErrorMessage, Field } from "formik";
 
 import { marginProperties, paddingProperties } from "../../../utils/styles";
 
-export const Error = styled(ErrorMessage)`
+const Error = styled(ErrorMessage)`
   ${(props) =>
     css`
       color: ${props.theme.colors.alert.colors.error};
@@ -16,7 +16,7 @@ export const Error = styled(ErrorMessage)`
     `};
 `;
 
-export const InputStyles = styled(Field)`
+const InputStyles = styled(Field)`
   background-color: transparent;
   border: none;
   flex-grow: 1;
@@ -31,7 +31,7 @@ export const InputStyles = styled(Field)`
     `};
 `;
 
-export const InputWrapper = styled.div`
+const InputWrapper = styled.div`
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -49,9 +49,18 @@ export const InputWrapper = styled.div`
     `};
 `;
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   ${(props) =>
     css`
       ${marginProperties(props)}
     `};
 `;
+
+const Styles = {
+  Error,
+  InputStyles,
+  InputWrapper,
+  Wrapper,
+};
+
+export default Styles;

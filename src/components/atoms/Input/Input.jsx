@@ -6,7 +6,7 @@ import { ShowPasswordButton } from "./components/ShowPasswordButton/ShowPassword
 import { Icon, Text } from "../../../";
 
 /* import styles. */
-import { Error, InputStyles, InputWrapper, Wrapper } from "./Input.styles";
+import Styles from "./Input.styles";
 
 import { propsFilter } from "../../../utils/props/filter";
 
@@ -22,26 +22,29 @@ export const Input = (props) => {
   };
 
   return (
-    <Wrapper margin={props.margin}>
+    <Styles.Wrapper margin={props.margin}>
       {/* label */}
       <Text margin="b-4" weight="semibold">
         {props.label}
       </Text>
 
-      <InputWrapper padding="x-8 y-4" ref={props.reference}>
+      <Styles.InputWrapper padding="x-8 y-4" ref={props.reference}>
         {/* left icon */}
         {!!icon && <Icon icon={icon} margin="r-8" size="sm" />}
 
-        <InputStyles {...inputProps} type={showPassword ? "text" : type} />
+        <Styles.InputStyles
+          {...inputProps}
+          type={showPassword ? "text" : type}
+        />
 
         {type === "password" && (
           <ShowPasswordButton onClick={showPasswordValue} show={showPassword} />
         )}
-      </InputWrapper>
+      </Styles.InputWrapper>
 
       {/* error message */}
-      <Error component="div" margin="l-4 t-4" name={props.name} />
-    </Wrapper>
+      <Styles.Error component="div" margin="l-4 t-4" name={props.name} />
+    </Styles.Wrapper>
   );
 };
 

@@ -5,12 +5,7 @@ import PropTypes from "prop-types";
 import { Button, Panel } from "../../../";
 
 /* import styles */
-import {
-  ButtonsWrapper,
-  CloseBtnWrapper,
-  Overlay,
-  PanelWrapper,
-} from "./Modal.styles";
+import Styles from "./Modal.styles";
 
 export const Modal = (props) => {
   const { onClose, padding, show } = props;
@@ -18,16 +13,16 @@ export const Modal = (props) => {
   if (!show) return null;
 
   return (
-    <Overlay>
-      <PanelWrapper width={props.width}>
+    <Styles.Overlay>
+      <Styles.PanelWrapper width={props.width}>
         <Panel padding={padding}>
-          <CloseBtnWrapper>
+          <Styles.CloseBtnWrapper>
             <Button icon={{ name: "times" }} kind="icon" onClick={onClose} />
-          </CloseBtnWrapper>
+          </Styles.CloseBtnWrapper>
 
           {props.children}
 
-          <ButtonsWrapper>
+          <Styles.ButtonsWrapper>
             {!props.cancelButton.hide && (
               <Button kind="outlined" onClick={onClose}>
                 {props.cancelButton.text}
@@ -39,10 +34,10 @@ export const Modal = (props) => {
                 {props.confirmButton.text}
               </Button>
             )}
-          </ButtonsWrapper>
+          </Styles.ButtonsWrapper>
         </Panel>
-      </PanelWrapper>
-    </Overlay>
+      </Styles.PanelWrapper>
+    </Styles.Overlay>
   );
 };
 

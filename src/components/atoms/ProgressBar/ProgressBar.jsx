@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Bar from "./components/Bar";
 
 /* import styles. */
-import { ProgressBarWrapper } from "./ProgressBar.styles";
+import Styles from "./ProgressBar.styles";
 
 /* import utils */
 import {
@@ -32,9 +32,9 @@ export const ProgressBar = (props) => {
   }, [stepsRef]);
 
   return (
-    <ProgressBarWrapper {...progressBarOptions}>
+    <Styles.ProgressBarWrapper {...progressBarOptions}>
       <Bar {...barOptions} steps={stepsRef.current} />
-    </ProgressBarWrapper>
+    </Styles.ProgressBarWrapper>
   );
 };
 

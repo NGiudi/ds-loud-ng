@@ -4,7 +4,16 @@ import { marginProperties } from "../../../utils/styles";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const IconWrapper = styled.div`
+const IconItem = styled(FontAwesomeIcon)`
+  ${(props) =>
+    css`
+      font-size: ${props.theme.components.icon.iconSizes[props.local_size]};
+      max-height: ${props.theme.components.icon.iconSizes[props.local_size]};
+      max-widt: ${props.theme.components.icon.iconSizes[props.local_size]};
+    `}
+`;
+
+const IconWrapper = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
@@ -17,11 +26,9 @@ export const IconWrapper = styled.div`
     `}
 `;
 
-export const IconItem = styled(FontAwesomeIcon)`
-  ${(props) =>
-    css`
-      font-size: ${props.theme.components.icon.iconSizes[props.local_size]};
-      max-height: ${props.theme.components.icon.iconSizes[props.local_size]};
-      max-widt: ${props.theme.components.icon.iconSizes[props.local_size]};
-    `}
-`;
+const Styles = {
+  IconItem,
+  IconWrapper,
+};
+
+export default Styles;

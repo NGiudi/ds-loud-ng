@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import useOuterClick from "../../../hooks/useOuterClick";
 
 /* styles */
-import { DropdownWrapper } from "./Dropdown.styles";
+import Styles from "./Dropdown.styles";
 
 // TODO: Hacer tests.
 export const Dropdown = (props) => {
@@ -34,7 +34,7 @@ export const Dropdown = (props) => {
   const getToggle = React.Children.toArray(children)[0];
 
   return (
-    <DropdownWrapper ref={innerRef} {...others}>
+    <Styles.DropdownWrapper ref={innerRef} {...others}>
       {React.cloneElement(getToggle, {
         onClick: toogleShowPanel,
         openPanel: showPanel,
@@ -45,7 +45,7 @@ export const Dropdown = (props) => {
         onSelect: handleSelect,
         showPanel,
       })}
-    </DropdownWrapper>
+    </Styles.DropdownWrapper>
   );
 };
 

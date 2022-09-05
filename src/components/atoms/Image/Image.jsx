@@ -5,20 +5,20 @@ import PropTypes from "prop-types";
 import { Icon } from "../../../";
 
 /* styles */
-import { ImageStyles, WithoutImage } from "./Image.styles";
+import Styles from "./Image.styles";
 
 export const Image = (props) => {
   const { img, ...others } = props;
 
   if (!img) {
     return (
-      <WithoutImage {...others}>
+      <Styles.WithoutImage {...others}>
         <Icon color="white" icon="camera" size="sm" />
-      </WithoutImage>
+      </Styles.WithoutImage>
     );
   }
 
-  return <ImageStyles src={img} {...others} />;
+  return <Styles.ImageStyles src={img} {...others} />;
 };
 
 Image.propTypes = {

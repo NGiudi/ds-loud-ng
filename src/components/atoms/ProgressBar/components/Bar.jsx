@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 
-import { BarWrapper } from "../ProgressBar.styles";
+import Styles from "../ProgressBar.styles";
 
 const Bar = (props) => {
   const { onFinish, step, steps } = props;
@@ -54,7 +54,7 @@ const Bar = (props) => {
     return `${porcent}%`;
   };
 
-  return <BarWrapper size={props.size} porcent={porcentString()} />;
+  return <Styles.BarWrapper size={props.size} porcent={porcentString()} />;
 };
 
 Bar.propTypes = {

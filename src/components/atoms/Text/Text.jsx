@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* import styles. */
-import { TextWrapper } from "./Text.styles";
+import Styles from "./Text.styles";
 
 /* import utils */
 import { getTextOptionsFilter } from "./utils/propsFilter";
@@ -10,7 +10,7 @@ import { getTextOptionsFilter } from "./utils/propsFilter";
 export const Text = (props) => {
   const textOptions = getTextOptionsFilter(props);
 
-  return <TextWrapper {...textOptions} />;
+  return <Styles.TextWrapper {...textOptions} />;
 };
 
 Text.propTypes = {
