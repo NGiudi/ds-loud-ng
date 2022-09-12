@@ -1,10 +1,9 @@
 import React from "react";
 
 import { Avatar, Text, ThemeDS } from "../../../";
-/* 
-import perfil from "../assets/img/foto_perfil.jpg";
-import ojo from "../assets/img/foto_ojo.jpg";
- */
+
+import fotoPerfil from "../../../../assets/img/foto-perfil.jpg";
+
 const story = {
   title: "Components/Avatar",
   component: Avatar,
@@ -34,7 +33,7 @@ export const DinamicExample = (args) => {
   return (
     <ThemeDS>
       <Avatar {...args}>
-        <Avatar margin="t-10 x-50" size="lg" />
+        <Avatar img={fotoPerfil} margin="t-10 x-50" size="lg" />
         <div style={{ textAlign: "center" }}>
           <Text margin="y-20" size="lg" weight="semibold">
             Nicolás Giudice

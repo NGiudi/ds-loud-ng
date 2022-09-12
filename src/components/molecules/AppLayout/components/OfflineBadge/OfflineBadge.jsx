@@ -12,8 +12,6 @@ import { Wrapper } from "./OfflineBadge.styles.js";
 export const OfflineBadge = () => {
   const online = useOnlineStatus();
 
-  console.log(online);
-
   return (
     <>
       {!online ? (

@@ -122,7 +122,7 @@ export const FormExample = () => {
         <Formik
           initialValues={{
             fullName: "Nicolás Giudice",
-            lastName: "password1234",
+            password: "password1234",
           }}
           onSubmit={(values) => {
             alert(JSON.stringify(values, null, 2));
@@ -139,7 +139,7 @@ export const FormExample = () => {
             <Input
               label="Contraseña"
               margin="b-20"
-              name="lastName"
+              name="password"
               type="password"
             />
 

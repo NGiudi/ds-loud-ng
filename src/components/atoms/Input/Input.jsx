@@ -49,19 +49,25 @@ export const Input = (props) => {
 };
 
 Input.propTypes = {
+  autocomplete: PropTypes.string,
   icon: PropTypes.string,
+  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   label: PropTypes.string,
   margin: PropTypes.string,
   name: PropTypes.string,
-  reference: PropTypes.func,
+  onKeyPress: PropTypes.func,
+  reference: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   type: PropTypes.oneOf(["number", "password", "text"]),
 };
 
 Input.defaultProps = {
+  autocomplete: "off",
   icon: null,
+  innerRef: null,
   label: "",
   margin: "a-0",
   name: "",
+  onKeyPress: null,
   reference: null,
   type: "text",
 };
