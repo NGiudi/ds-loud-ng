@@ -1,6 +1,6 @@
 // TODO: cambiar la forma de hacer esto por la nueva metodologia.
 const textInputOptions = [
-  "autocomplete",
+  "autoComplete",
   "autofocus",
   "disabled",
   "innerRef",

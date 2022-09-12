@@ -49,7 +49,7 @@ export const Input = (props) => {
 };
 
 Input.propTypes = {
-  autocomplete: PropTypes.string,
+  autoComplete: PropTypes.string,
   icon: PropTypes.string,
   innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   label: PropTypes.string,
@@ -61,7 +61,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  autocomplete: "off",
+  autoComplete: "off",
   icon: null,
   innerRef: null,
   label: "",
