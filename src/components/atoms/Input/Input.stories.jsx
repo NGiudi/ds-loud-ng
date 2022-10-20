@@ -33,9 +33,11 @@ const story = {
 };
 
 export const DinamicExample = (args) => {
+  const values = { dinamic_example: "" };
+
   return (
     <ThemeDS>
-      <Formik>
+      <Formik initialValues={values}>
         <Form>
           <Input name="dinamic_example" {...args} />
         </Form>
