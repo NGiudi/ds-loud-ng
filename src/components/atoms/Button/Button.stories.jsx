@@ -120,6 +120,32 @@ export const AllButtons = (args) => {
 
           <tr>
             <th style={cellSize}>
+              <Button kind="text" onClick={() => {}}>
+                Button
+              </Button>
+            </th>
+
+            <th style={cellSize}>
+              <Button icon={{ name: "cog" }} kind="text" onClick={() => {}}>
+                Button
+              </Button>
+            </th>
+
+            <th style={cellSize}>
+              <Button kind="text" loading onClick={() => {}}>
+                Button
+              </Button>
+            </th>
+
+            <th style={cellSize}>
+              <Button disabled kind="text" onClick={() => {}}>
+                Button
+              </Button>
+            </th>
+          </tr>
+
+          <tr>
+            <th style={cellSize}>
               <Button icon={{ name: "cog" }} kind="icon" onClick={() => {}} />
             </th>
 

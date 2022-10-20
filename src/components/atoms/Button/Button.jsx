@@ -6,7 +6,7 @@ import { Icon } from "../../../";
 
 /* import styles. */
 import { LoaderWrapper, ContentWrapper } from "./Wrappers.styles";
-import { IconButton, OutlinedButton, SolidButton } from "./Button.styles";
+import Styles from "./Button.styles";
 
 export const Button = (props) => {
   const { children, loading, onClick, ...others } = props;
@@ -23,14 +23,16 @@ export const Button = (props) => {
 
   const Button = ({ kind, ...others }) => {
     switch (kind) {
-      case "solid":
-        return <SolidButton {...others} />;
-      case "outlined":
-        return <OutlinedButton {...others} />;
       case "icon":
-        return <IconButton {...others} />;
+        return <Styles.IconButton {...others} />;
+      case "outlined":
+        return <Styles.OutlinedButton {...others} />;
+      case "solid":
+        return <Styles.SolidButton {...others} />;
+      case "text":
+        return <Styles.TextButton {...others} />;
       default:
-        return <SolidButton {...others} />;
+        return <Styles.SolidButton {...others} />;
     }
   };
 
@@ -70,7 +72,7 @@ Button.propTypes = {
     name: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     size: PropTypes.oneOf(["input", "lg", "md", "sm"]),
   }),
-  kind: PropTypes.oneOf(["icon", "outlined", "solid"]),
+  kind: PropTypes.oneOf(["icon", "outlined", "solid", "text"]),
   loading: PropTypes.bool,
   margin: PropTypes.string,
   onClick: PropTypes.func.isRequired,

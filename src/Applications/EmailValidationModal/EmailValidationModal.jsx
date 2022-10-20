@@ -13,6 +13,10 @@ const EmailValidationModal = (props) => {
         cancelButton={{ hide: true }}
         show={!props.isValidEmail && props.showModal}
         onClose={props.handleCloseModal}
+        confirmButton={{
+          onClick: () => console.log("press continue"),
+          text: "Continuar",
+        }}
         width="650px"
       >
         <Text margin="b-20" type="title" weight="bold">
@@ -28,7 +32,7 @@ const EmailValidationModal = (props) => {
         </Text>
 
         {props.canResendEmail ? (
-          <Button onClick={props.handleResendEmail} size="md">
+          <Button kind="text" onClick={props.handleResendEmail} size="md">
             Reenviar correo
           </Button>
         ) : (
