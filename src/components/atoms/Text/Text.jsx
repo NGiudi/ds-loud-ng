@@ -5,15 +5,34 @@ import PropTypes from "prop-types";
 import Styles from "./Text.styles";
 
 /* import utils */
-import { getTextOptionsFilter } from "./utils/propsFilter";
+import {
+  getLabelOptionsFilter,
+  getTextOptionsFilter,
+} from "./utils/propsFilter";
 
 export const Text = (props) => {
+  const { as } = props;
+
   const textOptions = getTextOptionsFilter(props);
 
-  return <Styles.TextWrapper {...textOptions} />;
+  const getTextType = () => {
+    switch (as) {
+      case "label":
+        const labelOptions = getLabelOptionsFilter(props);
+        return <Styles.LabelWrapper {...textOptions} {...labelOptions} />;
+      case "p":
+        return <Styles.TextWrapper {...textOptions} />;
+      default:
+        return <Styles.TextWrapper {...textOptions} />;
+    }
+  };
+
+  return getTextType();
 };
 
 Text.propTypes = {
+  as: PropTypes.oneOf(["label", "p"]),
+  htmlFor: PropTypes.string, // used only for label type.
   margin: PropTypes.string,
   padding: PropTypes.string,
   size: PropTypes.oneOf(["sm", "md", "lg"]),
@@ -23,6 +42,8 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
+  as: "p",
+  htmlFor: "",
   margin: "a-0",
   padding: "a-0",
   size: "md",

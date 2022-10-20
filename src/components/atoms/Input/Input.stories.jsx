@@ -27,6 +27,7 @@ const story = {
     type: {
       control: { type: "select" },
       description: "Recibe el tipo de input que se usa.",
+      options: ["number", "password", "text"],
     },
   },
 };
@@ -143,7 +144,7 @@ export const FormExample = () => {
               type="password"
             />
 
-            <Button fullWidth type="submit">
+            <Button fullWidth onClick={() => {}} type="submit">
               Submit
             </Button>
           </Form>

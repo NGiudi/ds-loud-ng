@@ -24,17 +24,18 @@ export const Input = (props) => {
   return (
     <Styles.Wrapper margin={props.margin}>
       {/* label */}
-      <Text margin="b-4" weight="semibold">
+      <Text as="label" htmlFor={props.name} weight="semibold">
         {props.label}
       </Text>
 
-      <Styles.InputWrapper padding="x-8 y-4" ref={props.reference}>
+      <Styles.InputWrapper margin="t-4" padding="x-8 y-4" ref={props.reference}>
         {/* left icon */}
         {!!icon && <Icon icon={icon} margin="r-8" size="sm" />}
 
         <Styles.InputStyles
-          {...inputProps}
+          id={props.name}
           type={showPassword ? "text" : type}
+          {...inputProps}
         />
 
         {type === "password" && (
@@ -54,7 +55,7 @@ Input.propTypes = {
   innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   label: PropTypes.string,
   margin: PropTypes.string,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   onKeyPress: PropTypes.func,
   reference: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   type: PropTypes.oneOf(["number", "password", "text"]),

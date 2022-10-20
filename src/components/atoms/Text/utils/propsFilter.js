@@ -1,6 +1,6 @@
 import { pick } from "../../../../utils/objects/object";
 
-/* start - barOptions filter */
+/* start - textOptions filter */
 const whtListTextOptions = [
   "children",
   "margin",
@@ -18,4 +18,12 @@ const whtListTextOptions = [
 export const getTextOptionsFilter = (props) => {
   return pick(props, whtListTextOptions);
 };
-/* end - barOptions filter */
+/* end - textOptions filter */
+
+/* start - labelOptions filter */
+const whtListLabelOptions = ["htmlFor"];
+
+export const getLabelOptionsFilter = (props) => {
+  return pick(props, whtListLabelOptions);
+};
+/* end - labelOptions filter */

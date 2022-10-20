@@ -182,40 +182,4 @@ DinamicExample.args = {
   kind: "solid",
 };
 
-/* form example */
-export const FormExample = () => {
-  const [loading, setLoading] = useState(false);
-
-  const handleClick = () => {
-    setLoading(true);
-
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  };
-
-  return (
-    <ThemeDS>
-      <form>
-        <div>
-          <input type="text" />
-        </div>
-
-        <div style={{ marginTop: "10px" }}>
-          <input type="password" />
-        </div>
-
-        <Button
-          loading={loading}
-          margin="y-8"
-          onClick={handleClick}
-          type="submit"
-        >
-          Mostrar Loading
-        </Button>
-      </form>
-    </ThemeDS>
-  );
-};
-
 export default story;
