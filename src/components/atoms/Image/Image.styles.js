@@ -9,6 +9,7 @@ const ImageStyles = styled.img`
     css`
       border-radius: ${props.type === "round" ? "50%" : "0px"};
       height: ${props.theme.components.image.height[props.type][props.size]};
+      object-fit: cover;
       width: ${props.theme.components.image.width[props.type][props.size]};
       ${marginProperties(props, "a-0")}
     `};
