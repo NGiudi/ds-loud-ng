@@ -128,6 +128,7 @@ const SolidButton = styled.button`
 
 const TextButton = styled.button`
   align-items: center;
+  background-color: transparent;
   border: none;
   display: inline-flex;
   justify-content: center;
