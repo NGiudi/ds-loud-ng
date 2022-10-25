@@ -20,7 +20,14 @@ const IconButton = styled.button`
   &:hover:enabled {
     ${(props) =>
       css`
-        background-color: ${props.theme.colors.black._100};
+        background-color: ${props.theme.colors.black._200};
+      `}
+  }
+
+  &:active:enabled {
+    ${(props) =>
+      css`
+        background-color: ${!props.loading && props.theme.colors.black._300};
       `}
   }
 
