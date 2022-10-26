@@ -3,6 +3,7 @@ import { pick } from "../../../../utils/objects/object";
 /* start - textOptions filter */
 const whtListTextOptions = [
   "children",
+  "color",
   "margin",
   "padding",
   "size",

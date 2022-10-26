@@ -32,6 +32,7 @@ export const Text = (props) => {
 
 Text.propTypes = {
   as: PropTypes.oneOf(["label", "p"]),
+  color: PropTypes.string,
   htmlFor: PropTypes.string, // used only for label type.
   margin: PropTypes.string,
   padding: PropTypes.string,
@@ -43,6 +44,7 @@ Text.propTypes = {
 
 Text.defaultProps = {
   as: "p",
+  color: "black",
   htmlFor: "",
   margin: "a-0",
   padding: "a-0",

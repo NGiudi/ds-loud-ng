@@ -2,6 +2,12 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 
+/*******************************************************************************/
+/** TODO LIST                                                                 **/
+/**   1. Quitar todos los colores harcodeados.                                **/
+/**   2. Hacer dinamico el tamaño de la letra del placeholder de image.       **/
+/*******************************************************************************/
+
 /* fontawensome icons. */
 library.add(fas, far);
 

@@ -13,7 +13,7 @@ import { propsFilter } from "../../../utils/props/filter";
 export const Input = (props) => {
   const { icon, type } = props;
 
-  const inputProps = propsFilter(props, "textInputOptions");
+  const inputProps = propsFilter(props, "textInputOptions"); //TODO: hacerlo igual que en el componente panel.
 
   const [showPassword, setShowPassword] = useState(false);
 

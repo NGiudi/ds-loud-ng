@@ -18,7 +18,7 @@ Icon.propTypes = {
   color: PropTypes.string,
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   margin: PropTypes.string,
-  size: PropTypes.oneOf(["input", "lg", "md", "sm"]),
+  size: PropTypes.oneOf(["avatar", "avatarSm", "input", "lg", "md", "sm"]),
 };
 
 Icon.defaultProps = {

@@ -23,13 +23,20 @@ const story = {
       control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
+    placeholder: {
+      control: { type: "text" },
+      description:
+        "Se puede pasar un string para mostrar la la primer letra en el placeholder.",
+    },
     size: {
       control: { type: "select" },
-      description: "Recibe el tamaño del componente",
+      description: "Recibe el tamaño del componente.",
+      options: ["avatar", "avatarSm", "lg", "md", "sm"],
     },
     type: {
       control: { type: "select" },
       description: "Recibe el tipo de imagen que se desea utilizar.",
+      options: ["round", "square"],
     },
   },
 };
@@ -48,7 +55,7 @@ export const DinamicExample = (args) => {
   );
 };
 
-export const WithoutImage = () => {
+export const IconPlaceholder = () => {
   return (
     <ThemeDS>
       <table style={{ marginBottom: "30px" }}>
@@ -103,6 +110,10 @@ export const WithoutImage = () => {
             <th style={cellSize}>
               <Text>Avatar</Text>
             </th>
+
+            <th style={cellSize}>
+              <Text>Avatar small</Text>
+            </th>
           </tr>
         </thead>
 
@@ -123,6 +134,10 @@ export const WithoutImage = () => {
             <th style={cellSize}>
               <Image alt="foto de perfil" size="avatar" type="round" />
             </th>
+
+            <th style={cellSize}>
+              <Image alt="foto de perfil" size="avatarSm" type="round" />
+            </th>
           </tr>
         </tbody>
       </table>
@@ -130,7 +145,122 @@ export const WithoutImage = () => {
   );
 };
 
-export const Sizes = () => {
+export const LetterPlaceholder = () => {
+  return (
+    <ThemeDS>
+      <table style={{ marginBottom: "30px" }}>
+        <thead>
+          <tr>
+            <th style={cellSize}>
+              <Text>Large</Text>
+            </th>
+
+            <th style={cellSize}>
+              <Text>Medium</Text>
+            </th>
+
+            <th style={cellSize}>
+              <Text>Small</Text>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th style={cellSize}>
+              <Image alt="foto de perfil" placeholder="load" size="lg" />
+            </th>
+
+            <th style={cellSize}>
+              <Image alt="foto de perfil" placeholder="load" size="md" />
+            </th>
+
+            <th style={cellSize}>
+              <Image alt="foto de perfil" placeholder="load" size="sm" />
+            </th>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr>
+            <th style={cellSize}>
+              <Text>Large</Text>
+            </th>
+
+            <th style={cellSize}>
+              <Text>Medium</Text>
+            </th>
+
+            <th style={cellSize}>
+              <Text>Small</Text>
+            </th>
+
+            <th style={cellSize}>
+              <Text>Avatar</Text>
+            </th>
+
+            <th style={cellSize}>
+              <Text>Avatar small</Text>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th style={cellSize}>
+              <Image
+                alt="foto de perfil"
+                placeholder="load"
+                size="lg"
+                type="round"
+              />
+            </th>
+
+            <th style={cellSize}>
+              <Image
+                alt="foto de perfil"
+                placeholder="load"
+                size="md"
+                type="round"
+              />
+            </th>
+
+            <th style={cellSize}>
+              <Image
+                alt="foto de perfil"
+                placeholder="load"
+                size="sm"
+                type="round"
+              />
+            </th>
+
+            <th style={cellSize}>
+              <Image
+                alt="foto de perfil"
+                placeholder="load"
+                size="avatar"
+                type="round"
+              />
+            </th>
+
+            <th style={cellSize}>
+              <Image
+                alt="foto de perfil"
+                placeholder="load"
+                size="avatarSm"
+                type="round"
+              />
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </ThemeDS>
+  );
+};
+
+export const WithImage = () => {
   return (
     <ThemeDS>
       <Text margin="b-12" type="title">
@@ -193,6 +323,10 @@ export const Sizes = () => {
             <th style={cellSize}>
               <Text>Avatar</Text>
             </th>
+
+            <th style={cellSize}>
+              <Text>Avatar small</Text>
+            </th>
           </tr>
         </thead>
 
@@ -230,6 +364,15 @@ export const Sizes = () => {
                 alt="foto de perfil"
                 img={fotoPerfil}
                 size="avatar"
+                type="round"
+              />
+            </th>
+
+            <th style={cellSize}>
+              <Image
+                alt="foto de perfil"
+                img={fotoPerfil}
+                size="avatarSm"
                 type="round"
               />
             </th>
