@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+/* import hooks */
+import useOuterClick from "../../../hooks/useOuterClick";
+
 /* import components. */
 import { Panel, Image } from "../../../";
 
@@ -12,6 +15,10 @@ export const Avatar = (props) => {
   const { size } = props;
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const innerRef = useOuterClick(() => {
+    setIsOpen(false);
+  });
 
   const imageAttributes = {
     /* default values. */
@@ -27,7 +34,7 @@ export const Avatar = (props) => {
   };
 
   return (
-    <Styles.Wrapper margin={props.margin}>
+    <Styles.Wrapper margin={props.margin} ref={innerRef}>
       <Styles.AvatarWrapper isSelected={isOpen} onClick={handleAvatarClick}>
         <Image size={size} type="round" {...imageAttributes} />
       </Styles.AvatarWrapper>

@@ -31,6 +31,7 @@ const PanelWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
+  display: inline-block;
   position: relative;
 
   ${(props) => css`
