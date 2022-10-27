@@ -13,7 +13,7 @@ export const Button = (props) => {
 
   const isIconButton = props.kind === "icon";
 
-  const icon = {
+  const iconAttributes = {
     /* default values. */
     name: null,
     size: "sm",
@@ -51,11 +51,11 @@ export const Button = (props) => {
 
       {/* content view */}
       <ContentWrapper loading={loading ? 1 : 0}>
-        {icon.name && (
+        {iconAttributes.name && (
           <Icon
-            icon={icon.name}
+            icon={iconAttributes.name}
             margin={isIconButton ? "" : "r-4"}
-            size={icon.size}
+            size={iconAttributes.size}
           />
         )}
         {children}

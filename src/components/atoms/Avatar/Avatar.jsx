@@ -3,43 +3,33 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 /* import components. */
-import { Panel, Text } from "../../../";
+import { Panel, Image } from "../../../";
 
 /* import styles.*/
 import Styles from "./Avatar.styles";
 
 export const Avatar = (props) => {
-  const { img, isButton, placeholderWord, size } = props;
+  const { size } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleAvatarClick = () => {
-    if (isButton) {
-      setIsOpen((prev) => !prev);
-    }
+  const imageAttributes = {
+    /* default values. */
+    alt: "default-alt",
+    img: null,
+    placeholder: "L",
+    /* component values. */
+    ...props.img,
   };
 
-  const renderContent = () => {
-    if (img) {
-      return <Styles.Image src={img} alt="roberto_foto_perfil" />;
-    }
-
-    return (
-      <Styles.WordWrapper size={size}>
-        <Text size={size}>{placeholderWord[0]}</Text>
-      </Styles.WordWrapper>
-    );
+  const handleAvatarClick = () => {
+    setIsOpen((prev) => !prev);
   };
 
   return (
     <Styles.Wrapper margin={props.margin}>
-      <Styles.AvatarWrapper
-        isButton={isButton}
-        isSelected={isOpen}
-        onClick={handleAvatarClick}
-        size={size}
-      >
-        {renderContent()}
+      <Styles.AvatarWrapper isSelected={isOpen} onClick={handleAvatarClick}>
+        <Image size={size} type="round" {...imageAttributes} />
       </Styles.AvatarWrapper>
 
       {isOpen && (
@@ -53,18 +43,18 @@ export const Avatar = (props) => {
 
 Avatar.propTypes = {
   children: PropTypes.node,
-  img: PropTypes.string,
-  isButton: PropTypes.bool,
+  img: PropTypes.shape({
+    alt: PropTypes.string,
+    img: PropTypes.string,
+    placeholder: PropTypes.string,
+  }),
   margin: PropTypes.string,
-  placeholderWord: PropTypes.string,
-  size: PropTypes.oneOf(["sm", "md", "lg"]),
+  size: PropTypes.oneOf(["avatar", "avatarSm"]),
 };
 
 Avatar.defaultProps = {
   children: null,
   img: null,
-  isButton: false,
   margin: "a-0",
-  placeholderWord: "L",
-  size: "md",
+  size: "avatar",
 };

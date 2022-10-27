@@ -3,9 +3,13 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 
 /*******************************************************************************/
-/** TODO LIST                                                                 **/
+/** TODO LIST:                                                                **/
 /**   1. Quitar todos los colores harcodeados.                                **/
 /**   2. Hacer dinamico el tamaño de la letra del placeholder de image.       **/
+/**   3. Agregar propiedad de alineamiento en el texto. si queremos           **/
+/**      lo podemos centrarr o alinear a la derecha.                          **/
+/**   4. Hacer que se puede abrir el dropdown del avatar tanto para la        **/
+/**      izquierda como para la derecha.                                      **/
 /*******************************************************************************/
 
 /* fontawensome icons. */
@@ -34,5 +38,3 @@ export { Text } from "./components/atoms";
 /* molecules components */
 export { AppLayout } from "./components/molecules";
 export { StepsBar } from "./components/molecules";
-
-/* layout components */

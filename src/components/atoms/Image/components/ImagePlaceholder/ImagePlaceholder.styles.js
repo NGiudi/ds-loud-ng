@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const IconPlaceholder = styled.div`
   align-items: center;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
 
   ${(props) =>
