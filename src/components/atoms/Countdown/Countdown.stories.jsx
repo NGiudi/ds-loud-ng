@@ -27,6 +27,7 @@ const story = {
     formatTime: {
       control: { type: "select" },
       description: "Formato con el cual se muestra en pantalla.",
+      options: ["hh:mm:ss", "mm:ss", "ss"],
       table: {
         defaultValue: { summary: "hh:mm:ss" },
       },

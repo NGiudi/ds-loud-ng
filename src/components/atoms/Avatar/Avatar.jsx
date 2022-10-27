@@ -12,7 +12,7 @@ import { Panel, Image } from "../../../";
 import Styles from "./Avatar.styles";
 
 export const Avatar = (props) => {
-  const { size } = props;
+  const { pos, size } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,7 +40,7 @@ export const Avatar = (props) => {
       </Styles.AvatarWrapper>
 
       {isOpen && (
-        <Styles.PanelWrapper margin="t-8">
+        <Styles.PanelWrapper margin="t-8" pos={pos}>
           <Panel width="200px">{props.children}</Panel>
         </Styles.PanelWrapper>
       )}
@@ -56,6 +56,7 @@ Avatar.propTypes = {
     placeholder: PropTypes.string,
   }),
   margin: PropTypes.string,
+  pos: PropTypes.oneOf(["left", "right"]),
   size: PropTypes.oneOf(["avatar", "avatarSm"]),
 };
 
@@ -63,5 +64,6 @@ Avatar.defaultProps = {
   children: null,
   img: null,
   margin: "a-0",
+  pos: "left",
   size: "avatar",
 };

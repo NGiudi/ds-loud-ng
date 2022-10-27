@@ -1,12 +1,20 @@
 import React from "react";
 
-import { Avatar, Image, Text, ThemeDS } from "../../../";
+import { Avatar, Columns, Image, Text, ThemeDS } from "../../../";
 
 import fotoPerfil from "../../../../assets/img/foto-perfil.jpg";
 
 const story = {
   title: "Components/Avatar",
   component: Avatar,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Si el dropdown del avatar está abierto y se hace un click en cualquier lugar por fuera del area del componente, el mismo se cierra automaticamente.",
+      },
+    },
+  },
   argTypes: {
     img: {
       control: { type: "text" },
@@ -16,6 +24,11 @@ const story = {
     margin: {
       control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
+    },
+    pos: {
+      control: { type: "select" },
+      description: "Setea la orientación del panel respecto la imagen.",
+      options: ["left", "right"],
     },
     size: {
       control: { type: "select" },
@@ -38,6 +51,36 @@ export const DinamicExample = (args) => {
           </Text>
         </div>
       </Avatar>
+    </ThemeDS>
+  );
+};
+
+export const Positions = (args) => {
+  return (
+    <ThemeDS>
+      <Columns>
+        <Avatar img={{ img: fotoPerfil }}>
+          <Image img={fotoPerfil} margin="t-10 x-50" size="sm" type="round" />
+
+          {/*TODO: centrar con el text.*/}
+          <div style={{ textAlign: "center" }}>
+            <Text margin="y-20" size="lg" weight="semibold">
+              Nicolás Giudice
+            </Text>
+          </div>
+        </Avatar>
+
+        <Avatar img={{ img: fotoPerfil }} pos="right">
+          <Image img={fotoPerfil} margin="t-10 x-50" size="sm" type="round" />
+
+          {/*TODO: centrar con el text.*/}
+          <div style={{ textAlign: "center" }}>
+            <Text margin="y-20" size="lg" weight="semibold">
+              Nicolás Giudice
+            </Text>
+          </div>
+        </Avatar>
+      </Columns>
     </ThemeDS>
   );
 };
