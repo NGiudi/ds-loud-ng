@@ -2,13 +2,14 @@ import { pick } from "../../../../utils/objects/object";
 
 /* start - textOptions filter */
 const whtListTextOptions = [
+  "align",
   "children",
   "color",
+  "decoration",
   "margin",
   "padding",
   "size",
   "type",
-  "underline",
   "weight",
 ];
 

@@ -31,25 +31,27 @@ export const Text = (props) => {
 };
 
 Text.propTypes = {
+  align: PropTypes.oneOf(["center", "end", "start"]),
   as: PropTypes.oneOf(["label", "p"]),
   color: PropTypes.string,
+  decoration: PropTypes.oneOf(["underline", "line-through"]),
   htmlFor: PropTypes.string, // used only for label type.
   margin: PropTypes.string,
   padding: PropTypes.string,
   size: PropTypes.oneOf(["sm", "md", "lg"]),
   type: PropTypes.oneOf(["text", "title"]),
-  underline: PropTypes.bool,
   weight: PropTypes.oneOf(["light", "regular", "semibold", "bold"]),
 };
 
 Text.defaultProps = {
+  align: "start",
   as: "p",
   color: "black",
+  decoration: null,
   htmlFor: "",
   margin: "a-0",
   padding: "a-0",
   size: "md",
   type: "text",
-  underline: false,
   weight: "regular",
 };

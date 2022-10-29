@@ -6,8 +6,35 @@ const story = {
   title: "Components/Text",
   component: Text,
   argTypes: {
+    align: {
+      control: { type: "select" },
+      description: "Se setea la posición del texto.",
+      options: ["center", "end", "start"],
+    },
+    as: {
+      control: { type: "select" },
+      description: "Se elegi la etiqueta del texto.",
+      options: ["label", "p"],
+    },
+    color: {
+      control: { type: "text" },
+      description: "Se puede modificar el color del texto.",
+    },
+    decoration: {
+      control: { type: "select" },
+      description: "agregar el estilo deseado en el texto.",
+      options: ["underline"],
+    },
+    htmlFor: {
+      control: { type: "text" },
+      description:
+        "Unicamente se debe usar para los textos que tenga la propiedad `as` con el valor `label`.",
+    },
     margin: {
       description: "Se setea la distancia de los margenes.",
+    },
+    padding: {
+      description: "Se setea la distancia de los paddings.",
     },
     size: {
       control: { type: "select" },
@@ -17,10 +44,6 @@ const story = {
       control: { type: "select" },
       description:
         "separo los estilos de textos y titulos, con esta propiedad lo podemos seleccionar.",
-    },
-    underline: {
-      control: { type: "boolean" },
-      description: "subraya el texto.",
     },
     weight: {
       control: { type: "select" },
@@ -44,7 +67,6 @@ DinamicExample.args = {
   margin: "a-12",
   size: "md",
   type: "text",
-  underline: false,
   weight: "regular",
 };
 
@@ -119,12 +141,38 @@ export const Weights = () => {
 export const TextStyles = () => {
   return (
     <ThemeDS>
-      <Text margin="y-12" size="lg">
+      <Text margin="y-12" size="md">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </Text>
 
-      <Text margin="y-12" size="md" underline>
+      <Text decoration="underline" margin="y-12" size="md">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </Text>
+
+      <Text decoration="line-through" margin="y-12" size="md">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </Text>
+    </ThemeDS>
+  );
+};
+
+export const TextAlign = () => {
+  return (
+    <ThemeDS>
+      <Text margin="y-12" size="md">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </Text>
+
+      <Text align="center" margin="y-12" size="md">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </Text>
+
+      <Text align="end" margin="y-12" size="md">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </Text>

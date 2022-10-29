@@ -9,7 +9,8 @@ const textStyles = (props) => {
     font-size: ${props.theme.components[props.type].sizes[props.size]};
     font-weight: ${props.theme.components[props.type].weights[props.weight]};
     line-height: ${props.theme.components[props.type].lineHeight[props.size]};
-    text-decoration: ${props.underline && "underline"};
+    text-align: ${props.align};
+    text-decoration: ${props.decoration};
 
     ${marginProperties(props)}
     ${paddingProperties(props)}

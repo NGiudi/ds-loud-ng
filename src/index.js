@@ -6,8 +6,6 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 /** TODO LIST:                                                                **/
 /**   1. Quitar todos los colores harcodeados.                                **/
 /**   2. Hacer dinamico el tamaño de la letra del placeholder de image.       **/
-/**   3. Agregar propiedad de alineamiento en el texto. si queremos           **/
-/**      lo podemos centrarr o alinear a la derecha.                          **/
 /*******************************************************************************/
 
 /* fontawensome icons. */
