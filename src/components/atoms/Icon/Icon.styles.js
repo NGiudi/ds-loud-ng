@@ -7,9 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const IconItem = styled(FontAwesomeIcon)`
   ${(props) =>
     css`
-      font-size: ${props.theme.components.icon.iconSizes[props.local_size]};
-      max-height: ${props.theme.components.icon.iconSizes[props.local_size]};
-      max-widt: ${props.theme.components.icon.iconSizes[props.local_size]};
+      font-size: ${props.theme.components.icon.iconSizes[props.customsize]};
+      max-height: ${props.theme.components.icon.iconSizes[props.customsize]};
+      max-widt: ${props.theme.components.icon.iconSizes[props.customsize]};
     `}
 `;
 

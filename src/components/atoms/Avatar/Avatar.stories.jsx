@@ -44,12 +44,9 @@ export const DinamicExample = (args) => {
       <Avatar {...args}>
         <Image img={fotoPerfil} margin="t-10 x-50" size="sm" type="round" />
 
-        {/*TODO: centrar con el text.*/}
-        <div style={{ textAlign: "center" }}>
-          <Text margin="y-20" size="lg" weight="semibold">
-            Nicolás Giudice
-          </Text>
-        </div>
+        <Text align="center" margin="y-20" size="lg" weight="semibold">
+          Nicolás Giudice
+        </Text>
       </Avatar>
     </ThemeDS>
   );
@@ -62,23 +59,17 @@ export const Positions = (args) => {
         <Avatar img={{ img: fotoPerfil }}>
           <Image img={fotoPerfil} margin="t-10 x-50" size="sm" type="round" />
 
-          {/*TODO: centrar con el text.*/}
-          <div style={{ textAlign: "center" }}>
-            <Text margin="y-20" size="lg" weight="semibold">
-              Nicolás Giudice
-            </Text>
-          </div>
+          <Text align="center" margin="y-20" size="lg" weight="semibold">
+            Nicolás Giudice
+          </Text>
         </Avatar>
 
         <Avatar img={{ img: fotoPerfil }} pos="right">
           <Image img={fotoPerfil} margin="t-10 x-50" size="sm" type="round" />
 
-          {/*TODO: centrar con el text.*/}
-          <div style={{ textAlign: "center" }}>
-            <Text margin="y-20" size="lg" weight="semibold">
-              Nicolás Giudice
-            </Text>
-          </div>
+          <Text align="center" margin="y-20" size="lg" weight="semibold">
+            Nicolás Giudice
+          </Text>
         </Avatar>
       </Columns>
     </ThemeDS>

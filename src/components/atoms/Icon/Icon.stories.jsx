@@ -14,14 +14,14 @@ const story = {
       control: { type: "text" },
       description: "Recibe el nombre del icono de fontawensome free.",
     },
+    margin: {
+      control: { type: "text" },
+      description: "Se setea la distancia de los margenes.",
+    },
     size: {
       control: { type: "select" },
       description: "Recibe el valor del tamaño del ícono.",
       options: ["sm", "md", "lg"],
-    },
-    margin: {
-      control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
     },
   },
 };

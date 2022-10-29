@@ -4,12 +4,21 @@ import PropTypes from "prop-types";
 /* import styles. */
 import Styles from "./Icon.styles";
 
+/* utils */
+import {
+  getIconOptionsFilter,
+  getWrapperOptionsFilter,
+} from "./utils/propsFilter";
+
 export const Icon = (props) => {
-  const { color, icon, size } = props;
+  const { size } = props;
+
+  const iconOptions = getIconOptionsFilter(props);
+  const wrapperOptions = getWrapperOptionsFilter(props);
 
   return (
-    <Styles.IconWrapper {...props}>
-      <Styles.IconItem color={color} icon={icon} local_size={size} />
+    <Styles.IconWrapper {...wrapperOptions}>
+      <Styles.IconItem {...iconOptions} customsize={size} />
     </Styles.IconWrapper>
   );
 };
