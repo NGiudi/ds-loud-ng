@@ -75,7 +75,7 @@ Button.propTypes = {
   kind: PropTypes.oneOf(["icon", "outlined", "solid", "text"]),
   loading: PropTypes.bool,
   margin: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   size: PropTypes.oneOf(["input", "md"]),
   type: PropTypes.oneOf(["button", "submit"]),
 };

@@ -12,9 +12,9 @@ import {
 } from "../../../";
 
 /* imagen */
-import argentina from "../../../../assets/countries flag/argentina.png";
-import brasil from "../../../../assets/countries flag/brasil.png";
-import usa from "../../../../assets/countries flag/usa.png";
+import argentina from "../../../assets/countries flag/argentina.png";
+import brasil from "../../../assets/countries flag/brasil.png";
+import usa from "../../../assets/countries flag/usa.png";
 
 const story = {
   title: "Components/Dropdown",

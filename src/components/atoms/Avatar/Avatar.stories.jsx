@@ -2,7 +2,7 @@ import React from "react";
 
 import { Avatar, Columns, Image, Text, ThemeDS } from "../../../";
 
-import fotoPerfil from "../../../../assets/img/foto-perfil.jpg";
+import fotoPerfil from "../../../assets/img/foto-perfil.jpg";
 
 const story = {
   title: "Components/Avatar",

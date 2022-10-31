@@ -11,10 +11,6 @@ const story = {
       description:
         "Recibe un string para alinear el contenido dentro del panel.",
     },
-    children: {
-      control: false,
-      description: "Contenido del panel.",
-    },
     margin: {
       control: { type: "text" },
       description: "Se setea la distancia de los margenes.",

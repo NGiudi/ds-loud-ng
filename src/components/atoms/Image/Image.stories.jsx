@@ -4,8 +4,8 @@ import React from "react";
 import { Image, Text, ThemeDS } from "../../../";
 
 /* images */
-import argentina from "../../../../assets/countries flag/argentina.png";
-import fotoPerfil from "../../../../assets/img/foto-perfil.jpg";
+import argentina from "../../../assets/countries flag/argentina.png";
+import fotoPerfil from "../../../assets/img/foto-perfil.jpg";
 
 const story = {
   title: "Components/Image",

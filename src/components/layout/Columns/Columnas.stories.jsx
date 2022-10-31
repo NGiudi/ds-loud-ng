@@ -6,11 +6,6 @@ const story = {
   title: "Layout/Columns",
   component: Columns,
   argTypes: {
-    children: {
-      control: { type: "text" },
-      description:
-        "Recibe el contenido de las columnas. Cada elemento hijo es una columna.",
-    },
     gap: {
       control: { type: "text" },
       description: "Recibe el valor del espacio entre columnas.",

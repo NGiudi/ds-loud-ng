@@ -7,6 +7,8 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 /**   1. Quitar todos los colores harcodeados.                                **/
 /**   2. Hacer dinamico el tamaño de la letra del placeholder de image.       **/
 /**   3. Revisar el componente de dropdown, tengo que hacer mejoras.          **/
+/**   4. Revisar el componente Input                                          **/
+/**   5. Terminar AppLayout                                                   **/
 /*******************************************************************************/
 
 /* fontawensome icons. */
@@ -34,4 +36,5 @@ export { Text } from "./components/atoms";
 
 /* molecules components */
 export { AppLayout } from "./components/molecules";
+export { RulesPanel } from "./components/molecules";
 export { StepsBar } from "./components/molecules";
