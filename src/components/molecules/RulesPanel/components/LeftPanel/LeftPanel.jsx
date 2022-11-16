@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 import { RulesPanelContext } from "../../RulesPanelContext";
 
 /* import components */
-import { Button, Input, Panel } from "../../../../../";
+import FieldsGroup from "../FieldsGroup/FieldsGroup";
+import { Button, Panel } from "../../../../../";
 
 /* import external components */
 import { Form, Formik } from "formik";
@@ -53,21 +54,6 @@ const LeftPanel = (props) => {
     return initialValues;
   };
 
-  const renderInputs = () => {
-    return fields.map((field) => {
-      const { label, name } = field;
-
-      return (
-        <Input
-          key={`rulesPanel_input_${name}`}
-          label={label}
-          margin="b-12"
-          name={name}
-        />
-      );
-    });
-  };
-
   return (
     <Panel>
       <Formik
@@ -76,7 +62,7 @@ const LeftPanel = (props) => {
         onSubmit={onSubmit}
       >
         <Form>
-          {renderInputs && renderInputs()}
+          <FieldsGroup fields={fields} />
 
           <div style={{ textAlign: "end" }}>
             <Button

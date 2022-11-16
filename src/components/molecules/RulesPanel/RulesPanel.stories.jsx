@@ -24,10 +24,18 @@ const fields = [
   {
     label: "Marca",
     name: "marca",
+    options: ["audi", "lexus", "volkswagen"],
+    type: "select",
   },
   {
     label: "Modelo",
     name: "modelo",
+    type: "text",
+  },
+  {
+    label: "Patente",
+    name: "patente",
+    type: "text",
   },
 ];
 
@@ -36,6 +44,7 @@ const elements = [
     data: {
       marca: "Volkswagen",
       modelo: "fox",
+      patente: "KZH614",
     },
     isEditable: true,
     isRemovable: false,
@@ -44,6 +53,7 @@ const elements = [
     data: {
       marca: "Volkswagen",
       modelo: "gol",
+      patente: "FDB312",
     },
     isEditable: true,
     isRemovable: true,
@@ -65,7 +75,10 @@ export const DinamicExample = () => {
     return (
       <>
         <Text weight="semibold">{el.marca}</Text>
-        <Text size="md">{el.modelo}</Text>
+
+        <Text size="md">
+          {el.modelo} - {el.patente}
+        </Text>
       </>
     );
   };
