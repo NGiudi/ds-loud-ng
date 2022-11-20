@@ -15,11 +15,11 @@ const FieldsGroup = (props) => {
 };
 
 FieldsGroup.propTypes = {
-  field: PropTypes.object,
+  fields: PropTypes.array,
 };
 
 FieldsGroup.defaultProps = {
-  field: {},
+  fields: [],
 };
 
 export default FieldsGroup;

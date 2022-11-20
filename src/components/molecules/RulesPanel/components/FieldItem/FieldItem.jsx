@@ -2,24 +2,23 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* import components */
-import { Input } from "../../../../../";
+import { Input, Select } from "../../../../../";
 
 const FieldItem = (props) => {
   const { field, margin } = props;
-  const { name, options, type } = field;
+  const { label, name, options, type } = field;
 
   switch (type) {
     case "select":
-      //TODO: cambiar este select por el componente select cuando lo haga.
       return (
-        <select>
+        <Select label={label} margin={margin} name={name}>
           {options &&
             options.map((opc) => (
               <option key={`rulesPanel_${name}_${opc}`} value={opc}>
                 {opc}
               </option>
             ))}
-        </select>
+        </Select>
       );
     default:
       return <Input margin={margin} {...field} />;
@@ -27,12 +26,12 @@ const FieldItem = (props) => {
 };
 
 FieldItem.propTypes = {
-  field: PropTypes.array,
+  field: PropTypes.object,
   margin: PropTypes.string,
 };
 
-FieldItem.propTypes = {
-  field: [],
+FieldItem.defaultProps = {
+  field: null,
   margin: "a-0",
 };
 

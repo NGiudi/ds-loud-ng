@@ -13,4 +13,5 @@ export { Input } from "./Input/Input";
 export { Modal } from "./Modal/Modal";
 export { Panel } from "./Panel/Panel";
 export { ProgressBar } from "./ProgressBar/ProgressBar";
+export { Select } from "./Select/Select";
 export { Text } from "./Text/Text";

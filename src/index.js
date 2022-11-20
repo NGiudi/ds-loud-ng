@@ -3,12 +3,17 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 
 /*******************************************************************************/
+/** IN PROGRESS:                                                              **/
+/**   1. Perfeccionar el Select (por ahora solo hice lo basico de lo basico). **/
+/**   2. Rules Panel (Seguir después de terminar con el select)               **/
+/**                                                                           **/
 /** TODO LIST:                                                                **/
-/**   1. Quitar todos los colores harcodeados.                                **/
-/**   2. Hacer dinamico el tamaño de la letra del placeholder de image.       **/
-/**   3. Revisar el componente de dropdown, tengo que hacer mejoras.          **/
-/**   4. Revisar el componente Input                                          **/
-/**   5. Terminar AppLayout                                                   **/
+/**   1. Actualizar librerias.                                                **/
+/**   3. Quitar todos los colores harcodeados.                                **/
+/**   4. Hacer dinamico el tamaño de la letra del placeholder de image.       **/
+/**   5. Revisar el componente de dropdown, tengo que hacer mejoras.          **/
+/**   6. Revisar el componente Input                                          **/
+/**   7. Terminar AppLayout                                                   **/
 /*******************************************************************************/
 
 /* fontawensome icons. */
@@ -32,6 +37,7 @@ export { Input } from "./components/atoms";
 export { Modal } from "./components/atoms";
 export { Panel } from "./components/atoms";
 export { ProgressBar } from "./components/atoms";
+export { Select } from "./components/atoms";
 export { Text } from "./components/atoms";
 
 /* molecules components */

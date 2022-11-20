@@ -7,6 +7,7 @@ import image from "./image";
 import input from "./input";
 import modal from "./modal";
 import progressBar from "./progressBar";
+import select from "./select";
 import stepsBar from "./stepsBar";
 import text from "./text";
 import title from "./title";
@@ -21,6 +22,7 @@ const components = {
   input,
   modal,
   progressBar,
+  select,
   stepsBar,
   text,
   title,

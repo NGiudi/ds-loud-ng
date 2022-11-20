@@ -45,7 +45,7 @@ const InputWrapper = styled.div`
       border-width: ${props.theme.components.input.border.weight};
 
       ${marginProperties(props)}
-      ${paddingProperties(props)}
+      ${paddingProperties(props, "x-8 y-4")}
     `};
 `;
 

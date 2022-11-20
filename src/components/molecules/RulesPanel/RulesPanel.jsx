@@ -17,6 +17,7 @@ import {
   getWrapperFilter,
 } from "./utils/propsFilters";
 
+//TODO: Recibir el schema validation de yup para el formulario.
 export const RulesPanel = (props) => {
   const contextOptions = getContextOptions(props);
   const leftPanelOptions = getLeftPanelOptions(props);
@@ -34,15 +35,16 @@ export const RulesPanel = (props) => {
 };
 
 RulesPanel.propTypes = {
-  leftPanelContent: PropTypes.func,
+  fields: PropTypes.array,
   list: PropTypes.array,
   listElement: PropTypes.func,
   margin: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 RulesPanel.defaultProps = {
-  leftPanelContent: null,
-  list: null,
+  fields: [],
+  list: [],
   listElement: null,
-  margin: "a-0",
+  margin: null,
 };

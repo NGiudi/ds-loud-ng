@@ -28,7 +28,7 @@ export const Input = (props) => {
         {props.label}
       </Text>
 
-      <Styles.InputWrapper margin="t-4" padding="x-8 y-4" ref={props.reference}>
+      <Styles.InputWrapper margin="t-4" ref={props.reference}>
         {/* left icon */}
         {!!icon && <Icon icon={icon} margin="r-8" size="sm" />}
 
