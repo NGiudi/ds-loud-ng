@@ -2,6 +2,7 @@
   "name": "ds-loud-ng",
   "version": "0.0.1",
   "description": "Design System implemented in React",
+  "homepage": "https://ngiudi.github.io/ds-loud-ng",
   "main": "./dist/index.js",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.2.1",
@@ -12,6 +13,7 @@
     "@testing-library/react": "13.4.0",
     "@testing-library/user-event": "14.4.3",
     "formik": "^2.2.9",
+    "gh-pages": "^4.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-scripts": "5.0.1",
@@ -19,8 +21,9 @@
     "web-vitals": "3.1.0"
   },
   "scripts": {
+    "deploy": "npm run build && gh-pages -d build",
     "start": "react-scripts start",
-    "build": "npx babel src --out-dir dist",
+    "build": "npx babel src --out-dir build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
