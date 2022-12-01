@@ -1,18 +1,32 @@
-# Loud
-> Desing System implemented in React.
+# Loud Design System
+Se está desarrollando un Desing System para proyectos de React con la menor cantidad de dependecias posibles para hacer más fácil el mantenimiento.
 
-## How to publish to npm
+El proyecto está publicado en github pages: https://ngiudi.github.io/ds-loud-ng
 
-1. After finishing all the changes do the build of the project
+## Caracteristicas:
+* Se puede pasar un theme y personalizar colores, espaciados, bordes, entre otros estilos de los componentes.
+
+## ¿Cómo actualizar el deploy en githup pages?
+
+1. El siguiente comando va a crear el build y va a publicar la página.
+```
+npm run depluy
+```
+2. Si en consola vemos el mensaje `Publish`, se ha publicado con éxito la página.
+
+## ¿Cómo publicar en npm?
+
+1. Una vez finalizados los cambios ejecutamos el siguiente comando.
 ```
 npm run build
 ```
 
-2. Update the version of the package.json, then commit and push it to master!
+2. Actualizar la version en el package json, si no se hace esto, va a fallar al momento de intentar publicar en npm.
 
-3. Publish the project in npm
+3. Publicar el nuevo paquete
 ```
   npm publish
 ```
-### Assets
+
+## Assets
 PNG flags: https://icons8.com/icon/set/flags/fluency
