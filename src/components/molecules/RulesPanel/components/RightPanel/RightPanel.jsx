@@ -14,7 +14,7 @@ import Styles from "./RightPanel.styles";
 import { INVALID_INDEX } from "../../../../../assets/constants/array";
 
 const RightPanel = (props) => {
-  const { list, listElement, onChange } = props;
+  const { list, listElement, onChange, panelLeftHeight } = props;
 
   const ctx = useContext(RulesPanelContext);
 
@@ -30,32 +30,37 @@ const RightPanel = (props) => {
   const renderList = () => {
     if (list) {
       return list.map((el, idx) => {
+        const isFirstItem = idx === 0;
+        const isLastItem = idx === list.length - 1;
+
         return (
-          <Panel margin="b-10" key={`rightPanel-listItem-${idx}`}>
-            <Styles.ContentContainer>
-              <div>{listElement && listElement(el.data)}</div>
+          <Styles.ContentContainer
+            isFirstItem={isFirstItem}
+            isLastItem={isLastItem}
+            key={`rightPanel-listItem-${idx}`}
+          >
+            <div>{listElement && listElement(el.data)}</div>
 
-              <Styles.ButtonsContainer>
-                {el.isEditable && (
-                  <Button
-                    disabled={ctx.selectedElement !== INVALID_INDEX}
-                    icon={{ name: "pencil" }}
-                    kind="icon"
-                    onClick={() => onClickEdit(idx)}
-                  />
-                )}
+            <Styles.ButtonsContainer>
+              {el.isEditable && (
+                <Button
+                  disabled={ctx.selectedElement !== INVALID_INDEX}
+                  icon={{ name: "pencil" }}
+                  kind="icon"
+                  onClick={() => onClickEdit(idx)}
+                />
+              )}
 
-                {el.isRemovable && (
-                  <Button
-                    disabled={ctx.selectedElement === idx}
-                    icon={{ name: "trash" }}
-                    kind="icon"
-                    onClick={() => onClickDelete(idx)}
-                  />
-                )}
-              </Styles.ButtonsContainer>
-            </Styles.ContentContainer>
-          </Panel>
+              {el.isRemovable && (
+                <Button
+                  disabled={ctx.selectedElement === idx}
+                  icon={{ name: "trash" }}
+                  kind="icon"
+                  onClick={() => onClickDelete(idx)}
+                />
+              )}
+            </Styles.ButtonsContainer>
+          </Styles.ContentContainer>
         );
       });
     }
@@ -63,19 +68,32 @@ const RightPanel = (props) => {
     return null;
   };
 
-  return <Panel>{renderList()}</Panel>;
+  return (
+    <Panel
+      padding="a-16"
+      style={{
+        boxSizing: "border-box",
+        height: panelLeftHeight === -1 ? "auto" : `${panelLeftHeight}px`,
+        overflowY: "scroll",
+      }}
+    >
+      {renderList()}
+    </Panel>
+  );
 };
 
 RightPanel.propTypes = {
   list: PropTypes.array,
   listElement: PropTypes.func,
   onChange: PropTypes.func,
+  panelLeftHeight: PropTypes.number,
 };
 
 RightPanel.defaultProps = {
   list: [],
   listElement: null,
   onChange: null,
+  panelLeftHeight: -1,
 };
 
 export default RightPanel;

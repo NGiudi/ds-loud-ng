@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 /* import context */
@@ -19,16 +19,22 @@ import {
 
 //TODO: Recibir el schema validation de yup para el formulario.
 export const RulesPanel = (props) => {
+  const [panelLeftHeight, setPanelLeftHeight] = useState(0);
+
   const contextOptions = getContextOptions(props);
   const leftPanelOptions = getLeftPanelOptions(props);
   const rightPanelOptions = getRightPanelFilter(props);
   const wrapperOptions = getWrapperFilter(props);
 
+  const handleSizeH = (height) => {
+    setPanelLeftHeight(height);
+  };
+
   return (
     <RulesPanelProvider {...contextOptions}>
       <Columns {...wrapperOptions}>
-        <LeftPanel {...leftPanelOptions} />
-        <RightPanel {...rightPanelOptions} />
+        <LeftPanel onSizeH={handleSizeH} {...leftPanelOptions} />
+        <RightPanel panelLeftHeight={panelLeftHeight} {...rightPanelOptions} />
       </Columns>
     </RulesPanelProvider>
   );

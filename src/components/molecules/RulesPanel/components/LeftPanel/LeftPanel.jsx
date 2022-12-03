@@ -15,7 +15,7 @@ import { Form, Formik } from "formik";
 import { INVALID_INDEX } from "../../../../../assets/constants/array";
 
 const LeftPanel = (props) => {
-  const { fields, list, onChange } = props;
+  const { fields, list, onChange, onSizeH } = props;
 
   const ctx = useContext(RulesPanelContext);
 
@@ -54,8 +54,12 @@ const LeftPanel = (props) => {
     return initialValues;
   };
 
+  const handleHeight = (height) => {
+    onSizeH && onSizeH(height);
+  };
+
   return (
-    <Panel>
+    <Panel onSizeH={handleHeight} padding="a-16">
       <Formik
         enableReinitialize
         initialValues={generateInicialValues()}
@@ -88,12 +92,14 @@ LeftPanel.propTypes = {
   fields: PropTypes.array,
   list: PropTypes.array,
   onChange: PropTypes.func,
+  onSizeH: PropTypes.func,
 };
 
 LeftPanel.defaultProps = {
   fields: [],
   list: [],
   onChange: null,
+  onSizeH: null,
 };
 
 export default LeftPanel;
