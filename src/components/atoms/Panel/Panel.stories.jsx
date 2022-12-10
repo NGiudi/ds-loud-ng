@@ -22,6 +22,7 @@ const story = {
     type: {
       control: { type: "select" },
       description: "Cambia el color de fondo y del texto.",
+      options: ["error", "info", "neutral", "success", "warning"],
     },
   },
 };

@@ -8,10 +8,18 @@ import Styles from "./ImagePlaceholder.styles";
 const ImagePlaceholder = (props) => {
   const { placeholder, size } = props;
 
+  const selectTextSize = () => {
+    if (["avatar", "avatarSm", "sm"].includes(size)) {
+      return "md";
+    }
+
+    return "lg";
+  };
+
   return (
     <Styles.IconPlaceholder {...props}>
       {placeholder ? (
-        <Text color="white" size="lg" weight="bold">
+        <Text color="white" size={selectTextSize()} weight="bold">
           {placeholder.charAt(0).toUpperCase()}
         </Text>
       ) : (

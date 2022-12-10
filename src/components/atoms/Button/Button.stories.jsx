@@ -44,6 +44,7 @@ const story = {
       control: { type: "select" },
       description:
         "Recibe del tipo de botón. Sirve para hacer que el botón sea de tipo submit para formularios.",
+      options: ["button", "submit"],
     },
   },
 };

@@ -2,18 +2,23 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 /* import components. */
-import { ShowPasswordButton } from "./components/ShowPasswordButton/ShowPasswordButton";
+import { ShowPasswordButton } from "./components";
 import { Icon, Text } from "../../../";
 
 /* import styles. */
 import Styles from "./Input.styles";
 
-import { propsFilter } from "../../../utils/props/filter";
+/* import utils */
+import {
+  getInputOptionsFilter,
+  getWrapperOptionsFilter,
+} from "./utils/propsFilter";
 
 export const Input = (props) => {
   const { icon, type } = props;
 
-  const inputProps = propsFilter(props, "textInputOptions"); //TODO: hacerlo igual que en el componente panel.
+  const inputProps = getInputOptionsFilter(props);
+  const wrapperProps = getWrapperOptionsFilter(props);
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -22,7 +27,7 @@ export const Input = (props) => {
   };
 
   return (
-    <Styles.Wrapper margin={props.margin}>
+    <Styles.Wrapper {...wrapperProps}>
       {/* label */}
       <Text as="label" htmlFor={props.name} weight="semibold">
         {props.label}

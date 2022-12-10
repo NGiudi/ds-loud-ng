@@ -23,7 +23,7 @@ const story = {
     decoration: {
       control: { type: "select" },
       description: "agregar el estilo deseado en el texto.",
-      options: ["underline"],
+      options: ["underline", "line-through"],
     },
     htmlFor: {
       control: { type: "text" },
@@ -39,15 +39,18 @@ const story = {
     size: {
       control: { type: "select" },
       description: "Cambia el tamaño del texto.",
+      options: ["sm", "md", "lg"],
     },
     type: {
       control: { type: "select" },
       description:
         "separo los estilos de textos y titulos, con esta propiedad lo podemos seleccionar.",
+      options: ["text", "title"],
     },
     weight: {
       control: { type: "select" },
       description: "Cambia el espesor del texto.",
+      options: ["light", "regular", "semibold", "bold"],
     },
   },
 };

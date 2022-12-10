@@ -33,6 +33,7 @@ const story = {
     size: {
       control: { type: "select" },
       description: "Modifica el alto de la progressBar y el border radius.",
+      options: ["sm", "md", "lg"],
     },
     step: {
       control: { type: "number" },

@@ -1,6 +1,6 @@
 const border = {
-  color: "#0F0F0F",
-  radius: "8px",
+  color: "#C4C4C4",
+  radius: "6px",
   weight: "1px",
 };
 

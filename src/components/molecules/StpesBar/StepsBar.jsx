@@ -54,7 +54,7 @@ export const StepsBar = (props) => {
     return (
       <>
         {renderStep !== 1 && (
-          <ProgressBarWrapper>
+          <ProgressBarWrapper key={`progressBar-step-${renderStep}`}>
             <ProgressBar
               borderRound
               noShowAnimationOnFirstLoad={noShowOldAnaimation(renderStep)}

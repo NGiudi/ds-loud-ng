@@ -29,6 +29,13 @@ export const Countdown = (props) => {
     }
   }, [endTime, time]);
 
+  /* clear timer when unmounted component */
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
   /* execute the callback when the time expires.
     if it starts without time it does not execute. */
   useEffect(() => {
