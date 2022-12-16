@@ -8,8 +8,8 @@ const sidebar = {
     width: "1px",
   },
   width: {
-    contracted: "57px",
-    expanded: "241px",
+    contracted: "56px",
+    expanded: "240px",
   }, // sidebar + border.
 };
 

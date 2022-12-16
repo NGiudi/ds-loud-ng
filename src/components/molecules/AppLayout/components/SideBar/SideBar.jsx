@@ -5,11 +5,7 @@ import PropTypes from "prop-types";
 import { Icon, Text } from "../../../../../";
 
 /* import styles */
-import {
-  BottomContentStyles,
-  SideBarButton,
-  SideBarStyles,
-} from "./SideBar.styles";
+import Styles from "./SideBar.styles";
 
 export const SideBar = (props) => {
   const { buttons } = props;
@@ -34,23 +30,28 @@ export const SideBar = (props) => {
   };
 
   return (
-    <SideBarStyles isExpanded={isExpanded}>
+    <Styles.SideBarStyles>
       {/* button list */}
-      {buttons &&
-        buttons.map((btn, idx) => {
-          return (
-            <SideBarButton key={`sidebar-button-${idx}`}>
-              {renderButtonContent(btn)}
-            </SideBarButton>
-          );
-        })}
+      <Styles.SideBarButtonsWrapper>
+        {buttons &&
+          buttons.map((btn, idx) => {
+            return (
+              <Styles.SideBarButton
+                isExpanded={isExpanded}
+                key={`sidebar-button-${idx}`}
+              >
+                {renderButtonContent(btn)}
+              </Styles.SideBarButton>
+            );
+          })}
+      </Styles.SideBarButtonsWrapper>
 
-      <BottomContentStyles>
-        <SideBarButton onClick={handleClick}>
+      <Styles.BottomContentStyles>
+        <Styles.SideBarButton isExpanded={isExpanded} onClick={handleClick}>
           {renderButtonContent(contractedButton)}
-        </SideBarButton>
-      </BottomContentStyles>
-    </SideBarStyles>
+        </Styles.SideBarButton>
+      </Styles.BottomContentStyles>
+    </Styles.SideBarStyles>
   );
 };
 

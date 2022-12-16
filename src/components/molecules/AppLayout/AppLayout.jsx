@@ -21,7 +21,6 @@ export const AppLayout = (props) => {
       </TopBar>
 
       <MainContent>
-        {/*TODO: scroll de sidebar si se extiende mucho.*/}
         <SideBar buttons={sidebarButtons} />
 
         <ContentBox>{props.children}</ContentBox>

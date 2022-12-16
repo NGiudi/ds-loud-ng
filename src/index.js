@@ -10,7 +10,8 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 /** TODO LIST:                                                                **/
 /**   1. Quitar todos los colores harcodeados.                                **/
 /**   2. Revisar el componente de dropdown, tengo que hacer mejoras.          **/
-/**   3. Terminar AppLayout                                                   **/
+/**   3. Terminar AppLayout => Agregar navegacion de react en los botones del **/
+/**      sidebar.                                                             **/
 /*******************************************************************************/
 
 /* fontawensome icons. */
