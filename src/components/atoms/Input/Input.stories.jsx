@@ -132,12 +132,7 @@ export const FormExample = () => {
           }}
         >
           <Form>
-            <Input
-              icon="search"
-              label="Nombre completo"
-              margin="b-20"
-              name="fullName"
-            />
+            <Input label="Nombre completo" margin="b-20" name="fullName" />
 
             <Input
               label="Contraseña"

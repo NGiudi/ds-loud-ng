@@ -15,7 +15,7 @@ const IconItem = styled(FontAwesomeIcon)`
 
 const IconWrapper = styled.div`
   align-items: center;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
 
   ${(props) =>

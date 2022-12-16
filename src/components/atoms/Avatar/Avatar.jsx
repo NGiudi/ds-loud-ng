@@ -41,7 +41,7 @@ export const Avatar = (props) => {
 
       {isOpen && (
         <Styles.PanelWrapper margin="t-8" pos={pos}>
-          <Panel width="200px">{props.children}</Panel>
+          <Panel>{props.children}</Panel>
         </Styles.PanelWrapper>
       )}
     </Styles.Wrapper>

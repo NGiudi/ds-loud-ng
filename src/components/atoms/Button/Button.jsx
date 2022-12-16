@@ -58,6 +58,7 @@ export const Button = (props) => {
             size={iconAttributes.size}
           />
         )}
+
         {children}
       </ContentWrapper>
     </Button>

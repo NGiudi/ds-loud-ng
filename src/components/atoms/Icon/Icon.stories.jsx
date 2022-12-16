@@ -42,31 +42,11 @@ DinamicExample.args = {
 export const Sizes = () => {
   return (
     <ThemeDS>
-      <table>
-        <thead>
-          <tr>
-            <th style={{ padding: "5px 30px" }}>small</th>
-            <th style={{ padding: "5px 30px" }}>medium</th>
-            <th style={{ padding: "5px 30px" }}>large</th>
-          </tr>
-        </thead>
+      <Icon icon="cog" margin="r-32" size="lg" />
 
-        <tbody>
-          <tr>
-            <th style={{ padding: "5px 30px" }}>
-              <Icon icon="cog" margin="b-8" size="sm" />
-            </th>
+      <Icon icon="cog" margin="r-32" size="md" />
 
-            <th style={{ padding: "5px 30px" }}>
-              <Icon icon="cog" margin="b-8" size="md" />
-            </th>
-
-            <th style={{ padding: "5px 30px" }}>
-              <Icon icon="cog" margin="b-8" size="lg" />
-            </th>
-          </tr>
-        </tbody>
-      </table>
+      <Icon icon="cog" size="sm" />
     </ThemeDS>
   );
 };

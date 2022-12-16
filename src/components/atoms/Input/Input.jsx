@@ -29,7 +29,7 @@ export const Input = (props) => {
   return (
     <Styles.Wrapper {...wrapperProps}>
       {/* label */}
-      <Text as="label" htmlFor={props.name} weight="semibold">
+      <Text as="label" htmlFor={props.name} size="sm" weight="semibold">
         {props.label}
       </Text>
 

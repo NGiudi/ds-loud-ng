@@ -1,7 +1,7 @@
 import { pick } from "../../../../utils/objects/object";
 
 /* start - wrapper filter */
-const whtWrapperOptions = ["size"];
+const whtWrapperOptions = ["margin", "size"];
 
 /**
  * @param {object} props component properties.
