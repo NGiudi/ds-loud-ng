@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Button, ProgressBar, ThemeDS } from "../../../";
+import { Button, Flex, ProgressBar, ThemeDS } from "../../../";
 
 const story = {
   title: "Components/ProgressBar",
@@ -92,16 +92,13 @@ export const useExample = () => {
       <div style={{ margin: "30px auto", width: "90%" }}>
         <ProgressBar step={step} steps={5} />
 
-        {/* TODO: usar flex */}
-        <div
-          style={{ display: "flex", justifyContent: "end", marginTop: "10px" }}
-        >
+        <Flex hAlign="end" margin="t-10">
           <Button margin="r-8" onClick={decrement}>
             decrement
           </Button>
 
           <Button onClick={increment}>increment</Button>
-        </div>
+        </Flex>
       </div>
     </ThemeDS>
   );

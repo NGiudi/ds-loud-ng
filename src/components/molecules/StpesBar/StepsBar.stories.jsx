@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Button, StepsBar, ThemeDS } from "../../../";
+import { Button, Flex, StepsBar, ThemeDS } from "../../../";
 
 const story = {
   title: "Components/StepsBar",
@@ -45,13 +45,13 @@ export const DinamicExample = (args) => {
     <ThemeDS>
       <StepsBar {...args} step={step} />
 
-      {/* TODO: usar flex  */}
-      <div style={{ marginTop: "40px", textAlign: "right" }}>
+      <Flex hAlign="end" margin="t-40">
         <Button onClick={previusStep}>Anterior</Button>
+
         <Button margin="l-8" onClick={nextStep}>
           Siguiente
         </Button>
-      </div>
+      </Flex>
     </ThemeDS>
   );
 };

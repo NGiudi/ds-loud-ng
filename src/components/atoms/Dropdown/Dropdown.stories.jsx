@@ -7,6 +7,7 @@ import {
   DropdownItem,
   DropdownPanel,
   DropdownToogle,
+  Flex,
   Image,
   Text,
   ThemeDS,
@@ -40,14 +41,7 @@ const story = {
 export const Positions = () => {
   return (
     <ThemeDS>
-      {/* TODO: Usar el componente Flex */}
-      <div
-        style={{
-          justifyContent: "space-around",
-          display: "flex",
-          width: "100%",
-        }}
-      >
+      <Flex hAlign="space-around">
         <Dropdown>
           <DropdownToogle>
             <Image img={argentina} size="avatar" type="round" />
@@ -55,25 +49,20 @@ export const Positions = () => {
 
           <DropdownPanel>
             <DropdownItem value="ar">
-              {/* TODO: Usar el componente Flex */}
-              <div
-                style={{ alignItems: "center", display: "flex", width: "100%" }}
-              >
+              <Flex vAlign="center">
                 <Image
                   img={argentina}
                   margin="a-4 r-8"
                   size="avatarSm"
                   type="round"
                 />
+
                 <Text>Argentina</Text>
-              </div>
+              </Flex>
             </DropdownItem>
 
             <DropdownItem value="usa">
-              {/* TODO: Usar el componente Flex */}
-              <div
-                style={{ alignItems: "center", display: "flex", width: "100%" }}
-              >
+              <Flex vAlign="center">
                 <Image
                   img={usa}
                   margin="a-4 r-8"
@@ -82,7 +71,7 @@ export const Positions = () => {
                 />
 
                 <Text>Estados Unidos</Text>
-              </div>
+              </Flex>
             </DropdownItem>
           </DropdownPanel>
         </Dropdown>
@@ -94,25 +83,20 @@ export const Positions = () => {
 
           <DropdownPanel direction="left">
             <DropdownItem value="ar">
-              {/* TODO: Usar el componente Flex */}
-              <div
-                style={{ alignItems: "center", display: "flex", width: "100%" }}
-              >
+              <Flex vAlign="center">
                 <Image
                   img={argentina}
                   margin="a-4 r-8"
                   size="avatarSm"
                   type="round"
                 />
+
                 <Text>Argentina</Text>
-              </div>
+              </Flex>
             </DropdownItem>
 
             <DropdownItem value="usa">
-              {/* TODO: Usar el componente Flex */}
-              <div
-                style={{ alignItems: "center", display: "flex", width: "100%" }}
-              >
+              <Flex vAlign="center">
                 <Image
                   img={usa}
                   margin="a-4 r-8"
@@ -121,11 +105,11 @@ export const Positions = () => {
                 />
 
                 <Text>Estados Unidos</Text>
-              </div>
+              </Flex>
             </DropdownItem>
           </DropdownPanel>
         </Dropdown>
-      </div>
+      </Flex>
     </ThemeDS>
   );
 };
@@ -166,35 +150,27 @@ export const UseExample = () => {
 
         <DropdownPanel>
           <DropdownItem value="ar">
-            {/* TODO: Usar el componente Flex */}
-            <div
-              style={{ alignItems: "center", display: "flex", width: "100%" }}
-            >
+            <Flex vAlign="center">
               <Image
                 img={argentina}
                 margin="a-4 r-8"
                 size="avatarSm"
                 type="round"
               />
+
               <Text>Argentina</Text>
-            </div>
+            </Flex>
           </DropdownItem>
 
           <DropdownItem value="usa">
-            {/* TODO: Usar el componente Flex */}
-            <div
-              style={{ alignItems: "center", display: "flex", width: "100%" }}
-            >
+            <Flex vAlign="center">
               <Image img={usa} margin="a-4 r-8" size="avatarSm" type="round" />
               <Text>Estados Unidos</Text>
-            </div>
+            </Flex>
           </DropdownItem>
 
           <DropdownItem disabled value="br">
-            {/* TODO: Usar el componente Flex */}
-            <div
-              style={{ alignItems: "center", display: "flex", width: "100%" }}
-            >
+            <Flex vAlign="center">
               <Image
                 img={brasil}
                 margin="a-4 r-8"
@@ -205,7 +181,7 @@ export const UseExample = () => {
               <Text>Brasil</Text>
 
               <Badge margin="l-8">Proximamente</Badge>
-            </div>
+            </Flex>
           </DropdownItem>
         </DropdownPanel>
       </Dropdown>
