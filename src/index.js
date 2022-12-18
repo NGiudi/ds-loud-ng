@@ -8,9 +8,8 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 /**   2. Rules Panel (Seguir después de terminar con el select)               **/
 /**                                                                           **/
 /** TODO LIST:                                                                **/
-/**   1. Quitar todos los colores harcodeados.                                **/
-/**   2. Revisar el componente de dropdown, tengo que hacer mejoras.          **/
-/**   3. Terminar AppLayout => Agregar navegacion de react en los botones del **/
+/**   1. Revisar el componente de dropdown, tengo que hacer mejoras.          **/
+/**   2. Terminar AppLayout => Agregar navegacion de react en los botones del **/
 /**      sidebar.                                                             **/
 /*******************************************************************************/
 

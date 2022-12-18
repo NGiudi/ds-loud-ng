@@ -13,7 +13,7 @@ const SelectWrapper = styled(Field)`
 
   ${(props) =>
     css`
-      border-color: ${props.theme.components.select.border.color};
+      border-color: ${props.theme.colors.black._400};
       border-radius: ${props.theme.components.select.border.radius};
       border-width: ${props.theme.components.select.border.weight};
       font-size: ${props.theme.components.text.sizes.md};

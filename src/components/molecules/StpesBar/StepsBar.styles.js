@@ -1,46 +1,31 @@
 import styled, { css } from "styled-components";
 
 const getColor = (theme, type) => {
-  let color;
-
   switch (type) {
     case "pendingCircle":
-      color = theme.colors.black._300;
-      break;
-
+      return theme.colors.black._300;
     case "checkedCircle":
     case "circle":
     default:
-      color = theme.colors.orange._700;
-      break;
+      return theme.colors.orange._700;
   }
-  return color;
 };
 
 const getBgColor = (theme, type) => {
-  let color;
-
   switch (type) {
     case "pendingCircle":
-      color = theme.colors.black._300;
-      break;
-
+      return theme.colors.black._300;
     case "circle":
-      color = "none";
-      break;
-
+      return "none";
     case "checkedCircle":
     default:
-      color = theme.colors.orange._700;
-      break;
+      return theme.colors.orange._700;
   }
-  return color;
 };
 
 export const Circle = styled.div`
   align-items: center;
   border-radius: 50%;
-  color: #fafafa;
   display: flex;
   justify-content: center;
 
@@ -48,6 +33,7 @@ export const Circle = styled.div`
     css`
       background-color: ${getBgColor(props.theme, props.type)};
       border: 3px solid ${getColor(props.theme, props.type)};
+      color: ${props.theme.colors.black._100};
       height: ${props.theme.components.stepsBar.circle.diameter[props.size]};
       width: ${props.theme.components.stepsBar.circle.diameter[props.size]};
     `}

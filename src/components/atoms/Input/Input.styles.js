@@ -39,7 +39,7 @@ const InputWrapper = styled.div`
 
   ${(props) =>
     css`
-      border-color: ${props.theme.components.input.border.color};
+      border-color: ${props.theme.colors.black._400};
       border-radius: ${props.theme.components.input.border.radius};
       border-style: solid;
       border-width: ${props.theme.components.input.border.weight};

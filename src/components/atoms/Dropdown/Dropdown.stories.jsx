@@ -202,7 +202,7 @@ export const UseExample = () => {
               />
 
               <Text>Brasil</Text>
-              {/* //TODO: Agregar Badge */}
+              {/* TODO: Agregar Badge */}
               <div
                 style={{
                   backgroundColor: "#338E4E",
