@@ -6,6 +6,7 @@ const whtListBarOptions = [
   "onFinish",
   "size",
   "step",
+  "stepTime",
   "steps",
 ];
 

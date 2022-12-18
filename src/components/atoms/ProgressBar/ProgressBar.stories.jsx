@@ -39,6 +39,11 @@ const story = {
       control: { type: "number" },
       description: "Recibe el valor numerico del paso en el que se encuentra.",
     },
+    stepTime: {
+      control: { type: "number" },
+      description:
+        "Se setea el tiempo que pasa en el incremente o decremento de una centecima de la barra.",
+    },
     steps: {
       control: { type: "number" },
       description:
@@ -90,7 +95,7 @@ export const useExample = () => {
   return (
     <ThemeDS>
       <div style={{ margin: "30px auto", width: "90%" }}>
-        <ProgressBar step={step} steps={5} />
+        <ProgressBar step={step} stepTime={5} steps={5} />
 
         <Flex hAlign="end" margin="t-10">
           <Button margin="r-8" onClick={decrement}>

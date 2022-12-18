@@ -13,7 +13,6 @@ import {
   getProgressBarOptionsFilter,
 } from "./utils/propsFilters";
 
-//TODO: Agregar una prop para cambiar el tiempo que tarda en cargar la barra.
 export const ProgressBar = (props) => {
   let { steps } = props;
 
@@ -45,6 +44,7 @@ ProgressBar.propTypes = {
   onFinish: PropTypes.func,
   size: PropTypes.oneOf(["sm", "md", "lg"]),
   step: PropTypes.number,
+  stepTime: PropTypes.number,
   steps: PropTypes.number,
 };
 
@@ -54,6 +54,7 @@ ProgressBar.defaultProps = {
   noShowAnimationOnFirstLoad: false,
   onFinish: null,
   size: "md",
-  steps: 100,
   step: 0,
+  stepTime: 10,
+  steps: 100,
 };

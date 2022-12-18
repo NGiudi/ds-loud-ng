@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Styles from "../ProgressBar.styles";
 
 const Bar = (props) => {
-  const { onFinish, step, steps } = props;
+  const { onFinish, step, stepTime, steps } = props;
 
   const [width, setWidth] = useState(0);
 
@@ -15,7 +15,7 @@ const Bar = (props) => {
 
     timer.current = setTimeout(() => {
       setWidth((previusWidth) => previusWidth + 1);
-    }, 10);
+    }, stepTime);
   };
 
   const animationSubtractStep = () => {
@@ -23,7 +23,7 @@ const Bar = (props) => {
 
     timer.current = setTimeout(() => {
       setWidth((previusWidth) => previusWidth - 1);
-    }, 10);
+    }, stepTime);
   };
 
   /* clear timer when unmounted component */
@@ -69,6 +69,7 @@ Bar.propTypes = {
   onFinish: PropTypes.func,
   size: PropTypes.oneOf(["sm", "md", "lg"]),
   step: PropTypes.number,
+  stepTime: PropTypes.number,
   steps: PropTypes.number,
 };
 
@@ -77,6 +78,7 @@ Bar.defaultProps = {
   onFinish: null,
   size: "md",
   step: 0,
+  stepTime: 10,
   steps: 0,
 };
 
