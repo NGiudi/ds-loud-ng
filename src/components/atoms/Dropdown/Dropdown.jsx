@@ -6,7 +6,6 @@ import useOuterClick from "../../../hooks/useOuterClick";
 /* styles */
 import Styles from "./Dropdown.styles";
 
-// TODO: Hacer tests.
 export const Dropdown = (props) => {
   const { children, name, onSelect, ...others } = props;
 

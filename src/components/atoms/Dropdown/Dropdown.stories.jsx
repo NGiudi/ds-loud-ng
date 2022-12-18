@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 /* components */
 import {
+  Badge,
   Dropdown,
   DropdownItem,
   DropdownPanel,
@@ -202,18 +203,8 @@ export const UseExample = () => {
               />
 
               <Text>Brasil</Text>
-              {/* TODO: Agregar Badge */}
-              <div
-                style={{
-                  backgroundColor: "#338E4E",
-                  color: "white",
-                  marginLeft: "4px",
-                }}
-              >
-                <Text margin="x-4" size="sm">
-                  Proximamente
-                </Text>
-              </div>
+
+              <Badge margin="l-8">Proximamente</Badge>
             </div>
           </DropdownItem>
         </DropdownPanel>

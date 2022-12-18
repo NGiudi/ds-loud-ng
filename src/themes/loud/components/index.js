@@ -1,5 +1,6 @@
 import appLayout from "./appLayout";
 import avatar from "./avatar";
+import badge from "./badge";
 import button from "./button";
 import dropdown from "./dropdown";
 import icon from "./icon";
@@ -15,6 +16,7 @@ import title from "./title";
 const components = {
   appLayout,
   avatar,
+  badge,
   button,
   dropdown,
   icon,
