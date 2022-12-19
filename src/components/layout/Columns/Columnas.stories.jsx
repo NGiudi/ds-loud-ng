@@ -12,8 +12,7 @@ const story = {
     },
     margin: {
       control: { type: "text" },
-      description:
-        "Recibe el valor del ancho mínimo de cada columna. Si el ancho es menor, se pone un elemento abajo del otro.",
+      description: "Se setea la distancia de los margenes.",
     },
     minWidth: {
       control: { type: "text" },

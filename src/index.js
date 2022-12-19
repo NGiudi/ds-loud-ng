@@ -17,7 +17,7 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 library.add(fas, far);
 
 /* layout components */
-export { Columns, Flex, ThemeDS } from "./components/layout";
+export { Box, Columns, Flex, ThemeDS } from "./components/layout";
 
 /* atoms components */
 export {
