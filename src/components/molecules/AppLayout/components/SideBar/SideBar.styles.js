@@ -13,7 +13,9 @@ const BottomContentStyles = styled.div`
   `}
 `;
 
-const SideBarButton = styled.div`
+const SideBarButton = styled.button`
+  background-color: transparent;
+  border: none;
   box-sizing: border-box;
   display: flex;
 

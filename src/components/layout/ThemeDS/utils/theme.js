@@ -23,12 +23,11 @@ export const getTheme = (name) => {
     case "loudLight":
     default:
       const colorTheme = getColorsTheme(name);
-      const t = {
+
+      return {
         colors: colors[colorTheme],
         name,
         ...loud,
       };
-      console.log(t);
-      return t;
   }
 };

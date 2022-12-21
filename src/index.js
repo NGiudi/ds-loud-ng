@@ -9,17 +9,16 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 /**                                                                           **/
 /** TODO LIST:                                                                **/
 /**   1. Revisar el componente de dropdown, tengo que hacer mejoras.          **/
-/**   2. Terminar AppLayout => Agregar navegacion de react en los botones del **/
-/**      sidebar.                                                             **/
+/**   2. Usar version 6 de react router dom.                                  **/
 /*******************************************************************************/
 
-/* fontawensome icons. */
+//? fontawensome icons.
 library.add(fas, far);
 
-/* layout components */
+//? layout components
 export { Box, Columns, Flex, ThemeDS } from "./components/layout";
 
-/* atoms components */
+//? atoms components
 export {
   Avatar,
   Badge,
@@ -39,5 +38,5 @@ export {
   Text,
 } from "./components/atoms";
 
-/* molecules components */
+//? molecules components
 export { AppLayout, RulesPanel, StepsBar } from "./components/molecules";

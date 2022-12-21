@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+/* import hooks */
+import { useRouter } from "../../../../../hooks/useRouter";
+
 /* import components */
 import { Icon, Text } from "../../../../../";
 
@@ -10,6 +13,8 @@ import Styles from "./SideBar.styles";
 export const SideBar = (props) => {
   const { buttons } = props;
 
+  const router = useRouter();
+
   const [isExpanded, setIsExpanded] = useState(true);
 
   const contractedButton = {
@@ -18,6 +23,10 @@ export const SideBar = (props) => {
   };
 
   const handleClick = () => setIsExpanded((prev) => !prev);
+
+  const handleSidebarButtonClick = (to) => {
+    router.push(to);
+  };
 
   const renderButtonContent = (btn) => {
     return (
@@ -39,6 +48,7 @@ export const SideBar = (props) => {
               <Styles.SideBarButton
                 isExpanded={isExpanded}
                 key={`sidebar-button-${idx}`}
+                onClick={() => handleSidebarButtonClick(btn.to)}
               >
                 {renderButtonContent(btn)}
               </Styles.SideBarButton>
