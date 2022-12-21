@@ -1,4 +1,3 @@
-/* last update March 5 2022 */
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
@@ -21,11 +20,11 @@ export const Avatar = (props) => {
   });
 
   const imageAttributes = {
-    /* default values. */
+    //? default values.
     alt: "default-alt",
     img: null,
     placeholder: "L",
-    /* component values. */
+    //? component values.
     ...props.img,
   };
 

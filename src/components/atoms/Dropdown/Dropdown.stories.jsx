@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-/* components */
+/* import components */
 import {
   Badge,
   Dropdown,
@@ -13,7 +13,7 @@ import {
   ThemeDS,
 } from "../../../";
 
-/* imagen */
+/* import images */
 import argentina from "../../../assets/countries flag/argentina.png";
 import brasil from "../../../assets/countries flag/brasil.png";
 import usa from "../../../assets/countries flag/usa.png";

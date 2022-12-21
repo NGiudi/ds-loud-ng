@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 /* import styles. */
 import Styles from "./Icon.styles";
 
-/* utils */
+/* import utils */
 import {
   getIconOptionsFilter,
   getWrapperOptionsFilter,

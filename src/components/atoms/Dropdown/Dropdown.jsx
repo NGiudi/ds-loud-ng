@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+/* import hooks */
 import useOuterClick from "../../../hooks/useOuterClick";
 
-/* styles */
+/* import styles */
 import Styles from "./Dropdown.styles";
 
 export const Dropdown = (props) => {

@@ -10,7 +10,7 @@ import Styles from "./Panel.styles";
 /* import utils */
 import { getWrapperOptionsFilter } from "./utils/propsFilter";
 
-/* import theme */
+/* TODO: agregar al theme */
 import icons from "../../../themes/icons";
 
 export const Panel = (props) => {

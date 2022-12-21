@@ -31,7 +31,7 @@ const SideBarButton = styled.div`
 `;
 
 const SideBarButtonsWrapper = styled.div`
-  /* height: 49px = padding button + padding sidebarBottom + border */
+  /* TODO: height: 49px = padding button + padding sidebarBottom + border */
   height: calc(100% - 49px);
   overflow-y: auto;
 

@@ -15,7 +15,7 @@ export const Countdown = (props) => {
 
   const timeoutRef = React.useRef();
 
-  /* trigger countdown */
+  //? trigger countdown.
   useEffect(() => {
     if (time > 1000) {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -29,22 +29,22 @@ export const Countdown = (props) => {
     }
   }, [endTime, time]);
 
-  /* clear timer when unmounted component */
+  //? clear timer when unmounted component
   useEffect(() => {
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, []);
 
-  /* execute the callback when the time expires.
-    if it starts without time it does not execute. */
+  //? execute the callback when the time expires.
+  //? if it starts without time it does not execute.
   useEffect(() => {
     if (onFinish && !startWithoutTime && time < 1000) {
       onFinish();
     }
   }, [onFinish, startWithoutTime, time]);
 
-  /* no show zero value */
+  //? no show zero value.
   if (time < 1000 && !showZero) return null;
 
   return formatClock(getTimeObject(time), formatTime);

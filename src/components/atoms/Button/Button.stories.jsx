@@ -55,7 +55,6 @@ const cellSize = {
   width: "120px",
 };
 
-/* all buttons. */
 export const AllButtons = (args) => {
   return (
     <ThemeDS>
@@ -168,7 +167,6 @@ export const AllButtons = (args) => {
   );
 };
 
-/* dinamic example*/
 export const DinamicExample = (args) => {
   return (
     <ThemeDS>

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 /*  import components */
 import { Icon, ProgressBar } from "../../../";
 
-/* import styles. */
+/* import styles */
 import { Circle, ProgressBarWrapper, StepsWrapper } from "./StepsBar.styles";
 
 export const StepsBar = (props) => {

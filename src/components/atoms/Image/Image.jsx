@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* components */
+/* import components */
 import ImagePlaceholder from "./components/ImagePlaceholder/ImagePlaceholder";
 
-/* styles */
+/* import styles */
 import Styles from "./Image.styles";
 
-/* utils */
+/* import utils */
 import {
   getImageOptionsFilter,
   getPlaceholderOptionsFilter,

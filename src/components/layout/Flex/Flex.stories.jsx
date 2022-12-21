@@ -1,6 +1,6 @@
 import React from "react";
 
-/* components */
+/* import components */
 import { Text } from "../../atoms";
 import { ThemeDS, Flex } from "../";
 

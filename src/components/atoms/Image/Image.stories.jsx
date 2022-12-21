@@ -1,9 +1,9 @@
 import React from "react";
 
-/* components */
+/* import components */
 import { Image, Text, ThemeDS } from "../../../";
 
-/* images */
+/* import images */
 import argentina from "../../../assets/countries flag/argentina.png";
 import fotoPerfil from "../../../assets/img/foto-perfil.jpg";
 

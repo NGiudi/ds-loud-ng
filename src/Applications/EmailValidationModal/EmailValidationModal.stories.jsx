@@ -40,7 +40,7 @@ export const EmailValidationModalStory = () => {
     refreshTimer.current = timerId;
   };
 
-  /* init check email */
+  //? init check email.
   useEffect(() => {
     return () => clearTimeout(refreshTimer.current);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps

@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+/* import components */
 import { Icon } from "../../../../../";
 
-/* styles */
+/* import  styles */
 import { ContentWrapper, ToogleWrapper } from "./DropdownToogle.styles";
 
 export const DropdownToogle = (props) => {

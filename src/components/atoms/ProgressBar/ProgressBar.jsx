@@ -21,7 +21,7 @@ export const ProgressBar = (props) => {
   const progressBarOptions = getProgressBarOptionsFilter(props);
   const barOptions = getBarOptionsFilter(props);
 
-  /* value out of range */
+  //? value out of range.
   useEffect(() => {
     if (stepsRef.current > 100) {
       stepsRef.current = 100;

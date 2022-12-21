@@ -14,10 +14,10 @@ export const Button = (props) => {
   const isIconButton = props.kind === "icon";
 
   const iconAttributes = {
-    /* default values. */
+    //? default values.
     name: null,
     size: "sm",
-    /* component values. */
+    //? component values.
     ...props.icon,
   };
 

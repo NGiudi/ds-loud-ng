@@ -1,15 +1,15 @@
 import styled, { css, keyframes } from "styled-components";
 
-/* loading animation */
+//? loading animation
 const rotate = keyframes`
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 `;
 
 export const LoaderWrapper = styled.span`
-  left: calc(50% - 10px); /* 10px = half icon size */
+  left: calc(50% - 10px); /* TODO: 10px = half icon size */
   position: absolute;
-  top: calc(50% - 10px); /* 10px = half icon size */
+  top: calc(50% - 10px); /* TODO: 10px = half icon size */
 
   ${(props) =>
     css`

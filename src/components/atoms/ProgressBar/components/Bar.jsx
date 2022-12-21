@@ -26,14 +26,14 @@ const Bar = (props) => {
     }, stepTime);
   };
 
-  /* clear timer when unmounted component */
+  //? clear timer when unmounted component.
   useEffect(() => {
     return () => {
       if (timer.current) clearTimeout(timer.current);
     };
   }, []);
 
-  /* animation controller */
+  //? animation controller.
   useEffect(() => {
     const finishWidth = Math.floor((step * 100) / steps);
 
