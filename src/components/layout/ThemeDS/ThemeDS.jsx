@@ -3,33 +3,26 @@ import PropTypes from "prop-types";
 
 import { ThemeProvider } from "styled-components";
 
-import { loudLight } from "../../../themes/loud";
+import { getTheme } from "./utils/theme";
 
 export const ThemeDS = (props) => {
-  const { children, theme } = props;
+  const { children, name, theme } = props;
 
-  const getTheme = (themeName) => {
-    let theme;
+  if (theme) {
+    return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  }
 
-    switch (themeName) {
-      case "loudLight":
-      default:
-        theme = loudLight;
-        break;
-    }
-
-    return theme;
-  };
-
-  return <ThemeProvider theme={getTheme(theme)}>{children}</ThemeProvider>;
+  return <ThemeProvider theme={getTheme(name)}>{children}</ThemeProvider>;
 };
 
 ThemeDS.propTypes = {
   children: PropTypes.node,
-  theme: PropTypes.oneOf(["loudLight"]),
+  name: PropTypes.oneOf(["loudLight"]),
+  theme: PropTypes.object,
 };
 
 ThemeDS.defaultProps = {
   children: null,
-  theme: "loudLight",
+  name: "loudLight",
+  theme: null,
 };
