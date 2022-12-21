@@ -35,7 +35,7 @@ Text.propTypes = {
   as: PropTypes.oneOf(["label", "p"]),
   color: PropTypes.string,
   decoration: PropTypes.oneOf(["underline", "line-through"]),
-  htmlFor: PropTypes.string, // used only for label type.
+  htmlFor: PropTypes.string, //? used only for label type.
   margin: PropTypes.string,
   padding: PropTypes.string,
   size: PropTypes.oneOf(["sm", "md", "lg"]),

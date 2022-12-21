@@ -10,7 +10,7 @@ const sidebar = {
   width: {
     contracted: "56px",
     expanded: "240px",
-  }, // sidebar + border.
+  }, //? sidebar + border.
 };
 
 const topbar = {

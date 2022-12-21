@@ -8,7 +8,7 @@ import EmailValidationModal from "./EmailValidationModal";
 
 const story = { title: "Application/EmailModal" };
 
-const COUTER_TIME = 5000 * 60; // 5 min.
+const COUTER_TIME = 5000 * 60; //? equal to 5 minutes.
 
 export const EmailValidationModalStory = () => {
   const localStorage = useLocalStorage("loudDS_last_resend_email_request");
@@ -35,7 +35,7 @@ export const EmailValidationModalStory = () => {
         setIsValidEmail(true);
         clearTimeout(refreshTimer.current);
       }
-    }, 5000); // Check email every 5 seconds.
+    }, 5000); //? check email every 5 seconds.
 
     refreshTimer.current = timerId;
   };

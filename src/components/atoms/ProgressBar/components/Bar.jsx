@@ -50,7 +50,7 @@ const Bar = (props) => {
     if (finishWidth === width) {
       onFinish && onFinish();
     }
-  }, [step, steps, width]); // eslint-disable-line
+  }, [step, steps, width]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const porcentString = () => {
     let porcent = width;

@@ -85,7 +85,7 @@ Button.defaultProps = {
   children: null,
   disabled: false,
   fullWidth: false,
-  icon: null, // default value insert into javascript code.
+  icon: null, //? default value insert into javascript code.
   kind: "solid",
   loading: false,
   margin: "a-0",

@@ -2,27 +2,27 @@
  * @param {string} message message in the notifications of the operating system.
  */
 export const createNotify = (message) => {
-  // Let's check if the browser supports notifications
+  //? let's check if the browser supports notifications
   if (!("Notification" in window)) {
     console.warn("This browser does not support desktop notification");
   }
 
-  // Let's check whether notification permissions have already been granted
+  //? let's check whether notification permissions have already been granted
   else if (Notification.permission === "granted") {
-    // If it's okay let's create a notification
+    //? if it's okay let's create a notification
     new Notification(message);
   }
 
-  // Otherwise, we need to ask the user for permission
+  //? otherwise, we need to ask the user for permission
   else if (Notification.permission !== "denied") {
     Notification.requestPermission((permission) => {
-      // If the user accepts, let's create a notification
+      //? if the user accepts, let's create a notification
       if (permission === "granted") {
         new Notification(message);
       }
     });
   }
 
-  // At last, if the user has denied notifications, and you
-  // want to be respectful there is no need to bother them any more.
+  //? at last, if the user has denied notifications, and you
+  //? want to be respectful there is no need to bother them any more.
 };

@@ -1,7 +1,6 @@
 import { holidays } from "../../../assets/constants/holidays";
 
-/* declaration of constants */
-const MS_IN_A_DAY = 24 * 60 * 60 * 1000; // hours * minutes * seconds * miliseconds.
+const MS_IN_A_DAY = 24 * 60 * 60 * 1000; //? hours * minutes * seconds * miliseconds.
 
 const WEEK_DAY = [
   "sunday",

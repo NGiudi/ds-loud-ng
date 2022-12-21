@@ -21,7 +21,7 @@ const LeftPanel = (props) => {
 
   const onSubmit = (values) => {
     if (ctx.selectedElement === INVALID_INDEX) {
-      // add element.
+      //? add element.
       const newItem = {
         data: values,
         isEditable: true,
@@ -30,7 +30,7 @@ const LeftPanel = (props) => {
 
       list.push(newItem);
     } else {
-      // edit element.
+      //? edit element.
       list[ctx.selectedElement].data = values;
       ctx.setSelectedElement(INVALID_INDEX);
     }
