@@ -14,8 +14,6 @@ const Wrapper = styled.div`
     `}
 `;
 
-const Styles = {
+export const Styles = {
   Wrapper,
 };
-
-export default Styles;

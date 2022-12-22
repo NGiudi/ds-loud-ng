@@ -26,9 +26,7 @@ const ProgressBarWrapper = styled.div`
     `}
 `;
 
-const Styles = {
+export const Styles = {
   BarWrapper,
   ProgressBarWrapper,
 };
-
-export default Styles;

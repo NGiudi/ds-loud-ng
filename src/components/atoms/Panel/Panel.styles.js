@@ -50,10 +50,8 @@ const PositionWrapper = styled.div`
     `}
 `;
 
-const Styles = {
+export const Styles = {
   ContentWrapper,
   PanelWrapper,
   PositionWrapper,
 };
-
-export default Styles;

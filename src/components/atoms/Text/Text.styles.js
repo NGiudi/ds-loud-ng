@@ -25,9 +25,7 @@ const LabelWrapper = styled.label`
   ${(props) => textStyles(props)};
 `;
 
-const Styles = {
+export const Styles = {
   LabelWrapper,
   TextWrapper,
 };
-
-export default Styles;

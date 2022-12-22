@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Icon, Text } from "../../../../..";
 
-import Styles from "./ImagePlaceholder.styles";
+import { Styles } from "./ImagePlaceholder.styles";
 
 export const ImagePlaceholder = (props) => {
   const { placeholder, size } = props;

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 /* import components */
 import { Input, Select } from "../../../../../";
 
-const FieldItem = (props) => {
+export const FieldItem = (props) => {
   const { field, margin } = props;
   const { label, name, options, type } = field;
 
@@ -34,5 +34,3 @@ FieldItem.defaultProps = {
   field: null,
   margin: "a-0",
 };
-
-export default FieldItem;

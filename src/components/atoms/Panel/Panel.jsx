@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Icon } from "../../../";
 
 /* import styles. */
-import Styles from "./Panel.styles";
+import { Styles } from "./Panel.styles";
 
 /* import utils */
 import { getWrapperOptionsFilter } from "./utils/propsFilter";

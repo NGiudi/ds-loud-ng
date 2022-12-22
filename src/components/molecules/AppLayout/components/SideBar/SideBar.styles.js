@@ -65,11 +65,9 @@ const SideBarStyles = styled.div`
   `}
 `;
 
-const Styles = {
+export const Styles = {
   BottomContentStyles,
   SideBarButton,
   SideBarButtonsWrapper,
   SideBarStyles,
 };
-
-export default Styles;

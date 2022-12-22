@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* import components */
-import FieldItem from "../FieldItem/FieldItem";
+import { FieldItem } from "../FieldItem/FieldItem";
 
 const FieldsGroup = (props) => {
   const { fields } = props;

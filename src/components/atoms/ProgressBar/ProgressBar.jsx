@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 /* import components */
-import Bar from "./components/Bar";
+import { Bar } from "./components/Bar";
 
 /* import styles. */
-import Styles from "./ProgressBar.styles";
+import { Styles } from "./ProgressBar.styles";
 
 /* import utils */
 import {

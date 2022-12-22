@@ -56,11 +56,9 @@ const Wrapper = styled.div`
     `};
 `;
 
-const Styles = {
+export const Styles = {
   Error,
   InputStyles,
   InputWrapper,
   Wrapper,
 };
-
-export default Styles;

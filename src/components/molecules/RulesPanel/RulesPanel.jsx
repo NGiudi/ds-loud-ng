@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 /* import context */
-import RulesPanelProvider from "./RulesPanelContext";
+import { RulesPanelProvider } from "./RulesPanelContext";
 
 /* import components */
 import RightPanel from "./components/RightPanel/RightPanel";

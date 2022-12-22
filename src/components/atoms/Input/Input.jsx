@@ -6,7 +6,7 @@ import { ShowPasswordButton } from "./components";
 import { Icon, Text } from "../../../";
 
 /* import styles. */
-import Styles from "./Input.styles";
+import { Styles } from "./Input.styles";
 
 /* import utils */
 import {

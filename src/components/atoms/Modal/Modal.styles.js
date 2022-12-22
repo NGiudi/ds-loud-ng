@@ -37,11 +37,9 @@ const PanelWrapper = styled.div`
     `}
 `;
 
-const Styles = {
+export const Styles = {
   ButtonsWrapper,
   CloseBtnWrapper,
   Overlay,
   PanelWrapper,
 };
-
-export default Styles;

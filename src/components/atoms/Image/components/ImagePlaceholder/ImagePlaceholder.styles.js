@@ -14,8 +14,6 @@ const IconPlaceholder = styled.div`
     `};
 `;
 
-const Styles = {
+export const Styles = {
   IconPlaceholder,
 };
-
-export default Styles;

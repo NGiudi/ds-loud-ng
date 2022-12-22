@@ -8,7 +8,7 @@ import { useRouter } from "../../../../../hooks/useRouter";
 import { Icon, Text } from "../../../../../";
 
 /* import styles */
-import Styles from "./SideBar.styles";
+import { Styles } from "./SideBar.styles";
 
 export const SideBar = (props) => {
   const { buttons } = props;

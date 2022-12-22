@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Button, Panel } from "../../../";
 
 /* import styles */
-import Styles from "./Modal.styles";
+import { Styles } from "./Modal.styles";
 
 export const Modal = (props) => {
   const { onClose, padding, show } = props;

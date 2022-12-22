@@ -32,9 +32,7 @@ const Wrapper = styled.div`
     `};
 `;
 
-const Styles = {
+export const Styles = {
   SelectWrapper,
   Wrapper,
 };
-
-export default Styles;

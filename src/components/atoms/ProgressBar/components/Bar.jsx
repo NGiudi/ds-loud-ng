@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Styles from "../ProgressBar.styles";
 
-const Bar = (props) => {
+export const Bar = (props) => {
   const { onFinish, step, stepTime, steps } = props;
 
   const [width, setWidth] = useState(0);
@@ -81,5 +81,3 @@ Bar.defaultProps = {
   stepTime: 10,
   steps: 0,
 };
-
-export default Bar;

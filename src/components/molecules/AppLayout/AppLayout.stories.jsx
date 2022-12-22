@@ -1,7 +1,7 @@
 import React from "react";
 
 /* import components */
-import { AppLayout, Text, ThemeDS } from "../../../";
+import { AppLayout, Text, ThemeDS } from "../../..";
 
 /* import external components  */
 import { BrowserRouter, Route, Switch } from "react-router-dom";

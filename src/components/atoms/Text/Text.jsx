@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* import styles */
-import Styles from "./Text.styles";
+import { Styles } from "./Text.styles";
 
 /* import utils */
 import {

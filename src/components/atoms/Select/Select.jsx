@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Text } from "../../../";
 
 /* import styles */
-import Styles from "./Select.styles.js";
+import { Styles } from "./Select.styles.js";
 
 /* import utils */
 import {

@@ -6,7 +6,7 @@ import { INVALID_INDEX } from "../../../assets/constants/array";
 
 export const RulesPanelContext = createContext({});
 
-const RulesPanelProvider = (props) => {
+export const RulesPanelProvider = (props) => {
   const { children } = props;
 
   const [selectedElement, setSelectedElement] = useState(INVALID_INDEX);
@@ -25,5 +25,3 @@ RulesPanelProvider.propTypes = {
 RulesPanelProvider.defaultProps = {
   children: null,
 };
-
-export default RulesPanelProvider;
