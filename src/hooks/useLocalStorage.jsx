@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useLocalStorage = (_name) => {
+export const useLocalStorage = (_name) => {
   const [name] = useState(_name);
 
   const getLocalStorage = () => {
@@ -37,5 +37,3 @@ const useLocalStorage = (_name) => {
     remove: removeLocalStorage,
   };
 };
-
-export default useLocalStorage;

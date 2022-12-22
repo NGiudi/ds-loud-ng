@@ -28,9 +28,7 @@ const width = {
   },
 };
 
-const image = {
+export const image = {
   height,
   width,
 };
-
-export default image;

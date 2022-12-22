@@ -3,8 +3,6 @@ const border = {
   weight: "1px",
 };
 
-const select = {
+export const select = {
   border,
 };
-
-export default select;

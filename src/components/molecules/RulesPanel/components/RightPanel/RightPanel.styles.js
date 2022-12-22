@@ -18,9 +18,7 @@ const ContentContainer = styled.div`
     `}
 `;
 
-const Styles = {
+export const Styles = {
   ButtonsContainer,
   ContentContainer,
 };
-
-export default Styles;

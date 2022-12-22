@@ -2,8 +2,6 @@ export const panelSize = {
   width: "200px",
 };
 
-const dropdown = {
+export const dropdown = {
   panelSize,
 };
-
-export default dropdown;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 /* import hooks */
-import useOuterClick from "../../../hooks/useOuterClick";
+import { useOuterClick } from "../../../hooks/useOuterClick";
 
 /* import styles */
 import { Styles } from "./Dropdown.styles";

@@ -17,10 +17,8 @@ const topbar = {
   height: "56px",
 };
 
-const appLayout = {
+export const appLayout = {
   scroll,
   sidebar,
   topbar,
 };
-
-export default appLayout;

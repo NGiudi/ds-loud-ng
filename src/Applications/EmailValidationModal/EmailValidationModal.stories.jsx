@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 /* import hooks */
-import useLocalStorage from "../../hooks/useLocalStorage";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 /* import components */
 import { EmailValidationModal } from "./EmailValidationModal";

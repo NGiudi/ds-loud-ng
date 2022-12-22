@@ -12,9 +12,7 @@ const border = {
   },
 };
 
-const progressBar = {
+export const progressBar = {
   border,
   height,
 };
-
-export default progressBar;

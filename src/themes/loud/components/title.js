@@ -19,10 +19,8 @@ const weights = {
   bold: textWeights.bold,
 };
 
-const title = {
+export const title = {
   lineHeight,
   sizes,
   weights,
 };
-
-export default title;

@@ -19,10 +19,8 @@ const weights = {
   bold: textWeights.bold,
 };
 
-const text = {
+export const text = {
   lineHeight,
   sizes,
   weights,
 };
-
-export default text;

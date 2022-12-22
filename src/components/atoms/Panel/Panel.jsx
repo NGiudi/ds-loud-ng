@@ -11,7 +11,7 @@ import { Styles } from "./Panel.styles";
 import { getWrapperOptionsFilter } from "./utils/propsFilter";
 
 /* TODO: agregar al theme */
-import icons from "../../../themes/icons";
+import { icons } from "../../../themes/icons";
 
 export const Panel = (props) => {
   const { align, onSizeH } = props;

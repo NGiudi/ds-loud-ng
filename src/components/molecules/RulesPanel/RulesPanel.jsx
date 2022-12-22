@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 import { RulesPanelProvider } from "./RulesPanelContext";
 
 /* import components */
-import RightPanel from "./components/RightPanel/RightPanel";
-import LeftPanel from "./components/LeftPanel/LeftPanel";
+import { RightPanel } from "./components/RightPanel/RightPanel";
+import { LeftPanel } from "./components/LeftPanel/LeftPanel";
 import { Columns } from "../../..";
 
 /* import utils */

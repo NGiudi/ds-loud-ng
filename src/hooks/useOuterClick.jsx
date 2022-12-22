@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const useOuterClick = (callback) => {
+export const useOuterClick = (callback) => {
   const callbackRef = useRef(); //? initialize mutable ref, which stores callback
   const innerRef = useRef(); //? returned to client, who marks "border" element
 
@@ -26,5 +26,3 @@ const useOuterClick = (callback) => {
 
   return innerRef; //? convenience for client (doesn't need to init ref himself)
 };
-
-export default useOuterClick;

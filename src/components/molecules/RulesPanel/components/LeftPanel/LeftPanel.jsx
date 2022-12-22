@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { RulesPanelContext } from "../../RulesPanelContext";
 
 /* import components */
-import FieldsGroup from "../FieldsGroup/FieldsGroup";
+import { FieldsGroup } from "../FieldsGroup/FieldsGroup";
 import { Button, Panel } from "../../../../../";
 
 /* import external components */
@@ -14,7 +14,7 @@ import { Form, Formik } from "formik";
 /* import constants */
 import { INVALID_INDEX } from "../../../../../assets/constants/array";
 
-const LeftPanel = (props) => {
+export const LeftPanel = (props) => {
   const { fields, list, onChange, onSizeH } = props;
 
   const ctx = useContext(RulesPanelContext);
@@ -101,5 +101,3 @@ LeftPanel.defaultProps = {
   onChange: null,
   onSizeH: null,
 };
-
-export default LeftPanel;

@@ -17,10 +17,8 @@ const solid = {
   padding: "8px 12px",
 };
 
-const button = {
+export const button = {
   icon,
   outlined,
   solid,
 };
-
-export default button;

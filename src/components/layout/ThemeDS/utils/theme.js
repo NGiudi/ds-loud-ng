@@ -1,6 +1,6 @@
 import { loud } from "../../../../themes/loud";
 
-import colors from "../../../../themes/loud/colors";
+import { colors } from "../../../../themes/loud/colors";
 
 /**
  * @param {object} name name of DS theme.

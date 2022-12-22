@@ -10,9 +10,7 @@ const circle = {
   },
 };
 
-const stepsBar = {
+export const stepsBar = {
   circle,
   progressBar,
 };
-
-export default stepsBar;

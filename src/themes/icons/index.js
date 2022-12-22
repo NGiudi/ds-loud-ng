@@ -1,7 +1,5 @@
-import fontawesome from "./icons";
+import { fontawesome } from "./icons";
 
-const icons = {
+export const icons = {
   fontawesome,
 };
-
-export default icons;

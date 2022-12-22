@@ -1,7 +1,7 @@
 import React from "react";
 
 /* import hooks */
-import useOnlineStatus from "../../../../../hooks/useOnlineStatus";
+import { useOnlineStatus } from "../../../../../hooks/useOnlineStatus";
 
 /* import components */
 import { Icon, Text } from "../../../../../";

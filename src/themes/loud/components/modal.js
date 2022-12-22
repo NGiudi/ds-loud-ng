@@ -9,9 +9,7 @@ const panel = {
   marginX: "16px",
 };
 
-const modal = {
+export const modal = {
   closeButton,
   panel,
 };
-
-export default modal;

@@ -8,12 +8,12 @@ import { RulesPanelContext } from "../../RulesPanelContext";
 import { Button, Panel } from "../../../../../";
 
 /* import styles */
-import Styles from "./RightPanel.styles";
+import { Styles } from "./RightPanel.styles";
 
 /* import constants */
 import { INVALID_INDEX } from "../../../../../assets/constants/array";
 
-const RightPanel = (props) => {
+export const RightPanel = (props) => {
   const { list, listElement, onChange, panelLeftHeight } = props;
 
   const ctx = useContext(RulesPanelContext);
@@ -95,5 +95,3 @@ RightPanel.defaultProps = {
   onChange: null,
   panelLeftHeight: -1,
 };
-
-export default RightPanel;

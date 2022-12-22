@@ -1,7 +1,5 @@
-import whiteTheme from "./whiteTheme";
+import { whiteTheme } from "./whiteTheme";
 
-const colors = {
+export const colors = {
   whiteTheme,
 };
-
-export default colors;

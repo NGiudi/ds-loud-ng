@@ -2,8 +2,6 @@ const border = {
   radius: "4px",
 };
 
-const badge = {
+export const badge = {
   border,
 };
-
-export default badge;

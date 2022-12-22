@@ -1,7 +1,5 @@
 const thickShadow = "4px";
 
-const avatar = {
+export const avatar = {
   thickShadow,
 };
-
-export default avatar;

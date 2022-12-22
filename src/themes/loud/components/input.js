@@ -3,8 +3,6 @@ const border = {
   weight: "1px",
 };
 
-const input = {
+export const input = {
   border,
 };
-
-export default input;

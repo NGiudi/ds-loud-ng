@@ -16,9 +16,7 @@ export const iconSizes = {
   lg: "32px",
 };
 
-const icon = {
+export const icon = {
   iconSizes,
   wrapperSizes,
 };
-
-export default icon;

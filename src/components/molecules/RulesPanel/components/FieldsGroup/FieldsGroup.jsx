@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 /* import components */
 import { FieldItem } from "../FieldItem/FieldItem";
 
-const FieldsGroup = (props) => {
+export const FieldsGroup = (props) => {
   const { fields } = props;
 
   return fields.map((field) => {
@@ -21,5 +21,3 @@ FieldsGroup.propTypes = {
 FieldsGroup.defaultProps = {
   fields: [],
 };
-
-export default FieldsGroup;
