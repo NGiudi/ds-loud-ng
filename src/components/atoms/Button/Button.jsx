@@ -6,7 +6,7 @@ import { Icon } from "../../../";
 
 /* import styles. */
 import { LoaderWrapper, ContentWrapper } from "./Wrappers.styles";
-import Styles from "./Button.styles";
+import { Styles } from "./Button.styles";
 
 export const Button = (props) => {
   const { children, loading, onClick, ...others } = props;

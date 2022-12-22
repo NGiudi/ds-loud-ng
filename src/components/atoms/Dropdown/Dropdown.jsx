@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import useOuterClick from "../../../hooks/useOuterClick";
 
 /* import styles */
-import Styles from "./Dropdown.styles";
+import { Styles } from "./Dropdown.styles";
 
 export const Dropdown = (props) => {
   const { children, name, onSelect, ...others } = props;

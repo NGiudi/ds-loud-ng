@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Text } from "../";
 
-import Styles from "./Badge.styles";
+import { Styles } from "./Badge.styles";
 
 import { getWrapperOptionsFilter } from "./utils/propsFilter";
 

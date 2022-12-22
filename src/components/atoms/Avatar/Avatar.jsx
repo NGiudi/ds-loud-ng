@@ -8,7 +8,7 @@ import useOuterClick from "../../../hooks/useOuterClick";
 import { Panel, Image } from "../../../";
 
 /* import styles.*/
-import Styles from "./Avatar.styles";
+import { Styles } from "./Avatar.styles";
 
 export const Avatar = (props) => {
   const { pos, size } = props;

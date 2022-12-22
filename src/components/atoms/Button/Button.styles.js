@@ -175,11 +175,9 @@ const TextButton = styled.button`
   }
 `;
 
-const Styles = {
+export const Styles = {
   IconButton,
   OutlinedButton,
   SolidButton,
   TextButton,
 };
-
-export default Styles;

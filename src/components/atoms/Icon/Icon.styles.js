@@ -26,9 +26,7 @@ const IconWrapper = styled.div`
     `}
 `;
 
-const Styles = {
+export const Styles = {
   IconItem,
   IconWrapper,
 };
-
-export default Styles;

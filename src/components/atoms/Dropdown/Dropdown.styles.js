@@ -5,8 +5,6 @@ const DropdownWrapper = styled.div`
   position: relative;
 `;
 
-const Styles = {
+export const Styles = {
   DropdownWrapper,
 };
-
-export default Styles;

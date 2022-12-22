@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* import styles. */
-import Styles from "./Icon.styles";
+import { Styles } from "./Icon.styles";
 
 /* import utils */
 import {

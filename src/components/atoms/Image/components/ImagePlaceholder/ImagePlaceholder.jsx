@@ -5,7 +5,7 @@ import { Icon, Text } from "../../../../..";
 
 import Styles from "./ImagePlaceholder.styles";
 
-const ImagePlaceholder = (props) => {
+export const ImagePlaceholder = (props) => {
   const { placeholder, size } = props;
 
   const selectTextSize = () => {
@@ -38,5 +38,3 @@ ImagePlaceholder.defaultProps = {
   placeholder: "",
   size: "md",
 };
-
-export default ImagePlaceholder;

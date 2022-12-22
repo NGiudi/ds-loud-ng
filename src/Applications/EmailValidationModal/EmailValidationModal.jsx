@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 /* import components */
 import { Button, Countdown, Modal, Text, ThemeDS } from "../..";
 
-const EmailValidationModal = (props) => {
+export const EmailValidationModal = (props) => {
   return (
     <ThemeDS>
       <Button onClick={props.handleOpneModal}>Abrir modal</Button>
@@ -72,5 +72,3 @@ EmailValidationModal.defaultProps = {
   showModal: false,
   time: 0,
 };
-
-export default EmailValidationModal;

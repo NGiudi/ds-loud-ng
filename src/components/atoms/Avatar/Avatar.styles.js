@@ -40,10 +40,8 @@ const Wrapper = styled.div`
   `}
 `;
 
-const Styles = {
+export const Styles = {
   AvatarWrapper,
   PanelWrapper,
   Wrapper,
 };
-
-export default Styles;

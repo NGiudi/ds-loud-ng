@@ -16,8 +16,6 @@ const ImageStyles = styled.img`
     `};
 `;
 
-const Styles = {
+export const Styles = {
   ImageStyles,
 };
-
-export default Styles;

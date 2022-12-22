@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
 /* import components */
-import EmailValidationModal from "./EmailValidationModal";
+import { EmailValidationModal } from "./EmailValidationModal";
 
 const story = { title: "Application/EmailModal" };
 

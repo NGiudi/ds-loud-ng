@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* import components */
-import ImagePlaceholder from "./components/ImagePlaceholder/ImagePlaceholder";
+import { ImagePlaceholder } from "./components";
 
 /* import styles */
-import Styles from "./Image.styles";
+import { Styles } from "./Image.styles";
 
 /* import utils */
 import {
