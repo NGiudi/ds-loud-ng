@@ -3,6 +3,11 @@ Se está desarrollando un Desing System para proyectos de React con la menor can
 
 El proyecto está publicado en github pages: https://ngiudi.github.io/ds-loud-ng
 
+## Caracteristicas:
+* Se puede pasar un theme y personalizar colores, espaciados, bordes, entre otros estilos de los componentes.
+
+* Diseño responsive.
+
 ## Test
 Los métodos de utils cuentan con tests. Para ejecutarlos debemos usar el siguiente comando:
 
@@ -11,9 +16,6 @@ npm run test
 ```
 
 Proximamente los componentes también van a tener tests.
-
-## Caracteristicas:
-* Se puede pasar un theme y personalizar colores, espaciados, bordes, entre otros estilos de los componentes.
 
 ## ¿Cómo actualizar el deploy en githup pages?
 
