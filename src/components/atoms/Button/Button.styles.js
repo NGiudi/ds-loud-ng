@@ -51,9 +51,9 @@ const OutlinedButton = styled.button`
 
   ${(props) =>
     css`
-      border: 1px solid ${props.theme.colors.orange._700};
+      border: 1px solid ${props.theme.colors.orange._600};
       border-radius: ${props.theme.components.button.outlined.borderRadius};
-      color: ${props.theme.colors.orange._700};
+      color: ${props.theme.colors.orange._600};
       height: ${props.theme.components.button.outlined.height};
       padding: ${props.theme.components.button.outlined.padding};
 
@@ -97,7 +97,7 @@ const SolidButton = styled.button`
 
   ${(props) =>
     css`
-      background-color: ${props.theme.colors.orange._700};
+      background-color: ${props.theme.colors.orange._600};
       border-radius: ${props.theme.components.button.solid.borderRadius};
       box-shadow: ${props.theme.shadows.level1};
       height: ${props.theme.components.button.solid.height};

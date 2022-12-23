@@ -7,7 +7,7 @@ const getColor = (theme, type) => {
     case "checkedCircle":
     case "circle":
     default:
-      return theme.colors.orange._700;
+      return theme.colors.orange._600;
   }
 };
 
@@ -19,7 +19,7 @@ const getBgColor = (theme, type) => {
       return "none";
     case "checkedCircle":
     default:
-      return theme.colors.orange._700;
+      return theme.colors.orange._600;
   }
 };
 

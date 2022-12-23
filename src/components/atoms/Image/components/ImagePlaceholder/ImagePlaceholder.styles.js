@@ -7,7 +7,7 @@ const IconPlaceholder = styled.div`
 
   ${(props) =>
     css`
-      background-color: ${props.theme.colors.orange._700};
+      background-color: ${props.theme.colors.orange._600};
       border-radius: ${props.type === "round" ? "50%" : "0px"};
       height: ${props.theme.components.image.height[props.type][props.size]};
       width: ${props.theme.components.image.width[props.type][props.size]};

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 
-import Styles from "../ProgressBar.styles";
+import { Styles } from "../ProgressBar.styles";
 
 export const Bar = (props) => {
   const { onFinish, step, stepTime, steps } = props;
