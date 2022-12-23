@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 
   ${(props) =>
     css`
-      background-color: ${props.theme.colors[props.color]._100};
+      background-color: ${props.theme.colors[props.color]._200};
       border-radius: ${props.theme.components.badge.border.radius};
 
       ${marginProperties(props)}
