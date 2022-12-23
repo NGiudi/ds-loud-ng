@@ -45,6 +45,7 @@ export const formatClock = (timeObject, format) => {
   /* create string formatted */
   for (const property in time) {
     let numString = "";
+
     if (time[property] < 10) numString = "0";
 
     numString += time[property].toString();
@@ -59,4 +60,24 @@ export const formatClock = (timeObject, format) => {
   }
 
   return format;
+};
+
+/**
+ * @param {object} startDate time in ms of the start date that is obtained from get time from Date.
+ * @param {object} endDate time in ms of the end date that is obtained from get time from Date.
+ * @return {string} formatted string.
+ */
+export const timeElapsed = (startDate, endDate) => {
+  const diff = endDate - startDate;
+  const diffObj = getTimeObject(diff);
+
+  if (diffObj.days > 0) {
+    return `${diffObj.days} d`;
+  } else if (diffObj.hours > 0) {
+    return `${diffObj.hours} h`;
+  } else if (diffObj.minutes > 0) {
+    return `${diffObj.minutes} m`;
+  } else {
+    return `${diffObj.seconds} s`;
+  }
 };
