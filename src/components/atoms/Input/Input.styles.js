@@ -27,13 +27,13 @@ const InputStyles = styled(Field)`
   background-color: transparent;
   border: none;
   flex-grow: 1;
-  height: 24px;
   outline: none;
 
   ${(props) =>
     css`
       font-size: ${props.theme.components.text.sizes.md};
       font-weight: ${props.theme.components.text.weights.regular};
+      height: ${props.theme.components.input.height};
       line-height: ${props.theme.components.text.lineHeight.md};
     `};
 `;
@@ -52,7 +52,7 @@ const InputWrapper = styled.div`
       border-width: ${props.theme.components.input.border.weight};
 
       ${marginProperties(props)}
-      ${paddingProperties(props, "x-6 y-2")}
+      ${paddingProperties(props, props.theme.components.input.padding)}
     `};
 `;
 

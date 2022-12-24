@@ -12,13 +12,13 @@ const ContentWrapper = styled.div`
 `;
 
 const PanelWrapper = styled.div`
-  border-radius: 4px;
   display: flex;
   position: relative;
 
   ${(props) =>
     css`
       background-color: ${props.theme.colors.alert.bgColors[props.type]};
+      border-radius: ${props.theme.components.panel.border.radius};
       box-shadow: ${props.theme.shadows.level2};
       color: ${props.theme.colors.alert.colors[props.type]};
 
@@ -36,7 +36,7 @@ const PanelWrapper = styled.div`
       }
 
       ${marginProperties(props)}
-      ${paddingProperties(props, "a-3")}
+      ${paddingProperties(props, props.theme.components.panel.padding)}
     `}
 `;
 

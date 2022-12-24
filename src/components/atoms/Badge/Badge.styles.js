@@ -11,7 +11,7 @@ const Wrapper = styled.div`
       border-radius: ${props.theme.components.badge.border.radius};
 
       ${marginProperties(props)}
-      ${paddingProperties(props, "x-8 y-4")}
+      ${paddingProperties(props, props.theme.components.badge.padding)}
     `}
 `;
 

@@ -2,7 +2,7 @@ const border = {
   radius: "4px",
 };
 
-export const badge = {
+export const panel = {
   border,
-  padding: "x-8 y-4",
+  padding: "a-4",
 };

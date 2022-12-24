@@ -5,4 +5,6 @@ const border = {
 
 export const input = {
   border,
+  height: "24px",
+  padding: "x-6 y-2",
 };

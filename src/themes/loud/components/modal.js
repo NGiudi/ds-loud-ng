@@ -6,7 +6,7 @@ const closeButton = {
 };
 
 const panel = {
-  marginX: "16px",
+  padding: "x-16 y-0",
 };
 
 export const modal = {

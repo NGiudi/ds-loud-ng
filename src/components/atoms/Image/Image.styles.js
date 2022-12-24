@@ -12,7 +12,7 @@ const ImageStyles = styled.img`
       object-fit: cover;
       width: ${props.theme.components.image.width[props.type][props.size]};
 
-      ${marginProperties(props, "a-0")}
+      ${marginProperties(props)}
     `};
 `;
 

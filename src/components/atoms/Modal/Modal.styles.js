@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+import { paddingProperties } from "../../../utils/styles/spacing";
+
 const ButtonsWrapper = styled.div`
   text-align: right;
 `;
@@ -33,7 +35,10 @@ const PanelWrapper = styled.div`
   ${(props) =>
     css`
       max-width: ${props.width};
-      padding: 0 ${props.theme.components.modal.panel.marginX};
+      padding: ${paddingProperties(
+        props,
+        props.theme.components.modal.panel.padding
+      )};
     `}
 `;
 
