@@ -2,13 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* import components */
-import { Input, Select } from "../../../../../";
+import { Input /* , Select */ } from "../../../../../";
 
 export const FieldItem = (props) => {
   const { field, margin } = props;
-  const { label, name, options, type } = field;
+  const { /* label, name, options, */ type } = field;
 
   switch (type) {
+    /* TODO: descomentar esto cuando haya creado el nuevo select.  
     case "select":
       return (
         <Select label={label} margin={margin} name={name}>
@@ -19,7 +20,7 @@ export const FieldItem = (props) => {
               </option>
             ))}
         </Select>
-      );
+      ); */
     default:
       return <Input margin={margin} {...field} />;
   }

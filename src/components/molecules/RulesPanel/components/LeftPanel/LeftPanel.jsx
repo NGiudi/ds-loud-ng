@@ -15,7 +15,7 @@ import { Form, Formik } from "formik";
 import { INVALID_INDEX } from "../../../../../assets/constants/array";
 
 export const LeftPanel = (props) => {
-  const { fields, list, onChange, onSizeH } = props;
+  const { fields, list, onChange, onSizeH, validationSchema } = props;
 
   const ctx = useContext(RulesPanelContext);
 
@@ -64,6 +64,7 @@ export const LeftPanel = (props) => {
         enableReinitialize
         initialValues={generateInicialValues()}
         onSubmit={onSubmit}
+        validationSchema={validationSchema}
       >
         <Form>
           <FieldsGroup fields={fields} />
@@ -93,6 +94,7 @@ LeftPanel.propTypes = {
   list: PropTypes.array,
   onChange: PropTypes.func,
   onSizeH: PropTypes.func,
+  validationSchema: PropTypes.object,
 };
 
 LeftPanel.defaultProps = {
@@ -100,4 +102,5 @@ LeftPanel.defaultProps = {
   list: [],
   onChange: null,
   onSizeH: null,
+  validationSchema: null,
 };

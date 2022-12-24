@@ -2,6 +2,10 @@ import React, { useState } from "react";
 
 import { RulesPanel, Text, ThemeDS } from "../../../";
 
+import { carSchema } from "./utils/validationSchema";
+
+import { fields, rules } from "../../../constants/stories/RulesPanel";
+
 const story = {
   title: "Components/RulesPanel",
   component: RulesPanel,
@@ -20,56 +24,8 @@ const story = {
   },
 };
 
-const fields = [
-  {
-    label: "Marca",
-    name: "marca",
-    options: ["audi", "lexus", "volkswagen"],
-    type: "select",
-  },
-  {
-    label: "Modelo",
-    name: "modelo",
-    type: "text",
-  },
-  {
-    label: "Patente",
-    name: "patente",
-    type: "text",
-  },
-];
-
-const elements = [
-  {
-    data: {
-      marca: "Volkswagen",
-      modelo: "fox",
-      patente: "KZH614",
-    },
-    isEditable: true,
-    isRemovable: false,
-  },
-  {
-    data: {
-      marca: "Volkswagen",
-      modelo: "gol",
-      patente: "FDB312",
-    },
-    isEditable: true,
-    isRemovable: true,
-  },
-  {
-    data: {
-      marca: "Audi",
-      modelo: "S3",
-    },
-    isEditable: false,
-    isRemovable: true,
-  },
-];
-
 export const DinamicExample = () => {
-  const [listTest, setListTest] = useState(elements);
+  const [listTest, setListTest] = useState(rules);
 
   const renderElemContent = (el) => {
     return (
@@ -91,6 +47,7 @@ export const DinamicExample = () => {
         listElement={renderElemContent}
         margin="a-10"
         onChange={(list) => setListTest([...list])}
+        validationSchema={carSchema}
       />
     </ThemeDS>
   );

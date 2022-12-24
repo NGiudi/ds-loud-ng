@@ -13,7 +13,12 @@ export const getContextOptions = (props) => {
 /* end - context filter */
 
 /* start - left panel filter */
-const whtListLeftPanelOptions = ["fields", "list", "onChange"];
+const whtListLeftPanelOptions = [
+  "fields",
+  "list",
+  "onChange",
+  "validationSchema",
+];
 
 /**
  * @param {object} props component properties.
