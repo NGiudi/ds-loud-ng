@@ -9,7 +9,10 @@ const BottomContentStyles = styled.div`
     border-top-color: ${props.theme.colors.black._200};
     border-top-width: ${props.theme.components.appLayout.sidebar.border.width};
 
-    ${paddingProperties(props, "y-2")}
+    ${paddingProperties(
+      props,
+      props.theme.components.appLayout.sidebar.bottomContent.padding
+    )}
   `}
 `;
 
@@ -25,19 +28,22 @@ const SideBarButton = styled.button`
       : props.theme.components.appLayout.sidebar.width.contracted};
 
     &:hover {
-      background-color: ${props.theme.colors.black._100};
+      background-color: ${props.theme.colors.black._200};
     }
 
-    ${paddingProperties(props, "l-18 y-12")}
+    ${paddingProperties(
+      props,
+      props.theme.components.appLayout.sidebar.button.padding
+    )}
   `}
 `;
 
 const SideBarButtonsWrapper = styled.div`
-  /* TODO: height: 49px = padding button + padding sidebarBottom + border */
-  height: calc(100% - 49px);
   overflow-y: auto;
 
   ${(props) => css`
+    height: calc(100% - ${props.theme.components.appLayout.sidebar.content.height});
+    
     &::-webkit-scrollbar {
       width: ${props.theme.components.appLayout.scroll.width};
     }

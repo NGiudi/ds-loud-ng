@@ -28,7 +28,10 @@ export const ContentBox = styled.div`
       border-radius: ${props.theme.components.appLayout.scroll.radious});
     }
 
-    ${paddingProperties(props, "a-20")}
+    ${paddingProperties(
+      props,
+      props.theme.components.appLayout.content.padding
+    )}
   `}
 `;
 
