@@ -49,7 +49,9 @@ export const Input = (props) => {
       </Styles.InputWrapper>
 
       {/* error message */}
-      <Styles.Error component="div" margin="l-4 t-4" name={props.name} />
+      <Styles.ErrorWrapper margin="l-4 t-4">
+        <Styles.Error component="div" name={props.name} />
+      </Styles.ErrorWrapper>
     </Styles.Wrapper>
   );
 };

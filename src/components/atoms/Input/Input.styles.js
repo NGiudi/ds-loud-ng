@@ -8,9 +8,16 @@ const Error = styled(ErrorMessage)`
   ${(props) =>
     css`
       color: ${props.theme.colors.alert.colors.error};
-      font-size: ${props.theme.components.text.sizes.md};
+      font-size: ${props.theme.components.text.sizes.sm};
       font-weight: ${props.theme.components.text.weights.regular};
-      line-height: ${props.theme.components.text.lineHeight.md};
+      line-height: ${props.theme.components.text.lineHeight.sm};
+    `};
+`;
+
+const ErrorWrapper = styled.div`
+  ${(props) =>
+    css`
+      height: ${props.theme.components.text.lineHeight.sm};
 
       ${marginProperties(props)}
     `};
@@ -58,6 +65,7 @@ const Wrapper = styled.div`
 
 export const Styles = {
   Error,
+  ErrorWrapper,
   InputStyles,
   InputWrapper,
   Wrapper,
