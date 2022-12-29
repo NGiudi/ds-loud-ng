@@ -11,6 +11,7 @@ import { panel } from "./panel";
 import { progressBar } from "./progressBar";
 import { select } from "./select";
 import { stepsBar } from "./stepsBar";
+import { tabs } from "./tabs";
 import { text } from "./text";
 import { title } from "./title";
 
@@ -28,6 +29,7 @@ export const components = {
   progressBar,
   select,
   stepsBar,
+  tabs,
   text,
   title,
 };

@@ -13,4 +13,6 @@ export { Modal } from "./Modal/Modal";
 export { Panel } from "./Panel/Panel";
 export { ProgressBar } from "./ProgressBar/ProgressBar";
 export { Select } from "./Select/Select";
+export { Tab } from "./Tabs/components/Tab/Tab";
+export { Tabs } from "./Tabs/Tabs";
 export { Text } from "./Text/Text";

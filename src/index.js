@@ -35,6 +35,8 @@ export {
   Panel,
   ProgressBar,
   Select,
+  Tab,
+  Tabs,
   Text,
 } from "./components/atoms";
 
