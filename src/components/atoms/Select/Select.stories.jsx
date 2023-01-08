@@ -2,7 +2,7 @@ import React from "react";
 
 import { Form, Formik } from "formik";
 
-import { Button, Flex, Select, ThemeDS } from "../../../";
+import { Button, Flex, Select, SelectOption, ThemeDS } from "../../../";
 
 const story = {
   title: "Components/Select",
@@ -22,10 +22,10 @@ export const DinamicExample = () => {
         }}
       >
         <Form>
-          <Select label="Seleccione un elemento" name="marca">
-            <option value="audi">Audi</option>
-            <option value="lexus">Lexus</option>
-            <option value="volvo">Volvo</option>
+          <Select label="Seleccione un elemento" margin="t-20">
+            <SelectOption value="audi">Audi</SelectOption>
+            <SelectOption value="lexus">Lexus</SelectOption>
+            <SelectOption value="volvo">Volvo</SelectOption>
           </Select>
 
           <Flex hAlign="end">

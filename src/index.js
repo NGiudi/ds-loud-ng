@@ -35,6 +35,7 @@ export {
   Panel,
   ProgressBar,
   Select,
+  SelectOption,
   Tab,
   Tabs,
   Text,

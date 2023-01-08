@@ -7,7 +7,7 @@ const panel = {
   margin: {
     top: "4px",
   },
-  padding: "4px 8px",
+  padding: "4px 0",
 };
 
 export const select = {
