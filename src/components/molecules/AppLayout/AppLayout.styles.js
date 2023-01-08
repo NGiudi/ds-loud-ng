@@ -56,7 +56,7 @@ export const TopBar = styled.div`
     background-color: ${props.theme.colors.black._700};
     box-shadow: ${props.theme.shadows.level3};
     height: ${props.theme.components.appLayout.topbar.height};
-    z-index: 10;
+    z-index: 100;
 
     ${paddingProperties(props)}
   `}

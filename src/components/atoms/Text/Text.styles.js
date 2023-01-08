@@ -22,6 +22,7 @@ const TextWrapper = styled.p`
 `;
 
 const LabelWrapper = styled.label`
+  display: inline-block;
   ${(props) => textStyles(props)};
 `;
 

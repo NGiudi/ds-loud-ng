@@ -1,28 +1,50 @@
 import styled, { css } from "styled-components";
 
-import { marginProperties, paddingProperties } from "../../../utils/styles";
+import { marginProperties } from "../../../utils/styles";
 
-import { Field } from "formik";
-
-const SelectWrapper = styled(Field)`
-  background-color: transparent;
-  border: none;
+const SelectPanel = styled.div`
   border-style: solid;
-  outline: none;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 50;
   width: 100%;
 
   ${(props) =>
     css`
+      background-color: ${props.theme.colors.black._100};
       border-color: ${props.theme.colors.black._400};
       border-radius: ${props.theme.components.select.border.radius};
-      border-width: ${props.theme.components.select.border.weight};
-      font-size: ${props.theme.components.text.sizes.md};
-      font-weight: ${props.theme.components.text.weights.regular};
-      line-height: ${props.theme.components.text.lineHeight.md};
-
-      ${marginProperties(props)}
-      ${paddingProperties(props, "x-8 y-8")}
+      border-width: ${props.theme.components.select.border.width};
+      margin-top: ${props.theme.components.select.panel.margin.top};
+      padding: ${props.theme.components.select.panel.padding};
+      top: ${props.theme.components.select.height};
     `};
+`;
+
+const SelectedOption = styled.div`
+  flex-grow: 1;
+`;
+
+const SelectedOptionWrapper = styled.div`
+  align-items: center;
+  border-style: solid;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+
+  ${(props) =>
+    css`
+      background-color: ${props.theme.colors.black._100};
+      border-color: ${props.theme.colors.black._400};
+      border-radius: ${props.theme.components.select.border.radius};
+      border-width: ${props.theme.components.select.border.width};
+      height: ${props.theme.components.select.height};
+    `};
+`;
+
+const SelectWrapper = styled.div`
+  position: relative;
+  width: 100%;
 `;
 
 const Wrapper = styled.div`
@@ -33,6 +55,9 @@ const Wrapper = styled.div`
 `;
 
 export const Styles = {
+  SelectPanel,
+  SelectedOption,
+  SelectedOptionWrapper,
   SelectWrapper,
   Wrapper,
 };

@@ -15,7 +15,7 @@ import {
 } from "./utils/propsFilter";
 
 export const Input = (props) => {
-  const { icon, type } = props;
+  const { icon, label, type } = props;
 
   const inputProps = getInputOptionsFilter(props);
   const wrapperProps = getWrapperOptionsFilter(props);
@@ -29,11 +29,19 @@ export const Input = (props) => {
   return (
     <Styles.Wrapper {...wrapperProps}>
       {/* label */}
-      <Text as="label" htmlFor={props.name} size="sm" weight="semibold">
-        {props.label}
-      </Text>
+      {!!label && (
+        <Text
+          as="label"
+          htmlFor={props.name}
+          margin="b-4"
+          size="sm"
+          weight="semibold"
+        >
+          {label}
+        </Text>
+      )}
 
-      <Styles.InputWrapper margin="t-4" ref={props.reference}>
+      <Styles.InputWrapper ref={props.reference}>
         {/* left icon */}
         {!!icon && <Icon icon={icon} margin="r-8" size="sm" />}
 

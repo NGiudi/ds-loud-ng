@@ -28,6 +28,7 @@ const InputStyles = styled(Field)`
   border: none;
   flex-grow: 1;
   outline: none;
+  padding: 0;
 
   ${(props) =>
     css`
@@ -40,6 +41,7 @@ const InputStyles = styled(Field)`
 
 const InputWrapper = styled.div`
   align-items: center;
+  border-style: solid;
   box-sizing: border-box;
   display: flex;
   width: 100%;
@@ -48,7 +50,6 @@ const InputWrapper = styled.div`
     css`
       border-color: ${props.theme.colors.black._400};
       border-radius: ${props.theme.components.input.border.radius};
-      border-style: solid;
       border-width: ${props.theme.components.input.border.weight};
 
       ${marginProperties(props)}
