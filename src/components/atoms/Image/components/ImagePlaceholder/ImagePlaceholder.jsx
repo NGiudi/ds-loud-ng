@@ -30,11 +30,13 @@ export const ImagePlaceholder = (props) => {
 };
 
 ImagePlaceholder.propTypes = {
+  margin: PropTypes.string,
   placeholder: PropTypes.string,
   size: PropTypes.oneOf(["avatar", "avatarSm", "lg", "md", "sm"]),
 };
 
 ImagePlaceholder.defaultProps = {
+  margin: "a-0",
   placeholder: "",
   size: "md",
 };

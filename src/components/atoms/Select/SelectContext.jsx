@@ -7,7 +7,7 @@ export const SelectProvider = (props) => {
   const { children } = props;
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(null);
+  const [selectedValue, setSelectedValue] = useState("");
 
   const closeSelect = () => setIsOpen(false);
   const openSelect = () => setIsOpen(true);

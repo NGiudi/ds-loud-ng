@@ -13,7 +13,13 @@ export const getImageOptionsFilter = (props) => {
 /* end - placeholder filter */
 
 /* start - placeholder filter */
-const whtListPlaceholderOptions = ["placeholder", "size", "theme", "type"];
+const whtListPlaceholderOptions = [
+  "margin",
+  "placeholder",
+  "size",
+  "theme",
+  "type",
+];
 
 /**
  * @param {object} props component properties.

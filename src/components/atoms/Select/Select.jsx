@@ -13,6 +13,7 @@ import { Styles } from "./Select.styles.js";
 
 /* utils */
 import { getWrapperOptionsFilter } from "./utils/propsFilter";
+import { SelectValue } from "./components/SelectValue/SelectValue";
 
 export const Select = (props) => {
   const { label } = props;
@@ -21,6 +22,8 @@ export const Select = (props) => {
 
   return (
     <SelectProvider>
+      <SelectValue name={props.name} />
+
       <Styles.Wrapper {...wrapperOptions}>
         {!!label && (
           <Text
