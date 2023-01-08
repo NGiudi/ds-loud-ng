@@ -10,10 +10,11 @@ import { Styles } from "./SelectOption.styles";
 export const SelectOption = (props) => {
   const { value } = props;
 
-  const { setSelectedValue } = useContext(SelectContext);
+  const ctx = useContext(SelectContext);
 
   const handleClick = () => {
-    setSelectedValue(value);
+    ctx.setSelectedValue(value);
+    ctx.closeSelect();
   };
 
   return (
