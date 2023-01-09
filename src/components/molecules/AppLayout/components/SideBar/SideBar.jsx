@@ -47,6 +47,7 @@ export const SideBar = (props) => {
             return (
               <Styles.SideBarButton
                 isExpanded={isExpanded}
+                isSelectedSection={router.location.pathname.includes(btn.to)}
                 key={`sidebar-button-${idx}`}
                 onClick={() => handleSidebarButtonClick(btn.to)}
               >

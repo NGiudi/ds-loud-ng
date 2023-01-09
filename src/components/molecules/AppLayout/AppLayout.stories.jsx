@@ -23,7 +23,7 @@ export const LayoutExample = () => {
       {
         icon: "home",
         label: "Home",
-        to: "/",
+        to: "/home",
       },
       {
         icon: "ghost",

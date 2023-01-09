@@ -46,7 +46,7 @@ Text.propTypes = {
 Text.defaultProps = {
   align: "start",
   as: "p",
-  color: "black",
+  color: "inheret",
   decoration: null,
   htmlFor: "",
   margin: "a-0",
