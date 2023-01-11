@@ -23,7 +23,7 @@ const PanelWrapper = styled.div`
       color: ${props.theme.colors.alert.colors[props.type]};
 
       &::-webkit-scrollbar {
-        width: ${props.theme.components.appLayout.scroll.width};
+        width: ${props.theme.components.panel.scroll.width};
       }
 
       &::-webkit-scrollbar-track {
@@ -32,7 +32,6 @@ const PanelWrapper = styled.div`
 
       &::-webkit-scrollbar-thumb {
         background-color: ${props.theme.colors.black._300};
-        border-radius: 4px;
       }
 
       ${marginProperties(props)}

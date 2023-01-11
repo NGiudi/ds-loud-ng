@@ -10,7 +10,7 @@ export const FieldsGroup = (props) => {
   return fields.map((field) => {
     const { name } = field;
 
-    return <FieldItem field={field} key={`rulesPanel_${name}`} margin="b-4" />;
+    return <FieldItem field={field} key={`rulesPanel_${name}`} />;
   });
 };
 

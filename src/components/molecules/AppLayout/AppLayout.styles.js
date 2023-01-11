@@ -9,6 +9,7 @@ export const ContentBox = styled.div`
   overflow: auto;
 
   ${(props) => css`
+    background-color: ${props.theme.colors.black._100};
     width: calc(100vw - ${
       props.isExpanded
         ? props.theme.components.appLayout.sidebar.width.expanded
@@ -45,9 +46,7 @@ export const MainContent = styled.div`
 `;
 
 export const TopBar = styled.div`
-  align-items: center;
   box-sizing: border-box;
-  display: flex;
   position: relative;
   width: 100vw;
 

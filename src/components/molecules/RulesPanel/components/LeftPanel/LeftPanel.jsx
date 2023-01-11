@@ -11,6 +11,9 @@ import { Button, Panel } from "../../../../../";
 /* import external components */
 import { Form, Formik } from "formik";
 
+/* styles */
+import { Styles } from "./LeftPanel.styles";
+
 /* import constants */
 import { INVALID_INDEX } from "../../../../../assets/constants/array";
 
@@ -69,7 +72,7 @@ export const LeftPanel = (props) => {
         <Form>
           <FieldsGroup fields={fields} />
 
-          <div style={{ textAlign: "end" }}>
+          <Styles.ButtonsGroup margin="t-20">
             <Button
               disabled={ctx.selectedElement === INVALID_INDEX}
               kind="outlined"
@@ -82,7 +85,7 @@ export const LeftPanel = (props) => {
             <Button type="submit">
               {ctx.selectedElement === INVALID_INDEX ? "Agregar" : "Editar"}
             </Button>
-          </div>
+          </Styles.ButtonsGroup>
         </Form>
       </Formik>
     </Panel>

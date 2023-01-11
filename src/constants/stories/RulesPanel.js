@@ -1,9 +1,14 @@
+import { carsBrands } from "../cars/brands";
+
 export const fields = [
   {
     label: "Marca",
     name: "marca",
-    // options: ["audi", "lexus", "volkswagen"], //TODO: descomentar
-    type: "text", //TODO: usar select,
+    options: carsBrands,
+    type: "select",
+    props: {
+      maxHeight: "200px",
+    },
   },
   {
     label: "Modelo",

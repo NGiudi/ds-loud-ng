@@ -17,17 +17,19 @@ const TabsBar = styled.div`
 const TabButton = styled.button`
   background-color: transparent;
   border: none;
-  border-bottom-color: transparent;
   border-bottom-style: solid;
 
   ${(props) =>
     css`
+      border-bottom-color: ${props.isSelected
+        ? props.theme.colors.orange._600
+        : "transparent"};
       border-bottom-width: ${props.theme.components.tabs.button.border.width};
 
       ${paddingProperties(props, props.theme.components.tabs.button.padding)}
 
       &:hover {
-        border-bottom-color: ${props.theme.colors.orange._600};
+        border-bottom-color: ${props.theme.colors.orange._300};
       }
     `};
 `;

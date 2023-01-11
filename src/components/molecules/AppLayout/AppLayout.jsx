@@ -9,14 +9,15 @@ import { SideBar } from "./components/SideBar/SideBar";
 import { ContentBox, MainContent, TopBar } from "./AppLayout.styles";
 
 export const AppLayout = (props) => {
-  const { sidebar } = props;
+  const { sidebar, topbar } = props;
 
   const sidebarButtons = sidebar ? sidebar.buttons : null;
 
   return (
     <>
-      <TopBar padding="y-8 l-24">
-        Logotipo
+      <TopBar padding="x-24 y-8">
+        {topbar ? topbar.content : null}
+
         <OfflineBadge />
       </TopBar>
 
@@ -41,9 +42,13 @@ AppLayout.propTypes = {
       })
     ),
   }),
+  topbar: PropTypes.shape({
+    content: PropTypes.node,
+  }),
 };
 
 AppLayout.defaultProps = {
   children: null,
   sidebar: null,
+  topbar: null,
 };

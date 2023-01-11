@@ -3,9 +3,6 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 
 /*******************************************************************************/
-/** IN PROGRESS:                                                              **/
-/**   1. Perfeccionar el Select (por ahora solo hice lo basico de lo basico). **/
-/**   2. Rules Panel (Seguir después de terminar con el select)               **/
 /**                                                                           **/
 /** TODO LIST:                                                                **/
 /**   1. Revisar el componente de dropdown, tengo que hacer mejoras.          **/

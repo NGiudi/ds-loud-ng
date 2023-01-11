@@ -12,13 +12,17 @@ import { Text } from "../../../";
 import { Styles } from "./Select.styles.js";
 
 /* utils */
-import { getWrapperOptionsFilter } from "./utils/propsFilter";
 import { SelectValue } from "./components/SelectValue/SelectValue";
+import {
+  getWrapperOptionsFilter,
+  getContentOptionsFilter,
+} from "./utils/propsFilter";
 
 export const Select = (props) => {
   const { label } = props;
 
   const wrapperOptions = getWrapperOptionsFilter(props);
+  const contentOptions = getContentOptionsFilter(props);
 
   return (
     <SelectProvider>
@@ -37,7 +41,7 @@ export const Select = (props) => {
           </Text>
         )}
 
-        <SelectContent>{props.children}</SelectContent>
+        <SelectContent {...contentOptions}>{props.children}</SelectContent>
       </Styles.Wrapper>
     </SelectProvider>
   );
@@ -48,6 +52,7 @@ Select.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
   margin: PropTypes.string,
+  maxHeight: PropTypes.string, //? content panel height
 };
 
 Select.defaultProps = {
@@ -55,4 +60,5 @@ Select.defaultProps = {
   label: "",
   name: "",
   margin: "",
+  maxHeight: "auto",
 };

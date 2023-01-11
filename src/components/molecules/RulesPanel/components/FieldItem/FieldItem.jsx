@@ -2,36 +2,34 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* import components */
-import { Input /* , Select */ } from "../../../../../";
+import { Input, Select, SelectOption } from "../../../../../";
 
 export const FieldItem = (props) => {
-  const { field, margin } = props;
-  const { /* label, name, options, */ type } = field;
+  const { field } = props;
 
-  switch (type) {
-    /* TODO: descomentar esto cuando haya creado el nuevo select.  
+  switch (field.type) {
     case "select":
+      const { label, name, options, props } = field;
+
       return (
-        <Select label={label} margin={margin} name={name}>
+        <Select label={label} margin="b-24" name={name} {...props}>
           {options &&
             options.map((opc) => (
-              <option key={`rulesPanel_${name}_${opc}`} value={opc}>
+              <SelectOption key={`rulesPanel_${name}_${opc}`} value={opc}>
                 {opc}
-              </option>
+              </SelectOption>
             ))}
         </Select>
-      ); */
+      );
     default:
-      return <Input margin={margin} {...field} />;
+      return <Input margin="b-4" {...field} />;
   }
 };
 
 FieldItem.propTypes = {
   field: PropTypes.object,
-  margin: PropTypes.string,
 };
 
 FieldItem.defaultProps = {
   field: null,
-  margin: "a-0",
 };

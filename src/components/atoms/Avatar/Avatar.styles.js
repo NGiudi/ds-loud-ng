@@ -10,12 +10,12 @@ const AvatarWrapper = styled.div`
   ${(props) =>
     css`
       border-color: ${props.isSelected
-        ? `${props.theme.colors.black._300}`
+        ? `${props.theme.colors.black._500}`
         : "transparent"};
       border-width: ${props.theme.components.avatar.thickShadow};
 
       &:hover {
-        border-color: ${!props.isSelected && props.theme.colors.black._200};
+        border-color: ${!props.isSelected && props.theme.colors.black._600};
       }
     `}
 `;

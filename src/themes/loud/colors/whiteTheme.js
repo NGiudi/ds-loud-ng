@@ -26,14 +26,14 @@ const alertColors = {
   bgColors: {
     error: "#FED7D7",
     info: "#D6EAF8",
-    neutral: "#F8F9F9",
+    neutral: blackColors._100,
     success: "#C6F6D5",
     warning: "#F9E79F",
   },
   colors: {
     error: "#822727",
     info: "#21618C",
-    neutral: "#363636",
+    neutral: blackColors,
     success: "#22543D",
     warning: "#B7950B",
   },

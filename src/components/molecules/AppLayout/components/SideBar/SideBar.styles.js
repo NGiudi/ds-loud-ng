@@ -69,6 +69,7 @@ const SideBarStyles = styled.div`
   position: relative;
 
   ${(props) => css`
+    background-color: ${props.theme.colors.black._100};
     border-right-color: ${props.theme.colors.black._200};
     border-right-width: ${props.theme.components.appLayout.sidebar.border
       .width};

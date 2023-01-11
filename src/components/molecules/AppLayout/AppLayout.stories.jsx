@@ -1,7 +1,7 @@
 import React from "react";
 
 /* import components */
-import { AppLayout, Text, ThemeDS } from "../../..";
+import { AppLayout, Avatar, Flex, Image, Text, ThemeDS } from "../../..";
 
 /* import external components  */
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -38,10 +38,25 @@ export const LayoutExample = () => {
     ],
   };
 
+  const TopbarContent = () => {
+    return (
+      <Flex hAlign="space-between">
+        Logotipo
+        <Avatar pos="right">
+          <Image margin="t-10 x-50" size="sm" type="round" />
+
+          <Text align="center" margin="y-20" size="lg" weight="semibold">
+            Nicolás Giudice
+          </Text>
+        </Avatar>
+      </Flex>
+    );
+  };
+
   return (
     <ThemeDS>
       <BrowserRouter>
-        <AppLayout sidebar={sidebar}>
+        <AppLayout sidebar={sidebar} topbar={{ content: <TopbarContent /> }}>
           <Switch>
             <Route exact path="/games">
               <Text margin="b-24" type="title" weight="bold">

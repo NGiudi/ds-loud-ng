@@ -12,9 +12,12 @@ import { Styles } from "./SelectContent.styles";
 
 /* utils */
 import { disclosureIcon } from "../../../../../utils/icons/icons";
+import { getPanelOptionsFilter } from "../../utils/propsFilter";
 
 export const SelectContent = (props) => {
   const ctx = useContext(SelectContext);
+
+  const panelOptions = getPanelOptionsFilter(props);
 
   const handleClick = () => {
     if (ctx.isOpen) {
@@ -39,7 +42,9 @@ export const SelectContent = (props) => {
 
       {/* panel */}
       {ctx.isOpen ? (
-        <Styles.SelectPanel margin="t-8">{props.children}</Styles.SelectPanel>
+        <Styles.SelectPanel margin="t-8" {...panelOptions}>
+          {props.children}
+        </Styles.SelectPanel>
       ) : null}
     </Styles.SelectWrapper>
   );
@@ -47,8 +52,10 @@ export const SelectContent = (props) => {
 
 SelectContent.propTypes = {
   children: PropTypes.node,
+  maxHeight: PropTypes.string,
 };
 
 SelectContent.defaultProps = {
   children: null,
+  maxHeight: "auto",
 };
