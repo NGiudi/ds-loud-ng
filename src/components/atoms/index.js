@@ -2,6 +2,7 @@ export { Avatar } from "./Avatar/Avatar";
 export { Badge } from "./Badge/Badge";
 export { Button } from "./Button/Button";
 export { Countdown } from "./Countdown/Countdown";
+export { Divider } from "./Divider/Divider";
 export { Dropdown } from "./Dropdown/Dropdown";
 export { DropdownItem } from "./Dropdown/components/DropdownItem/DropdownItem";
 export { DropdownPanel } from "./Dropdown/components/DropdownPanel/DropdownPanel";

@@ -21,6 +21,7 @@ export {
   Badge,
   Button,
   Countdown,
+  Divider,
   Dropdown,
   DropdownItem,
   DropdownPanel,
