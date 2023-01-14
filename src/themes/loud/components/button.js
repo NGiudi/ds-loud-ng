@@ -1,6 +1,6 @@
 const icon = {
   size: {
-    md: "40px",
+    md: "38px",
     input: "24px",
   },
 };

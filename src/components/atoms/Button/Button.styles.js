@@ -56,6 +56,7 @@ const OutlinedButton = styled.button`
       color: ${props.theme.colors.orange._600};
       height: ${props.theme.components.button.outlined.height};
       padding: ${props.theme.components.button.outlined.padding};
+      width: ${props.fullWidth ? "100%" : "auto"};
 
       ${marginProperties(props)}
     `}
