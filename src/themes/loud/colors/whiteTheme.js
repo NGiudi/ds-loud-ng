@@ -34,7 +34,7 @@ const alertColors = {
     error: "#822727",
     info: "#21618C",
     neutral: blackColors,
-    success: "#22543D",
+    success: "#008F39",
     warning: "#B7950B",
   },
 };

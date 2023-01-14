@@ -1,9 +1,7 @@
 import React from "react";
 
 /* components */
-import { ThemeDS } from "../../..";
-
-import { Pagination } from "./Pagination";
+import { Pagination, ThemeDS } from "../../..";
 
 const story = {
   title: "Molecules/Pagination",
