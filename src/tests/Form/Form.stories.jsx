@@ -4,7 +4,7 @@ import { Form, Formik } from "formik";
 
 import { Input, Text, ThemeDS } from "../../";
 
-const story = { title: "Application/Form" };
+const story = { title: "Test/Form" };
 
 export const FormStory = () => {
   const lastnameInputRef = useRef();

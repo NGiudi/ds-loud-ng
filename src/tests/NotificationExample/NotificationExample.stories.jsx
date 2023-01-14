@@ -6,7 +6,7 @@ import { Button, ThemeDS } from "../../";
 /* import utils */
 import { createNotify } from "../../utils/services/notificacions";
 
-const story = { title: "Application/Notification" };
+const story = { title: "Test/Notification" };
 
 export const NotificationExample = () => {
   const handleClick = () => {

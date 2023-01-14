@@ -6,7 +6,7 @@ import { ThemeDS } from "../../..";
 import { Pagination } from "./Pagination";
 
 const story = {
-  title: "Components/Pagination",
+  title: "Molecules/Pagination",
   parameters: {
     docs: {
       description: {

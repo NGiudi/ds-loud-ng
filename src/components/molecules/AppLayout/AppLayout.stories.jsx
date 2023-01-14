@@ -7,7 +7,7 @@ import { AppLayout, Avatar, Flex, Image, Text, ThemeDS } from "../../..";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 const story = {
-  title: "Components/AppLayout",
+  title: "Molecules/AppLayout",
   parameters: {
     docs: {
       description: {

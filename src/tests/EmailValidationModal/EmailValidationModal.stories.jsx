@@ -6,7 +6,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 /* import components */
 import { EmailValidationModal } from "./EmailValidationModal";
 
-const story = { title: "Application/EmailModal" };
+const story = { title: "Test/EmailModal" };
 
 const COUTER_TIME = 5000 * 60; //? equal to 5 minutes.
 

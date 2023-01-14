@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button, Flex, StepsBar, ThemeDS } from "../../../";
 
 const story = {
-  title: "Components/StepsBar",
+  title: "Molecules/StepsBar",
   component: StepsBar,
   parameters: {
     docs: {

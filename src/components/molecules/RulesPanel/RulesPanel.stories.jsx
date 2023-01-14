@@ -7,7 +7,7 @@ import { carSchema } from "./utils/validationSchema";
 import { fields, rules } from "../../../constants/stories/RulesPanel";
 
 const story = {
-  title: "Components/RulesPanel",
+  title: "Molecules/RulesPanel",
   component: RulesPanel,
   parameters: {
     docs: {
