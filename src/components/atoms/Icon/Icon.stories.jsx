@@ -42,11 +42,33 @@ DinamicExample.args = {
 export const Sizes = () => {
   return (
     <ThemeDS>
+      <Icon icon="cog" margin="r-32" size="xl" />
+
       <Icon icon="cog" margin="r-32" size="lg" />
 
       <Icon icon="cog" margin="r-32" size="md" />
 
       <Icon icon="cog" size="sm" />
+    </ThemeDS>
+  );
+};
+
+export const Colors = () => {
+  return (
+    <ThemeDS>
+      <Icon color="black" icon="cog" margin="r-32" />
+
+      <Icon color="orange" icon="cog" margin="r-32" />
+
+      <Icon color="#AEAEAE" icon="cog" />
+    </ThemeDS>
+  );
+};
+
+export const Efects = () => {
+  return (
+    <ThemeDS>
+      <Icon icon="cog" margin="r-32" spin />
     </ThemeDS>
   );
 };

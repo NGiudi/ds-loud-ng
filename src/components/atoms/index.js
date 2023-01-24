@@ -15,6 +15,7 @@ export { Panel } from "./Panel/Panel";
 export { ProgressBar } from "./ProgressBar/ProgressBar";
 export { Select } from "./Select/Select";
 export { SelectOption } from "./Select/components/SelectOption/SelectOption";
+export { Table } from "./Table/Table";
 export { Tab } from "./Tabs/components/Tab/Tab";
 export { Tabs } from "./Tabs/Tabs";
 export { Text } from "./Text/Text";

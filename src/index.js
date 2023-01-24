@@ -34,6 +34,7 @@ export {
   ProgressBar,
   Select,
   SelectOption,
+  Table,
   Tab,
   Tabs,
   Text,

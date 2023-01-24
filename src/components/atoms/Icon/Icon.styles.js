@@ -20,6 +20,7 @@ const IconWrapper = styled.div`
 
   ${(props) =>
     css`
+      color: ${props.theme.colors[props.color]?._400 || props.color};
       height: ${props.theme.components.icon.wrapperSizes[props.size]};
       width: ${props.theme.components.icon.wrapperSizes[props.size]};
       ${marginProperties(props)}

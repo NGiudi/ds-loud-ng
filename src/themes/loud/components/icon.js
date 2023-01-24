@@ -14,6 +14,7 @@ export const iconSizes = {
   sm: "16px",
   md: "20px",
   lg: "32px",
+  xl: "48px",
 };
 
 export const icon = {

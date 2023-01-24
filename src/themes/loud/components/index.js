@@ -12,6 +12,7 @@ import { panel } from "./panel";
 import { progressBar } from "./progressBar";
 import { select } from "./select";
 import { stepsBar } from "./stepsBar";
+import { table } from "./table";
 import { tabs } from "./tabs";
 import { text } from "./text";
 import { title } from "./title";
@@ -31,6 +32,7 @@ export const components = {
   progressBar,
   select,
   stepsBar,
+  table,
   tabs,
   text,
   title,

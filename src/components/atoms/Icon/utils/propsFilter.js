@@ -13,7 +13,7 @@ export const getWrapperOptionsFilter = (props) => {
 /* end - wrapper filter */
 
 /* start - icon filter */
-const whtListIconOptions = ["color", "icon"];
+const whtListIconOptions = ["color", "icon", "spin"];
 
 /**
  * @param {object} props component properties.

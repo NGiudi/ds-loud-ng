@@ -27,7 +27,16 @@ Icon.propTypes = {
   color: PropTypes.string,
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   margin: PropTypes.string,
-  size: PropTypes.oneOf(["avatar", "avatarSm", "input", "lg", "md", "sm"]),
+  size: PropTypes.oneOf([
+    "avatar",
+    "avatarSm",
+    "input",
+    "lg",
+    "md",
+    "sm",
+    "xl",
+  ]),
+  spin: PropTypes.bool,
 };
 
 Icon.defaultProps = {
@@ -35,4 +44,5 @@ Icon.defaultProps = {
   icon: "home",
   margin: "a-0",
   size: "md",
+  spin: false,
 };
