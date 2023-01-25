@@ -1,7 +1,7 @@
 import { pick } from "../../../../utils/objects/object";
 
 /* start - wrapper filter */
-const whtListWrapperOptions = ["clickable", "margin"];
+const whtListWrapperOptions = ["margin"];
 
 /**
  * @param {object} props component properties.

@@ -1,57 +1,38 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+/*  hooks */
+import { useWindowSize } from "../../../hooks/useWindowSize";
+import { useTheme } from "styled-components";
+
 /* components */
-import { Text } from "../../../";
-
-/* styles */
-import { Styles } from "./Table.styles";
-
-/* utils */
-import { getWrapperOptionsFilter } from "./utils/propsFilter";
+import { DesktopTable, PhoneTable } from "./components";
 
 export const Table = (props) => {
-  const { columns, data, onClick } = props;
+  const size = useWindowSize();
+  const theme = useTheme();
 
-  const wrapperOptions = getWrapperOptionsFilter(props);
+  if (size.width > theme.breakpoints.mobile) {
+    return <DesktopTable {...props} />;
+  }
 
-  return (
-    <Styles.Wrapper {...wrapperOptions}>
-      <Styles.Row isHeader>
-        {columns.map((column, idx) => (
-          <Styles.Column key={`column-title-${idx}`} width={column.width}>
-            <Text weight="semibold">{column.label}</Text>
-          </Styles.Column>
-        ))}
-      </Styles.Row>
-
-      {data.map((row, idx) => (
-        <Styles.Row
-          idx={idx}
-          key={`table-row-${idx}`}
-          onClick={() => onClick && onClick(row)}
-        >
-          {columns.map((column, idx) => (
-            <Styles.Column key={`column-title-${idx}`} width={column.width}>
-              {column.content(row)}
-            </Styles.Column>
-          ))}
-        </Styles.Row>
-      ))}
-    </Styles.Wrapper>
-  );
+  return <PhoneTable {...props} />;
 };
 
 Table.propTypes = {
   columns: PropTypes.array.isRequired,
   data: PropTypes.array.isRequired,
+  desktopColumns: PropTypes.array,
   margin: PropTypes.string,
+  mobileColumns: PropTypes.array,
   onClick: PropTypes.func,
 };
 
 Table.defaultProps = {
   columns: [],
   data: [],
+  desktopColumns: [],
   margin: "a-0",
+  mobileColumns: [],
   onClick: null,
 };

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { marginProperties } from "../../../utils/styles";
+import { marginProperties } from "../../../../../utils/styles";
 
 const Column = styled.div`
   ${(props) => `

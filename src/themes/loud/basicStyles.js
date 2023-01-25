@@ -1,3 +1,7 @@
+export const breakpoints = {
+  mobile: 768,
+};
+
 export const textWeights = {
   light: "200",
   regular: "400",

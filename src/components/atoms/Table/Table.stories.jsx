@@ -22,34 +22,6 @@ export const DinamicExample = (args) => {
 };
 
 DinamicExample.args = {
-  columns: [
-    {
-      content: (data) => (
-        <Text margin="y-10">{`${data.name} ${data.last_name}`}</Text>
-      ),
-      label: "Nombre",
-      width: "15%",
-    },
-    {
-      content: (data) => <Text>{data.email}</Text>,
-      label: "Email",
-      width: "25%",
-    },
-    {
-      content: (data) => <Text>{data.phone}</Text>,
-      label: "Teléfono",
-      width: "15%",
-    },
-    {
-      content: (data) => <Text>{data.status}</Text>,
-      label: "Estado",
-      width: "10%",
-    },
-    {
-      content: (data) => <Text>{data.address}</Text>,
-      label: "Dirección",
-    },
-  ],
   data: [
     {
       name: "Nicolás",
@@ -74,6 +46,75 @@ DinamicExample.args = {
       phone: "+5491167946707",
       status: "inactive",
       address: "false 123",
+    },
+  ],
+  desktopColumns: [
+    {
+      content: (data) => (
+        <Text margin="y-10">{`${data.name} ${data.last_name}`}</Text>
+      ),
+      label: "Nombre",
+      width: "15%",
+    },
+    {
+      content: (data) => <Text>{data.email}</Text>,
+      label: "Email",
+      width: "25%",
+    },
+    {
+      content: (data) => <Text>{data.phone}</Text>,
+      label: "Teléfono",
+      width: "15%",
+    },
+    {
+      content: (data) => <Text>{data.address}</Text>,
+      label: "Dirección",
+      width: "20%",
+    },
+    {
+      content: (data) => <Text>{data.status}</Text>,
+      label: "Estado",
+      width: "10%",
+    },
+  ],
+  mobileColumns: [
+    {
+      content: (data) => (
+        <>
+          <Text weight="semibold">Nombre</Text>
+          <Text margin="y-10">{`${data.name} ${data.last_name}`}</Text>
+        </>
+      ),
+    },
+    {
+      content: (data) => (
+        <>
+          <div style={{ display: "inline-block", width: "50%" }}>
+            <Text weight="semibold">Email</Text>
+            <Text>{data.email}</Text>
+          </div>
+
+          <div style={{ display: "inline-block", width: "50%" }}>
+            <Text weight="semibold">Teléfono</Text>
+            <Text>{data.phone}</Text>
+          </div>
+        </>
+      ),
+    },
+    {
+      content: (data) => (
+        <>
+          <div style={{ display: "inline-block", width: "50%" }}>
+            <Text weight="semibold">Dirección</Text>
+            <Text>{data.address}</Text>
+          </div>
+
+          <div style={{ display: "inline-block", width: "50%" }}>
+            <Text weight="semibold">Estado</Text>
+            <Text>{data.status}</Text>
+          </div>
+        </>
+      ),
     },
   ],
 };

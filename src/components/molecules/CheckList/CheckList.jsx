@@ -48,7 +48,6 @@ export const CheckList = (props) => {
       setArrayClickedProp((prevValue) => {
         const newArray = [...prevValue];
         newArray[index] = !newArray[index];
-        console.log(newArray);
         return newArray;
       });
     }
