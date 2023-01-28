@@ -27,6 +27,7 @@ export {
   DropdownPanel,
   DropdownToogle,
   Icon,
+  IconButton,
   Image,
   Input,
   Modal,

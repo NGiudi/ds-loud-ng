@@ -23,8 +23,6 @@ export const Button = (props) => {
 
   const Button = ({ kind, ...others }) => {
     switch (kind) {
-      case "icon":
-        return <Styles.IconButton {...others} />;
       case "outlined":
         return <Styles.OutlinedButton {...others} />;
       case "solid":
@@ -73,11 +71,10 @@ Button.propTypes = {
     name: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     size: PropTypes.oneOf(["input", "lg", "md", "sm"]),
   }),
-  kind: PropTypes.oneOf(["icon", "outlined", "solid", "text"]),
+  kind: PropTypes.oneOf(["outlined", "solid", "text"]),
   loading: PropTypes.bool,
   margin: PropTypes.string,
   onClick: PropTypes.func,
-  size: PropTypes.oneOf(["input", "md"]),
   type: PropTypes.oneOf(["button", "submit"]),
 };
 
@@ -90,6 +87,5 @@ Button.defaultProps = {
   loading: false,
   margin: "a-0",
   onClick: null,
-  size: "md",
   type: "button",
 };

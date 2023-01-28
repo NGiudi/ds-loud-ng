@@ -1,7 +1,7 @@
 import { pick } from "../../../../utils/objects/object";
 
 /* start - wrapper filter */
-const whtWrapperOptions = ["margin", "size"];
+const whtWrapperOptions = ["color", "margin", "size"];
 
 /**
  * @param {object} props component properties.
@@ -13,7 +13,7 @@ export const getWrapperOptionsFilter = (props) => {
 /* end - wrapper filter */
 
 /* start - icon filter */
-const whtListIconOptions = ["color", "icon", "spin"];
+const whtListIconOptions = ["icon", "spin"];
 
 /**
  * @param {object} props component properties.

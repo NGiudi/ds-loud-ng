@@ -19,10 +19,18 @@ const story = {
       control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
+    onClick: {
+      action: "clicked",
+      description: "Función que se ejecuta al hacer click en el ícono.",
+    },
     size: {
       control: { type: "select" },
       description: "Recibe el valor del tamaño del ícono.",
       options: ["sm", "md", "lg"],
+    },
+    spin: {
+      control: { type: "boolean" },
+      description: "Si este valor es true el icono rota.",
     },
   },
 };
