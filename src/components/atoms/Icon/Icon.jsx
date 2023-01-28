@@ -24,7 +24,13 @@ export const Icon = (props) => {
 };
 
 Icon.propTypes = {
-  color: PropTypes.string,
+  color: PropTypes.oneOf(
+    PropTypes.string,
+    PropTypes.shape({
+      intensity: PropTypes.string,
+      tone: PropTypes.string,
+    })
+  ),
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   margin: PropTypes.string,
   size: PropTypes.oneOf([
@@ -40,7 +46,10 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-  color: null,
+  color: {
+    intensity: "700",
+    tone: "black",
+  },
   icon: "home",
   margin: "a-0",
   size: "md",

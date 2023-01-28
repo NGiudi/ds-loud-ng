@@ -8,9 +8,9 @@ const story = {
   component: Divider,
   argTypes: {
     color: {
-      control: { type: "select" },
-      description: "Se setea el color del fondo.",
-      options: ["black", "orange"],
+      control: { type: "text" },
+      description:
+        "Se setea el color del fondo, se pasa el tono de color y la intensidad.",
     },
     margin: {
       control: { type: "text" },

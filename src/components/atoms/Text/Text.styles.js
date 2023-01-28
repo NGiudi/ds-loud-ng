@@ -4,7 +4,9 @@ import { marginProperties, paddingProperties } from "../../../utils/styles";
 
 const textStyles = (props) => {
   return css`
-    color: ${props.color};
+    color: ${typeof props.color === "object"
+      ? props.theme.colors[props.color.tone][`_${props.color.intensity}`]
+      : props.color};
     font-family: "Roboto", sans-serif;
     font-size: ${props.theme.components[props.type].sizes[props.size]};
     font-weight: ${props.theme.components[props.type].weights[props.weight]};

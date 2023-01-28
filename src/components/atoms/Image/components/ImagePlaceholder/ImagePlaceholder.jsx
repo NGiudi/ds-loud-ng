@@ -19,11 +19,19 @@ export const ImagePlaceholder = (props) => {
   return (
     <Styles.IconPlaceholder {...props}>
       {placeholder ? (
-        <Text color="white" size={selectTextSize()} weight="bold">
+        <Text
+          color={{ intensity: "100", tone: "black" }}
+          size={selectTextSize()}
+          weight="bold"
+        >
           {placeholder.charAt(0).toUpperCase()}
         </Text>
       ) : (
-        <Icon color="white" icon="camera" size={size} />
+        <Icon
+          color={{ intensity: "100", tone: "black" }}
+          icon="camera"
+          size={size}
+        />
       )}
     </Styles.IconPlaceholder>
   );

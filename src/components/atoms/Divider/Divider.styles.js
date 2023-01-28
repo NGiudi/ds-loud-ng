@@ -6,7 +6,11 @@ const Wrapper = styled.div`
   border: none;
 
   ${(props) => `
-    background-color: ${props.theme.colors[props.color]._300};
+    background-color: ${
+      typeof props.color === "object"
+        ? props.theme.colors[props.color.tone][`_${props.color.intensity}`]
+        : props.color
+    };
     height: ${props.theme.components.divider.height};
 
     ${marginProperties(props)}

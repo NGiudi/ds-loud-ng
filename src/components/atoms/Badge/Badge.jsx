@@ -21,12 +21,21 @@ export const Badge = (props) => {
 
 Badge.propTypes = {
   children: PropTypes.node,
-  color: PropTypes.string,
+  color: PropTypes.oneOf(
+    PropTypes.string,
+    PropTypes.shape({
+      intensity: PropTypes.string,
+      tone: PropTypes.string,
+    })
+  ),
   margin: PropTypes.string,
 };
 
 Badge.defaultProps = {
   children: null,
-  color: "orange",
+  color: {
+    intensity: "700",
+    tone: "orange",
+  },
   margin: "a-0",
 };

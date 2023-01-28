@@ -8,7 +8,8 @@ const story = {
   argTypes: {
     color: {
       control: { type: "text" },
-      description: "Recibe el color del ícono.",
+      description:
+        "Se setea el color del fondo, se pasa el tono de color y la intensidad.",
     },
     icon: {
       control: { type: "text" },
@@ -56,9 +57,13 @@ export const Sizes = () => {
 export const Colors = () => {
   return (
     <ThemeDS>
-      <Icon color="black" icon="cog" margin="r-32" />
-
       <Icon color="orange" icon="cog" margin="r-32" />
+
+      <Icon
+        color={{ intensity: "700", tone: "orange" }}
+        icon="cog"
+        margin="r-32"
+      />
 
       <Icon color="#AEAEAE" icon="cog" />
     </ThemeDS>

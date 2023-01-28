@@ -18,7 +18,8 @@ const story = {
     },
     color: {
       control: { type: "text" },
-      description: "Se puede modificar el color del texto.",
+      description:
+        "Se setea el color del fondo, se pasa el tono de color y la intensidad.",
     },
     decoration: {
       control: { type: "select" },

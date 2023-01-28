@@ -28,12 +28,23 @@ export const SideBar = (props) => {
     router.push(to);
   };
 
-  const renderButtonContent = (btn) => {
+  const renderButtonContent = (btn, isSelected) => {
     return (
       <>
         <Icon icon={btn.icon} margin="r-8" size="sm" />
 
-        {isExpanded && <Text weight="semibold">{btn.label}</Text>}
+        {isExpanded && (
+          <Text
+            color={
+              isSelected
+                ? { intensity: "600", tone: "orange" }
+                : { intensity: "900", tone: "black" }
+            }
+            weight="semibold"
+          >
+            {btn.label}
+          </Text>
+        )}
       </>
     );
   };
@@ -44,14 +55,16 @@ export const SideBar = (props) => {
       <Styles.SideBarButtonsWrapper>
         {buttons &&
           buttons.map((btn, idx) => {
+            const isSelected = router.location.pathname.includes(btn.to);
+
             return (
               <Styles.SideBarButton
                 isExpanded={isExpanded}
-                isSelectedSection={router.location.pathname.includes(btn.to)}
+                isSelectedSection={isSelected}
                 key={`sidebar-button-${idx}`}
                 onClick={() => handleSidebarButtonClick(btn.to)}
               >
-                {renderButtonContent(btn)}
+                {renderButtonContent(btn, isSelected)}
               </Styles.SideBarButton>
             );
           })}
