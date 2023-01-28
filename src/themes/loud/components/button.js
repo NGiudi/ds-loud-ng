@@ -1,10 +1,3 @@
-const icon = {
-  size: {
-    md: "38px",
-    input: "24px",
-  },
-};
-
 const outlined = {
   borderRadius: "4px",
   height: "38px",
@@ -18,7 +11,6 @@ const solid = {
 };
 
 export const button = {
-  icon,
   outlined,
   solid,
 };

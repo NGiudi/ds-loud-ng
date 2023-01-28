@@ -38,7 +38,7 @@ const story = {
     },
     onClick: {
       action: "clicked",
-      description: "Función que se ejecuta al apretar el botón",
+      description: "Función que se ejecuta al apretar el botón.",
     },
     type: {
       control: { type: "select" },

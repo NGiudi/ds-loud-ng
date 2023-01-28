@@ -2,17 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* import components */
-import { Button } from "../../../../../";
+import { Icon } from "../../../../../";
 
 export const ShowPasswordButton = (props) => {
   const { onClick, show } = props;
 
   return (
-    <Button
-      icon={{ name: show ? "eye-slash" : "eye", size: "input" }}
-      kind="icon"
+    <Icon
+      color={{ intensity: "500", tone: "black" }}
+      icon={show ? "eye-slash" : "eye"}
+      margin="r-8"
       onClick={onClick}
-      size="input"
+      size="sm"
     />
   );
 };

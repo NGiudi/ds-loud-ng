@@ -11,13 +11,17 @@ import {
 } from "./utils/propsFilter";
 
 export const Icon = (props) => {
-  const { size } = props;
+  const { onClick, size } = props;
 
   const iconOptions = getIconOptionsFilter(props);
   const wrapperOptions = getWrapperOptionsFilter(props);
 
+  const handleClick = () => {
+    onClick && onClick();
+  };
+
   return (
-    <Styles.IconWrapper {...wrapperOptions}>
+    <Styles.IconWrapper onClick={handleClick} {...wrapperOptions}>
       <Styles.IconItem {...iconOptions} customsize={size} />
     </Styles.IconWrapper>
   );
@@ -27,6 +31,7 @@ Icon.propTypes = {
   color: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   margin: PropTypes.string,
+  onClick: PropTypes.func,
   size: PropTypes.oneOf([
     "avatar",
     "avatarSm",
@@ -46,6 +51,7 @@ Icon.defaultProps = {
   },
   icon: "home",
   margin: "a-0",
+  onClick: null,
   size: "md",
   spin: false,
 };

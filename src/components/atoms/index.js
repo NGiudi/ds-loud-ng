@@ -8,6 +8,7 @@ export { DropdownItem } from "./Dropdown/components/DropdownItem/DropdownItem";
 export { DropdownPanel } from "./Dropdown/components/DropdownPanel/DropdownPanel";
 export { DropdownToogle } from "./Dropdown/components/DropdownToogle/DropdownToogle";
 export { Icon } from "./Icon/Icon";
+export { IconButton } from "./IconButton/IconButton";
 export { Image } from "./Image/Image";
 export { Input } from "./Input/Input";
 export { Modal } from "./Modal/Modal";
