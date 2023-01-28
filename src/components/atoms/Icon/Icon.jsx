@@ -24,13 +24,7 @@ export const Icon = (props) => {
 };
 
 Icon.propTypes = {
-  color: PropTypes.oneOf(
-    PropTypes.string,
-    PropTypes.shape({
-      intensity: PropTypes.string,
-      tone: PropTypes.string,
-    })
-  ),
+  color: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   margin: PropTypes.string,
   size: PropTypes.oneOf([

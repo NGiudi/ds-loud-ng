@@ -21,13 +21,7 @@ export const Badge = (props) => {
 
 Badge.propTypes = {
   children: PropTypes.node,
-  color: PropTypes.oneOf(
-    PropTypes.string,
-    PropTypes.shape({
-      intensity: PropTypes.string,
-      tone: PropTypes.string,
-    })
-  ),
+  color: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   margin: PropTypes.string,
 };
 
