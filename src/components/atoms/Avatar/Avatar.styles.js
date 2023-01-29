@@ -23,6 +23,7 @@ const AvatarWrapper = styled.div`
 const PanelWrapper = styled.div`
   position: absolute;
   top: 100%;
+  width: 250px;
 
   ${(props) => css`
     ${props.pos}: 0;

@@ -64,6 +64,9 @@ export const Button = (props) => {
 };
 
 Button.propTypes = {
+  border: PropTypes.shape({
+    radius: PropTypes.string,
+  }),
   children: PropTypes.node,
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
@@ -79,6 +82,9 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  border: {
+    radius: "",
+  },
   children: null,
   disabled: false,
   fullWidth: false,
