@@ -40,7 +40,7 @@ export const Avatar = (props) => {
 
       {isOpen && (
         <Styles.PanelWrapper margin="t-8" pos={pos}>
-          <Panel>{props.children}</Panel>
+          <Panel padding="a-0">{props.children}</Panel>
         </Styles.PanelWrapper>
       )}
     </Styles.Wrapper>

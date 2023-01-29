@@ -1,6 +1,16 @@
 import React from "react";
 
-import { Avatar, Columns, Image, Text, ThemeDS } from "../../../";
+import {
+  Avatar,
+  Box,
+  Button,
+  Columns,
+  Divider,
+  Flex,
+  Image,
+  Text,
+  ThemeDS,
+} from "../../../";
 
 import fotoPerfil from "../../../assets/img/foto-perfil.jpg";
 
@@ -42,11 +52,25 @@ export const DinamicExample = (args) => {
   return (
     <ThemeDS>
       <Avatar {...args}>
-        <Image img={fotoPerfil} margin="t-10 x-50" size="sm" type="round" />
+        <Flex margin="l-20 y-10">
+          <Image img={fotoPerfil} size="sm" type="round" />
 
-        <Text align="center" margin="y-20" size="lg" weight="semibold">
-          Nicolás Giudice
-        </Text>
+          <Box margin="l-10">
+            <Text margin="a-0" size="md" weight="semibold">
+              Nicolás Giudice
+            </Text>
+
+            <Text margin="a-0" size="sm" weight="semibold">
+              Desarrollador
+            </Text>
+          </Box>
+        </Flex>
+
+        <Divider />
+
+        <Button border={{ radius: "0px" }} fullWidth kind="text">
+          Cerrar sesión
+        </Button>
       </Avatar>
     </ThemeDS>
   );
