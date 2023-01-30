@@ -89,7 +89,12 @@ export const Options = () => {
     <ThemeDS>
       <Formik initialValues={values} onSubmit={handleSubmit}>
         <Form>
-          <Input icon="search" label="Input with icon" name="options_example" />
+          <Input
+            description="Esta es la descripción del input"
+            icon="search"
+            label="Input with icon"
+            name="options_example"
+          />
         </Form>
       </Formik>
     </ThemeDS>

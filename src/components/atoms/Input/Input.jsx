@@ -15,7 +15,7 @@ import {
 } from "./utils/propsFilter";
 
 export const Input = (props) => {
-  const { icon, label, type } = props;
+  const { description, icon, label, type } = props;
 
   const inputProps = getInputOptionsFilter(props);
   const wrapperProps = getWrapperOptionsFilter(props);
@@ -38,6 +38,17 @@ export const Input = (props) => {
           weight="semibold"
         >
           {label}
+        </Text>
+      )}
+
+      {/* label */}
+      {!!description && (
+        <Text
+          color={{ intensity: "400", tone: "black" }}
+          margin="b-4"
+          size="sm"
+        >
+          {description}
         </Text>
       )}
 
@@ -66,6 +77,7 @@ export const Input = (props) => {
 
 Input.propTypes = {
   autoComplete: PropTypes.string,
+  description: PropTypes.string,
   icon: PropTypes.string,
   innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   label: PropTypes.string,
@@ -78,6 +90,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   autoComplete: "off",
+  description: "",
   icon: null,
   innerRef: null,
   label: "",
