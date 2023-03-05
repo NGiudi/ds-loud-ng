@@ -2,25 +2,29 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* import components */
-import { Button, Panel } from "../../../";
+import { Button, IconButton, Panel } from "../../../";
 
 /* import styles */
 import { Styles } from "./Modal.styles";
 
 export const Modal = (props) => {
-  const { onClose, padding, show } = props;
+  const { onClose, show } = props;
 
   if (!show) return null;
 
   return (
     <Styles.Overlay>
       <Styles.PanelWrapper width={props.width}>
-        <Panel padding={padding}>
+        <Panel padding="a-20">
           <Styles.CloseBtnWrapper>
-            <Button icon={{ name: "times" }} kind="icon" onClick={onClose} />
+            <IconButton
+              icon={{ name: "times" }}
+              kind="icon"
+              onClick={onClose}
+            />
           </Styles.CloseBtnWrapper>
 
-          {props.children}
+          <Styles.ContentBox padding="r-28">{props.children}</Styles.ContentBox>
 
           <Styles.ButtonsWrapper>
             {!props.cancelButton.hide && (
@@ -53,7 +57,6 @@ Modal.propTypes = {
     text: PropTypes.string,
   }),
   onClose: PropTypes.func,
-  padding: PropTypes.string,
   show: PropTypes.bool,
   width: PropTypes.string,
 };
@@ -70,7 +73,6 @@ Modal.defaultProps = {
     text: "Continuar",
   },
   onClose: null,
-  padding: "a-20",
   show: false,
   width: "auto",
 };

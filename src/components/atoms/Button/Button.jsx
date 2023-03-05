@@ -44,13 +44,14 @@ export const Button = (props) => {
     <Button loading={loading ? 1 : 0} onClick={handleClick} {...others}>
       {/* loading view */}
       <LoaderWrapper loading={loading ? 1 : 0} data-testid="loading">
-        <Icon icon="spinner" size="sm" />
+        <Icon color="inheret" icon="spinner" size="sm" />
       </LoaderWrapper>
 
       {/* content view */}
       <ContentWrapper loading={loading ? 1 : 0}>
         {iconAttributes.name && (
           <Icon
+            color="inheret"
             icon={iconAttributes.name}
             margin={isIconButton ? "" : "r-4"}
             size={iconAttributes.size}
@@ -83,7 +84,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   border: {
-    radius: "",
+    radius: "4px",
   },
   children: null,
   disabled: false,

@@ -16,6 +16,13 @@ const CloseBtnWrapper = styled.div`
     `}
 `;
 
+const ContentBox = styled.div`
+  ${(props) =>
+    css`
+      padding: ${paddingProperties(props)};
+    `}
+`;
+
 const Overlay = styled.div`
   align-items: center;
   backdrop-filter: blur(1px);
@@ -45,6 +52,7 @@ const PanelWrapper = styled.div`
 export const Styles = {
   ButtonsWrapper,
   CloseBtnWrapper,
+  ContentBox,
   Overlay,
   PanelWrapper,
 };

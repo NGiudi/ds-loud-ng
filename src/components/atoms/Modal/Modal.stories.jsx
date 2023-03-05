@@ -55,12 +55,11 @@ export const ConfirmationExample = () => {
         cancelButton={{ text: "No, cancelar" }}
         confirmButton={{ text: "Sí, avanzar" }}
         onClose={handleShowModal}
-        padding="a-20"
         show={showModal}
         width="600px"
       >
         <Text margin="b-20" type="title" weight="bold">
-          ¿Quieres activar la cuenta Natural Vegan SAS?
+          ¿Quieres activar la cuenta X?
         </Text>
 
         <Text margin="b-32">

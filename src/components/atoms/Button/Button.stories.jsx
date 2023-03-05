@@ -143,24 +143,6 @@ export const AllButtons = (args) => {
               </Button>
             </th>
           </tr>
-
-          <tr>
-            <th style={cellSize}>
-              <Button icon={{ name: "cog" }} kind="icon" onClick={() => {}} />
-            </th>
-
-            <th style={cellSize}></th>
-            <th style={cellSize}></th>
-
-            <th style={cellSize}>
-              <Button
-                disabled
-                icon={{ name: "cog" }}
-                kind="icon"
-                onClick={() => {}}
-              />
-            </th>
-          </tr>
         </tbody>
       </table>
     </ThemeDS>
