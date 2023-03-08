@@ -21,7 +21,7 @@ Proximamente los componentes también van a tener tests.
 
 1. El siguiente comando va a crear el build y va a publicar la página.
 ```
-npm run depluy
+npm run deploy
 ```
 2. Si en consola vemos el mensaje `Publish`, se ha publicado con éxito la página.
 
