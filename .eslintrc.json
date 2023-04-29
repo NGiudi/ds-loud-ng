@@ -1,10 +1,20 @@
 {
-  "extends": ["react-app", "plugin:react/recommended"],
-  "plugins": ["react", "prettier"],
+  "extends": [
+    "react-app",
+    "plugin:react/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": [
+    "react",
+    "prettier"
+  ],
   "rules": {
     "no-eval": "error",
-    "prettier/prettier": ["error", {
-      "endOfLine": "auto"}
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
     ]
   }
 }
