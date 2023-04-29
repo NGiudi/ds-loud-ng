@@ -45,20 +45,11 @@ export const AllButtons = (args) => {
         <tbody>
           <tr>
             <th style={cellSize}>
-              <IconButton
-                icon={{ name: "cog" }}
-                kind="icon"
-                onClick={() => {}}
-              />
+              <IconButton icon={{ name: "cog" }} onClick={() => {}} />
             </th>
 
             <th style={cellSize}>
-              <IconButton
-                disabled
-                icon={{ name: "cog" }}
-                kind="icon"
-                onClick={() => {}}
-              />
+              <IconButton disabled icon={{ name: "cog" }} onClick={() => {}} />
             </th>
           </tr>
         </tbody>

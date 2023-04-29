@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { RulesPanelContext } from "../../RulesPanelContext";
 
 /* import components */
-import { Button, Panel } from "../../../../../";
+import { IconButton, Panel } from "../../../../../";
 
 /* import styles */
 import { Styles } from "./RightPanel.styles";
@@ -43,19 +43,17 @@ export const RightPanel = (props) => {
 
             <Styles.ButtonsContainer>
               {el.isEditable && (
-                <Button
+                <IconButton
                   disabled={ctx.selectedElement !== INVALID_INDEX}
                   icon={{ name: "pencil" }}
-                  kind="icon"
                   onClick={() => onClickEdit(idx)}
                 />
               )}
 
               {el.isRemovable && (
-                <Button
+                <IconButton
                   disabled={ctx.selectedElement === idx}
                   icon={{ name: "trash" }}
-                  kind="icon"
                   onClick={() => onClickDelete(idx)}
                 />
               )}

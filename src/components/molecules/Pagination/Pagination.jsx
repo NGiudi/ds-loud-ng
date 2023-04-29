@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 /* components */
 import { PaginateButton } from "./components";
-import { Button, Icon } from "../../../";
+import { IconButton, Icon } from "../../../";
 
 /* styles */
 import { Styles } from "./Pagination.styles";
@@ -31,10 +31,9 @@ export const Pagination = (props) => {
 
   return (
     <Styles.Wrapper {...wrapperOptions}>
-      <Button
+      <IconButton
         disabled={currentPage === 1}
         icon={{ name: "chevron-left" }}
-        kind="icon"
         onClick={() => setCurrentPage((prev) => prev - 1)}
       />
 
@@ -61,10 +60,9 @@ export const Pagination = (props) => {
         }
       })}
 
-      <Button
+      <IconButton
         disabled={currentPage === pages}
         icon={{ name: "chevron-right" }}
-        kind="icon"
         onClick={() => setCurrentPage((prev) => prev + 1)}
       />
     </Styles.Wrapper>

@@ -36,7 +36,7 @@ npm run build
 
 3. Publicar el nuevo paquete
 ```
-  npm publish
+npm publish
 ```
 
 ## Assets

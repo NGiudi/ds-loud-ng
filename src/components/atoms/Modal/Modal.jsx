@@ -17,11 +17,7 @@ export const Modal = (props) => {
       <Styles.PanelWrapper width={props.width}>
         <Panel padding="a-20">
           <Styles.CloseBtnWrapper>
-            <IconButton
-              icon={{ name: "times" }}
-              kind="icon"
-              onClick={onClose}
-            />
+            <IconButton icon={{ name: "times" }} onClick={onClose} />
           </Styles.CloseBtnWrapper>
 
           <Styles.ContentBox padding="r-28">{props.children}</Styles.ContentBox>

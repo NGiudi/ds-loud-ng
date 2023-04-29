@@ -4,7 +4,7 @@ import React from "react";
 import { AppLayout, Avatar, Flex, Image, Text, ThemeDS } from "../../..";
 
 /* import external components  */
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const story = {
   title: "Molecules/AppLayout",
@@ -57,7 +57,7 @@ export const LayoutExample = () => {
     <ThemeDS>
       <BrowserRouter>
         <AppLayout sidebar={sidebar} topbar={{ content: <TopbarContent /> }}>
-          <Switch>
+          <Routes>
             <Route exact path="/games">
               <Text margin="b-24" type="title" weight="bold">
                 Juegos
@@ -181,7 +181,7 @@ export const LayoutExample = () => {
                 pains.
               </Text>
             </Route>
-          </Switch>
+          </Routes>
         </AppLayout>
       </BrowserRouter>
     </ThemeDS>

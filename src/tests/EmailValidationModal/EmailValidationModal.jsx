@@ -14,7 +14,9 @@ export const EmailValidationModal = (props) => {
         show={!props.isValidEmail && props.showModal}
         onClose={props.handleCloseModal}
         confirmButton={{
-          onClick: () => console.log("press continue"),
+          onClick: () => {
+            console.log("press continue");
+          },
           text: "Continuar",
         }}
         width="650px"
