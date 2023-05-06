@@ -19,7 +19,7 @@ const story = {
 };
 
 export const DinamicExample = () => {
-  const values = { marca: "" };
+  const values = { marca: "", modelo: "" };
 
   return (
     <ThemeDS>
@@ -30,7 +30,7 @@ export const DinamicExample = () => {
         }}
       >
         <Form>
-          <Select label="Seleccione un elemento" margin="t-20">
+          <Select label="Seleccione un elemento" margin="t-20" name="marca">
             <SelectOption value="Audi">
               <Text>Audi</Text>
             </SelectOption>
@@ -41,6 +41,20 @@ export const DinamicExample = () => {
 
             <SelectOption value="Volvo">
               <Text>Volvo</Text>
+            </SelectOption>
+          </Select>
+
+          <Select disabled label="Seleccione un elemento" margin="t-20" name="modelo">
+            <SelectOption value="Audi">
+              <Text>S3</Text>
+            </SelectOption>
+
+            <SelectOption value="Lexus">
+              <Text>Gol</Text>
+            </SelectOption>
+
+            <SelectOption value="Volvo">
+              <Text>Fox</Text>
             </SelectOption>
           </Select>
 

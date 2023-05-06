@@ -15,21 +15,21 @@ import { disclosureIcon } from "../../../../../utils/icons/icons";
 import { getPanelOptionsFilter } from "../../utils/propsFilter";
 
 export const SelectContent = (props) => {
+  const { disabled } = props;
+ 
   const ctx = useContext(SelectContext);
 
   const panelOptions = getPanelOptionsFilter(props);
 
   const handleClick = () => {
-    if (ctx.isOpen) {
-      ctx.closeSelect();
-    } else {
-      ctx.openSelect();
+    if (!disabled) {
+      ctx.toogleSelect();
     }
   };
 
   return (
     <Styles.SelectWrapper>
-      <Styles.SelectedOptionWrapper onClick={handleClick}>
+      <Styles.SelectedOptionWrapper disabled={disabled} onClick={handleClick}>
         <Styles.SelectedOption>
           <Text margin="l-8">
             {ctx.selectedValue || "- Seleccione una opción -"}

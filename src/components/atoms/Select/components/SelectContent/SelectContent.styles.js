@@ -51,6 +51,7 @@ const SelectedOptionWrapper = styled.div`
       border-radius: ${props.theme.components.select.border.radius};
       border-width: ${props.theme.components.select.border.width};
       height: ${props.theme.components.select.height};
+      opacity: ${props.disabled && "0.5"}
     `};
 `;
 

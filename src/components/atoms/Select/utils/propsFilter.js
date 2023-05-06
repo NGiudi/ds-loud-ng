@@ -1,7 +1,7 @@
 import { pick } from "../../../../utils/objects/object";
 
 /* start - select content filter */
-const whtListContentOptions = ["maxHeight"];
+const whtListContentOptions = ["disabled", "maxHeight"];
 
 /**
  * @param {object} props component properties.

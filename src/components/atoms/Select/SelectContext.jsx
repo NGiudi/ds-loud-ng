@@ -12,14 +12,22 @@ export const SelectProvider = (props) => {
   const closeSelect = () => setIsOpen(false);
   const openSelect = () => setIsOpen(true);
 
+  const toogleSelect = () => {
+    if (isOpen) {
+      closeSelect();
+    } else {
+      openSelect();
+    }
+  };
+
   return (
     <SelectContext.Provider
       value={{
         isOpen,
         selectedValue,
         closeSelect,
-        openSelect,
         setSelectedValue,
+        toogleSelect,
       }}
     >
       {children}
