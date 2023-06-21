@@ -8,12 +8,12 @@ import { SelectContext } from "../../SelectContext";
 import { Styles } from "./SelectOption.styles";
 
 export const SelectOption = (props) => {
-  const { value } = props;
+  const { displayValue, value } = props;
 
   const ctx = useContext(SelectContext);
 
   const handleClick = () => {
-    ctx.setSelectedValue(value);
+    ctx.handleSelectedValue(value, displayValue);
     ctx.closeSelect();
   };
 
@@ -26,10 +26,12 @@ export const SelectOption = (props) => {
 
 SelectOption.propTypes = {
   children: PropTypes.node,
+  displayValue: PropTypes.string,
   value: PropTypes.string,
 };
 
 SelectOption.defaultProps = {
   children: null,
+  displayValue: "",
   value: "",
 };

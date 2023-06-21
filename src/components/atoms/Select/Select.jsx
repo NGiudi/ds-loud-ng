@@ -19,20 +19,20 @@ import {
 } from "./utils/propsFilter";
 
 export const Select = (props) => {
-  const { label } = props;
+  const { displayValue, label, name } = props;
 
   const wrapperOptions = getWrapperOptionsFilter(props);
   const contentOptions = getContentOptionsFilter(props);
 
   return (
-    <SelectProvider>
-      <SelectValue name={props.name} />
+    <SelectProvider displayValue={displayValue} name={name}>
+      <SelectValue name={name} />
 
       <Styles.Wrapper {...wrapperOptions}>
         {!!label && (
           <Text
             as="label"
-            htmlFor={props.name}
+            htmlFor={name}
             margin="b-4"
             size="sm"
             weight="semibold"
@@ -49,6 +49,7 @@ export const Select = (props) => {
 
 Select.propTypes = {
   children: PropTypes.node,
+  displayValue: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string,
   margin: PropTypes.string,
@@ -57,6 +58,7 @@ Select.propTypes = {
 
 Select.defaultProps = {
   children: null,
+  displayValue: "",
   label: "",
   name: "",
   margin: "",
