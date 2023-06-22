@@ -6,20 +6,18 @@ import { useFormikContext } from "formik";
 export const SelectContext = createContext({});
 
 export const SelectProvider = (props) => {
-  const { children, displayValue, name } = props;
+  const { children, name } = props;
 
   const { values } = useFormikContext();
 
-  const [display, setDisplay] = useState(displayValue);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(values[name]);
 
   const closeSelect = () => setIsOpen(false);
   const openSelect = () => setIsOpen(true);
 
-  const handleSelectedValue = (value, displayValue) => {
+  const handleSelectedValue = (value) => {
     setSelectedValue(value);
-    setDisplay(displayValue);
   }
 
   const toogleSelect = () => {
@@ -33,7 +31,6 @@ export const SelectProvider = (props) => {
   return (
     <SelectContext.Provider
       value={{
-        display,
         isOpen,
         selectedValue,
         closeSelect,
@@ -48,10 +45,10 @@ export const SelectProvider = (props) => {
 
 SelectProvider.propTypes = {
   children: PropTypes.node,
-  displayValue: PropTypes.string,
+  name: PropTypes.string,
 };
 
 SelectProvider.defaultProps = {
   children: null,
-  displayValue: "",
+  name: "",
 };

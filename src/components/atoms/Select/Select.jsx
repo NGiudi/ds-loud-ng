@@ -19,13 +19,13 @@ import {
 } from "./utils/propsFilter";
 
 export const Select = (props) => {
-  const { displayValue, label, name } = props;
+  const { label, name } = props;
 
   const wrapperOptions = getWrapperOptionsFilter(props);
   const contentOptions = getContentOptionsFilter(props);
 
   return (
-    <SelectProvider displayValue={displayValue} name={name}>
+    <SelectProvider name={name}>
       <SelectValue name={name} />
 
       <Styles.Wrapper {...wrapperOptions}>
@@ -49,7 +49,6 @@ export const Select = (props) => {
 
 Select.propTypes = {
   children: PropTypes.node,
-  displayValue: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string,
   margin: PropTypes.string,
@@ -58,7 +57,6 @@ Select.propTypes = {
 
 Select.defaultProps = {
   children: null,
-  displayValue: "",
   label: "",
   name: "",
   margin: "",

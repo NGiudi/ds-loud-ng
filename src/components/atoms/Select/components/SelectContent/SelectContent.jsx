@@ -32,7 +32,7 @@ export const SelectContent = (props) => {
       <Styles.SelectedOptionWrapper disabled={disabled} onClick={handleClick}>
         <Styles.SelectedOption>
           <Text margin="l-8">
-            {ctx.display || ctx.selectedValue || "- Seleccione una opción -"}
+            {ctx.selectedValue || "- Seleccione una opción -"}
           </Text>
         </Styles.SelectedOption>
 

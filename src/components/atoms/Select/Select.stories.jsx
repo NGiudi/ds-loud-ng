@@ -39,6 +39,30 @@ const story = {
 export const DinamicExample = () => {
   const values = { marca: "volvo", modelo: "" };
 
+  const options = [
+    {
+      children: (
+        <Text>Audi</Text>
+      ),
+      display: "Audi",
+      value: "audi",
+    },
+    {
+      children: (
+        <Text>Lexus</Text>
+      ),
+      display: "Lexus",
+      value: "lexus",
+    },
+    {
+      children: (
+        <Text>Volvo</Text>
+      ),
+      display: "Volvo",
+      value: "volvo",
+    },
+  ]
+
   return (
     <ThemeDS>
       <Formik
@@ -48,30 +72,23 @@ export const DinamicExample = () => {
         }}
       >
         <Form>
-          <Select displayValue="VOLVO" label="Seleccione un elemento" margin="t-20" name="marca">
-            <SelectOption displayValue="AUDI" value="audi">
-              <Text>Audi</Text>
-            </SelectOption>
-
-            <SelectOption displayValue="LEXUS" value="lexus">
-              <Text>Lexus</Text>
-            </SelectOption>
-
-            <SelectOption displayValue="VOLVO" value="volvo">
-              <Text>Volvo</Text>
-            </SelectOption>
-          </Select>
+          <Select 
+            label="Seleccione un elemento"
+            margin="t-20"
+            name="marca"
+            options={options}
+          />
 
           <Select disabled label="Seleccione un elemento" margin="t-20" name="modelo">
-            <SelectOption value="Audi">
+            <SelectOption value="audi">
               <Text>S3</Text>
             </SelectOption>
 
-            <SelectOption value="Lexus">
+            <SelectOption value="lexus">
               <Text>Gol</Text>
             </SelectOption>
 
-            <SelectOption value="Volvo">
+            <SelectOption value="volvo">
               <Text>Fox</Text>
             </SelectOption>
           </Select>
