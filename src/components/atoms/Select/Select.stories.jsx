@@ -7,10 +7,12 @@ import {
   Flex,
   Image,
   Select,
-  SelectOption,
   Text,
   ThemeDS,
 } from "../../../";
+
+import { carBrands } from "../../../constants/cars/brands";
+import { carModels } from "../../../constants/cars/models";
 
 const story = {
   title: "Components/Select",
@@ -32,36 +34,14 @@ const story = {
       control: { type: "text" },
       description: "Se usa para completar los campos del formulario de formik.",
     },
-  
+    options: {
+      description: "Listado de opciones del select.",
+    },
   },
 };
 
 export const DinamicExample = () => {
-  const values = { marca: "volvo", modelo: "" };
-
-  const options = [
-    {
-      children: (
-        <Text>Audi</Text>
-      ),
-      display: "Audi",
-      value: "audi",
-    },
-    {
-      children: (
-        <Text>Lexus</Text>
-      ),
-      display: "Lexus",
-      value: "lexus",
-    },
-    {
-      children: (
-        <Text>Volvo</Text>
-      ),
-      display: "Volvo",
-      value: "volvo",
-    },
-  ]
+  const values = { marca: "volvo", modelo: "fox" };
 
   return (
     <ThemeDS>
@@ -75,24 +55,19 @@ export const DinamicExample = () => {
           <Select 
             label="Seleccione un elemento"
             margin="t-20"
+            maxHeight="200px"
             name="marca"
-            options={options}
+            options={carBrands}
           />
 
-          <Select disabled label="Seleccione un elemento" margin="t-20" name="modelo">
-            <SelectOption value="audi">
-              <Text>S3</Text>
-            </SelectOption>
-
-            <SelectOption value="lexus">
-              <Text>Gol</Text>
-            </SelectOption>
-
-            <SelectOption value="volvo">
-              <Text>Fox</Text>
-            </SelectOption>
-          </Select>
-
+          <Select 
+            disabled
+            label="Seleccione un elemento"
+            margin="t-20"
+            name="modelo"
+            options={carModels}
+          />
+           
           <Flex hAlign="end">
             <Button margin="t-8" type="submit">
               Enviar Formulario
@@ -107,6 +82,60 @@ export const DinamicExample = () => {
 export const ComplexSelect = () => {
   const values = { marca: "" };
 
+  const options = [
+    {
+      children: (
+        <Flex>
+          <Image margin="r-8" size="avatar" type="round" />
+
+          <div>
+            <Text size="lg" weight="semibold">
+              Title
+            </Text>
+
+            <Text size="sm">Description</Text>
+          </div>
+        </Flex>
+      ),
+      display: "Opcion 1",
+      value: "option_1",
+    },
+    {
+      children: (
+        <Flex>
+          <Image margin="r-8" size="avatar" type="round" />
+
+          <div>
+            <Text size="lg" weight="semibold">
+              Title
+            </Text>
+
+            <Text size="sm">Description</Text>
+          </div>
+        </Flex>
+      ),
+      display: "Opcion 2",
+      value: "option_2",
+    },
+    {
+      children: (
+        <Flex>
+          <Image margin="r-8" size="avatar" type="round" />
+
+          <div>
+            <Text size="lg" weight="semibold">
+              Title
+            </Text>
+
+            <Text size="sm">Description</Text>
+          </div>
+        </Flex>
+      ),
+      display: "Opcion 3",
+      value: "option_3",
+    },
+  ];
+
   return (
     <ThemeDS>
       <Formik
@@ -116,49 +145,12 @@ export const ComplexSelect = () => {
         }}
       >
         <Form>
-          <Select label="Seleccione un elemento" margin="t-20" name="marca">
-            <SelectOption value="Opcion 1">
-              <Flex>
-                <Image margin="r-8" size="avatar" type="round" />
-
-                <div>
-                  <Text size="lg" weight="semibold">
-                    Title
-                  </Text>
-
-                  <Text size="sm">Description</Text>
-                </div>
-              </Flex>
-            </SelectOption>
-
-            <SelectOption value="Opcion 2">
-              <Flex>
-                <Image margin="r-8" size="avatar" type="round" />
-
-                <div>
-                  <Text size="lg" weight="semibold">
-                    Title
-                  </Text>
-
-                  <Text size="sm">Description</Text>
-                </div>
-              </Flex>
-            </SelectOption>
-
-            <SelectOption value="Opcion 3">
-              <Flex>
-                <Image margin="r-8" size="avatar" type="round" />
-
-                <div>
-                  <Text size="lg" weight="semibold">
-                    Title
-                  </Text>
-
-                  <Text size="sm">Description</Text>
-                </div>
-              </Flex>
-            </SelectOption>
-          </Select>
+          <Select
+            label="Seleccione un elemento"
+            margin="t-20"
+            name="marca"
+            options={options}
+          />
 
           <Flex hAlign="end">
             <Button margin="t-8" type="submit">

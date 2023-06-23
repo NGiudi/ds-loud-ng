@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { SelectContext } from "../../SelectContext";
 
 /* components */
-import { Icon, Text } from "../../../";
+import { Icon, SelectOption, Text } from "../../../";
 
 /* styles */
 import { Styles } from "./SelectContent.styles";
@@ -27,12 +27,17 @@ export const SelectContent = (props) => {
     }
   };
 
+  const getValue = () => {
+    const option = ctx.options.find((option) => option.value === ctx.selectedValue);
+    return option ? option.display : null;
+  };
+
   return (
     <Styles.SelectWrapper>
       <Styles.SelectedOptionWrapper disabled={disabled} onClick={handleClick}>
         <Styles.SelectedOption>
           <Text margin="l-8">
-            {ctx.selectedValue || "- Seleccione una opción -"}
+            {getValue() || ctx.selectedValue || "- Seleccione una opción -"}
           </Text>
         </Styles.SelectedOption>
 
@@ -43,7 +48,12 @@ export const SelectContent = (props) => {
       {/* panel */}
       {ctx.isOpen ? (
         <Styles.SelectPanel margin="t-8" {...panelOptions}>
-          {props.children}
+          {ctx.options.map((option) => (
+            <SelectOption key={`option-${option.value}`} value={option.value}>
+              {option.children}
+            </SelectOption>
+          ))}
+          
         </Styles.SelectPanel>
       ) : null}
     </Styles.SelectWrapper>
@@ -51,11 +61,9 @@ export const SelectContent = (props) => {
 };
 
 SelectContent.propTypes = {
-  children: PropTypes.node,
   maxHeight: PropTypes.string,
 };
 
 SelectContent.defaultProps = {
-  children: null,
   maxHeight: "auto",
 };

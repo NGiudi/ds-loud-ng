@@ -6,7 +6,7 @@ import { useFormikContext } from "formik";
 export const SelectContext = createContext({});
 
 export const SelectProvider = (props) => {
-  const { children, name } = props;
+  const { children, name, options } = props;
 
   const { values } = useFormikContext();
 
@@ -32,6 +32,7 @@ export const SelectProvider = (props) => {
     <SelectContext.Provider
       value={{
         isOpen,
+        options,
         selectedValue,
         closeSelect,
         handleSelectedValue,
@@ -46,9 +47,11 @@ export const SelectProvider = (props) => {
 SelectProvider.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
+  options: PropTypes.array,
 };
 
 SelectProvider.defaultProps = {
   children: null,
   name: "",
+  options: [],
 };

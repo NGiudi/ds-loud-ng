@@ -1,10 +1,10 @@
-import { carsBrands } from "../cars/brands";
+import { carBrands } from "../cars/brands";
 
 export const fields = [
   {
     label: "Marca",
     name: "marca",
-    options: carsBrands,
+    options: carBrands,
     type: "select",
     props: {
       maxHeight: "200px",

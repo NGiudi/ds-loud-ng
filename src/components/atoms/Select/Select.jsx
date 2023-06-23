@@ -19,13 +19,13 @@ import {
 } from "./utils/propsFilter";
 
 export const Select = (props) => {
-  const { label, name } = props;
+  const { label, name, options } = props;
 
   const wrapperOptions = getWrapperOptionsFilter(props);
   const contentOptions = getContentOptionsFilter(props);
 
   return (
-    <SelectProvider name={name}>
+    <SelectProvider name={name} options={options}>
       <SelectValue name={name} />
 
       <Styles.Wrapper {...wrapperOptions}>
@@ -41,24 +41,24 @@ export const Select = (props) => {
           </Text>
         )}
 
-        <SelectContent {...contentOptions}>{props.children}</SelectContent>
+        <SelectContent {...contentOptions} />
       </Styles.Wrapper>
     </SelectProvider>
   );
 };
 
 Select.propTypes = {
-  children: PropTypes.node,
   label: PropTypes.string,
   name: PropTypes.string,
   margin: PropTypes.string,
   maxHeight: PropTypes.string, //? content panel height
+  options: PropTypes.array,
 };
 
 Select.defaultProps = {
-  children: null,
   label: "",
   name: "",
   margin: "",
   maxHeight: "auto",
+  options: [],
 };

@@ -12,14 +12,13 @@ export const FieldItem = (props) => {
       const { label, name, options, props } = field;
 
       return (
-        <Select label={label} margin="b-24" name={name} {...props}>
-          {options &&
-            options.map((opc) => (
-              <SelectOption key={`rulesPanel_${name}_${opc}`} value={opc}>
-                {opc}
-              </SelectOption>
-            ))}
-        </Select>
+        <Select
+          label={label}
+          margin="b-24"
+          name={name}
+          options={options}
+          {...props}
+        />
       );
     default:
       return <Input margin="b-4" {...field} />;
