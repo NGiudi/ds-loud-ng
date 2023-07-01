@@ -5,6 +5,7 @@ import { Icon, ThemeDS } from "../../../";
 const story = {
   title: "Components/Icon",
   component: Icon,
+  tags: ["autodocs"],
   argTypes: {
     color: {
       control: { type: "text" },

@@ -5,6 +5,7 @@ import { Button, Flex, StepsBar, ThemeDS } from "../../../";
 const story = {
   title: "Molecules/StepsBar",
   component: StepsBar,
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {

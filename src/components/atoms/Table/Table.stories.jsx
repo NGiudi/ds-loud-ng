@@ -5,6 +5,7 @@ import { Table, Text, ThemeDS } from "../../../";
 const story = {
   title: "Components/Table",
   component: Table,
+  tags: ["autodocs"],
   argTypes: {
     margin: {
       control: { type: "text" },

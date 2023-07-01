@@ -5,6 +5,7 @@ import { Columns, Panel, Text, ThemeDS } from "../../../";
 const story = {
   title: "Layout/Columns",
   component: Columns,
+  tags: ["autodocs"],
   argTypes: {
     gap: {
       control: { type: "text" },

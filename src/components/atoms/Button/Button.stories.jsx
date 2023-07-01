@@ -5,6 +5,7 @@ import { Button, ThemeDS } from "../../../";
 const story = {
   title: "Components/Button",
   component: Button,
+  tags: ["autodocs"],
   argTypes: {
     children: {
       control: { type: "text" },

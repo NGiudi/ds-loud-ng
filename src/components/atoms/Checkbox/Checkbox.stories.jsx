@@ -9,6 +9,7 @@ import { Form, Formik } from "formik";
 const story = {
   title: "Components/Checkbox",
   component: Checkbox,
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {

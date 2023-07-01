@@ -6,6 +6,7 @@ import { Badge, ThemeDS } from "../../../";
 const story = {
   title: "Components/Badge",
   component: Badge,
+  tags: ["autodocs"],
   argTypes: {
     color: {
       control: { type: "text" },

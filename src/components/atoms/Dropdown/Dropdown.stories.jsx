@@ -21,6 +21,7 @@ import usa from "../../../assets/countries flag/usa.png";
 const story = {
   title: "Components/Dropdown",
   component: Dropdown,
+  tags: ["autodocs"],
   argTypes: {
     icon: {
       control: { type: "text" },

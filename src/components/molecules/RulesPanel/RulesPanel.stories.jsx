@@ -9,6 +9,7 @@ import { fields, rules } from "../../../constants/stories/RulesPanel";
 const story = {
   title: "Molecules/RulesPanel",
   component: RulesPanel,
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {

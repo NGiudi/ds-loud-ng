@@ -5,6 +5,7 @@ import { Panel, Text, ThemeDS } from "../../../";
 const story = {
   title: "Components/Panel",
   component: Panel,
+  tags: ["autodocs"],
   argTypes: {
     align: {
       control: false,

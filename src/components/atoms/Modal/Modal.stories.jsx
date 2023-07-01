@@ -5,6 +5,7 @@ import { Button, Modal, Text, ThemeDS } from "../../../";
 const story = {
   title: "Components/Modal",
   component: Modal,
+  tags: ["autodocs"],
   argTypes: {
     cancelButton: {
       control: { type: "text" },

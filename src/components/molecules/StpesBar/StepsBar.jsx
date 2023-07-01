@@ -52,9 +52,9 @@ export const StepsBar = (props) => {
 
   const renderStep = (renderStep) => {
     return (
-      <>
+      <React.Fragment key={`step-${renderStep}`}>
         {renderStep !== 1 && (
-          <ProgressBarWrapper key={`progressBar-step-${renderStep}`}>
+          <ProgressBarWrapper>
             <ProgressBar
               borderRound
               noShowAnimationOnFirstLoad={noShowOldAnaimation(renderStep)}
@@ -66,14 +66,10 @@ export const StepsBar = (props) => {
           </ProgressBarWrapper>
         )}
 
-        <Circle
-          key={`circle-step-${renderStep}`}
-          size={size}
-          type={selectTypeCircle(renderStep)}
-        >
+        <Circle size={size} type={selectTypeCircle(renderStep)}>
           {renderIconInsideCircle(renderStep)}
         </Circle>
-      </>
+      </React.Fragment>
     );
   };
 

@@ -7,6 +7,7 @@ import { ThemeDS, Flex } from "../";
 const story = {
   title: "Layout/Flex",
   component: Flex,
+  tags: ["autodocs"],
   argTypes: {
     hAlign: {
       control: { type: "select" },

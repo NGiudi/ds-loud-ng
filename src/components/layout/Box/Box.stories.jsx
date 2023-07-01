@@ -5,6 +5,7 @@ import { Box, ThemeDS } from "../../..";
 const story = {
   title: "Layout/Box",
   component: Box,
+  tags: ["autodocs"],
   argTypes: {
     margin: {
       control: { type: "text" },

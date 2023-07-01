@@ -5,6 +5,7 @@ import { Pagination, ThemeDS } from "../../..";
 
 const story = {
   title: "Molecules/Pagination",
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {

@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const story = {
   title: "Molecules/AppLayout",
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {

@@ -26,7 +26,7 @@ export const SelectOption = (props) => {
 
 SelectOption.propTypes = {
   children: PropTypes.node,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 };
 
 SelectOption.defaultProps = {

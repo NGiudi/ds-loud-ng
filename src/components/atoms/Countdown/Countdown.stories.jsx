@@ -7,6 +7,7 @@ import { Countdown } from "./Countdown";
 const story = {
   title: "Components/Countdown",
   component: Countdown,
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {

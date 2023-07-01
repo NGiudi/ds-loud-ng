@@ -7,6 +7,7 @@ import { Button, Input, Panel, ThemeDS } from "../../../";
 const story = {
   title: "Components/Input",
   component: Input,
+  tags: ["autodocs"],
   argTypes: {
     icon: {
       control: { type: "text" },

@@ -17,6 +17,7 @@ import fotoPerfil from "../../../assets/img/foto-perfil.jpg";
 const story = {
   title: "Components/Avatar",
   component: Avatar,
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {

@@ -10,6 +10,7 @@ import fotoPerfil from "../../../assets/img/foto-perfil.jpg";
 const story = {
   title: "Components/Image",
   component: Image,
+  tags: ["autodocs"],
   argTypes: {
     alt: {
       control: { type: "text" },

@@ -6,6 +6,7 @@ import { Divider, ThemeDS } from "../../../";
 const story = {
   title: "Components/Divider",
   component: Divider,
+  tags: ["autodocs"],
   argTypes: {
     color: {
       control: { type: "text" },

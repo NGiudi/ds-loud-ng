@@ -5,6 +5,7 @@ import { Text, ThemeDS } from "../../../";
 const story = {
   title: "Layout/ThemeDS",
   component: ThemeDS,
+  tags: ["autodocs"],
   argTypes: {
     name: {
       control: { type: "select" },

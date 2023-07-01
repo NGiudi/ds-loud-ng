@@ -5,6 +5,7 @@ import { Tabs, Tab, ThemeDS } from "../../../";
 const story = {
   title: "Components/Tabs",
   component: Tabs,
+  tags: ["autodocs"],
   argTypes: {
     margin: {
       description: "Se setea la distancia de los margenes.",

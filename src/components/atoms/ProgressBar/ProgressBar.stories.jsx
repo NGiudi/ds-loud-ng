@@ -5,6 +5,7 @@ import { Button, Flex, ProgressBar, ThemeDS } from "../../../";
 const story = {
   title: "Components/ProgressBar",
   component: ProgressBar,
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {

@@ -5,6 +5,7 @@ import { IconButton, ThemeDS } from "../../..";
 const story = {
   title: "Components/IconButton",
   component: IconButton,
+  tags: ["autodocs"],
   argTypes: {
     disabled: {
       control: { type: "boolean" },

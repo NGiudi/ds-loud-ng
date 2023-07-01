@@ -7,6 +7,7 @@ import { CheckList } from "./CheckList";
 
 const story = {
   title: "Molecules/CheckList",
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
