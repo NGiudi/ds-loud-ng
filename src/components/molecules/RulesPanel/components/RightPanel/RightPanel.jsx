@@ -35,8 +35,8 @@ export const RightPanel = (props) => {
 
         return (
           <Styles.ContentContainer
-            isFirstItem={isFirstItem}
-            isLastItem={isLastItem}
+            $isFirstItem={isFirstItem}
+            $isLastItem={isLastItem}
             key={`rightPanel-listItem-${idx}`}
           >
             <div>{listElement && listElement(el.data)}</div>

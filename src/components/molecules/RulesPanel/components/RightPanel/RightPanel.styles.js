@@ -11,10 +11,10 @@ const ContentContainer = styled.div`
 
   ${(props) =>
     css`
-      border-bottom: ${props.isLastItem
+      border-bottom: ${props.$isLastItem
         ? "none"
         : `solid 1px ${props.theme.colors.black._300}`};
-      padding: ${props.isFirstItem ? "0 0 10px 0" : "10px 0"};
+      padding: ${props.$isFirstItem ? "0 0 10px 0" : "10px 0"};
     `}
 `;
 

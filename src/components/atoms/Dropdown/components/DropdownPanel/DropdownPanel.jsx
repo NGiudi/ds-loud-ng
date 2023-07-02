@@ -8,10 +8,10 @@ import { Panel } from "../../../../../";
 import { PanelWrapper, TriangleWrapper } from "./DropdownPanel.styles";
 
 export const DropdownPanel = (props) => {
-  const { children, direction, name, onSelect, ...others } = props;
+  const { children, direction, name, onSelect, showPanel } = props;
 
   return (
-    <PanelWrapper direction={direction} {...others}>
+    <PanelWrapper direction={direction} $showPanel={showPanel}>
       <Panel margin="t-8" padding="y-4 x-0">
         <TriangleWrapper direction={direction} />
         {children.map((item, index) => {

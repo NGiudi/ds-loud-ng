@@ -3,9 +3,8 @@ import styled, { css } from "styled-components";
 import { marginProperties } from "../../../utils/styles";
 
 const Wrapper = styled.div`
-  ${(props) =>
-    css`
-      cursor: ${props.clickable && "pointer"};
+  ${(props) => css`
+      cursor: ${props.clickable ? "pointer" : "auto"};
 
       ${marginProperties(props)}
     `}

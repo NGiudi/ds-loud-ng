@@ -20,7 +20,7 @@ export const DesktopTable = (props) => {
 
   return (
     <Styles.Wrapper {...wrapperOptions}>
-      <Styles.Row isHeader>
+      <Styles.Row $isHeader>
         {list.map((column, idx) => (
           <Styles.Column key={`column-title-${idx}`} width={column.width}>
             <Text weight="semibold">{column.label}</Text>

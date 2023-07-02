@@ -18,18 +18,18 @@ const Row = styled.div`
   ${(props) => `
     border-bottom-color: ${props.theme.colors.black._400};
     border-bottom-width: ${props.theme.components.table.row.borderBottom.width};
-    cursor: ${!props.isHeader ? "pointer" : "default"};
+    cursor: ${!props.$isHeader ? "pointer" : "default"};
     padding: ${props.theme.components.table.row.padding};
 
     &:hover {
       background-color: ${
-        !props.isHeader ? props.theme.colors.black._200 : "transparent"
+        !props.$isHeader ? props.theme.colors.black._200 : "transparent"
       };
     }
 
     &:hover&:active {
       background-color: ${
-        !props.isHeader ? props.theme.colors.black._300 : "transparent"
+        !props.$isHeader ? props.theme.colors.black._300 : "transparent"
       };
     }
   `}

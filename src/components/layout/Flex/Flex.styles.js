@@ -7,8 +7,8 @@ const Wrapper = styled.div`
 
   ${(props) =>
     css`
-      align-items: ${props.vAlign};
-      justify-content: ${props.hAlign};
+      align-items: ${props.$vAlign};
+      justify-content: ${props.$hAlign};
 
       ${marginProperties(props)}
     `}

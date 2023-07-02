@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 
       ${marginProperties(props)}
 
-      @media only screen and (max-width: ${props.minWidth}) {
+      @media only screen and (max-width: ${props.$minWidth}) {
         grid-template-columns: repeat(1, 1fr);
       }
     `}

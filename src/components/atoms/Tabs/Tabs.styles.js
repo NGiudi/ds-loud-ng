@@ -21,7 +21,7 @@ const TabButton = styled.button`
 
   ${(props) =>
     css`
-      border-bottom-color: ${props.isSelected
+      border-bottom-color: ${props.$isSelected
         ? props.theme.colors.orange._600
         : "transparent"};
       border-bottom-width: ${props.theme.components.tabs.button.border.width};

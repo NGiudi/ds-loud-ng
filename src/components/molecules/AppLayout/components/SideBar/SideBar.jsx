@@ -59,8 +59,8 @@ export const SideBar = (props) => {
 
             return (
               <Styles.SideBarButton
-                isExpanded={isExpanded}
-                isSelectedSection={isSelected}
+                $isExpanded={isExpanded}
+                $isSelectedSection={isSelected}
                 key={`sidebar-button-${idx}`}
                 onClick={() => handleSidebarButtonClick(btn.to)}
               >
@@ -71,7 +71,7 @@ export const SideBar = (props) => {
       </Styles.SideBarButtonsWrapper>
 
       <Styles.BottomContentStyles>
-        <Styles.SideBarButton isExpanded={isExpanded} onClick={handleClick}>
+        <Styles.SideBarButton $isExpanded={isExpanded} onClick={handleClick}>
           {renderButtonContent(contractedButton)}
         </Styles.SideBarButton>
       </Styles.BottomContentStyles>

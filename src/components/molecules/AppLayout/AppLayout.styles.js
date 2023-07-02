@@ -10,11 +10,6 @@ export const ContentBox = styled.div`
 
   ${(props) => css`
     background-color: ${props.theme.colors.black._100};
-    width: calc(100vw - ${
-      props.isExpanded
-        ? props.theme.components.appLayout.sidebar.width.expanded
-        : props.theme.components.appLayout.sidebar.width.contracted
-    });
 
     &::-webkit-scrollbar {
       width: ${props.theme.components.appLayout.scroll.width};
@@ -33,7 +28,7 @@ export const ContentBox = styled.div`
       props,
       props.theme.components.appLayout.content.padding
     )}
-  `}
+  `}}
 `;
 
 export const MainContent = styled.div`

@@ -18,7 +18,7 @@ const OutlinedButton = styled.button`
       color: ${props.theme.colors.orange._600};
       height: ${props.theme.components.button.outlined.height};
       padding: ${props.theme.components.button.outlined.padding};
-      width: ${props.fullWidth ? "100%" : "auto"};
+      width: ${props.$fullWidth ? "100%" : "auto"};
 
       ${marginProperties(props)}
     `}
@@ -67,7 +67,7 @@ const SolidButton = styled.button`
       box-shadow: ${props.theme.shadows.level1};
       height: ${props.theme.components.button.solid.height};
       padding: ${props.theme.components.button.solid.padding};
-      width: ${props.fullWidth ? "100%" : "auto"};
+      width: ${props.$fullWidth ? "100%" : "auto"};
 
       ${marginProperties(props)}
     `}
@@ -113,7 +113,7 @@ const TextButton = styled.button`
         : props.theme.components.button.outlined.borderRadius};
       height: ${props.theme.components.button.solid.height};
       padding: ${props.theme.components.button.solid.padding};
-      width: ${props.fullWidth ? "100%" : "auto"};
+      width: ${props.$fullWidth ? "100%" : "auto"};
 
       ${marginProperties(props)}
     `}

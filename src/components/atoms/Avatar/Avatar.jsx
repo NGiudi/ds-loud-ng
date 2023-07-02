@@ -34,7 +34,7 @@ export const Avatar = (props) => {
 
   return (
     <Styles.Wrapper margin={props.margin} ref={innerRef}>
-      <Styles.AvatarWrapper isSelected={isOpen} onClick={handleAvatarClick}>
+      <Styles.AvatarWrapper $isSelected={isOpen} onClick={handleAvatarClick}>
         <Image size={size} type="round" {...imageAttributes} />
       </Styles.AvatarWrapper>
 

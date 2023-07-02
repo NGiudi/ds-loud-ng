@@ -20,13 +20,18 @@ export const getBarOptionsFilter = (props) => {
 /* end - barOptions filter */
 
 /* start - progressBarOptions filter */
-const whtListProgressBarOptions = ["borderRound", "margin", "size"];
+const whtListProgressBarOptions = ["margin", "size"];
 
 /**
  * @param {object} props component properties.
  * @return {object} filtered props.
  */
 export const getProgressBarOptionsFilter = (props) => {
-  return pick(props, whtListProgressBarOptions);
+  let validOptions = pick(props, whtListProgressBarOptions);
+
+  //? modify prop name.
+  validOptions.$borderRound = props.borderRound;
+
+  return validOptions;
 };
 /* end - barOptions filter */

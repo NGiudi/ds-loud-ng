@@ -23,11 +23,11 @@ const SideBarButton = styled.button`
   display: flex;
 
   ${(props) => css`
-    color: ${props.isSelectedSection
+    color: ${props.$isSelectedSection
       ? props.theme.colors.orange._600
       : "inheret"};
 
-    width: ${props.isExpanded
+    width: ${props.$isExpanded
       ? props.theme.components.appLayout.sidebar.width.expanded
       : props.theme.components.appLayout.sidebar.width.contracted};
 

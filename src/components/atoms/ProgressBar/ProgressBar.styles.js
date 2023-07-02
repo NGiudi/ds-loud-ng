@@ -19,7 +19,7 @@ const ProgressBarWrapper = styled.div`
   ${(props) =>
     css`
       background-color: ${props.theme.colors.black._300};
-      border-radius: ${props.borderRound &&
+      border-radius: ${props.$borderRound &&
       props.theme.components.progressBar.border.radius[props.size]};
 
       ${marginProperties(props)}

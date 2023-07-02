@@ -25,6 +25,6 @@ export const PanelWrapper = styled.div`
       ${props.direction === "right" && "left: 0;"}
       ${props.direction === "left" && "right: 0;"}
 
-      display: ${props.showPanel ? "block" : "none"};
+      display: ${props.$showPanel ? "block" : "none"};
     `};
 `;

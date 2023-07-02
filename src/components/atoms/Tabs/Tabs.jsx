@@ -37,7 +37,7 @@ export const Tabs = (props) => {
             <Styles.TabButton
               key={`${name}_tab_${idx}`}
               id={tabName}
-              isSelected={idx === posTabSelected}
+              $isSelected={idx === posTabSelected}
               onClick={handleBtnClick}
               value={tabName}
             >

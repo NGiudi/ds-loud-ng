@@ -9,7 +9,7 @@ import { LoaderWrapper, ContentWrapper } from "./Wrappers.styles";
 import { Styles } from "./Button.styles";
 
 export const Button = (props) => {
-  const { children, loading, onClick, ...others } = props;
+  const { children, fullWidth, loading, onClick, ...others } = props;
 
   const isIconButton = props.kind === "icon";
 
@@ -41,7 +41,12 @@ export const Button = (props) => {
   };
 
   return (
-    <Button loading={loading ? 1 : 0} onClick={handleClick} {...others}>
+    <Button 
+      $fullWidth={fullWidth}
+      loading={loading ? 1 : 0}
+      onClick={handleClick}
+      {...others}
+    >
       {/* loading view */}
       <LoaderWrapper loading={loading ? 1 : 0} data-testid="loading">
         <Icon color="inheret" icon="spinner" size="sm" />
