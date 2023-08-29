@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 
 import { Styles } from "./Flex.styles";
 
-import { getWrapperOptionsFilter } from "./utils/propsFilter";
-
 export const Flex = (props) => {
-  const wrapperOptions = getWrapperOptionsFilter(props);
-
-  return <Styles.Wrapper {...wrapperOptions}>{props.children}</Styles.Wrapper>;
+  const {hAlign, margin, vAlign} = props;
+  
+  return (
+    <Styles.Wrapper $margin={margin} $hAlign={hAlign} $vAlign={vAlign}>
+      {props.children}
+    </Styles.Wrapper>
+  );
 };
 
 Flex.propTypes = {

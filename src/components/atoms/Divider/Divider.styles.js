@@ -7,9 +7,9 @@ const Wrapper = styled.div`
 
   ${(props) => `
     background-color: ${
-      typeof props.color === "object"
-        ? props.theme.colors[props.color.tone][`_${props.color.intensity}`]
-        : props.color
+      typeof props.$color === "object"
+        ? props.theme.colors[props.$color.tone][`_${props.$color.intensity}`]
+        : props.$color
     };
     height: ${props.theme.components.divider.height};
 

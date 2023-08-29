@@ -61,7 +61,7 @@ export const Bar = (props) => {
     return `${porcent}%`;
   };
 
-  return <Styles.BarWrapper size={props.size} porcent={porcentString()} />;
+  return <Styles.BarWrapper size={props.size} $porcent={porcentString()} />;
 };
 
 Bar.propTypes = {

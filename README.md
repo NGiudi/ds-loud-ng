@@ -3,6 +3,10 @@ Se está desarrollando un Desing System para proyectos de React con la menor can
 
 El proyecto está publicado en github pages: https://ngiudi.github.io/ds-loud-ng
 
+## TODOs
+
+1. Corregir los warnings de los componentes, falta los componentes dentro de la carpeta molecules.
+
 ## Caracteristicas:
 * Se puede pasar un theme y personalizar colores, espaciados, bordes, entre otros estilos de los componentes.
 

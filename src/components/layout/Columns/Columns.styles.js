@@ -9,8 +9,8 @@ export const Wrapper = styled.div`
   ${(props) =>
     css`
       grid-template-columns: repeat(${props.children.length}, 1fr);
-      grid-column-gap: ${props.gap};
-      grid-row-gap: ${props.gap};
+      grid-column-gap: ${props.$gap};
+      grid-row-gap: ${props.$gap};
 
       ${marginProperties(props)}
 

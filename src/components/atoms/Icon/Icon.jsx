@@ -1,28 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* import styles. */
 import { Styles } from "./Icon.styles";
 
-/* import utils */
-import {
-  getIconOptionsFilter,
-  getWrapperOptionsFilter,
-} from "./utils/propsFilter";
-
 export const Icon = (props) => {
-  const { onClick, size } = props;
-
-  const iconOptions = getIconOptionsFilter(props);
-  const wrapperOptions = getWrapperOptionsFilter(props);
+  const { color, icon, margin, onClick, size, spin } = props;
 
   const handleClick = () => {
     onClick && onClick();
   };
 
   return (
-    <Styles.IconWrapper onClick={handleClick} {...wrapperOptions}>
-      <Styles.IconItem {...iconOptions} customsize={size} />
+    <Styles.IconWrapper $color={color} $margin={margin} onClick={handleClick} size={size}>
+      <Styles.IconItem  $customsize={size} icon={icon} spin={spin} />
     </Styles.IconWrapper>
   );
 };

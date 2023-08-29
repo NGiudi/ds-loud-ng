@@ -1,16 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* styles */
 import { Styles } from "./Divider.styles";
 
-/* utils */
-import { getWrapperOptionsFilter } from "./utils/propsFilter";
-
 export const Divider = (props) => {
-  const wrapperOptions = getWrapperOptionsFilter(props);
+  const { color, margin } = props;
 
-  return <Styles.Wrapper {...wrapperOptions} />;
+  return <Styles.Wrapper $color={color} $margin={margin} />;
 };
 
 Divider.propTypes = {

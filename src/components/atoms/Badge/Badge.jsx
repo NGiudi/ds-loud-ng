@@ -5,13 +5,11 @@ import { Text } from "../";
 
 import { Styles } from "./Badge.styles";
 
-import { getWrapperOptionsFilter } from "./utils/propsFilter";
-
 export const Badge = (props) => {
-  const wrapperOptions = getWrapperOptionsFilter(props);
+  const { color, margin } = props;
 
   return (
-    <Styles.Wrapper {...wrapperOptions}>
+    <Styles.Wrapper $color={color} $margin={margin}>
       <Text weight="semibold" size="sm">
         {props.children}
       </Text>

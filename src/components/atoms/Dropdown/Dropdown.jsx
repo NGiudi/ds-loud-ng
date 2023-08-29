@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-/* import hooks */
 import { useOuterClick } from "../../../hooks/useOuterClick";
 
-/* import styles */
 import { Styles } from "./Dropdown.styles";
 
+//TODO: Agregar margin a este componente.
 export const Dropdown = (props) => {
-  const { children, name, onSelect, ...others } = props;
+  const { children, name, onSelect } = props;
 
   const [optionSelected, setOptionSelected] = useState(null);
   const [showPanel, setShowPanel] = useState(false);
@@ -34,7 +33,7 @@ export const Dropdown = (props) => {
   const getToggle = React.Children.toArray(children)[0];
 
   return (
-    <Styles.DropdownWrapper ref={innerRef} {...others}>
+    <Styles.DropdownWrapper ref={innerRef}>
       {React.cloneElement(getToggle, {
         onClick: toogleShowPanel,
         openPanel: showPanel,

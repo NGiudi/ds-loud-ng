@@ -1,21 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* import components */
 import { Icon } from "../../..";
 
-/* import styles. */
 import { Styles } from "./IconButton.styles";
 
 export const IconButton = (props) => {
-  const { icon, onClick, ...others } = props;
+  const { disabled, icon, margin, onClick } = props;
 
   const handleClick = () => {
     onClick && onClick();
   };
 
   return (
-    <Styles.IconButton onClick={handleClick} {...others}>
+    <Styles.IconButton disabled={disabled} $margin={margin} onClick={handleClick}>
       <Icon icon={icon.name} size={icon.size} />
     </Styles.IconButton>
   );

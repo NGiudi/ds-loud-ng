@@ -1,25 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* import styles */
 import { Styles } from "./Text.styles";
 
-/* import utils */
-import {
-  getLabelOptionsFilter,
-  getTextOptionsFilter,
-} from "./utils/propsFilter";
-
 export const Text = (props) => {
-  const { as } = props;
+  const { as, htmlFor } = props;
 
-  const textOptions = getTextOptionsFilter(props);
-
+  const textOptions = {
+    $align: props.align,
+    children: props.children,
+    $color: props.color,
+    $decoration: props.decoration,
+    $margin: props.margin,
+    $padding: props.padding,
+    size: props.size,
+    type: props.type,
+    $weight: props.weight,
+  };
+  
   const getTextType = () => {
     switch (as) {
       case "label":
-        const labelOptions = getLabelOptionsFilter(props);
-        return <Styles.LabelWrapper {...textOptions} {...labelOptions} />;
+        return <Styles.LabelWrapper htmlFor={htmlFor} {...textOptions} />;
       case "p":
         return <Styles.TextWrapper {...textOptions} />;
       default:
@@ -33,10 +35,7 @@ export const Text = (props) => {
 Text.propTypes = {
   align: PropTypes.oneOf(["center", "end", "start"]),
   as: PropTypes.oneOf(["label", "p"]),
-  color: PropTypes.shape({
-    intensity: PropTypes.string,
-    tone: PropTypes.string,
-  }),
+  color: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   decoration: PropTypes.oneOf(["underline", "line-through"]),
   htmlFor: PropTypes.string, //? used only for label type.
   margin: PropTypes.string,

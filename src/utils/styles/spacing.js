@@ -44,8 +44,8 @@ const handleSpacing = (spacingString, type) => {
 export const marginProperties = (props, defaultValue) => {
   let string = "";
 
-  if (props.margin || defaultValue) {
-    string = handleSpacing(props.margin || defaultValue, "margin");
+  if (props.$margin || defaultValue) {
+    string = handleSpacing(props.$margin || defaultValue, "margin");
   }
 
   return string;
@@ -59,8 +59,8 @@ export const marginProperties = (props, defaultValue) => {
 export const paddingProperties = (props, defaultValue) => {
   let string = {};
 
-  if (props.padding || defaultValue) {
-    string = handleSpacing(props.padding || defaultValue, "padding");
+  if (props.$padding || defaultValue) {
+    string = handleSpacing(props.$padding || defaultValue, "padding");
   }
 
   return string;

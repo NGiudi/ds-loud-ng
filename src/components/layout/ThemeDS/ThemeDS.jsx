@@ -9,10 +9,18 @@ export const ThemeDS = (props) => {
   const { children, name, theme } = props;
 
   if (theme) {
-    return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+    return (
+      <ThemeProvider theme={theme}>
+        {children}
+      </ThemeProvider>
+    );
   }
 
-  return <ThemeProvider theme={getTheme(name)}>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider theme={getTheme(name)}>
+      {children}
+    </ThemeProvider>
+  );
 };
 
 ThemeDS.propTypes = {

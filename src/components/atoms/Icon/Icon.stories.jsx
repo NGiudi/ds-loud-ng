@@ -53,11 +53,8 @@ export const Sizes = () => {
   return (
     <ThemeDS>
       <Icon icon="cog" margin="r-32" size="xl" />
-
       <Icon icon="cog" margin="r-32" size="lg" />
-
       <Icon icon="cog" margin="r-32" size="md" />
-
       <Icon icon="cog" size="sm" />
     </ThemeDS>
   );

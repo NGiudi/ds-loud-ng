@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-/* import hooks */
 import { useOuterClick } from "../../../hooks/useOuterClick";
 
-/* import components. */
 import { Panel, Image } from "../../../";
 
-/* import styles.*/
 import { Styles } from "./Avatar.styles";
 
 export const Avatar = (props) => {
@@ -33,13 +30,13 @@ export const Avatar = (props) => {
   };
 
   return (
-    <Styles.Wrapper margin={props.margin} ref={innerRef}>
+    <Styles.Wrapper $margin={props.margin} ref={innerRef}>
       <Styles.AvatarWrapper $isSelected={isOpen} onClick={handleAvatarClick}>
         <Image size={size} type="round" {...imageAttributes} />
       </Styles.AvatarWrapper>
 
       {isOpen && (
-        <Styles.PanelWrapper margin="t-8" pos={pos}>
+        <Styles.PanelWrapper $margin="t-8" $pos={pos}>
           <Panel padding="a-0">{props.children}</Panel>
         </Styles.PanelWrapper>
       )}

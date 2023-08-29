@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* import styles */
 import { Wrapper } from "./Box.styles";
 
-/* import utils */
-import { getWrapperOptionsFilter } from "./utils/propsFliter";
-
 export const Box = (props) => {
-  const wrapperOptions = getWrapperOptionsFilter(props);
+  const { margin } = props;
 
-  return <Wrapper {...wrapperOptions}>{props.children}</Wrapper>;
+  return ( 
+    <Wrapper $margin={margin}>
+      {props.children}
+    </Wrapper>
+  );
 };
 
 Box.propTypes = {

@@ -1,6 +1,37 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 import { marginProperties } from "../../../utils/styles";
+
+//? loading animation
+const rotate = keyframes`
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+`;
+
+const ContentWrapper = styled.span`
+  align-items: center;
+  display: flex;
+
+  ${(props) =>
+    css`
+      visibility: ${props.loading ? "hidden" : "visible"};
+    `}
+`;
+
+const LoaderWrapper = styled.span`
+  left: calc(50% - 10px); /* TODO: 10px = half icon size */
+  position: absolute;
+  top: calc(50% - 10px); /* TODO: 10px = half icon size */
+
+  ${(props) =>
+    css`
+      animation-name: ${rotate};
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      display: ${props.loading ? "block" : "none"};
+    `}
+`;
 
 const OutlinedButton = styled.button`
   align-items: center;
@@ -12,8 +43,8 @@ const OutlinedButton = styled.button`
   ${(props) =>
     css`
       border: 1px solid ${props.theme.colors.orange._600};
-      border-radius: ${props.border
-        ? props.border.radius
+      border-radius: ${props.$border
+        ? props.$border.radius
         : props.theme.components.button.outlined.borderRadius};
       color: ${props.theme.colors.orange._600};
       height: ${props.theme.components.button.outlined.height};
@@ -61,8 +92,8 @@ const SolidButton = styled.button`
   ${(props) =>
     css`
       background-color: ${props.theme.colors.orange._600};
-      border-radius: ${props.border
-        ? props.border.radius
+      border-radius: ${props.$border
+        ? props.$border.radius
         : props.theme.components.button.outlined.borderRadius};
       box-shadow: ${props.theme.shadows.level1};
       height: ${props.theme.components.button.solid.height};
@@ -108,8 +139,8 @@ const TextButton = styled.button`
 
   ${(props) =>
     css`
-      border-radius: ${props.border
-        ? props.border.radius
+      border-radius: ${props.$border
+        ? props.$border.radius
         : props.theme.components.button.outlined.borderRadius};
       height: ${props.theme.components.button.solid.height};
       padding: ${props.theme.components.button.solid.padding};
@@ -143,6 +174,8 @@ const TextButton = styled.button`
 `;
 
 export const Styles = {
+  ContentWrapper,
+  LoaderWrapper,
   OutlinedButton,
   SolidButton,
   TextButton,

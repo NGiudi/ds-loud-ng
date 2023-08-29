@@ -45,7 +45,7 @@ const PositionWrapper = styled.div`
 
   ${(props) =>
     css`
-      align-items: ${props.align};
+      align-items: ${props.$align};
     `}
 `;
 

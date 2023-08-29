@@ -1,25 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-/* import components */
 import { Bar } from "./components/Bar";
 
-/* import styles. */
 import { Styles } from "./ProgressBar.styles";
 
-/* import utils */
-import {
-  getBarOptionsFilter,
-  getProgressBarOptionsFilter,
-} from "./utils/propsFilters";
-
 export const ProgressBar = (props) => {
-  let { steps } = props;
+  let { margin, size, steps } = props;
 
   const stepsRef = useRef(steps);
-
-  const progressBarOptions = getProgressBarOptionsFilter(props);
-  const barOptions = getBarOptionsFilter(props);
 
   //? value out of range.
   useEffect(() => {
@@ -31,8 +20,15 @@ export const ProgressBar = (props) => {
   }, [stepsRef]);
 
   return (
-    <Styles.ProgressBarWrapper {...progressBarOptions}>
-      <Bar {...barOptions} steps={stepsRef.current} />
+    <Styles.ProgressBarWrapper $margin={margin} size={size}>
+      <Bar
+        noShowAnimationOnFirstLoad={props.noShowAnimationOnFirstLoad}
+        onFinish={props.onFinish}
+        size={props.size}
+        step={props.step}
+        stepTime={props.stepTime}
+        steps={stepsRef.current}
+      />
     </Styles.ProgressBarWrapper>
   );
 };

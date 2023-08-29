@@ -1,25 +1,18 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
-/* context */
 import { SelectContext } from "../../SelectContext";
 
-/* components */
 import { Icon, SelectOption, Text } from "../../../";
 
-/* styles */
 import { Styles } from "./SelectContent.styles";
 
-/* utils */
 import { disclosureIcon } from "../../../../../utils/icons/icons";
-import { getPanelOptionsFilter } from "../../utils/propsFilter";
 
 export const SelectContent = (props) => {
-  const { disabled } = props;
+  const { disabled, maxHeight } = props;
  
   const ctx = useContext(SelectContext);
-
-  const panelOptions = getPanelOptionsFilter(props);
 
   const handleClick = () => {
     if (!disabled) {
@@ -47,13 +40,12 @@ export const SelectContent = (props) => {
 
       {/* panel */}
       {ctx.isOpen ? (
-        <Styles.SelectPanel margin="t-8" {...panelOptions}>
+        <Styles.SelectPanel $margin="t-8" $maxHeight={maxHeight}>
           {ctx.options.map((option) => (
             <SelectOption key={`option-${option.value}`} value={option.value}>
               {option.children}
             </SelectOption>
           ))}
-          
         </Styles.SelectPanel>
       ) : null}
     </Styles.SelectWrapper>

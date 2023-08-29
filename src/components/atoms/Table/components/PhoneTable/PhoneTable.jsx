@@ -1,33 +1,25 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
-/* components */
 import { Text } from "../../..";
 
-/* styles */
 import { Styles } from "./PhoneTable.styles";
 
-/* utils */
-import { getWrapperOptionsFilter } from "../../utils/propsFilter";
-
 export const PhoneTable = (props) => {
-  const { columns, data, mobileColumns, onClick } = props;
-
-  const wrapperOptions = getWrapperOptionsFilter(props);
+  const { columns, data, mobileColumns, margin, name, onClick } = props;
 
   const list =
     mobileColumns.length > 0 ? mobileColumns : columns.length ? columns : [];
 
   return (
-    <Styles.Wrapper {...wrapperOptions}>
+    <Styles.Wrapper $margin={margin}>
       {data.map((row, idx) => (
         <Styles.Row
-          idx={idx}
-          key={`table-row-${idx}`}
+          key={`table-${name}-row-${idx}`}
           onClick={() => onClick && onClick(row)}
         >
           {list.map((column, idx) => (
-            <Styles.Column key={`column-title-${idx}`} mobile={column.mobile}>
+            <Styles.Column key={`table-${name}-column-${idx}`} mobile={column.mobile}>
               <Text weight="semibold">{column.label}</Text>
 
               {column.content(row)}
@@ -44,6 +36,7 @@ PhoneTable.propTypes = {
   data: PropTypes.array.isRequired,
   margin: PropTypes.string,
   mobileColumns: PropTypes.array,
+  name: PropTypes.string,
   onClick: PropTypes.func,
 };
 
@@ -52,5 +45,6 @@ PhoneTable.defaultProps = {
   data: [],
   margin: "a-0",
   mobileColumns: [],
+  name: "",
   onClick: null,
 };

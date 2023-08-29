@@ -31,7 +31,16 @@ export const SideBar = (props) => {
   const renderButtonContent = (btn, isSelected) => {
     return (
       <>
-        <Icon icon={btn.icon} margin="r-8" size="sm" />
+        <Icon
+          color={
+            isSelected
+              ? { intensity: "600", tone: "orange" }
+              : { intensity: "900", tone: "black" }
+          }
+          icon={btn.icon}
+          margin="r-8"
+          size="sm"
+        />
 
         {isExpanded && (
           <Text

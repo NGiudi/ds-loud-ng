@@ -1,26 +1,19 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
-/* import components */
 import { Icon } from "../../../";
 
-/* import styles. */
 import { Styles } from "./Panel.styles";
-
-/* import utils */
-import { getWrapperOptionsFilter } from "./utils/propsFilter";
 
 /* TODO: agregar al theme */
 import { icons } from "../../../themes/icons";
 
 export const Panel = (props) => {
-  const { align, onSizeH } = props;
+  const { align, margin, padding, onSizeH, type } = props;
 
   const ref = useRef(null);
 
   const [height, setHeight] = useState(0);
-
-  const wrapperOptions = getWrapperOptionsFilter(props);
 
   //? gets the height of the panel on the left.
   useLayoutEffect(() => {
@@ -33,13 +26,13 @@ export const Panel = (props) => {
   }, [height]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Styles.PanelWrapper ref={ref} {...wrapperOptions}>
-      <Styles.PositionWrapper align={align}>
-        {props.type !== "neutral" && (
-          <Icon icon={icons.fontawesome[props.type]} margin="r-16" />
+    <Styles.PanelWrapper $margin={margin} $padding={padding} ref={ref} type={type}>
+      <Styles.PositionWrapper $align={align}>
+        {type !== "neutral" && (
+          <Icon icon={icons.fontawesome[type]} margin="r-16" />
         )}
 
-        <Styles.ContentWrapper margin="t-4">
+        <Styles.ContentWrapper $margin="t-4">
           {props.children}
         </Styles.ContentWrapper>
       </Styles.PositionWrapper>

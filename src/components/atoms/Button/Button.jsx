@@ -1,15 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* import components */
 import { Icon } from "../../../";
 
-/* import styles. */
-import { LoaderWrapper, ContentWrapper } from "./Wrappers.styles";
 import { Styles } from "./Button.styles";
 
 export const Button = (props) => {
-  const { children, fullWidth, loading, onClick, ...others } = props;
+  const { children, fullWidth, loading, onClick } = props;
 
   const isIconButton = props.kind === "icon";
 
@@ -21,7 +18,7 @@ export const Button = (props) => {
     ...props.icon,
   };
 
-  const Button = ({ kind, ...others }) => {
+  const CustomButton = ({ kind, ...others }) => {
     switch (kind) {
       case "outlined":
         return <Styles.OutlinedButton {...others} />;
@@ -41,19 +38,23 @@ export const Button = (props) => {
   };
 
   return (
-    <Button 
+    <CustomButton
+      $border={props.border}
+      disabled={props.disabled}
       $fullWidth={fullWidth}
+      kind={props.kind}
       loading={loading ? 1 : 0}
+      $margin={props.margin}
       onClick={handleClick}
-      {...others}
+      type={props.type}
     >
       {/* loading view */}
-      <LoaderWrapper loading={loading ? 1 : 0} data-testid="loading">
+      <Styles.LoaderWrapper loading={loading ? 1 : 0} data-testid="loading">
         <Icon color="inheret" icon="spinner" size="sm" />
-      </LoaderWrapper>
+      </Styles.LoaderWrapper>
 
       {/* content view */}
-      <ContentWrapper loading={loading ? 1 : 0}>
+      <Styles.ContentWrapper loading={loading ? 1 : 0}>
         {iconAttributes.name && (
           <Icon
             color="inheret"
@@ -64,8 +65,8 @@ export const Button = (props) => {
         )}
 
         {children}
-      </ContentWrapper>
-    </Button>
+      </Styles.ContentWrapper>
+    </CustomButton>
   );
 };
 

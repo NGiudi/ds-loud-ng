@@ -1,38 +1,27 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-/* import components. */
 import { ShowPasswordButton } from "./components";
 import { Icon, Text } from "../../../";
 
-/* import styles. */
 import { Styles } from "./Input.styles";
 
-/* import utils */
-import {
-  getInputOptionsFilter,
-  getWrapperOptionsFilter,
-} from "./utils/propsFilter";
-
 export const Input = (props) => {
-  const { description, icon, label, type } = props;
-
-  const inputProps = getInputOptionsFilter(props);
-  const wrapperProps = getWrapperOptionsFilter(props);
+  const { description, icon, label, name, type } = props;
 
   const [showPassword, setShowPassword] = useState(false);
 
   const showPasswordValue = () => {
     setShowPassword((prev) => !prev);
   };
-
+  
   return (
-    <Styles.Wrapper {...wrapperProps}>
+    <Styles.Wrapper $margin={props.margin}>
       {/* label */}
       {!!label && (
         <Text
           as="label"
-          htmlFor={props.name}
+          htmlFor={name}
           margin="b-4"
           size="sm"
           weight="semibold"
@@ -57,9 +46,16 @@ export const Input = (props) => {
         {!!icon && <Icon icon={icon} margin="r-8" size="sm" />}
 
         <Styles.InputStyles
-          id={props.name}
+          autoComplete={props.autoComplete}
+          autoFocus={props.autoFocus}
+          id={name}
+          disabled={props.disabled}
+          innerRef={props.innerRef}
+          name={name}
+          onKeyPress={props.onKeyPress}
+          placeholder={props.placeholder}
+          readOnly={props.readOnly}
           type={showPassword ? "text" : type}
-          {...inputProps}
         />
 
         {type === "password" && (
@@ -68,8 +64,8 @@ export const Input = (props) => {
       </Styles.InputWrapper>
 
       {/* error message */}
-      <Styles.ErrorWrapper margin="l-4 t-4">
-        <Styles.Error component="div" name={props.name} />
+      <Styles.ErrorWrapper $margin="l-4 t-4">
+        <Styles.Error component="div" name={name} />
       </Styles.ErrorWrapper>
     </Styles.Wrapper>
   );
@@ -77,26 +73,34 @@ export const Input = (props) => {
 
 Input.propTypes = {
   autoComplete: PropTypes.string,
+  autoFocus: PropTypes.bool,
   description: PropTypes.string,
+  disabled: PropTypes.bool,
   icon: PropTypes.string,
   innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   label: PropTypes.string,
   margin: PropTypes.string,
   name: PropTypes.string.isRequired,
   onKeyPress: PropTypes.func,
+  placeholder: PropTypes.string,
+  readOnly: PropTypes.bool,
   reference: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   type: PropTypes.oneOf(["number", "password", "text"]),
 };
 
 Input.defaultProps = {
   autoComplete: "off",
+  autoFocus: false,
   description: "",
+  disabled: false,
   icon: null,
   innerRef: null,
   label: "",
   margin: "a-0",
   name: "",
   onKeyPress: null,
+  placeholder: "",
+  readOnly: false,
   reference: null,
   type: "text",
 };

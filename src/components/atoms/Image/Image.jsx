@@ -1,29 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* import components */
 import { ImagePlaceholder } from "./components";
 
-/* import styles */
 import { Styles } from "./Image.styles";
 
-/* import utils */
-import {
-  getImageOptionsFilter,
-  getPlaceholderOptionsFilter,
-} from "./utils/propsFilter";
-
 export const Image = (props) => {
-  const { img } = props;
-
-  const placeholderOptions = getPlaceholderOptionsFilter(props);
-  const imageOptions = getImageOptionsFilter(props);
+  const { alt, img, margin, placeholder, size, type } = props;
 
   if (!img) {
-    return <ImagePlaceholder {...placeholderOptions} />;
+    return (
+      <ImagePlaceholder
+        margin={margin}
+        placeholder={placeholder}
+        size={size}
+        type={type}
+      />
+    );
   }
 
-  return <Styles.ImageStyles src={img} {...imageOptions} />;
+  return (
+    <Styles.ImageStyles
+      alt={alt}
+      $margin={margin}
+      $size={size}
+      src={img}
+      $type={type}
+    />
+  );
 };
 
 Image.propTypes = {

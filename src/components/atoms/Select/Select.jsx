@@ -1,34 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* context */
 import { SelectProvider } from "./SelectContext";
 
-/* components */
+import { SelectValue } from "./components/SelectValue/SelectValue";
 import { SelectContent } from "./components";
 import { Text } from "../../../";
 
-/* styles */
 import { Styles } from "./Select.styles.js";
 
-/* utils */
-import { SelectValue } from "./components/SelectValue/SelectValue";
-import {
-  getWrapperOptionsFilter,
-  getContentOptionsFilter,
-} from "./utils/propsFilter";
-
 export const Select = (props) => {
-  const { label, name, options } = props;
-
-  const wrapperOptions = getWrapperOptionsFilter(props);
-  const contentOptions = getContentOptionsFilter(props);
+  const { disabled, label, margin, maxHeight, name, options } = props;
 
   return (
     <SelectProvider name={name} options={options}>
       <SelectValue name={name} />
 
-      <Styles.Wrapper {...wrapperOptions}>
+      <Styles.Wrapper $margin={margin}>
         {!!label && (
           <Text
             as="label"
@@ -41,13 +29,14 @@ export const Select = (props) => {
           </Text>
         )}
 
-        <SelectContent {...contentOptions} />
+        <SelectContent disabled={disabled} maxHeight={maxHeight} />
       </Styles.Wrapper>
     </SelectProvider>
   );
 };
 
 Select.propTypes = {
+  disabled: PropTypes.bool,
   label: PropTypes.string,
   name: PropTypes.string,
   margin: PropTypes.string,
@@ -56,6 +45,7 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
+  disabled: false,
   label: "",
   name: "",
   margin: "",

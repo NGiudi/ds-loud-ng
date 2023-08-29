@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-/* import components */
 import { Text } from "../../../";
 
-/* import styles */
 import { Styles } from "./Tabs.styles";
 
-/* import utils */
-import { getWrapperOptionsFilter } from "./utils/propsFilter";
-
 export const Tabs = (props) => {
-  const { children, name } = props;
+  const { children, margin, name, padding } = props;
 
   const [tabsName, setTabsName] = useState([]);
   const [posTabSelected, setPosTabSelected] = useState(0);
-
-  const wrapperOptions = getWrapperOptionsFilter(props);
 
   useEffect(() => {
     children.forEach((elm, idx) => {
@@ -30,7 +23,7 @@ export const Tabs = (props) => {
   };
 
   return (
-    <Styles.Wrapper {...wrapperOptions}>
+    <Styles.Wrapper $margin={margin} $padding={padding}>
       <Styles.TabsBar>
         {tabsName.map((tabName, idx) => {
           return (

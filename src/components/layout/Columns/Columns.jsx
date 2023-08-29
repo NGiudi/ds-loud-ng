@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* import styles */
 import { Wrapper } from "./Columns.styles";
 
-/* import utils */
-import { getWrapperOptionsFilter } from "./utils/propsFliter";
-
 export const Columns = (props) => {
-  const wrapperOptions = getWrapperOptionsFilter(props);
+  const { gap, margin, minWidth } = props;
 
-  return <Wrapper {...wrapperOptions}>{props.children}</Wrapper>;
+  return (
+    <Wrapper $gap={gap} $margin={margin} $minWidth={minWidth}>
+      {props.children}
+    </Wrapper>
+  );
 };
 
 Columns.propTypes = {

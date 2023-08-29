@@ -15,7 +15,7 @@ const SelectPanel = styled.div`
       border-radius: ${props.theme.components.select.border.radius};
       border-width: ${props.theme.components.select.border.width};
       margin-top: ${props.theme.components.select.panel.margin.top};
-      max-height: ${props.maxHeight};
+      max-height: ${props.$maxHeight};
       padding: ${props.theme.components.select.panel.padding};
       top: ${props.theme.components.select.height};
 

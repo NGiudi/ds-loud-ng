@@ -8,7 +8,7 @@ const BarWrapper = styled.div`
       background-color: ${props.theme.colors.orange._600};
       height: ${props.size &&
       props.theme.components.progressBar.height[props.size]};
-      width: ${props.porcent ? props.porcent : "0%"};
+      width: ${props.$porcent ? props.$porcent : "0%"};
     `}
 `;
 

@@ -26,7 +26,7 @@ const PanelWrapper = styled.div`
   width: 250px;
 
   ${(props) => css`
-    ${props.pos}: 0;
+    ${props.$pos}: 0;
     ${marginProperties(props)}
   `}
 `;

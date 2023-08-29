@@ -1,11 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/*  hooks */
 import { useWindowSize } from "../../../hooks/useWindowSize";
 import { useTheme } from "styled-components";
 
-/* components */
 import { DesktopTable, PhoneTable } from "./components";
 
 export const Table = (props) => {
@@ -13,10 +11,28 @@ export const Table = (props) => {
   const theme = useTheme();
 
   if (size.width > theme.breakpoints.mobile) {
-    return <DesktopTable {...props} />;
+    return (
+      <DesktopTable
+        columns={props.colunms}
+        data={props.data}
+        desktopColumns={props.desktopColumns}
+        margin={props.margin}
+        name={props.name}
+        onClick={props.onClick}
+      />
+    );
   }
 
-  return <PhoneTable {...props} />;
+  return (
+    <PhoneTable
+      columns={props.colunms}
+      data={props.data}
+      margin={props.margin}
+      mobileColumns={props.mobileColumns}
+      name={props.name}
+      onClick={props.onClick}
+    />
+  );
 };
 
 Table.propTypes = {
@@ -25,6 +41,7 @@ Table.propTypes = {
   desktopColumns: PropTypes.array,
   margin: PropTypes.string,
   mobileColumns: PropTypes.array,
+  name: PropTypes.string,
   onClick: PropTypes.func,
 };
 
@@ -34,5 +51,6 @@ Table.defaultProps = {
   desktopColumns: [],
   margin: "a-0",
   mobileColumns: [],
+  name: "",
   onClick: null,
 };

@@ -1,41 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* components */
 import { Text } from "../../..";
 
-/* styles */
 import { Styles } from "./DesktopTable.styles";
 
-/* utils */
-import { getWrapperOptionsFilter } from "../../utils/propsFilter";
-
 export const DesktopTable = (props) => {
-  const { columns, data, desktopColumns, onClick } = props;
-
-  const wrapperOptions = getWrapperOptionsFilter(props);
+  const { columns, data, desktopColumns, margin, name, onClick } = props;
 
   const list =
     desktopColumns.length > 0 ? desktopColumns : columns.length ? columns : [];
 
   return (
-    <Styles.Wrapper {...wrapperOptions}>
+    <Styles.Wrapper $margin={margin}>
       <Styles.Row $isHeader>
-        {list.map((column, idx) => (
-          <Styles.Column key={`column-title-${idx}`} width={column.width}>
+        {list.map((column, idxC) => (
+          <Styles.Column key={`table-${name}-row-title-column-${idxC}`} width={column.width}>
             <Text weight="semibold">{column.label}</Text>
           </Styles.Column>
         ))}
       </Styles.Row>
 
-      {data.map((row, idx) => (
+      {data.map((row, idxR) => (
         <Styles.Row
-          idx={idx}
-          key={`table-row-${idx}`}
+          key={`table-row-${idxR}`}
           onClick={() => onClick && onClick(row)}
         >
-          {list.map((column, idx) => (
-            <Styles.Column key={`column-title-${idx}`} width={column.width}>
+          {list.map((column, idxC) => (
+            <Styles.Column key={`table-${name}-row-${idxR}-column-${idxC}`} width={column.width}>
               {column.content(row)}
             </Styles.Column>
           ))}
@@ -50,6 +42,7 @@ DesktopTable.propTypes = {
   data: PropTypes.array.isRequired,
   desktopColumns: PropTypes.array,
   margin: PropTypes.string,
+  name: PropTypes.string,
   onClick: PropTypes.func,
 };
 
@@ -58,5 +51,6 @@ DesktopTable.defaultProps = {
   data: [],
   desktopColumns: [],
   margin: "a-0",
+  name: "",
   onClick: null,
 };

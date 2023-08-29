@@ -15,31 +15,21 @@ const IconButton = styled.button`
   ${(props) =>
     css`
       ${marginProperties(props)}
-    `}
 
-  &:hover:enabled {
-    ${(props) =>
-      css`
+      &:hover:enabled {
         background-color: ${props.theme.colors.black._200};
-      `}
-  }
-
-  &:active:enabled {
-    ${(props) =>
-      css`
+      }
+      
+      &:active:enabled {
         background-color: ${!props.loading && props.theme.colors.black._300};
-      `}
-  }
-
-  &:disabled {
-    box-shadow: none;
-
-    ${(props) =>
-      css`
+      }
+    
+      &:disabled {
         border-color: ${props.theme.colors.black._400};
+        box-shadow: none;
         color: ${props.theme.colors.black._400};
-      `}
-  }
+      }
+    `}
 `;
 
 export const Styles = {
