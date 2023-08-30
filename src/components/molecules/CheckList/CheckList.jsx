@@ -1,19 +1,12 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-/* components */
 import { Icon } from "../../../";
 
-/* styles */
 import { Styles } from "./CheckList.styles";
 
-/* utils */
-import { getWrapperOptionsFilter } from "./utils/propsFilter";
-
 export const CheckList = (props) => {
-  const { children, clickable } = props;
-
-  const wrapperOptions = getWrapperOptionsFilter(props);
+  const { children, clickable, margin } = props;
 
   const [arrayClickedProp, setArrayClickedProp] = useState(() => {
     if (!children) return [];
@@ -54,7 +47,7 @@ export const CheckList = (props) => {
   }, [children]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Styles.Wrapper {...wrapperOptions}>
+    <Styles.Wrapper $clickable={clickable} $margin={margin}>
       {children.map((item, index) => {
         if (!item) return null;
 

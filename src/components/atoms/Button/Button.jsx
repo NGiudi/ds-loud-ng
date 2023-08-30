@@ -43,18 +43,18 @@ export const Button = (props) => {
       disabled={props.disabled}
       $fullWidth={fullWidth}
       kind={props.kind}
-      loading={loading ? 1 : 0}
+      $loading={loading}
       $margin={props.margin}
       onClick={handleClick}
       type={props.type}
     >
       {/* loading view */}
-      <Styles.LoaderWrapper loading={loading ? 1 : 0} data-testid="loading">
+      <Styles.LoaderWrapper $loading={loading} data-testid="loading">
         <Icon color="inheret" icon="spinner" size="sm" />
       </Styles.LoaderWrapper>
 
       {/* content view */}
-      <Styles.ContentWrapper loading={loading ? 1 : 0}>
+      <Styles.ContentWrapper $loading={loading}>
         {iconAttributes.name && (
           <Icon
             color="inheret"

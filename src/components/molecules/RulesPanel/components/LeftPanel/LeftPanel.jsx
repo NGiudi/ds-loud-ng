@@ -72,7 +72,7 @@ export const LeftPanel = (props) => {
         <Form>
           <FieldsGroup fields={fields} />
 
-          <Styles.ButtonsGroup margin="t-20">
+          <Styles.ButtonsGroup $margin="t-20">
             <Button
               disabled={ctx.selectedElement === INVALID_INDEX}
               kind="outlined"

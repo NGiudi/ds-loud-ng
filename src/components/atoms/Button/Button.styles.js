@@ -14,7 +14,7 @@ const ContentWrapper = styled.span`
 
   ${(props) =>
     css`
-      visibility: ${props.loading ? "hidden" : "visible"};
+      visibility: ${props.$loading ? "hidden" : "visible"};
     `}
 `;
 
@@ -29,7 +29,7 @@ const LoaderWrapper = styled.span`
       animation-duration: 1.5s;
       animation-iteration-count: infinite;
       animation-timing-function: ease-in-out;
-      display: ${props.loading ? "block" : "none"};
+      display: ${props.$loading ? "block" : "none"};
     `}
 `;
 
@@ -57,16 +57,16 @@ const OutlinedButton = styled.button`
   &:hover:enabled {
     ${(props) =>
       css`
-        border-color: ${!props.loading && props.theme.colors.orange._800};
-        color: ${!props.loading && props.theme.colors.orange._800};
+        border-color: ${!props.$loading && props.theme.colors.orange._800};
+        color: ${!props.$loading && props.theme.colors.orange._800};
       `}
   }
 
   &:active:enabled {
     ${(props) =>
       css`
-        border-color: ${!props.loading && props.theme.colors.orange._900};
-        color: ${!props.loading && props.theme.colors.orange._900};
+        border-color: ${!props.$loading && props.theme.colors.orange._900};
+        color: ${!props.$loading && props.theme.colors.orange._900};
       `}
   }
 
@@ -106,16 +106,16 @@ const SolidButton = styled.button`
   &:hover:enabled {
     ${(props) =>
       css`
-        background-color: ${!props.loading && props.theme.colors.orange._800};
-        box-shadow: ${!props.loading && props.theme.shadows.level2};
+        background-color: ${!props.$loading && props.theme.colors.orange._800};
+        box-shadow: ${!props.$loading && props.theme.shadows.level2};
       `}
   }
 
   &:active:enabled {
     ${(props) =>
       css`
-        background-color: ${!props.loading && props.theme.colors.orange._900};
-        box-shadow: ${!props.loading && props.theme.shadows.level3};
+        background-color: ${!props.$loading && props.theme.colors.orange._900};
+        box-shadow: ${!props.$loading && props.theme.shadows.level3};
       `}
   }
 
@@ -152,14 +152,14 @@ const TextButton = styled.button`
   &:hover:enabled {
     ${(props) =>
       css`
-        background-color: ${!props.loading && props.theme.colors.black._200};
+        background-color: ${!props.$loading && props.theme.colors.black._200};
       `}
   }
 
   &:active:enabled {
     ${(props) =>
       css`
-        background-color: ${!props.loading && props.theme.colors.black._300};
+        background-color: ${!props.$loading && props.theme.colors.black._300};
       `}
   }
 

@@ -1,11 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* import components */
 import { OfflineBadge } from "./components/OfflineBadge/OfflineBadge";
 import { SideBar } from "./components/SideBar/SideBar";
 
-/* import styles */
 import { ContentBox, MainContent, TopBar } from "./AppLayout.styles";
 
 export const AppLayout = (props) => {
@@ -15,7 +13,7 @@ export const AppLayout = (props) => {
 
   return (
     <>
-      <TopBar padding="x-24 y-8">
+      <TopBar $padding="x-24 y-8">
         {topbar ? topbar.content : null}
 
         <OfflineBadge />

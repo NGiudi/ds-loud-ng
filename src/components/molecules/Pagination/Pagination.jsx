@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-/* components */
 import { PaginateButton } from "./components";
 import { IconButton, Icon } from "../../../";
 
-/* styles */
 import { Styles } from "./Pagination.styles";
-
-/* utiils */
-import { getWrapperOptionsFilter } from "./utils/propsFilter";
 
 import { createPaginateList } from "./utils/pages";
 
 export const Pagination = (props) => {
-  const { nButtons, onChange, page, pages } = props;
-
-  const wrapperOptions = getWrapperOptionsFilter(props);
+  const { margin, nButtons, onChange, page, pages } = props;
 
   const [currentPage, setCurrentPage] = useState(page);
   const [buttonsList, setButtonsList] = useState([]);
@@ -30,7 +23,7 @@ export const Pagination = (props) => {
   }, [currentPage]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Styles.Wrapper {...wrapperOptions}>
+    <Styles.Wrapper $margin={margin}>
       <IconButton
         disabled={currentPage === 1}
         icon={{ name: "chevron-left" }}
@@ -70,16 +63,16 @@ export const Pagination = (props) => {
 };
 
 Pagination.propTypes = {
-  nButtons: PropTypes.number,
   margin: PropTypes.string,
+  nButtons: PropTypes.number,
   onChange: PropTypes.func,
   page: PropTypes.number.isRequired,
   pages: PropTypes.number.isRequired,
 };
 
 Pagination.defaultProps = {
-  nButtons: 9,
   margin: "a-0",
+  nButtons: 9,
   onChange: null,
   page: 1,
   pages: 1,
