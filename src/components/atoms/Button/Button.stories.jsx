@@ -7,8 +7,12 @@ const story = {
   component: Button,
   tags: ["autodocs"],
   argTypes: {
+    border: {
+      control: { type: "object" },
+      description: "Objecto de estilos para el borde del botón. Por el momento solo modifica el radio."
+    },
     children: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Recibe el texto que se imprime en el botón.",
     },
     disabled: {
@@ -21,12 +25,12 @@ const story = {
         "Si es true el botón ocupa el total del ancho del contenedor padre.",
     },
     icon: {
-      control: { type: "text" },
+      control: { type: "string" },
       description:
         "Nombre del ícono que se agrega del lado izquierdo del botón.",
     },
     kind: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Recibe el tipo de botón.",
     },
     loading: {
@@ -34,7 +38,7 @@ const story = {
       description: "Si es true se muestra un spinner de carga.",
     },
     margin: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
     onClick: {

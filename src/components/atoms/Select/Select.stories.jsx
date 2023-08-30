@@ -17,24 +17,26 @@ import { carModels } from "../../../constants/cars/models";
 const story = {
   title: "Components/Select",
   component: Select,
+  tags: ["autodocs"],
   argTypes: {
     label: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Texto de descripción en la parte superior del select.",
     },
     margin: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
     maxHeight: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Setea el alto máximo en pixeles del panel.",
     },
     name: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se usa para completar los campos del formulario de formik.",
     },
     options: {
+      control: { type: "none" },
       description: "Listado de opciones del select.",
     },
   },

@@ -7,16 +7,20 @@ const story = {
   component: Columns,
   tags: ["autodocs"],
   argTypes: {
+    children: {
+      control: { type: "none" },
+      description: "Contenido del componente.",
+    },
     gap: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Recibe el valor del espacio entre columnas.",
     },
     margin: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
     minWidth: {
-      control: { type: "text" },
+      control: { type: "string" },
       description:
         "Recibe el valor del ancho mínimo de cada columna. Si el ancho es menor, se pone un elemento abajo del otro.",
     },

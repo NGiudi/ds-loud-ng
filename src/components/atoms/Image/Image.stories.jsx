@@ -13,19 +13,19 @@ const story = {
   tags: ["autodocs"],
   argTypes: {
     alt: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se pasa el texto alternativo de la imagen.",
     },
     img: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se pasa la url de la imagen.",
     },
     margin: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
     placeholder: {
-      control: { type: "text" },
+      control: { type: "string" },
       description:
         "Se puede pasar un string para mostrar la la primer letra en el placeholder.",
     },

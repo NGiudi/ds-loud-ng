@@ -7,13 +7,20 @@ const story = {
   component: Tabs,
   tags: ["autodocs"],
   argTypes: {
+    children: {
+      control: { type: "none" },
+      description: "Contenido de la tab",
+    },
     margin: {
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
     name: {
+      control: { type: "string" },
       description: "Nombre que identifica el componente.",
     },
     padding: {
+      control: { type: "string" },
       description: "Se setea la distancia de los paddings.",
     },
   },

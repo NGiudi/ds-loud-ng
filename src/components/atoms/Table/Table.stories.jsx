@@ -7,10 +7,34 @@ const story = {
   component: Table,
   tags: ["autodocs"],
   argTypes: {
+    columns: {
+      control: { type: "none" },
+      description: "Se usa en lugar de desktopColums y mobileColumns y es para todas las dimensiones.",
+    },
+    data: {
+      control: { type: "none" },
+      description: "Array de objectos que compone las filas de la tabla.",
+    },
+    desktopColumns: {
+      control: { type: "none" },
+      description: "Array de columnas para pantallas más grandes. Caso no exista se usa las columnas pasadas en columns.",
+    },
     margin: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
+    mobileColumns: {
+      control: { type: "none" },
+      description: "Array de columnas para pantallas más chicas. Caso no exista se usa las columnas pasadas en columns.",
+    },
+    name: {
+      control: { type: "string" },
+      description: "Nombre del atributo. Equivalente al atributo name de html.",
+    },
+    onClick: {
+      control: { type: "none" },
+      description: "Función que se ejecuta al hacer click sobre una de las columnas de la tabla.",
+    }
   },
 };
 

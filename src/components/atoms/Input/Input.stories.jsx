@@ -9,21 +9,57 @@ const story = {
   component: Input,
   tags: ["autodocs"],
   argTypes: {
+    autoComplete: {
+      control: { type: "string" },
+      description: "Es igual al atributo autocomplete de html.",
+    },
+    autoFocus: {
+      control: { type: "string" },
+      description: "Es igual al atributo autofocus de html.",
+    },
+    description: {
+      control: { type: "string" },
+      description: "Texte descriptivo que va por debajo del label",
+    },
+    disabled: {
+      control: { type: "boolean" },
+      description: "Deshabilita el input si este valor es true.",
+    },
     icon: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Recibe el nombre del ícono de fontawesome.",
     },
+    innerRef: {
+      control: { type: "string" },
+      description: "Se puede pasar una variable para que haga referencia al iput.",
+    },
     label: {
-      control: { type: "text" },
-      description: "",
+      control: { type: "string" },
+      description: "Texto que identifica sobre que se trata el input.",
     },
     margin: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
     name: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se usa para completar los campos del formulario de formik.",
+    },
+    onKeyPress: {
+      control: { type: "none" },
+      description: "Función que se ejecuta al hacer click en una tecla",
+    },
+    placeholder: {
+      control: { type: "string" },
+      description: "Es texto que va en el placeholder de html.",
+    },
+    readOnly: {
+      control: { type: "boolean" },
+      description: "Es igual que el atributo readonly de html.",
+    },
+    reference: {
+      control: { type: "none" },
+      description: "Es similar al innerRef pero se hace referencia al contenedor padre del input.",
     },
     type: {
       control: { type: "select" },

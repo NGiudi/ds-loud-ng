@@ -8,7 +8,7 @@ const ColorBox = styled.div`
 
   ${(props) =>
     css`
-      background-color: ${props.theme.colors[props.color][props.intensity]};
+      background-color: ${props.theme.colors[props.$color][props.$intensity]};
     `}
 `;
 

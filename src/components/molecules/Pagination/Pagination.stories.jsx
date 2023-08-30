@@ -19,7 +19,7 @@ const story = {
           "Cantidad de botones que forman la barra de paginado. No incluye los botones de avanzar y retroceder.",
       },
       margin: {
-        control: { type: "text" },
+        control: { type: "string" },
         description: "Se setea la distancia de los margenes.",
       },
       onChange: {

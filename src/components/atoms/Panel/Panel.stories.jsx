@@ -8,16 +8,24 @@ const story = {
   tags: ["autodocs"],
   argTypes: {
     align: {
-      control: false,
+      control: { type: "none" },
       description:
         "Recibe un string para alinear el contenido dentro del panel.",
     },
+    children: {
+      control: { type: "none" },
+      description: "Contenido del panel",
+    },
     margin: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
+    onSizeH: {
+      control: { type: "none" },
+      description: "Función que se ejecuta al modificar el alto del panel.",
+    },
     padding: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los paddings.",
     },
     type: {

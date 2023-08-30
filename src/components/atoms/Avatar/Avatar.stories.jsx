@@ -28,12 +28,12 @@ const story = {
   },
   argTypes: {
     img: {
-      control: { type: "text" },
+      control: { type: "string" },
       description:
         "Recibe un objeto con las propiedas que se pasan al componente Image.",
     },
     margin: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
     pos: {

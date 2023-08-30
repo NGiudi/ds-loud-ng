@@ -17,11 +17,10 @@ const story = {
     argTypes: {
       clickable: {
         control: { type: "boolean" },
-        description:
-          "Si este valor es true se puede hacer click sobre el texto y cambia de estado.",
+        description: "Si este valor es true se puede hacer click sobre el texto y cambia de estado.",
       },
       margin: {
-        control: { type: "text" },
+        control: { type: "string" },
         description: "Se setea la distancia de los margenes.",
       },
     },

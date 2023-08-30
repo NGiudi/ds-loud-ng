@@ -19,7 +19,7 @@ const story = {
       description: "Si se pasa esta propiedad se redondea los bordes.",
     },
     margin: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
     noShowAnimationOnFirstLoad: {
@@ -27,7 +27,7 @@ const story = {
       description: "Si esta opción es true no se muestra la animación.",
     },
     onFinish: {
-      control: false,
+      control: { type: "none" },
       description:
         "Se pasa una función que se ejecuta al terminar la animación.",
     },

@@ -34,7 +34,7 @@ const story = {
       },
     },
     onFinish: {
-      control: false,
+      control: { type: "none" },
       description: "Callback que se ejecuta al terminar la cuenta regresiva.",
       table: {
         defaultValue: { summary: "null" },

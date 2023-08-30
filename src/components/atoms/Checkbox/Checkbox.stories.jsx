@@ -19,15 +19,15 @@ const story = {
   },
   argTypes: {
     id: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Identificador único del componente.",
     },
     label: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Recibe el texto que se muestra del lado del checkbox.",
     },
     name: {
-      control: { type: "text" },
+      control: { type: "string" },
       description:
         "Bajo este nombre se guarda el valor del checkbox. Ejemplo, si este campo se llama email, el valor del campo se se guarda en el campo email.",
     },

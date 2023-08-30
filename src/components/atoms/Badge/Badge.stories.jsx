@@ -8,13 +8,17 @@ const story = {
   component: Badge,
   tags: ["autodocs"],
   argTypes: {
+    children: {
+      control: "none",
+      description: "contenido del componente",
+    },
     color: {
-      control: { type: "text" },
+      control: { type: "string" },
       description:
         "Se setea el color del fondo, se pasa el tono de color y la intensidad.",
     },
     margin: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
   },

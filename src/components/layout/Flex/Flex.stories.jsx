@@ -9,13 +9,17 @@ const story = {
   component: Flex,
   tags: ["autodocs"],
   argTypes: {
+    children: {
+      control: { type: "none" },
+      description: "Contenido del componente.",
+    },
     hAlign: {
       control: { type: "select" },
       description: "Se setea la alineación horizontal.",
       options: ["center", "end", "space-around", "space-between", "start"],
     },
     margin: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
     vAlign: {

@@ -18,7 +18,7 @@ const story = {
       options: ["label", "p"],
     },
     color: {
-      control: { type: "text" },
+      control: { type: "string" },
       description:
         "Se setea el color del fondo, se pasa el tono de color y la intensidad.",
     },
@@ -28,7 +28,7 @@ const story = {
       options: ["underline", "line-through"],
     },
     htmlFor: {
-      control: { type: "text" },
+      control: { type: "string" },
       description:
         "Unicamente se debe usar para los textos que tenga la propiedad `as` con el valor `label`.",
     },

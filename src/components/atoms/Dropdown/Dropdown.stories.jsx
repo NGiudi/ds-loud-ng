@@ -23,18 +23,30 @@ const story = {
   component: Dropdown,
   tags: ["autodocs"],
   argTypes: {
+    childrem: {
+      control: { type: "none" },
+      description: "Es el contenido del componente.",
+    },
     icon: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Recibe el nombre del icono de fontawensome free.",
+    },
+    margin: {
+      control: { type: "string" },
+      description: "Se setea la distancia de los margenes.",
+    },
+    name: {
+      control: { type: "string" },
+      description: "nombre identificador del componente",
+    },
+    onSelect: {
+      control: { type: "none" },
+      description: "método que se ejecuta al seleccionar una opción del contenido.",
     },
     size: {
       control: { type: "select" },
       description: "Recibe el valor del tamaño del ícono.",
       options: ["sm", "md", "lg"],
-    },
-    margin: {
-      control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
     },
   },
 };

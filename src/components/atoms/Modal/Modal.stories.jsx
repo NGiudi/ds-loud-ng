@@ -8,24 +8,24 @@ const story = {
   tags: ["autodocs"],
   argTypes: {
     cancelButton: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Props que se pasan al botón de cancelar.",
     },
     children: {
-      control: false,
+      control: { type: "none" },
       description: "Contenido del modal.",
     },
     confirmButton: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Props que se pasan al botón de cancelar.",
     },
     onClose: {
-      control: false,
+      control: { type: "none" },
       description:
         "Función que se ejecuta al apretar en cancelar o al apretar el botón para cerrar el modal.",
     },
     padding: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los paddings.",
     },
     show: {

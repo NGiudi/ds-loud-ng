@@ -7,13 +7,17 @@ const story = {
   component: ThemeDS,
   tags: ["autodocs"],
   argTypes: {
+    children: {
+      control: { type: "none" },
+      description: "Contenido del componente.",
+    },
     name: {
       control: { type: "select" },
       description: "Se pasa el nombre de un tema interno del DS.",
       options: ["loudLight"],
     },
     theme: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Sirve para pasar un theme personalizado por paramentro.",
     },
   },

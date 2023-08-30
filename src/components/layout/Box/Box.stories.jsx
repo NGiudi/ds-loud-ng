@@ -7,8 +7,12 @@ const story = {
   component: Box,
   tags: ["autodocs"],
   argTypes: {
+    children: {
+      control: { type: "none" },
+      description: "Contenido del componente.",
+    },
     margin: {
-      control: { type: "text" },
+      control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
     },
   },
