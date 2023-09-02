@@ -1,26 +1,66 @@
-import { textWeights } from "../basicStyles";
-
-const lineHeight = {
-  sm: "16px",
-  md: "18px",
-  lg: "20px",
+const lineHeights = {
+  xs: "18px",
+  sm: "20px",
+  md: "28px",
+  lg: "32px",
+  xl: "42px",
 };
 
 const sizes = {
-  sm: "12px",
-  md: "14px",
-  lg: "16px",
+  xs: "12px",
+  sm: "14px",
+  md: "18px",
+  lg: "22px",
+  xl: "28px",
 };
 
-const weights = {
-  light: textWeights.light,
-  regular: textWeights.regular,
-  semibold: textWeights.semibold,
-  bold: textWeights.bold,
+export const weights = {
+  bold: 800,
+  regular: 400,
+  semibold: 600,
+};
+
+const types = {
+  bodyRegular: {
+    lineHeight: lineHeights.sm,
+    size: sizes.sm,
+    weight: weights.regular,
+  },
+  bodySemibold: {
+    lineHeight: lineHeights.sm,
+    size: sizes.sm,
+    weight: weights.semibold,
+  },
+  captionRegular: {
+    lineHeight: lineHeights.xs,
+    size: sizes.xs,
+    weight: weights.regular,
+  },
+  captionSemibold: {
+    lineHeight: lineHeights.xs,
+    size: sizes.xs,
+    weight: weights.semibold,
+  },
+  pageTitle: {
+    lineHeight: lineHeights.xl,
+    size: sizes.xl,
+    weight: weights.bold,
+  },
+  subtitle: {
+    lineHeight: lineHeights.md,
+    size: sizes.md,
+    weight: weights.semibold,
+  },
+  title: {
+    lineHeight: lineHeights.lg,
+    size: sizes.lg,
+    weight: weights.bold,
+  },
 };
 
 export const text = {
-  lineHeight,
+  lineHeights,
   sizes,
+  types,
   weights,
 };

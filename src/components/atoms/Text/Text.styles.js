@@ -2,15 +2,28 @@ import styled, { css } from "styled-components";
 
 import { marginProperties, paddingProperties } from "../../../utils/styles";
 
+//TODO: pasar el import al theme ds.
 const textStyles = (props) => {
   return css`
+    @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap");
+
     color: ${typeof props.$color === "object"
       ? props.theme.colors[props.$color.tone][`_${props.$color.intensity}`]
       : props.$color};
-    font-family: "Roboto", sans-serif;
-    font-size: ${props.theme.components[props.type].sizes[props.size]};
-    font-weight: ${props.theme.components[props.type].weights[props.$weight]};
-    line-height: ${props.theme.components[props.type].lineHeight[props.size]};
+
+    font-family: "Source Sans 3", sans-serif;
+    font-size: ${() => {
+      const { sizes, types } = props.theme.components.text;
+      return types[props.$type]?.size || sizes[props.$size];
+    }};
+    font-weight: ${() => {
+      const { weights, types } = props.theme.components.text;
+      return types[props.$type]?.weight || weights[props.$weight];
+    }};
+    line-height: ${() => {
+      const { lineHeights, types } = props.theme.components.text;
+      return types[props.$type]?.lineHeight || lineHeights[props.$size];
+    }};
     text-align: ${props.$align};
     text-decoration: ${props.$decoration};
 

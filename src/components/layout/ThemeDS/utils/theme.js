@@ -19,11 +19,11 @@ export const getColorsTheme = (name) => {
  * @return {object} DS theme.
  */
 export const getTheme = (name) => {
+  const colorTheme = getColorsTheme(name);
+
   switch (name) {
     case "loudLight":
     default:
-      const colorTheme = getColorsTheme(name);
-
       return {
         colors: colors[colorTheme],
         name,

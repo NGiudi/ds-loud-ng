@@ -41,13 +41,21 @@ const story = {
     size: {
       control: { type: "select" },
       description: "Cambia el tamaño del texto.",
-      options: ["sm", "md", "lg"],
+      options: ["xs", "sm", "md", "lg", "xl"],
     },
     type: {
       control: { type: "select" },
       description:
         "separo los estilos de textos y titulos, con esta propiedad lo podemos seleccionar.",
-      options: ["text", "title"],
+      options: [
+        "bodyRegular",
+        "bodySemibold",
+        "captionRegular",
+        "captionSemibold",
+        "pageTitle",
+        "subtitle",
+        "title",
+      ],
     },
     weight: {
       control: { type: "select" },
@@ -68,50 +76,61 @@ export const DinamicExample = (args) => {
   );
 };
 
-DinamicExample.args = {
-  margin: "a-12",
-  size: "md",
-  type: "text",
-  weight: "regular",
-};
-
-export const TextSizes = () => {
+export const Types = () => {
   return (
     <ThemeDS>
-      <Text margin="y-12" size="lg">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+      <Text margin="b-32" type="pageTitle">
+        Lorem Ipsum is simply dummy text
       </Text>
 
-      <Text margin="y-12" size="md">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+      <Text margin="y-32" type="title">
+        Lorem Ipsum is simply dummy text
       </Text>
 
-      <Text margin="y-12" size="sm">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+      <Text margin="b-32" type="subtitle">
+        Lorem Ipsum is simply dummy text
+      </Text>
+
+      <Text margin="b-32" type="bodySemibold">
+        Lorem Ipsum is simply dummy text
+      </Text>
+
+      <Text margin="b-32" type="bodyRegular">
+        Lorem Ipsum is simply dummy text
+      </Text>
+
+      <Text margin="b-32" type="captionSemibold">
+        Lorem Ipsum is simply dummy text
+      </Text>
+
+      <Text margin="b-32" type="captionRegular">
+        Lorem Ipsum is simply dummy text
       </Text>
     </ThemeDS>
   );
 };
 
-export const TitleSizes = () => {
+export const Sizes = () => {
   return (
     <ThemeDS>
-      <Text margin="y-12" size="lg" type="title">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+      <Text margin="y-16" size="xl">
+        Lorem Ipsum is simply dummy text
       </Text>
 
-      <Text margin="y-12" size="md" type="title">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+      <Text margin="y-16" size="lg">
+        Lorem Ipsum is simply dummy text
       </Text>
 
-      <Text margin="y-12" size="sm" type="title">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+      <Text margin="y-16" size="md">
+        Lorem Ipsum is simply dummy text
+      </Text>
+
+      <Text margin="y-16" size="sm">
+        Lorem Ipsum is simply dummy text
+      </Text>
+
+      <Text margin="y-16" size="xs">
+        Lorem Ipsum is simply dummy text
       </Text>
     </ThemeDS>
   );
@@ -120,22 +139,17 @@ export const TitleSizes = () => {
 export const Weights = () => {
   return (
     <ThemeDS>
-      <Text margin="y-12" size="lg" weight="bold">
+      <Text margin="y-16" weight="bold">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </Text>
 
-      <Text margin="y-12" size="lg" weight="semibold">
+      <Text margin="y-16" weight="semibold">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </Text>
 
-      <Text margin="y-12" size="lg" weight="regular">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
-      </Text>
-
-      <Text margin="y-12" size="lg" weight="light">
+      <Text margin="y-16">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </Text>
@@ -143,20 +157,20 @@ export const Weights = () => {
   );
 };
 
-export const TextStyles = () => {
+export const Styles = () => {
   return (
     <ThemeDS>
-      <Text margin="y-12" size="md">
+      <Text margin="y-16">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </Text>
 
-      <Text decoration="underline" margin="y-12" size="md">
+      <Text decoration="underline" margin="y-16">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </Text>
 
-      <Text decoration="line-through" margin="y-12" size="md">
+      <Text decoration="line-through" margin="y-16">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </Text>
@@ -164,20 +178,20 @@ export const TextStyles = () => {
   );
 };
 
-export const TextAlign = () => {
+export const Align = () => {
   return (
     <ThemeDS>
-      <Text margin="y-12" size="md">
+      <Text margin="y-16">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </Text>
 
-      <Text align="center" margin="y-12" size="md">
+      <Text align="center" margin="y-16">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </Text>
 
-      <Text align="end" margin="y-12" size="md">
+      <Text align="end" margin="y-16">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </Text>

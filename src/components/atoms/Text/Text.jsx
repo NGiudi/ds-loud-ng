@@ -13,8 +13,8 @@ export const Text = (props) => {
     $decoration: props.decoration,
     $margin: props.margin,
     $padding: props.padding,
-    size: props.size,
-    type: props.type,
+    $size: props.size,
+    $type: props.type,
     $weight: props.weight,
   };
 
@@ -38,9 +38,17 @@ Text.propTypes = {
   htmlFor: PropTypes.string, //? used only for label type.
   margin: PropTypes.string,
   padding: PropTypes.string,
-  size: PropTypes.oneOf(["sm", "md", "lg"]),
-  type: PropTypes.oneOf(["text", "title"]),
-  weight: PropTypes.oneOf(["light", "regular", "semibold", "bold"]),
+  size: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl", "xxl "]),
+  type: PropTypes.oneOf([
+    "bodyRegular",
+    "bodySemibold",
+    "captionRegular",
+    "captionSemibold",
+    "pageTitle",
+    "subtitle",
+    "title",
+  ]),
+  weight: PropTypes.oneOf(["bold", "regular", "semibold"]),
 };
 
 Text.defaultProps = {
@@ -54,7 +62,7 @@ Text.defaultProps = {
   htmlFor: "",
   margin: "a-0",
   padding: "a-0",
-  size: "md",
-  type: "text",
+  size: "sm",
+  type: null,
   weight: "regular",
 };

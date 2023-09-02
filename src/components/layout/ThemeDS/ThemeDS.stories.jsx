@@ -31,7 +31,7 @@ const story = {
   },
 };
 
-export const DinamicColumns = (args) => {
+export const DinamicColumns = () => {
   return (
     <ThemeDS name="loudLight">
       <Text margin="a-20">Only documentatio</Text>
