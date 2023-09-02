@@ -17,15 +17,13 @@ export const Text = (props) => {
     type: props.type,
     $weight: props.weight,
   };
-  
+
   const getTextType = () => {
     switch (as) {
       case "label":
         return <Styles.LabelWrapper htmlFor={htmlFor} {...textOptions} />;
-      case "p":
-        return <Styles.TextWrapper {...textOptions} />;
       default:
-        return <Styles.TextWrapper {...textOptions} />;
+        return <Styles.TextWrapper as={as} {...textOptions} />;
     }
   };
 
@@ -34,7 +32,7 @@ export const Text = (props) => {
 
 Text.propTypes = {
   align: PropTypes.oneOf(["center", "end", "start"]),
-  as: PropTypes.oneOf(["label", "p"]),
+  as: PropTypes.oneOf(["label", "p", "span"]),
   color: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   decoration: PropTypes.oneOf(["underline", "line-through"]),
   htmlFor: PropTypes.string, //? used only for label type.

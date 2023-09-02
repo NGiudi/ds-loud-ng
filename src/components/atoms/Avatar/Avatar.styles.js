@@ -7,17 +7,16 @@ const AvatarWrapper = styled.div`
   border-style: solid;
   display: inline-block;
 
-  ${(props) =>
-    css`
-      border-color: ${props.$isSelected
-        ? `${props.theme.colors.black._500}`
-        : "transparent"};
-      border-width: ${props.theme.components.avatar.thickShadow};
+  ${(props) => css`
+    border-color: ${props.$isSelected
+      ? `${props.theme.colors.black._500}`
+      : "transparent"};
+    border-width: ${props.theme.components.avatar.thickShadow};
 
-      &:hover {
-        border-color: ${!props.$isSelected && props.theme.colors.black._600};
-      }
-    `}
+    &:hover {
+      border-color: ${!props.$isSelected && props.theme.colors.black._600};
+    }
+  `}
 `;
 
 const PanelWrapper = styled.div`

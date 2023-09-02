@@ -1,5 +1,7 @@
 import React from "react";
 
+import { AvatarDocs } from "./Avatar.docs";
+
 import {
   Avatar,
   Box,
@@ -14,36 +16,37 @@ import {
 
 import fotoPerfil from "../../../assets/img/foto-perfil.jpg";
 
-const story = {
+const meta = {
   title: "Components/Avatar",
   component: Avatar,
   tags: ["autodocs"],
   parameters: {
     docs: {
-      description: {
-        component:
-          "Si el dropdown del avatar está abierto y se hace un click en cualquier lugar por fuera del area del componente, el mismo se cierra automaticamente.",
-      },
+      page: AvatarDocs,
     },
   },
   argTypes: {
+    children: {
+      control: { type: "string" },
+      description: "Contenido del panel",
+    },
     img: {
       control: { type: "string" },
-      description:
-        "Recibe un objeto con las propiedas que se pasan al componente Image.",
+      description: "Propiedades que se pasan al componente de imagen",
     },
     margin: {
       control: { type: "string" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Establece la distancia de los márgenes",
     },
     pos: {
       control: { type: "select" },
-      description: "Setea la orientación del panel respecto la imagen.",
+      description:
+        "Establece la orientación del panel con respecto a la imagen",
       options: ["left", "right"],
     },
     size: {
       control: { type: "select" },
-      description: "Cambia el tamaño del avatar.",
+      description: "Establece el tamaño del avatar",
       options: ["avatar", "avatarSm"],
     },
   },
@@ -77,7 +80,7 @@ export const DinamicExample = (args) => {
   );
 };
 
-export const Positions = (args) => {
+export const Positions = () => {
   return (
     <ThemeDS>
       <Columns>
@@ -109,4 +112,4 @@ DinamicExample.args = {
   size: "avatar",
 };
 
-export default story;
+export default meta;
