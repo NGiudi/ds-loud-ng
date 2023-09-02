@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Canvas, Controls, Title, Unstyled } from "@storybook/blocks";
+import { Canvas, Controls, Unstyled } from "@storybook/blocks";
 
 import { Text, ThemeDS } from "../../../";
 
@@ -8,9 +8,11 @@ export const AvatarDocs = () => {
   return (
     <Unstyled>
       <ThemeDS>
-        <Title />
+        <Text margin="b-16" type="pageTitle">
+          Avatar
+        </Text>
 
-        <Text margin="b-12">
+        <Text>
           El componente avatar es parte de una interfaz de usuario que se
           utiliza comúnmente para representar a un usuario o entidad de una
           manera visualmente identificable.
@@ -18,7 +20,7 @@ export const AvatarDocs = () => {
 
         <Canvas />
 
-        <Text margin="b-24" type="title" weight="semibold">
+        <Text margin="b-16" type="title">
           Características
         </Text>
 
@@ -51,14 +53,12 @@ export const AvatarDocs = () => {
           muestre en el panel puede variar según el uso y el contexto.
         </Text>
 
-        <Text margin="b-16">
+        <Text margin="b-40">
           Cuando el panel está desplegado y se realiza un clic en cualquier área
           fuera de él, el componente se cierra automáticamente.
         </Text>
 
-        <Text margin="t-40" type="title" weight="semibold">
-          Propiedades
-        </Text>
+        <Text type="title">Propiedades</Text>
 
         <Controls />
       </ThemeDS>
