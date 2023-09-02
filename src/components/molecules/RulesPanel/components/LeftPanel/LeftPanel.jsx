@@ -1,20 +1,15 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
-/* import context */
 import { RulesPanelContext } from "../../RulesPanelContext";
 
-/* import components */
 import { FieldsGroup } from "../FieldsGroup/FieldsGroup";
 import { Button, Panel } from "../../../../../";
 
-/* import external components */
 import { Form, Formik } from "formik";
 
-/* styles */
 import { Styles } from "./LeftPanel.styles";
 
-/* import constants */
 import { INVALID_INDEX } from "../../../../../assets/constants/array";
 
 export const LeftPanel = (props) => {

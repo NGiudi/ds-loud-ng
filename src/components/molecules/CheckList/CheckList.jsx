@@ -34,7 +34,7 @@ export const CheckList = (props) => {
   useEffect(() => {
     const index = children.findIndex(
       (el, idx) =>
-        el.props.checked && arrayClickedProp[idx] !== el.props.checked
+        el.props.checked && arrayClickedProp[idx] !== el.props.checked,
     );
 
     if (index !== -1) {
@@ -44,7 +44,7 @@ export const CheckList = (props) => {
         return newArray;
       });
     }
-  }, [children]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [children]); // eslint-disable-line
 
   return (
     <Styles.Wrapper $clickable={clickable} $margin={margin}>

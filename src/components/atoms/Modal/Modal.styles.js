@@ -9,18 +9,16 @@ const ButtonsWrapper = styled.div`
 const CloseBtnWrapper = styled.div`
   position: absolute;
 
-  ${(props) =>
-    css`
-      right: ${props.theme.components.modal.closeButton.position.right};
-      top: ${props.theme.components.modal.closeButton.position.top};
-    `}
+  ${(props) => css`
+    right: ${props.theme.components.modal.closeButton.position.right};
+    top: ${props.theme.components.modal.closeButton.position.top};
+  `}
 `;
 
 const ContentBox = styled.div`
-  ${(props) =>
-    css`
-      padding: ${paddingProperties(props)};
-    `}
+  ${(props) => css`
+    padding: ${paddingProperties(props)};
+  `}
 `;
 
 const Overlay = styled.div`
@@ -39,14 +37,13 @@ const PanelWrapper = styled.div`
   margin: auto;
   width: 100%;
 
-  ${(props) =>
-    css`
-      max-width: ${props.width};
-      padding: ${paddingProperties(
-        props,
-        props.theme.components.modal.panel.padding
-      )};
-    `}
+  ${(props) => css`
+    max-width: ${props.width};
+    padding: ${paddingProperties(
+      props,
+      props.theme.components.modal.panel.padding,
+    )};
+  `}
 `;
 
 export const Styles = {

@@ -2,14 +2,7 @@ import React from "react";
 
 import { Form, Formik } from "formik";
 
-import {
-  Button,
-  Flex,
-  Image,
-  Select,
-  Text,
-  ThemeDS,
-} from "../../../";
+import { Button, Flex, Image, Select, Text, ThemeDS } from "../../../";
 
 import { carBrands } from "../../../constants/cars/brands";
 import { carModels } from "../../../constants/cars/models";
@@ -54,7 +47,7 @@ export const DinamicExample = () => {
         }}
       >
         <Form>
-          <Select 
+          <Select
             label="Seleccione un elemento"
             margin="t-20"
             maxHeight="200px"
@@ -62,14 +55,14 @@ export const DinamicExample = () => {
             options={carBrands}
           />
 
-          <Select 
+          <Select
             disabled
             label="Seleccione un elemento"
             margin="t-20"
             name="modelo"
             options={carModels}
           />
-           
+
           <Flex hAlign="end">
             <Button margin="t-8" type="submit">
               Enviar Formulario

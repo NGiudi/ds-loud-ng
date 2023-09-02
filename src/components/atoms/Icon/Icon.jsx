@@ -11,8 +11,13 @@ export const Icon = (props) => {
   };
 
   return (
-    <Styles.IconWrapper $color={color} $margin={margin} onClick={handleClick} size={size}>
-      <Styles.IconItem  $customsize={size} icon={icon} spin={spin} />
+    <Styles.IconWrapper
+      $color={color}
+      $margin={margin}
+      onClick={handleClick}
+      size={size}
+    >
+      <Styles.IconItem $customsize={size} icon={icon} spin={spin} />
     </Styles.IconWrapper>
   );
 };

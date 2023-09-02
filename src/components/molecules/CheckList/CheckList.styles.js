@@ -4,10 +4,10 @@ import { marginProperties } from "../../../utils/styles";
 
 const Wrapper = styled.div`
   ${(props) => css`
-      cursor: ${props.$clickable ? "pointer" : "auto"};
+    cursor: ${props.$clickable ? "pointer" : "auto"};
 
-      ${marginProperties(props)}
-    `}
+    ${marginProperties(props)}
+  `}
 `;
 
 const ItemWrapper = styled.div`
@@ -18,12 +18,11 @@ const ListItem = styled.div`
   align-items: center;
   display: flex;
 
-  ${(props) =>
-    css`
-      color: ${props.checked
-        ? props.theme.colors.alert.colors.success
-        : props.theme.colors.black._300};
-    `}
+  ${(props) => css`
+    color: ${props.checked
+      ? props.theme.colors.alert.colors.success
+      : props.theme.colors.black._300};
+  `}
 `;
 
 export const Styles = {

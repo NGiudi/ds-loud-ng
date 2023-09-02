@@ -53,7 +53,7 @@ const story = {
   },
 };
 
-export const DinamicExample = (args) => {
+export const DinamicExample = () => {
   return (
     <ThemeDS>
       <ProgressBar step={2} steps={5} />

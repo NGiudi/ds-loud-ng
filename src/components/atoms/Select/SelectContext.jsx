@@ -18,7 +18,7 @@ export const SelectProvider = (props) => {
 
   const handleSelectedValue = (value) => {
     setSelectedValue(value);
-  }
+  };
 
   const toogleSelect = () => {
     if (isOpen) {

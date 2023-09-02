@@ -31,7 +31,8 @@ const story = {
     },
     innerRef: {
       control: { type: "string" },
-      description: "Se puede pasar una variable para que haga referencia al iput.",
+      description:
+        "Se puede pasar una variable para que haga referencia al iput.",
     },
     label: {
       control: { type: "string" },
@@ -59,7 +60,8 @@ const story = {
     },
     reference: {
       control: { type: "none" },
-      description: "Es similar al innerRef pero se hace referencia al contenedor padre del input.",
+      description:
+        "Es similar al innerRef pero se hace referencia al contenedor padre del input.",
     },
     type: {
       control: { type: "select" },

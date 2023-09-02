@@ -20,7 +20,9 @@ export const Modal = (props) => {
             <IconButton icon={{ name: "times" }} onClick={onClose} />
           </Styles.CloseBtnWrapper>
 
-          <Styles.ContentBox $padding="r-28">{props.children}</Styles.ContentBox>
+          <Styles.ContentBox $padding="r-28">
+            {props.children}
+          </Styles.ContentBox>
 
           <Styles.ButtonsWrapper>
             {!props.cancelButton.hide && (

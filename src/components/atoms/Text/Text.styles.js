@@ -10,7 +10,6 @@ const textStyles = (props) => {
     color: ${typeof props.$color === "object"
       ? props.theme.colors[props.$color.tone][`_${props.$color.intensity}`]
       : props.$color};
-
     font-family: "Source Sans 3", sans-serif;
     font-size: ${() => {
       const { sizes, types } = props.theme.components.text;

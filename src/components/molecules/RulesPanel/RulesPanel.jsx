@@ -8,7 +8,7 @@ import { LeftPanel } from "./components/LeftPanel/LeftPanel";
 import { Columns } from "../../..";
 
 export const RulesPanel = (props) => {
-  const { fields, list, listElement, margin, onChange, validationSchema } = props;
+  const { list, onChange } = props;
 
   const [panelLeftHeight, setPanelLeftHeight] = useState(0);
 
@@ -18,18 +18,18 @@ export const RulesPanel = (props) => {
 
   return (
     <RulesPanelProvider list={list}>
-      <Columns margin={margin}>
+      <Columns margin={props.margin}>
         <LeftPanel
-          fields={fields}
+          fields={props.fields}
           list={list}
           onChange={onChange}
           onSizeH={handleSizeH}
-          validationSchema={validationSchema}
+          validationSchema={props.validationSchema}
         />
-        
+
         <RightPanel
           list={list}
-          listElement={listElement}
+          listElement={props.listElement}
           onChange={onChange}
           panelLeftHeight={panelLeftHeight}
         />

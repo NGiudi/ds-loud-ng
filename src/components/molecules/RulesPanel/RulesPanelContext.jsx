@@ -1,7 +1,6 @@
 import React, { createContext, useState } from "react";
 import PropTypes from "prop-types";
 
-/* import constants */
 import { INVALID_INDEX } from "../../../assets/constants/array";
 
 export const RulesPanelContext = createContext({});

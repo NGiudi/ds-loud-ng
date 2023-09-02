@@ -29,14 +29,13 @@ export const Circle = styled.div`
   display: flex;
   justify-content: center;
 
-  ${(props) =>
-    css`
-      background-color: ${getBgColor(props.theme, props.type)};
-      border: 3px solid ${getColor(props.theme, props.type)};
-      color: ${props.theme.colors.black._100};
-      height: ${props.theme.components.stepsBar.circle.diameter[props.size]};
-      width: ${props.theme.components.stepsBar.circle.diameter[props.size]};
-    `}
+  ${(props) => css`
+    background-color: ${getBgColor(props.theme, props.type)};
+    border: 3px solid ${getColor(props.theme, props.type)};
+    color: ${props.theme.colors.black._100};
+    height: ${props.theme.components.stepsBar.circle.diameter[props.size]};
+    width: ${props.theme.components.stepsBar.circle.diameter[props.size]};
+  `}
 `;
 
 export const ProgressBarWrapper = styled.div`

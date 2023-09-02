@@ -1,10 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* import components */
 import { Panel } from "../../../../../";
 
-/* import styles */
 import { PanelWrapper, TriangleWrapper } from "./DropdownPanel.styles";
 
 export const DropdownPanel = (props) => {

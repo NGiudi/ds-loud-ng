@@ -9,7 +9,8 @@ const story = {
   argTypes: {
     border: {
       control: { type: "object" },
-      description: "Objecto de estilos para el borde del botón. Por el momento solo modifica el radio."
+      description:
+        "Objecto de estilos para el borde del botón. Por el momento solo modifica el radio.",
     },
     children: {
       control: { type: "string" },
@@ -60,7 +61,7 @@ const cellSize = {
   width: "120px",
 };
 
-export const AllButtons = (args) => {
+export const AllButtons = () => {
   return (
     <ThemeDS>
       <table>

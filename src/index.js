@@ -6,7 +6,7 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 /**                                                                           **/
 /** TODO LIST:                                                                **/
 /**   1. Revisar el componente de dropdown, tengo que hacer mejoras.          **/
-/**   2. Usar version 6 de react router dom.                                  **/
+/**                                                                           **/
 /*******************************************************************************/
 
 //? fontawensome icons.

@@ -6,10 +6,9 @@ const ColorBox = styled.div`
   margin: 20px auto;
   width: 90%;
 
-  ${(props) =>
-    css`
-      background-color: ${props.theme.colors[props.$color][props.$intensity]};
-    `}
+  ${(props) => css`
+    background-color: ${props.theme.colors[props.$color][props.$intensity]};
+  `}
 `;
 
 export const Styles = {

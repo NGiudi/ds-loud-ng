@@ -11,7 +11,7 @@ import { disclosureIcon } from "../../../../../utils/icons/icons";
 
 export const SelectContent = (props) => {
   const { disabled, maxHeight } = props;
- 
+
   const ctx = useContext(SelectContext);
 
   const handleClick = () => {
@@ -21,7 +21,9 @@ export const SelectContent = (props) => {
   };
 
   const getValue = () => {
-    const option = ctx.options.find((option) => option.value === ctx.selectedValue);
+    const option = ctx.options.find(
+      (option) => option.value === ctx.selectedValue,
+    );
     return option ? option.display : null;
   };
 
@@ -53,9 +55,11 @@ export const SelectContent = (props) => {
 };
 
 SelectContent.propTypes = {
+  disabled: PropTypes.bool,
   maxHeight: PropTypes.string,
 };
 
 SelectContent.defaultProps = {
+  disabled: false,
   maxHeight: "auto",
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* import components */
 import { FieldItem } from "../FieldItem/FieldItem";
 
 export const FieldsGroup = (props) => {

@@ -33,7 +33,7 @@ const cellSize = {
   width: "120px",
 };
 
-export const AllButtons = (args) => {
+export const AllButtons = () => {
   return (
     <ThemeDS>
       <table>

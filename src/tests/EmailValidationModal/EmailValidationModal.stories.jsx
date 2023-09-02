@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
-/* import hooks */
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
-/* import components */
 import { EmailValidationModal } from "./EmailValidationModal";
 
 const story = { title: "Test/EmailModal" };
@@ -43,7 +41,7 @@ export const EmailValidationModalStory = () => {
   //? init check email.
   useEffect(() => {
     return () => clearTimeout(refreshTimer.current);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line
 
   const handleCloseModal = () => {
     if (refreshTimer.current) clearTimeout(refreshTimer.current);

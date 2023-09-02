@@ -12,10 +12,10 @@ export const Tabs = (props) => {
   const [posTabSelected, setPosTabSelected] = useState(0);
 
   useEffect(() => {
-    children.forEach((elm, idx) => {
+    children.forEach((elm) => {
       setTabsName((prev) => [...prev, elm.props.name]);
     });
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line
 
   const handleBtnClick = (e) => {
     const tabIdx = tabsName.indexOf(e.target.innerText);

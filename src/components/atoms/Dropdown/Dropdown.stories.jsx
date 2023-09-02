@@ -41,7 +41,8 @@ const story = {
     },
     onSelect: {
       control: { type: "none" },
-      description: "método que se ejecuta al seleccionar una opción del contenido.",
+      description:
+        "método que se ejecuta al seleccionar una opción del contenido.",
     },
     size: {
       control: { type: "select" },

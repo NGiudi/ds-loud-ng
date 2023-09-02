@@ -13,7 +13,11 @@ export const IconButton = (props) => {
   };
 
   return (
-    <Styles.IconButton disabled={disabled} $margin={margin} onClick={handleClick}>
+    <Styles.IconButton
+      disabled={disabled}
+      $margin={margin}
+      onClick={handleClick}
+    >
       <Icon icon={icon.name} size={icon.size} />
     </Styles.IconButton>
   );

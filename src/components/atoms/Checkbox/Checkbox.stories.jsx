@@ -34,7 +34,7 @@ const story = {
   },
 };
 
-export const DinamicExample = (args) => {
+export const DinamicExample = () => {
   return (
     <ThemeDS>
       <Formik

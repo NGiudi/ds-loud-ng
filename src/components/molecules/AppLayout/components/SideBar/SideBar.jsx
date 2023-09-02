@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-/* import hooks */
 import { useRouter } from "../../../../../hooks/useRouter";
 
-/* import components */
 import { Icon, Text } from "../../../../../";
 
-/* import styles */
 import { Styles } from "./SideBar.styles";
 
 export const SideBar = (props) => {
@@ -94,7 +91,7 @@ SideBar.propTypes = {
       icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
       label: PropTypes.string.isRequired,
       to: PropTypes.string.isRequired,
-    })
+    }),
   ),
 };
 

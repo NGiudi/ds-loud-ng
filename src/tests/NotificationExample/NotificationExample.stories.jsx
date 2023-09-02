@@ -1,9 +1,7 @@
 import React from "react";
 
-/* import components */
 import { Button, ThemeDS } from "../../";
 
-/* import utils */
 import { createNotify } from "../../utils/services/notificacions";
 
 const story = { title: "Test/Notification" };

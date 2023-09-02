@@ -9,7 +9,8 @@ const story = {
   argTypes: {
     columns: {
       control: { type: "none" },
-      description: "Se usa en lugar de desktopColums y mobileColumns y es para todas las dimensiones.",
+      description:
+        "Se usa en lugar de desktopColums y mobileColumns y es para todas las dimensiones.",
     },
     data: {
       control: { type: "none" },
@@ -17,7 +18,8 @@ const story = {
     },
     desktopColumns: {
       control: { type: "none" },
-      description: "Array de columnas para pantallas más grandes. Caso no exista se usa las columnas pasadas en columns.",
+      description:
+        "Array de columnas para pantallas más grandes. Caso no exista se usa las columnas pasadas en columns.",
     },
     margin: {
       control: { type: "string" },
@@ -25,7 +27,8 @@ const story = {
     },
     mobileColumns: {
       control: { type: "none" },
-      description: "Array de columnas para pantallas más chicas. Caso no exista se usa las columnas pasadas en columns.",
+      description:
+        "Array de columnas para pantallas más chicas. Caso no exista se usa las columnas pasadas en columns.",
     },
     name: {
       control: { type: "string" },
@@ -33,8 +36,9 @@ const story = {
     },
     onClick: {
       control: { type: "none" },
-      description: "Función que se ejecuta al hacer click sobre una de las columnas de la tabla.",
-    }
+      description:
+        "Función que se ejecuta al hacer click sobre una de las columnas de la tabla.",
+    },
   },
 };
 

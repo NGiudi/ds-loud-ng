@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
-/* context */
 import { SelectContext } from "../../SelectContext";
 
-/* styles */
 import { Styles } from "./SelectOption.styles";
 
 export const SelectOption = (props) => {

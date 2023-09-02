@@ -15,7 +15,10 @@ export const DesktopTable = (props) => {
     <Styles.Wrapper $margin={margin}>
       <Styles.Row $isHeader>
         {list.map((column, idxC) => (
-          <Styles.Column key={`table-${name}-row-title-column-${idxC}`} width={column.width}>
+          <Styles.Column
+            key={`table-${name}-row-title-column-${idxC}`}
+            width={column.width}
+          >
             <Text weight="semibold">{column.label}</Text>
           </Styles.Column>
         ))}
@@ -27,7 +30,10 @@ export const DesktopTable = (props) => {
           onClick={() => onClick && onClick(row)}
         >
           {list.map((column, idxC) => (
-            <Styles.Column key={`table-${name}-row-${idxR}-column-${idxC}`} width={column.width}>
+            <Styles.Column
+              key={`table-${name}-row-${idxR}-column-${idxC}`}
+              width={column.width}
+            >
               {column.content(row)}
             </Styles.Column>
           ))}

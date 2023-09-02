@@ -47,7 +47,7 @@ DinamicExample.args = {
   vAlign: "center",
 };
 
-export const Orientaciones = (args) => {
+export const Orientaciones = () => {
   return (
     <ThemeDS>
       <Flex hAlign="start" margin="a-30">

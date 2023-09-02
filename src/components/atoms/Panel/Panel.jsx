@@ -23,10 +23,15 @@ export const Panel = (props) => {
   //? run when the height of the panel changes.
   useEffect(() => {
     onSizeH && onSizeH(height);
-  }, [height]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [height]); // eslint-disable-line
 
   return (
-    <Styles.PanelWrapper $margin={margin} $padding={padding} ref={ref} type={type}>
+    <Styles.PanelWrapper
+      $margin={margin}
+      $padding={padding}
+      ref={ref}
+      type={type}
+    >
       <Styles.PositionWrapper $align={align}>
         {type !== "neutral" && (
           <Icon icon={icons.fontawesome[type]} margin="r-16" />

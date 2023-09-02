@@ -20,7 +20,7 @@ export const Pagination = (props) => {
     setButtonsList(buttonsList);
 
     onChange && onChange(currentPage);
-  }, [currentPage]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [currentPage]); // eslint-disable-line
 
   return (
     <Styles.Wrapper $margin={margin}>

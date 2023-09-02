@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* import components */
 import { Button, Countdown, Modal, Text, ThemeDS } from "../..";
 
 export const EmailValidationModal = (props) => {

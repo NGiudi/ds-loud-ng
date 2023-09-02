@@ -37,7 +37,7 @@ AppLayout.propTypes = {
           .isRequired,
         label: PropTypes.string.isRequired,
         to: PropTypes.string.isRequired,
-      })
+      }),
     ),
   }),
   topbar: PropTypes.shape({

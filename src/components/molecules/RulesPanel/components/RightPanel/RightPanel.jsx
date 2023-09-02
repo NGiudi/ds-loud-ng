@@ -1,16 +1,12 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
-/* import context */
 import { RulesPanelContext } from "../../RulesPanelContext";
 
-/* import components */
 import { IconButton, Panel } from "../../../../../";
 
-/* import styles */
 import { Styles } from "./RightPanel.styles";
 
-/* import constants */
 import { INVALID_INDEX } from "../../../../../assets/constants/array";
 
 export const RightPanel = (props) => {

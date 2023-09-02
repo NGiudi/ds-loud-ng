@@ -16,7 +16,7 @@ export const SelectValue = (props) => {
 
   useEffect(() => {
     setFieldValue(name, ctx.selectedValue);
-  }, [ctx.selectedValue]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [ctx.selectedValue]); // eslint-disable-line
 
   return <Field name={name} type="hidden" />;
 };

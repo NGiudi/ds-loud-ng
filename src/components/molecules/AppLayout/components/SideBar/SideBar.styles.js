@@ -11,7 +11,7 @@ const BottomContentStyles = styled.div`
 
     ${paddingProperties(
       props,
-      props.theme.components.appLayout.sidebar.bottomContent.padding
+      props.theme.components.appLayout.sidebar.bottomContent.padding,
     )}
   `}
 `;
@@ -37,7 +37,7 @@ const SideBarButton = styled.button`
 
     ${paddingProperties(
       props,
-      props.theme.components.appLayout.sidebar.button.padding
+      props.theme.components.appLayout.sidebar.button.padding,
     )}
   `}
 `;

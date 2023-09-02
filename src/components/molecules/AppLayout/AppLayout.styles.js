@@ -26,7 +26,7 @@ export const ContentBox = styled.div`
 
     ${paddingProperties(
       props,
-      props.theme.components.appLayout.content.padding
+      props.theme.components.appLayout.content.padding,
     )}
   `}}
 `;

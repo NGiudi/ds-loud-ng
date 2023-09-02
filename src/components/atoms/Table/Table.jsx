@@ -13,7 +13,7 @@ export const Table = (props) => {
   if (size.width > theme.breakpoints.mobile) {
     return (
       <DesktopTable
-        columns={props.colunms}
+        columns={props.columns}
         data={props.data}
         desktopColumns={props.desktopColumns}
         margin={props.margin}
@@ -25,7 +25,7 @@ export const Table = (props) => {
 
   return (
     <PhoneTable
-      columns={props.colunms}
+      columns={props.columns}
       data={props.data}
       margin={props.margin}
       mobileColumns={props.mobileColumns}

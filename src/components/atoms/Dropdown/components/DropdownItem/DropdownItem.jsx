@@ -6,7 +6,7 @@ import { ItemWrapper } from "./DropdownItem.styles";
 export const DropdownItem = (props) => {
   const { disabled, name, onSelect, value } = props;
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     if (!disabled) {
       onSelect && onSelect(value, name);
     }

@@ -2,22 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /* import components */
-import { Input, Select, SelectOption } from "../../../../../";
+import { Input, Select } from "../../../../../";
 
 export const FieldItem = (props) => {
   const { field } = props;
 
   switch (field.type) {
     case "select":
-      const { label, name, options, props } = field;
-
       return (
         <Select
-          label={label}
+          label={field.label}
           margin="b-24"
-          name={name}
-          options={options}
-          {...props}
+          name={field.name}
+          options={field.options}
+          {...field.props}
         />
       );
     default:

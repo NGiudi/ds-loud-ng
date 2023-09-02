@@ -5,13 +5,12 @@ import { marginProperties, paddingProperties } from "../../../utils/styles";
 const TabsBar = styled.div`
   border-bottom-style: solid;
 
-  ${(props) =>
-    css`
-      border-bottom-color: ${props.theme.colors.black._200};
-      border-bottom-width: ${props.theme.components.tabs.bar.border.width};
+  ${(props) => css`
+    border-bottom-color: ${props.theme.colors.black._200};
+    border-bottom-width: ${props.theme.components.tabs.bar.border.width};
 
-      ${paddingProperties(props, props.theme.components.tabs.bar.padding)}
-    `};
+    ${paddingProperties(props, props.theme.components.tabs.bar.padding)}
+  `};
 `;
 
 const TabButton = styled.button`
@@ -19,34 +18,31 @@ const TabButton = styled.button`
   border: none;
   border-bottom-style: solid;
 
-  ${(props) =>
-    css`
-      border-bottom-color: ${props.$isSelected
-        ? props.theme.colors.orange._600
-        : "transparent"};
-      border-bottom-width: ${props.theme.components.tabs.button.border.width};
+  ${(props) => css`
+    border-bottom-color: ${props.$isSelected
+      ? props.theme.colors.orange._600
+      : "transparent"};
+    border-bottom-width: ${props.theme.components.tabs.button.border.width};
 
-      ${paddingProperties(props, props.theme.components.tabs.button.padding)}
+    ${paddingProperties(props, props.theme.components.tabs.button.padding)}
 
-      &:hover {
-        border-bottom-color: ${props.theme.colors.orange._300};
-      }
-    `};
+    &:hover {
+      border-bottom-color: ${props.theme.colors.orange._300};
+    }
+  `};
 `;
 
 const TabContent = styled.div`
-  ${(props) =>
-    css`
-      ${paddingProperties(props, props.theme.components.tabs.content.padding)}
-    `};
+  ${(props) => css`
+    ${paddingProperties(props, props.theme.components.tabs.content.padding)}
+  `};
 `;
 
 const Wrapper = styled.div`
-  ${(props) =>
-    css`
-      ${marginProperties(props)}
-      ${paddingProperties(props)}
-    `};
+  ${(props) => css`
+    ${marginProperties(props)}
+    ${paddingProperties(props)}
+  `};
 `;
 
 export const Styles = {

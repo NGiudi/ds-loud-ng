@@ -28,7 +28,8 @@ const story = {
     },
     listElement: {
       control: { type: "none" },
-      description: "Componente con la estructura de los elementos de la derecha.",
+      description:
+        "Componente con la estructura de los elementos de la derecha.",
     },
     margin: {
       control: { type: "string" },
@@ -36,11 +37,13 @@ const story = {
     },
     onChange: {
       control: { type: "none" },
-      description: "Método que se ejecuta cuando cambia el listado de elementos.",
+      description:
+        "Método que se ejecuta cuando cambia el listado de elementos.",
     },
     validationSchema: {
       control: { type: "none" },
-      description: "Schema de validación para el formulario del panel de la izquierda.",
+      description:
+        "Schema de validación para el formulario del panel de la izquierda.",
     },
   },
 };

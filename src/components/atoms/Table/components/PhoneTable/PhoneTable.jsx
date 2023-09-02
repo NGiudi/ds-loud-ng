@@ -19,7 +19,10 @@ export const PhoneTable = (props) => {
           onClick={() => onClick && onClick(row)}
         >
           {list.map((column, idx) => (
-            <Styles.Column key={`table-${name}-column-${idx}`} mobile={column.mobile}>
+            <Styles.Column
+              key={`table-${name}-column-${idx}`}
+              mobile={column.mobile}
+            >
               <Text weight="semibold">{column.label}</Text>
 
               {column.content(row)}

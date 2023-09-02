@@ -6,11 +6,7 @@ import { Wrapper } from "./Box.styles";
 export const Box = (props) => {
   const { margin } = props;
 
-  return ( 
-    <Wrapper $margin={margin}>
-      {props.children}
-    </Wrapper>
-  );
+  return <Wrapper $margin={margin}>{props.children}</Wrapper>;
 };
 
 Box.propTypes = {
