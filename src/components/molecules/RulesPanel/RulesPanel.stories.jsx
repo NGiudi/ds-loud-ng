@@ -18,9 +18,29 @@ const story = {
     },
   },
   argTypes: {
+    fields: {
+      control: { type: "none" },
+      description: "Listado de inputs que van en el panel de la izquierda.",
+    },
+    list: {
+      control: { type: "none" },
+      description: "Listado de elementos que van en la tabla de la derecha.",
+    },
+    listElement: {
+      control: { type: "none" },
+      description: "Componente con la estructura de los elementos de la derecha.",
+    },
     margin: {
       control: { type: "string" },
       description: "Se setea la distancia de los margenes.",
+    },
+    onChange: {
+      control: { type: "none" },
+      description: "Método que se ejecuta cuando cambia el listado de elementos.",
+    },
+    validationSchema: {
+      control: { type: "none" },
+      description: "Schema de validación para el formulario del panel de la izquierda.",
     },
   },
 };

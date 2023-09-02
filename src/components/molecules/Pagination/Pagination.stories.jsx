@@ -12,28 +12,28 @@ const story = {
         component: "",
       },
     },
-    argTypes: {
-      nButtons: {
-        control: { type: "number" },
-        description:
-          "Cantidad de botones que forman la barra de paginado. No incluye los botones de avanzar y retroceder.",
-      },
-      margin: {
-        control: { type: "string" },
-        description: "Se setea la distancia de los margenes.",
-      },
-      onChange: {
-        control: { type: "none" },
-        description: "Función que se ejecuta al cambiar de página.",
-      },
-      page: {
-        control: { type: "number" },
-        description: "Número de la página actual.",
-      },
-      pages: {
-        control: { type: "number" },
-        description: "Cantidad total de páginas.",
-      },
+  },
+  argTypes: {
+    margin: {
+      control: { type: "string" },
+      description: "Se setea la distancia de los margenes.",
+    },
+    nButtons: {
+      control: { type: "number" },
+      description:
+        "Cantidad de botones que forman la barra de paginado. No incluye los botones de avanzar y retroceder.",
+    },
+    onChange: {
+      control: { type: "none" },
+      description: "Función que se ejecuta al cambiar de página.",
+    },
+    page: {
+      control: { type: "number" },
+      description: "Número de la página actual.",
+    },
+    pages: {
+      control: { type: "number" },
+      description: "Cantidad total de páginas.",
     },
   },
 };

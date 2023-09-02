@@ -16,6 +16,25 @@ const story = {
       },
     },
   },
+  argTypes: {
+    img: {
+      control: { type: "string" },
+      description:
+        "Recibe un objeto con las propiedas que se pasan al componente Image.",
+    },
+    children: {
+      control: { type: "none" },
+      description: "Contenido del componente",
+    },
+    sidebar: {
+      control: { type: "none" },
+      description: "Objeto que recibe el listado de botones que van en la sidebar.",
+    },
+    topbar: {
+      control: { type: "Recibe un objeto con el contenido de la topbar." },
+      description: "Contenido del componente",
+    },
+  },
 };
 
 export const LayoutExample = () => {

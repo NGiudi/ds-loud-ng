@@ -14,6 +14,10 @@ const story = {
     },
   },
   argTypes: {
+    size: {
+      control: { type: "select" },
+      description: "Esta propiedad sirve para cambiarle el tamaño del componente.",
+    },
     step: {
       control: { type: "number" },
       description: "Recibe el valor numerico del paso en el que se encuentra.",

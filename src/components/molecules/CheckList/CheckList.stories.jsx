@@ -14,15 +14,19 @@ const story = {
         component: "",
       },
     },
-    argTypes: {
-      clickable: {
-        control: { type: "boolean" },
-        description: "Si este valor es true se puede hacer click sobre el texto y cambia de estado.",
-      },
-      margin: {
-        control: { type: "string" },
-        description: "Se setea la distancia de los margenes.",
-      },
+  },
+  argTypes: {
+    children: {
+      control: { type: "none" },
+      description: "Contenido del componente",
+    },
+    clickable: {
+      control: { type: "boolean" },
+      description: "Si este valor es true se puede hacer click sobre el texto y cambia de estado.",
+    },
+    margin: {
+      control: { type: "string" },
+      description: "Se setea la distancia de los margenes.",
     },
   },
 };
