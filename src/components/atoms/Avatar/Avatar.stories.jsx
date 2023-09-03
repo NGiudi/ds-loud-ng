@@ -17,14 +17,6 @@ import {
 import fotoPerfil from "../../../assets/img/foto-perfil.jpg";
 
 const meta = {
-  title: "Components/Avatar",
-  component: Avatar,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      page: AvatarDocs,
-    },
-  },
   argTypes: {
     children: {
       control: { type: "string" },
@@ -50,6 +42,14 @@ const meta = {
       options: ["avatar", "avatarSm"],
     },
   },
+  component: Avatar,
+  parameters: {
+    docs: {
+      page: AvatarDocs,
+    },
+  },
+  tags: ["autodocs"],
+  title: "Components/Avatar",
 };
 
 export const DinamicExample = (args) => {

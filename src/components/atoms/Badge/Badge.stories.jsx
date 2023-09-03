@@ -1,27 +1,32 @@
 import React from "react";
 
-/* components */
+import { BadgeDocs } from "./Badge.docs";
+
 import { Badge, ThemeDS } from "../../../";
 
-const story = {
-  title: "Components/Badge",
-  component: Badge,
-  tags: ["autodocs"],
+const meta = {
   argTypes: {
     children: {
       control: "none",
-      description: "contenido del componente",
+      description: "Contenido del badge",
     },
     color: {
       control: { type: "string" },
-      description:
-        "Se setea el color del fondo, se pasa el tono de color y la intensidad.",
+      description: "Establece el color del fondo.",
     },
     margin: {
       control: { type: "string" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Establece la distancia de los márgenes",
     },
   },
+  component: Badge,
+  parameters: {
+    docs: {
+      page: BadgeDocs,
+    },
+  },
+  tags: ["autodocs"],
+  title: "Components/Badge",
 };
 
 export const DinamicExample = (args) => {
@@ -48,4 +53,4 @@ export const Colors = () => {
   );
 };
 
-export default story;
+export default meta;
