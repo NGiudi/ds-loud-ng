@@ -1,6 +1,6 @@
 {
   "name": "ds-loud-ng",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Design System implemented in React",
   "homepage": "https://ngiudi.github.io/ds-loud-ng",
   "main": "./dist/index.js",
@@ -49,10 +49,11 @@
     "storybook": "7.4.0"
   },
   "scripts": {
-    "deploy": "npm run build-storybook && gh-pages -d storybook-static",
+    "build-storybook": "storybook build",
     "build": "npx babel src --out-dir dist",
-    "start": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "deploy": "npm run build-storybook && gh-pages -d storybook-static",
+    "publish": "npm run build && npm publish",
+    "start": "storybook dev -p 6006"
   },
   "eslintConfig": {
     "extends": [
