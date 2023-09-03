@@ -9,17 +9,17 @@ export const ImagePlaceholder = (props) => {
   const { placeholder, margin, size, type } = props;
 
   const selectTextSize = () => {
-    if (["avatar", "avatarSm", "sm"].includes(size)) {
-      return "md";
+    if (["avatarSm", "sm"].includes(size)) {
+      return "captionSemibold";
     }
 
-    return "lg";
+    return "bodySemibold";
   };
 
   return (
     <Styles.IconPlaceholder $margin={margin} $size={size} $type={type}>
       {placeholder ? (
-        <Text color="black_100" size={selectTextSize()} weight="bold">
+        <Text color="black_100" type={selectTextSize()}>
           {placeholder.charAt(0).toUpperCase()}
         </Text>
       ) : (
