@@ -60,11 +60,11 @@ export const DinamicExample = (args) => {
           <Image img={fotoPerfil} size="sm" type="round" />
 
           <Box margin="l-10">
-            <Text margin="a-0" size="md" weight="semibold">
+            <Text margin="a-0" type="bodySemibold">
               Nicolás Giudice
             </Text>
 
-            <Text margin="a-0" size="sm" weight="semibold">
+            <Text margin="a-0" type="bodyRegular">
               Desarrollador
             </Text>
           </Box>
@@ -85,19 +85,35 @@ export const Positions = () => {
     <ThemeDS>
       <Columns>
         <Avatar img={{ img: fotoPerfil }}>
-          <Image img={fotoPerfil} margin="t-10 x-50" size="sm" type="round" />
+          <Flex margin="l-20 y-10">
+            <Image img={fotoPerfil} size="sm" type="round" />
 
-          <Text align="center" margin="y-20" size="lg" weight="semibold">
-            Nicolás Giudice
-          </Text>
+            <Box margin="l-10">
+              <Text margin="a-0" type="bodySemibold">
+                Nicolás Giudice
+              </Text>
+
+              <Text margin="a-0" type="bodyRegular">
+                Desarrollador
+              </Text>
+            </Box>
+          </Flex>
         </Avatar>
 
         <Avatar img={{ img: fotoPerfil }} pos="right">
-          <Image img={fotoPerfil} margin="t-10 x-50" size="sm" type="round" />
+          <Flex margin="l-20 y-10">
+            <Image img={fotoPerfil} size="sm" type="round" />
 
-          <Text align="center" margin="y-20" size="lg" weight="semibold">
-            Nicolás Giudice
-          </Text>
+            <Box margin="l-10">
+              <Text margin="a-0" type="bodySemibold">
+                Nicolás Giudice
+              </Text>
+
+              <Text margin="a-0" type="bodyRegular">
+                Desarrollador
+              </Text>
+            </Box>
+          </Flex>
         </Avatar>
       </Columns>
     </ThemeDS>

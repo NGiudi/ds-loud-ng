@@ -23,7 +23,7 @@ export const Icon = (props) => {
 };
 
 Icon.propTypes = {
-  color: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  color: PropTypes.string,
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   margin: PropTypes.string,
   onClick: PropTypes.func,
@@ -40,10 +40,7 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-  color: {
-    intensity: "700",
-    tone: "black",
-  },
+  color: "black_700",
   icon: "home",
   margin: "a-0",
   onClick: null,

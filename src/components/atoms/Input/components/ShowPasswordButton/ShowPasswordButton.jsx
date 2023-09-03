@@ -8,7 +8,7 @@ export const ShowPasswordButton = (props) => {
 
   return (
     <Icon
-      color={{ intensity: "500", tone: "black" }}
+      color="black_500"
       icon={show ? "eye-slash" : "eye"}
       margin="r-8"
       onClick={onClick}

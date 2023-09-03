@@ -10,24 +10,19 @@ export const Badge = (props) => {
 
   return (
     <Styles.Wrapper $color={color} $margin={margin}>
-      <Text weight="semibold" size="sm">
-        {props.children}
-      </Text>
+      <Text type="bodySemibold">{props.children}</Text>
     </Styles.Wrapper>
   );
 };
 
 Badge.propTypes = {
   children: PropTypes.node,
-  color: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  color: PropTypes.string,
   margin: PropTypes.string,
 };
 
 Badge.defaultProps = {
   children: null,
-  color: {
-    intensity: "700",
-    tone: "orange",
-  },
+  color: "orange_700",
   margin: "a-0",
 };

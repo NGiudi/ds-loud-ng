@@ -10,14 +10,11 @@ export const Divider = (props) => {
 };
 
 Divider.propTypes = {
-  color: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  color: PropTypes.string,
   margin: PropTypes.string,
 };
 
 Divider.defaultProps = {
-  color: {
-    intensity: "300",
-    tone: "black",
-  },
+  color: "black_300",
   margin: "a-0",
 };

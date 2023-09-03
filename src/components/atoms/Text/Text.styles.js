@@ -6,11 +6,8 @@ import {
   paddingProperties,
 } from "../../../utils/styles";
 
-//TODO: pasar el import al theme ds.
 const textStyles = (props) => {
   return css`
-    @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap");
-
     color: ${getColor(props.theme, props.$color)};
     font-family: "Source Sans 3", sans-serif;
     font-size: ${() => {

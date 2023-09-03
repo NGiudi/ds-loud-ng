@@ -7,7 +7,7 @@ import { Icon, Text } from "../../../";
 import { Styles } from "./Input.styles";
 
 export const Input = (props) => {
-  const { description, icon, label, name, type } = props;
+  const { description, icon, id, label, name, type } = props;
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -19,24 +19,14 @@ export const Input = (props) => {
     <Styles.Wrapper $margin={props.margin}>
       {/* label */}
       {!!label && (
-        <Text
-          as="label"
-          htmlFor={name}
-          margin="b-4"
-          size="sm"
-          weight="semibold"
-        >
+        <Text as="label" htmlFor={id} margin="b-4" size="sm" weight="semibold">
           {label}
         </Text>
       )}
 
       {/* label */}
       {!!description && (
-        <Text
-          color={{ intensity: "400", tone: "black" }}
-          margin="b-4"
-          size="sm"
-        >
+        <Text color="black_400" margin="b-4" size="sm">
           {description}
         </Text>
       )}
@@ -48,7 +38,7 @@ export const Input = (props) => {
         <Styles.InputStyles
           autoComplete={props.autoComplete}
           autoFocus={props.autoFocus}
-          id={name}
+          id={id}
           disabled={props.disabled}
           innerRef={props.innerRef}
           name={name}
@@ -77,6 +67,7 @@ Input.propTypes = {
   description: PropTypes.string,
   disabled: PropTypes.bool,
   icon: PropTypes.string,
+  id: PropTypes.string,
   innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   label: PropTypes.string,
   margin: PropTypes.string,
@@ -94,6 +85,7 @@ Input.defaultProps = {
   description: "",
   disabled: false,
   icon: null,
+  id: null,
   innerRef: null,
   label: "",
   margin: "a-0",

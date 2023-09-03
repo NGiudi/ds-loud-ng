@@ -1,6 +1,5 @@
 import React from "react";
 
-/* components */
 import { Divider, ThemeDS } from "../../../";
 
 const story = {

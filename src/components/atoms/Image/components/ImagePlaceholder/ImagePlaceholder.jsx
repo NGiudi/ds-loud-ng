@@ -19,19 +19,11 @@ export const ImagePlaceholder = (props) => {
   return (
     <Styles.IconPlaceholder $margin={margin} $size={size} $type={type}>
       {placeholder ? (
-        <Text
-          color={{ intensity: "100", tone: "black" }}
-          size={selectTextSize()}
-          weight="bold"
-        >
+        <Text color="black_100" size={selectTextSize()} weight="bold">
           {placeholder.charAt(0).toUpperCase()}
         </Text>
       ) : (
-        <Icon
-          color={{ intensity: "100", tone: "black" }}
-          icon="camera"
-          size={size}
-        />
+        <Icon color="black_100" icon="camera" size={size} />
       )}
     </Styles.IconPlaceholder>
   );

@@ -29,11 +29,7 @@ export const SideBar = (props) => {
     return (
       <>
         <Icon
-          color={
-            isSelected
-              ? { intensity: "600", tone: "orange" }
-              : { intensity: "900", tone: "black" }
-          }
+          color={isSelected ? "orange_600" : "black_900"}
           icon={btn.icon}
           margin="r-8"
           size="sm"
@@ -41,11 +37,7 @@ export const SideBar = (props) => {
 
         {isExpanded && (
           <Text
-            color={
-              isSelected
-                ? { intensity: "600", tone: "orange" }
-                : { intensity: "900", tone: "black" }
-            }
+            color={isSelected ? "orange_600" : "black_900"}
             weight="semibold"
           >
             {btn.label}

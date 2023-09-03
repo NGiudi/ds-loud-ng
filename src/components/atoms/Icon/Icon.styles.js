@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { marginProperties } from "../../../utils/styles";
+import { getColor, marginProperties } from "../../../utils/styles";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -18,9 +18,7 @@ const IconWrapper = styled.div`
   justify-content: center;
 
   ${(props) => css`
-    color: ${typeof props.$color === "object"
-      ? props.theme.colors[props.$color.tone][`_${props.$color.intensity}`]
-      : props.$color};
+    color: ${getColor(props.theme, props.$color)};
     height: ${props.theme.components.icon.wrapperSizes[props.size]};
     width: ${props.theme.components.icon.wrapperSizes[props.size]};
     ${marginProperties(props)}

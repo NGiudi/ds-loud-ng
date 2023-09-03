@@ -65,11 +65,7 @@ export const Colors = () => {
     <ThemeDS>
       <Icon color="orange" icon="cog" margin="r-32" />
 
-      <Icon
-        color={{ intensity: "700", tone: "orange" }}
-        icon="cog"
-        margin="r-32"
-      />
+      <Icon color="orange_700" icon="cog" margin="r-32" />
 
       <Icon color="#AEAEAE" icon="cog" />
     </ThemeDS>

@@ -9,13 +9,13 @@ const Error = styled(ErrorMessage)`
     color: ${props.theme.colors.alert.colors.error};
     font-size: ${props.theme.components.text.sizes.sm};
     font-weight: ${props.theme.components.text.weights.regular};
-    line-height: ${props.theme.components.text.lineHeight.sm};
+    line-height: ${props.theme.components.text.lineHeights.sm};
   `};
 `;
 
 const ErrorWrapper = styled.div`
   ${(props) => css`
-    height: ${props.theme.components.text.lineHeight.sm};
+    height: ${props.theme.components.text.lineHeights.sm};
 
     ${marginProperties(props)}
   `};
@@ -32,7 +32,7 @@ const InputStyles = styled(Field)`
     font-size: ${props.theme.components.text.sizes.md};
     font-weight: ${props.theme.components.text.weights.regular};
     height: ${props.theme.components.input.height};
-    line-height: ${props.theme.components.text.lineHeight.md};
+    line-height: ${props.theme.components.text.lineHeights.md};
   `};
 `;
 

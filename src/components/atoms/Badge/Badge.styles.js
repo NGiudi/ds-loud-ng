@@ -1,14 +1,16 @@
 import styled, { css } from "styled-components";
 
-import { marginProperties, paddingProperties } from "../../../utils/styles";
+import {
+  getColor,
+  marginProperties,
+  paddingProperties,
+} from "../../../utils/styles";
 
 const Wrapper = styled.div`
   display: inline-block;
 
   ${(props) => css`
-    background-color: ${typeof props.$color === "object"
-      ? props.theme.colors[props.$color.tone][`_${props.$color.intensity}`]
-      : props.$color};
+    background-color: ${getColor(props.theme, props.$color)};
     border-radius: ${props.theme.components.badge.border.radius};
 
     ${marginProperties(props)}

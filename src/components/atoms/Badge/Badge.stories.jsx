@@ -33,10 +33,7 @@ export const DinamicExample = (args) => {
 };
 
 DinamicExample.args = {
-  color: {
-    intensity: "600",
-    tone: "orange",
-  },
+  color: "orange_600",
   margin: "a-10",
 };
 
@@ -44,7 +41,7 @@ export const Colors = () => {
   return (
     <ThemeDS>
       <Badge margin="l-10 t-10">Prueba</Badge>
-      <Badge color={{ intensity: "500", tone: "black" }} margin="l-10 t-10">
+      <Badge color="black_500" margin="l-10 t-10">
         Prueba
       </Badge>
     </ThemeDS>
