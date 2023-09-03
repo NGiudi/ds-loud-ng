@@ -199,4 +199,25 @@ export const Align = () => {
   );
 };
 
+export const Colors = () => {
+  return (
+    <ThemeDS>
+      <Text margin="y-16">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </Text>
+
+      <Text color="orange_700" margin="y-16">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </Text>
+
+      <Text color="red" margin="y-16">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </Text>
+    </ThemeDS>
+  );
+};
+
 export default story;

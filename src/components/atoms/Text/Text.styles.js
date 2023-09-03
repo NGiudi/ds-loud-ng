@@ -1,15 +1,17 @@
 import styled, { css } from "styled-components";
 
-import { marginProperties, paddingProperties } from "../../../utils/styles";
+import {
+  getColor,
+  marginProperties,
+  paddingProperties,
+} from "../../../utils/styles";
 
 //TODO: pasar el import al theme ds.
 const textStyles = (props) => {
   return css`
     @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap");
 
-    color: ${typeof props.$color === "object"
-      ? props.theme.colors[props.$color.tone][`_${props.$color.intensity}`]
-      : props.$color};
+    color: ${getColor(props.theme, props.$color)};
     font-family: "Source Sans 3", sans-serif;
     font-size: ${() => {
       const { sizes, types } = props.theme.components.text;

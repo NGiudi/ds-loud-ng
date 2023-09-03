@@ -33,7 +33,7 @@ export const Text = (props) => {
 Text.propTypes = {
   align: PropTypes.oneOf(["center", "end", "start"]),
   as: PropTypes.oneOf(["label", "p", "span"]),
-  color: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  color: PropTypes.string,
   decoration: PropTypes.oneOf(["underline", "line-through"]),
   htmlFor: PropTypes.string, //? used only for label type.
   margin: PropTypes.string,
@@ -54,10 +54,7 @@ Text.propTypes = {
 Text.defaultProps = {
   align: "start",
   as: "p",
-  color: {
-    intensity: "900",
-    tone: "black",
-  },
+  color: "black_900",
   decoration: null,
   htmlFor: "",
   margin: "a-0",
