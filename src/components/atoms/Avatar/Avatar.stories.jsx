@@ -52,7 +52,7 @@ const meta = {
   title: "Components/Avatar",
 };
 
-export const DinamicExample = (args) => {
+export const Model = (args) => {
   return (
     <ThemeDS>
       <Avatar {...args}>
@@ -78,6 +78,14 @@ export const DinamicExample = (args) => {
       </Avatar>
     </ThemeDS>
   );
+};
+
+Model.args = {
+  img: {
+    alt: "profile_image",
+    placeholder: "N",
+  },
+  size: "avatar",
 };
 
 export const Positions = () => {
@@ -118,14 +126,6 @@ export const Positions = () => {
       </Columns>
     </ThemeDS>
   );
-};
-
-DinamicExample.args = {
-  img: {
-    alt: "profile_image",
-    placeholder: "N",
-  },
-  size: "avatar",
 };
 
 export default meta;

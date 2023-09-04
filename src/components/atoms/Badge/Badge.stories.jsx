@@ -8,7 +8,7 @@ const meta = {
   argTypes: {
     children: {
       control: "none",
-      description: "Contenido del badge",
+      description: "Texto del ontenido de la badge",
     },
     color: {
       control: { type: "string" },
@@ -29,7 +29,7 @@ const meta = {
   title: "Components/Badge",
 };
 
-export const DinamicExample = (args) => {
+export const Model = (args) => {
   return (
     <ThemeDS>
       <Badge {...args}>Prueba</Badge>
@@ -37,7 +37,7 @@ export const DinamicExample = (args) => {
   );
 };
 
-DinamicExample.args = {
+Model.args = {
   color: "orange_600",
   margin: "a-10",
 };

@@ -1,58 +1,64 @@
 import React from "react";
 
 import { Button, ThemeDS } from "../../../";
+import { ButtonDocs } from "./Button.docs";
 
-const story = {
-  title: "Components/Button",
-  component: Button,
-  tags: ["autodocs"],
+const meta = {
   argTypes: {
     border: {
       control: { type: "object" },
       description:
-        "Objecto de estilos para el borde del botón. Por el momento solo modifica el radio.",
+        "Este objeto define los estilos aplicados al borde del botón",
     },
     children: {
       control: { type: "string" },
-      description: "Recibe el texto que se imprime en el botón.",
+      description: "Texto del contenido del botón",
     },
     disabled: {
       control: { type: "boolean" },
-      description: "Si es true el botón queda en estaba deshabilitado.",
+      description: "Cuando se establece en true, el botón queda deshabilitado",
     },
     fullWidth: {
       control: { type: "boolean" },
       description:
-        "Si es true el botón ocupa el total del ancho del contenedor padre.",
+        "Cuando se establece en true, el botón ocupa todo el ancho del contenedor padre",
     },
     icon: {
       control: { type: "string" },
-      description:
-        "Nombre del ícono que se agrega del lado izquierdo del botón.",
+      description: "Este objeto se pasa al componente icon dentro del botón",
     },
     kind: {
       control: { type: "string" },
-      description: "Recibe el tipo de botón.",
+      description: "Recibe el nombre del tipo de botón",
     },
     loading: {
       control: { type: "boolean" },
-      description: "Si es true se muestra un spinner de carga.",
+      description:
+        "Cuando se establece en true, se muestra un spinner de carga",
     },
     margin: {
       control: { type: "string" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Establece la distancia de los márgenes",
     },
     onClick: {
       action: "clicked",
-      description: "Función que se ejecuta al apretar el botón.",
+      description:
+        "Esta función se ejecuta al presionar el botón. Sin embargo, si el botón está en modo de carga, la función no se ejecuta",
     },
     type: {
       control: { type: "select" },
-      description:
-        "Recibe del tipo de botón. Sirve para hacer que el botón sea de tipo submit para formularios.",
+      description: "Establece si el botón actua como un botón submit o no.",
       options: ["button", "submit"],
     },
   },
+  component: Button,
+  parameters: {
+    docs: {
+      page: ButtonDocs,
+    },
+  },
+  tags: ["autodocs"],
+  title: "Components/Button",
 };
 
 const cellSize = {
@@ -61,7 +67,21 @@ const cellSize = {
   width: "120px",
 };
 
-export const AllButtons = () => {
+export const Model = (args) => {
+  return (
+    <ThemeDS>
+      <Button {...args} />
+    </ThemeDS>
+  );
+};
+
+Model.args = {
+  children: "Apretame",
+  icon: { name: "award" },
+  kind: "solid",
+};
+
+export const AllTypes = () => {
   return (
     <ThemeDS>
       <table>
@@ -155,18 +175,4 @@ export const AllButtons = () => {
   );
 };
 
-export const DinamicExample = (args) => {
-  return (
-    <ThemeDS>
-      <Button {...args} />
-    </ThemeDS>
-  );
-};
-
-DinamicExample.args = {
-  children: "Apretame",
-  icon: { name: "award" },
-  kind: "solid",
-};
-
-export default story;
+export default meta;
