@@ -1,7 +1,8 @@
 import React from "react";
 
-import { Button, ThemeDS } from "../../../";
 import { ButtonDocs } from "./Button.docs";
+
+import { Button, ThemeDS } from "../../../";
 
 const meta = {
   argTypes: {

@@ -1,6 +1,7 @@
 export { Avatar } from "./Avatar/Avatar";
 export { Badge } from "./Badge/Badge";
 export { Button } from "./Button/Button";
+export { Checkbox } from "./Checkbox/Checkbox";
 export { Countdown } from "./Countdown/Countdown";
 export { Divider } from "./Divider/Divider";
 export { Dropdown } from "./Dropdown/Dropdown";

@@ -20,6 +20,7 @@ export {
   Avatar,
   Badge,
   Button,
+  Checkbox,
   Countdown,
   Divider,
   Dropdown,

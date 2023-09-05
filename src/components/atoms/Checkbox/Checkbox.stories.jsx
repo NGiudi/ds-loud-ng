@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Checkbox } from "./Checkbox";
+import { CheckboxDocs } from "./Checkbox.docs";
 
-import { ThemeDS } from "../../../";
+import { Button, Checkbox, ThemeDS } from "../../../";
 
 import { Form, Formik } from "formik";
 
@@ -29,9 +29,7 @@ const meta = {
   component: Checkbox,
   parameters: {
     docs: {
-      description: {
-        component: "",
-      },
+      page: CheckboxDocs,
     },
   },
   tags: ["autodocs"],
@@ -59,20 +57,28 @@ Model.args = {};
 export const FormExample = () => {
   return (
     <ThemeDS>
-      <Formik
-        initialValues={{
-          email: false,
-        }}
-        onSubmit={(values) => {
-          alert(JSON.stringify(values));
-        }}
-      >
-        <Form>
-          <Checkbox label="Recibir emails" name="email" />
+      <div style={{ maxWidth: "500px" }}>
+        <Formik
+          initialValues={{
+            email: false,
+          }}
+          onSubmit={(values) => {
+            alert(JSON.stringify(values));
+          }}
+        >
+          <Form>
+            <Checkbox
+              description="Mantente al tanto de las últimas noticias, ofertas y actualizaciones de nuestra marca al marcar esta casilla. Recibirás correos electrónicos periódicos con información relevante sobre nuestros productos y servicios."
+              label="Suscribirse a boletines informativos"
+              name="email"
+            />
 
-          <button type="submit">Submit</button>
-        </Form>
-      </Formik>
+            <Button margin="t-20" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </Formik>
+      </div>
     </ThemeDS>
   );
 };
