@@ -1,14 +1,13 @@
-const border = {
-  radius: "4px",
-  width: "1px",
-};
-
-const padding = {
-  left: "24px",
-};
-
 export const checkbox = {
-  border,
-  padding,
-  width: "15px",
+  check: {
+    border: {
+      radius: "4px",
+      width: "1px",
+    },
+    margin: "1px 8px 0 0",
+    padding: {
+      left: "24px",
+    },
+    width: "16px",
+  },
 };

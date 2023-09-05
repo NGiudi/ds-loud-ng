@@ -27,6 +27,10 @@ const meta = {
       control: { type: "string" },
       description: "Este objeto se pasa al componente icon dentro del botón",
     },
+    id: {
+      control: { type: "string" },
+      description: "Identificador único para el componente",
+    },
     kind: {
       control: { type: "string" },
       description: "Recibe el nombre del tipo de botón",

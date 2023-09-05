@@ -10,19 +10,29 @@ const CustomCheckbox = styled(Field)`
     background-position: center;
     background-repeat: no-repeat;
     background-size: 60%;
-    border-color: ${props.theme.colors.black._900};
-    border-radius: ${props.theme.components.checkbox.border.radius};
+    border-color: ${props.theme.colors.black._400};
+    border-radius: ${props.theme.components.checkbox.check.border.radius};
     border-style: solid;
-    border-width: ${props.theme.components.checkbox.border.width};
+    border-width: ${props.theme.components.checkbox.check.border.width};
     box-sizing: border-box;
     flex-shrink: 0;
-    height: ${props.theme.components.checkbox.width};
-    width: ${props.theme.components.checkbox.width};
+    height: ${props.theme.components.checkbox.check.width};
+    margin: ${props.theme.components.checkbox.check.margin};
+    width: ${props.theme.components.checkbox.check.width};
 
     &:checked {
-      background-color: ${props.theme.colors.orange._700};
+      background-color: ${props.theme.colors.orange._500};
       background-image: url(${checkImage});
+      border-color: ${props.theme.colors.orange._500};
+    }
+
+    &:hover&:checked {
+      background-color: ${props.theme.colors.orange._700};
       border-color: ${props.theme.colors.orange._700};
+    }
+
+    &:hover&:not(:checked) {
+      border-color: ${props.theme.colors.black._700};
     }
   `}
 `;

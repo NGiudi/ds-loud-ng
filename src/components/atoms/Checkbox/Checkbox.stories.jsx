@@ -6,10 +6,27 @@ import { ThemeDS } from "../../../";
 
 import { Form, Formik } from "formik";
 
-const story = {
-  title: "Components/Checkbox",
+const meta = {
+  argTypes: {
+    description: {
+      control: { type: "string" },
+      description:
+        "Texto más detallado que describe la funcionalidad y contiene otras observaciones relevantes.",
+    },
+    id: {
+      control: { type: "string" },
+      description: "Identificador único para el componente",
+    },
+    label: {
+      control: { type: "string" },
+      description: "Un breve texto que describe la funcionalidad del checkbox",
+    },
+    name: {
+      control: { type: "string" },
+      description: "Nombre identificador del componente para su uso con Formik",
+    },
+  },
   component: Checkbox,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -17,24 +34,29 @@ const story = {
       },
     },
   },
-  argTypes: {
-    id: {
-      control: { type: "string" },
-      description: "Identificador único del componente.",
-    },
-    label: {
-      control: { type: "string" },
-      description: "Recibe el texto que se muestra del lado del checkbox.",
-    },
-    name: {
-      control: { type: "string" },
-      description:
-        "Bajo este nombre se guarda el valor del checkbox. Ejemplo, si este campo se llama email, el valor del campo se se guarda en el campo email.",
-    },
-  },
+  tags: ["autodocs"],
+  title: "Components/Checkbox",
 };
 
-export const DinamicExample = () => {
+export const Model = () => {
+  return (
+    <ThemeDS>
+      <Formik initialValues={{ email: false }}>
+        <Form>
+          <Checkbox
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            label="Lorem ipsum"
+            name="email"
+          />
+        </Form>
+      </Formik>
+    </ThemeDS>
+  );
+};
+
+Model.args = {};
+
+export const FormExample = () => {
   return (
     <ThemeDS>
       <Formik
@@ -55,6 +77,4 @@ export const DinamicExample = () => {
   );
 };
 
-DinamicExample.args = {};
-
-export default story;
+export default meta;

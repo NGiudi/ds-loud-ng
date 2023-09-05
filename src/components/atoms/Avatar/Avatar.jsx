@@ -8,7 +8,7 @@ import { Panel, Image } from "../../../";
 import { Styles } from "./Avatar.styles";
 
 export const Avatar = (props) => {
-  const { pos, size } = props;
+  const { id, pos, size } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -30,7 +30,7 @@ export const Avatar = (props) => {
   };
 
   return (
-    <Styles.Wrapper $margin={props.margin} ref={innerRef}>
+    <Styles.Wrapper id={id} $margin={props.margin} ref={innerRef}>
       <Styles.AvatarWrapper $isSelected={isOpen} onClick={handleAvatarClick}>
         <Image size={size} type="round" {...imageAttributes} />
       </Styles.AvatarWrapper>
@@ -46,6 +46,7 @@ export const Avatar = (props) => {
 
 Avatar.propTypes = {
   children: PropTypes.node,
+  id: PropTypes.string,
   img: PropTypes.shape({
     alt: PropTypes.string,
     img: PropTypes.string,
@@ -58,6 +59,7 @@ Avatar.propTypes = {
 
 Avatar.defaultProps = {
   children: null,
+  id: null,
   img: null,
   margin: "a-0",
   pos: "left",

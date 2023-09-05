@@ -6,7 +6,7 @@ import { Icon } from "../../../";
 import { Styles } from "./Button.styles";
 
 export const Button = (props) => {
-  const { children, fullWidth, loading, onClick } = props;
+  const { children, id, fullWidth, loading, onClick } = props;
 
   const isIconButton = props.kind === "icon";
 
@@ -41,6 +41,7 @@ export const Button = (props) => {
     <CustomButton
       $border={props.border}
       disabled={props.disabled}
+      id={id}
       $fullWidth={fullWidth}
       kind={props.kind}
       $loading={loading}
@@ -81,6 +82,7 @@ Button.propTypes = {
     name: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     size: PropTypes.oneOf(["input", "lg", "md", "sm"]),
   }),
+  id: PropTypes.string,
   kind: PropTypes.oneOf(["outlined", "solid", "text"]),
   loading: PropTypes.bool,
   margin: PropTypes.string,
@@ -96,6 +98,7 @@ Button.defaultProps = {
   disabled: false,
   fullWidth: false,
   icon: null, //? default value insert into javascript code.
+  id: null,
   kind: "solid",
   loading: false,
   margin: "a-0",

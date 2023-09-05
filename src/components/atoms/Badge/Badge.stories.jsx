@@ -14,6 +14,10 @@ const meta = {
       control: { type: "string" },
       description: "Establece el color del fondo.",
     },
+    id: {
+      control: { type: "string" },
+      description: "Identificador único para el componente",
+    },
     margin: {
       control: { type: "string" },
       description: "Establece la distancia de los márgenes",

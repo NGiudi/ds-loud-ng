@@ -22,6 +22,10 @@ const meta = {
       control: { type: "string" },
       description: "Contenido del panel",
     },
+    id: {
+      control: { type: "string" },
+      description: "Identificador único para el componente",
+    },
     img: {
       control: { type: "string" },
       description: "Propiedades que se pasan al componente de imagen",

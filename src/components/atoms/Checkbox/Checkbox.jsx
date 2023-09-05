@@ -6,16 +6,18 @@ import { Flex, Text } from "../../../";
 import { Styles } from "./Checkbox.styles";
 
 export const Checkbox = (props) => {
-  const { id, label, name } = props;
+  const { description, id, label, name } = props;
 
   return (
     <Flex vAlign="start">
       <Styles.CustomCheckbox id={id} name={name} type="checkbox" />
 
       <div style={{ flexGrow: "0" }}>
-        <Text as="label" margin="l-4 t-2" htmlFor={id}>
+        <Text as="label" htmlFor={id} margin="b-4" type="bodySemibold">
           {label}
         </Text>
+
+        {description && <Text type="captionRegular">{description}</Text>}
       </div>
     </Flex>
   );
@@ -23,12 +25,14 @@ export const Checkbox = (props) => {
 
 Checkbox.propTypes = {
   id: PropTypes.string,
-  label: PropTypes.string,
+  description: PropTypes.string,
+  label: PropTypes.string.isRequired,
   name: PropTypes.string,
 };
 
 Checkbox.defaultProps = {
-  id: "default_checkbox",
+  id: null,
+  description: null,
   label: "",
   name: "",
 };

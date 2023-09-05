@@ -6,10 +6,9 @@ import {
   paddingProperties,
 } from "../../../utils/styles";
 
-const Wrapper = styled.div`
-  display: inline-block;
-
+const Wrapper = styled("div")`
   ${(props) => css`
+    display: inline-block;
     background-color: ${getColor(props.theme, props.$color)};
     border-radius: ${props.theme.components.badge.border.radius};
 
