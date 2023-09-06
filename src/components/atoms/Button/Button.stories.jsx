@@ -26,7 +26,7 @@ const meta = {
     },
     icon: {
       control: { type: "string" },
-      description: "Este objeto se pasa al componente icon dentro del botón",
+      description: "Este objeto se pasa al componente Icon dentro del botón",
     },
     id: {
       control: { type: "string" },

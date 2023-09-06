@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
+import { Text } from "../../../";
+
 import { getTimeObject, formatClock } from "../../../utils/time/clock";
 
 export const Countdown = (props) => {
-  const { endTime, formatTime, onFinish, showZero } = props;
+  const { endTime, formatTime, onFinish, showZero, text } = props;
 
-  const [time, setTime] = useState(endTime - new Date().getTime());
+  const [time, setTime] = useState(0);
 
   const [startWithoutTime] = useState(() => {
     const firstTime = endTime - new Date().getTime();
@@ -27,7 +29,7 @@ export const Countdown = (props) => {
 
       timeoutRef.current = id;
     }
-  }, [endTime, time]);
+  }, [time]);
 
   //? clear timer when unmounted component
   useEffect(() => {
@@ -35,6 +37,11 @@ export const Countdown = (props) => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, []);
+
+  //? update the countdown when the end date and time are changed.
+  useEffect(() => {
+    setTime(endTime - new Date().getTime());
+  }, [endTime]);
 
   //? execute the callback when the time expires.
   //? if it starts without time it does not execute.
@@ -47,7 +54,7 @@ export const Countdown = (props) => {
   //? no show zero value.
   if (time < 1000 && !showZero) return null;
 
-  return formatClock(getTimeObject(time), formatTime);
+  return <Text {...text}>{formatClock(getTimeObject(time), formatTime)}</Text>;
 };
 
 Countdown.propTypes = {
@@ -55,11 +62,13 @@ Countdown.propTypes = {
   formatTime: PropTypes.oneOf(["hh:mm:ss", "mm:ss", "ss"]),
   onFinish: PropTypes.func,
   showZero: PropTypes.bool,
+  text: PropTypes.object,
 };
 
 Countdown.defaultProps = {
   endTime: null,
   formatTime: "hh:mm:ss",
   onFinish: null,
-  showZero: false,
+  showZero: true,
+  text: {},
 };

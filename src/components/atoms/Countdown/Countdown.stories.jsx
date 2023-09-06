@@ -2,24 +2,16 @@ import React from "react";
 
 import { action } from "@storybook/addon-actions";
 
-import { Countdown } from "./Countdown";
+import { CountdownDocs } from "./Countdown.docs";
 
-const story = {
-  title: "Components/Countdown",
-  component: Countdown,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component:
-          "El componente countdown es un componente que sirve para hacer cuentas regresivas, con solo pasar un valor del tipo Date ya estará  funcionando. Ahora podemos preguntarnos porque no se pasa un valor numerico en lugar de una fecha y la respuesta es simple; Al pasar un valor numérico no tenemos como saber el tiempo transcurrido si se recarga la página como si sabemos al tener el valor de una fecha.",
-      },
-    },
-  },
+import { Countdown, ThemeDS } from "../../../";
+
+const meta = {
   argTypes: {
     endTime: {
       control: { type: "date", required: true },
-      description: "Pasa la fecha y hora de fin de la cuenta regresiva.",
+      description:
+        "Establece la fecha y hora de finalización de la cuenta regresiva.",
       table: {
         defaultValue: { summary: "null" },
       },
@@ -27,7 +19,8 @@ const story = {
     },
     formatTime: {
       control: { type: "select" },
-      description: "Formato con el cual se muestra en pantalla.",
+      description:
+        "Establece el formato de como se muestra la cuenta regresiva.",
       options: ["hh:mm:ss", "mm:ss", "ss"],
       table: {
         defaultValue: { summary: "hh:mm:ss" },
@@ -35,7 +28,7 @@ const story = {
     },
     onFinish: {
       control: { type: "none" },
-      description: "Callback que se ejecuta al terminar la cuenta regresiva.",
+      description: "Función que se ejecuta al finalizar la cuenta regresiva.",
       table: {
         defaultValue: { summary: "null" },
       },
@@ -44,21 +37,43 @@ const story = {
       control: { type: "boolean" },
       description: "Comienza la cuenta regresiva al pasar un valor true.",
       table: {
-        defaultValue: { summary: "false" },
+        defaultValue: { summary: "true" },
+      },
+    },
+    text: {
+      control: { type: "object" },
+      description: "Este objeto se pasa al componente Text dentro del botón",
+      table: {
+        defaultValue: { summary: "true" },
       },
     },
   },
+  component: Countdown,
+  parameters: {
+    docs: {
+      page: CountdownDocs,
+    },
+  },
+  tags: ["autodocs"],
+  title: "Components/Countdown",
 };
 
-export const CountdownExample = (args) => {
-  return <Countdown {...args} />;
+export const Model = (args) => {
+  return (
+    <ThemeDS>
+      <Countdown {...args} />
+    </ThemeDS>
+  );
 };
 
-CountdownExample.args = {
+Model.args = {
   endTime: new Date().getTime() + 10000,
   formatTime: "hh:mm:ss",
   onFinish: action("onFinish"),
   showZero: true,
+  text: {
+    type: "subtitle",
+  },
 };
 
-export default story;
+export default meta;

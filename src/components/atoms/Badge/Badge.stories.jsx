@@ -8,7 +8,7 @@ const meta = {
   argTypes: {
     children: {
       control: "none",
-      description: "Texto del ontenido de la badge",
+      description: "Texto del contenido de la badge",
     },
     color: {
       control: { type: "string" },
