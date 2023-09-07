@@ -12,15 +12,15 @@ const story = {
       description: "Contenido del componente.",
     },
     gap: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Recibe el valor del espacio entre columnas.",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
     minWidth: {
-      control: { type: "string" },
+      control: { type: "text" },
       description:
         "Recibe el valor del ancho mínimo de cada columna. Si el ancho es menor, se pone un elemento abajo del otro.",
     },

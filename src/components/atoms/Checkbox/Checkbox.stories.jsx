@@ -9,20 +9,24 @@ import { Form, Formik } from "formik";
 const meta = {
   argTypes: {
     description: {
-      control: { type: "string" },
+      control: { type: "text" },
       description:
         "Texto más detallado que describe la funcionalidad y contiene otras observaciones relevantes.",
     },
     id: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Identificador único para el componente",
     },
     label: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Un breve texto que describe la funcionalidad del checkbox",
     },
+    margin: {
+      control: { type: "text" },
+      description: "Establece la distancia de los márgenes",
+    },
     name: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Nombre identificador del componente para su uso con Formik",
     },
   },

@@ -11,15 +11,15 @@ const meta = {
       description: "Texto del contenido de la badge",
     },
     color: {
-      control: { type: "string" },
-      description: "Establece el color del fondo.",
+      control: { type: "text" },
+      description: "Establece el color del fondo",
     },
     id: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Identificador único para el componente",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Establece la distancia de los márgenes",
     },
   },

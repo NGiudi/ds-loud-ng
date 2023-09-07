@@ -13,19 +13,19 @@ const story = {
   tags: ["autodocs"],
   argTypes: {
     label: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Texto de descripción en la parte superior del select.",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
     maxHeight: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Setea el alto máximo en pixeles del panel.",
     },
     name: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se usa para completar los campos del formulario de formik.",
     },
     options: {

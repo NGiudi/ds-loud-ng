@@ -32,7 +32,7 @@ const story = {
         "Componente con la estructura de los elementos de la derecha.",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
     onChange: {

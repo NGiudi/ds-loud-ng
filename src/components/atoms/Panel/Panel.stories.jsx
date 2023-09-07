@@ -17,7 +17,7 @@ const story = {
       description: "Contenido del panel",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
     onSizeH: {
@@ -25,7 +25,7 @@ const story = {
       description: "Función que se ejecuta al modificar el alto del panel.",
     },
     padding: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los paddings.",
     },
     type: {

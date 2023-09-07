@@ -26,7 +26,7 @@ const story = {
         "Si este valor es true se puede hacer click sobre el texto y cambia de estado.",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
   },

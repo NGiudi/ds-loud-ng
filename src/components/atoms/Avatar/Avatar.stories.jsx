@@ -19,19 +19,19 @@ import fotoPerfil from "../../../assets/img/foto-perfil.jpg";
 const meta = {
   argTypes: {
     children: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Contenido del panel",
     },
     id: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Identificador único para el componente",
     },
     img: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Propiedades que se pasan al componente de imagen",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Establece la distancia de los márgenes",
     },
     pos: {

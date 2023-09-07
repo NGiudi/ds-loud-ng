@@ -12,7 +12,7 @@ const story = {
       description: "Contenido del componente.",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
   },

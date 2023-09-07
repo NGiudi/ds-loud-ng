@@ -12,15 +12,15 @@ const story = {
       description: "Contenido de la tab",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
     name: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Nombre que identifica el componente.",
     },
     padding: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los paddings.",
     },
   },

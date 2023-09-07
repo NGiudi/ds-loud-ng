@@ -19,7 +19,7 @@ const story = {
       options: ["center", "end", "space-around", "space-between", "start"],
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
     vAlign: {

@@ -19,7 +19,7 @@ const story = {
       description: "Si se pasa esta propiedad se redondea los bordes.",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
     noShowAnimationOnFirstLoad: {

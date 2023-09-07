@@ -10,15 +10,15 @@ const story = {
   tags: ["autodocs"],
   argTypes: {
     autoComplete: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Es igual al atributo autocomplete de html.",
     },
     autoFocus: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Es igual al atributo autofocus de html.",
     },
     description: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Texte descriptivo que va por debajo del label",
     },
     disabled: {
@@ -26,24 +26,24 @@ const story = {
       description: "Deshabilita el input si este valor es true.",
     },
     icon: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Recibe el nombre del ícono de fontawesome.",
     },
     innerRef: {
-      control: { type: "string" },
+      control: { type: "text" },
       description:
         "Se puede pasar una variable para que haga referencia al iput.",
     },
     label: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Texto que identifica sobre que se trata el input.",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
     name: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se usa para completar los campos del formulario de formik.",
     },
     onKeyPress: {
@@ -51,7 +51,7 @@ const story = {
       description: "Función que se ejecuta al hacer click en una tecla",
     },
     placeholder: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Es texto que va en el placeholder de html.",
     },
     readOnly: {

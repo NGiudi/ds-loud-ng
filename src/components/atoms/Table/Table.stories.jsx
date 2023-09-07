@@ -22,7 +22,7 @@ const story = {
         "Array de columnas para pantallas más grandes. Caso no exista se usa las columnas pasadas en columns.",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
     mobileColumns: {
@@ -31,7 +31,7 @@ const story = {
         "Array de columnas para pantallas más chicas. Caso no exista se usa las columnas pasadas en columns.",
     },
     name: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Nombre del atributo. Equivalente al atributo name de html.",
     },
     onClick: {

@@ -17,7 +17,7 @@ const story = {
       options: ["loudLight"],
     },
     theme: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Sirve para pasar un theme personalizado por paramentro.",
     },
   },

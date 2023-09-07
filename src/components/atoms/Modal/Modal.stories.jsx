@@ -8,7 +8,7 @@ const story = {
   tags: ["autodocs"],
   argTypes: {
     cancelButton: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Props que se pasan al botón de cancelar.",
     },
     children: {
@@ -16,7 +16,7 @@ const story = {
       description: "Contenido del modal.",
     },
     confirmButton: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Props que se pasan al botón de cancelar.",
     },
     onClose: {
@@ -25,7 +25,7 @@ const story = {
         "Función que se ejecuta al apretar en cancelar o al apretar el botón para cerrar el modal.",
     },
     padding: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los paddings.",
     },
     show: {
@@ -34,7 +34,7 @@ const story = {
         "Controla la visualización del modal. Si es true muestra el modal.",
     },
     width: {
-      control: { type: "string" },
+      control: { type: "text" },
       description:
         "Se puede setear el ancho del modal. Caso la pantalla sea menor al valor seteado, el modal se adapta a la pantalla.",
     },

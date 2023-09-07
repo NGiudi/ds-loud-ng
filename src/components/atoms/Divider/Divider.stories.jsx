@@ -1,25 +1,35 @@
 import React from "react";
 
+import { DividerDocs } from "./Divider.docs";
+
 import { Divider, ThemeDS } from "../../../";
 
-const story = {
-  title: "Components/Divider",
-  component: Divider,
-  tags: ["autodocs"],
+const meta = {
   argTypes: {
     color: {
-      control: { type: "string" },
-      description:
-        "Se setea el color del fondo, se pasa el tono de color y la intensidad.",
+      control: { type: "text" },
+      description: "Establece el color del fondo.",
+    },
+    height: {
+      control: { type: "text" },
+      description: "Establece el espesor del divider",
     },
     margin: {
-      control: { type: "string" },
-      description: "Se setea la distancia de los margenes.",
+      control: { type: "text" },
+      description: "Establece la distancia de los márgenes",
     },
   },
+  component: Divider,
+  parameters: {
+    docs: {
+      page: DividerDocs,
+    },
+  },
+  title: "Components/Divider",
+  tags: ["autodocs"],
 };
 
-export const DinamicExample = (args) => {
+export const Model = (args) => {
   return (
     <ThemeDS>
       <Divider {...args} />
@@ -27,8 +37,10 @@ export const DinamicExample = (args) => {
   );
 };
 
-DinamicExample.args = {
+Model.args = {
+  color: "black_300",
+  height: "1px",
   margin: "y-10",
 };
 
-export default story;
+export default meta;

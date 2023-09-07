@@ -12,12 +12,12 @@ const story = {
       description: "Si es true el botón queda en estaba deshabilitado.",
     },
     icon: {
-      control: { type: "string" },
+      control: { type: "text" },
       description:
         "Nombre del ícono que se agrega del lado izquierdo del botón.",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
     onClick: {

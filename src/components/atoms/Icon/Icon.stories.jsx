@@ -8,16 +8,16 @@ const story = {
   tags: ["autodocs"],
   argTypes: {
     color: {
-      control: { type: "string" },
+      control: { type: "text" },
       description:
         "Se setea el color del fondo, se pasa el tono de color y la intensidad.",
     },
     icon: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Recibe el nombre del icono de fontawensome free.",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Se setea la distancia de los margenes.",
     },
     onClick: {

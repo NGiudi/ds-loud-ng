@@ -18,7 +18,7 @@ const story = {
   },
   argTypes: {
     img: {
-      control: { type: "string" },
+      control: { type: "text" },
       description:
         "Recibe un objeto con las propiedas que se pasan al componente Image.",
     },

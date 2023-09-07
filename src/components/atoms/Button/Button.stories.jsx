@@ -12,7 +12,7 @@ const meta = {
         "Este objeto define los estilos aplicados al borde del botón",
     },
     children: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Texto del contenido del botón",
     },
     disabled: {
@@ -25,15 +25,15 @@ const meta = {
         "Cuando se establece en true, el botón ocupa todo el ancho del contenedor padre",
     },
     icon: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Este objeto se pasa al componente Icon dentro del botón",
     },
     id: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Identificador único para el componente",
     },
     kind: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Recibe el nombre del tipo de botón",
     },
     loading: {
@@ -42,7 +42,7 @@ const meta = {
         "Cuando se establece en true, se muestra un spinner de carga",
     },
     margin: {
-      control: { type: "string" },
+      control: { type: "text" },
       description: "Establece la distancia de los márgenes",
     },
     onClick: {
