@@ -7,7 +7,7 @@ import { Badge, ThemeDS } from "../../../";
 const meta = {
   argTypes: {
     children: {
-      control: "none",
+      control: { type: "text" },
       description: "Texto del contenido de la badge",
     },
     color: {
@@ -36,14 +36,16 @@ const meta = {
 export const Model = (args) => {
   return (
     <ThemeDS>
-      <Badge {...args}>Prueba</Badge>
+      <Badge {...args} />
     </ThemeDS>
   );
 };
 
 Model.args = {
+  children: "Prueba",
   color: "orange_600",
-  margin: "a-10",
+  id: "badge-story",
+  margin: "a-0",
 };
 
 export const Colors = () => {

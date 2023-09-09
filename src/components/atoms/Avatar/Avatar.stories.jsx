@@ -19,7 +19,7 @@ import fotoPerfil from "../../../assets/img/foto-perfil.jpg";
 const meta = {
   argTypes: {
     children: {
-      control: { type: "text" },
+      control: { type: "none" },
       description: "Contenido del panel",
     },
     id: {
@@ -27,7 +27,7 @@ const meta = {
       description: "Identificador único para el componente",
     },
     img: {
-      control: { type: "text" },
+      control: { type: "object" },
       description: "Propiedades que se pasan al componente de imagen",
     },
     margin: {
@@ -85,10 +85,13 @@ export const Model = (args) => {
 };
 
 Model.args = {
+  id: "avatar-story",
   img: {
     alt: "profile_image",
     placeholder: "N",
   },
+  margin: "a-0",
+  pos: "left",
   size: "avatar",
 };
 

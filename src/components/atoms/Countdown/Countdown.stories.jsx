@@ -12,9 +12,6 @@ const meta = {
       control: { type: "date", required: true },
       description:
         "Establece la fecha y hora de finalización de la cuenta regresiva.",
-      table: {
-        defaultValue: { summary: "null" },
-      },
       type: { required: true },
     },
     formatTime: {
@@ -22,30 +19,18 @@ const meta = {
       description:
         "Establece el formato de como se muestra la cuenta regresiva.",
       options: ["hh:mm:ss", "mm:ss", "ss"],
-      table: {
-        defaultValue: { summary: "hh:mm:ss" },
-      },
     },
     onFinish: {
       control: { type: "none" },
       description: "Función que se ejecuta al finalizar la cuenta regresiva.",
-      table: {
-        defaultValue: { summary: "null" },
-      },
     },
     showZero: {
       control: { type: "boolean" },
       description: "Comienza la cuenta regresiva al pasar un valor true.",
-      table: {
-        defaultValue: { summary: "true" },
-      },
     },
     text: {
       control: { type: "object" },
       description: "Este objeto se pasa al componente Text dentro del botón",
-      table: {
-        defaultValue: { summary: "true" },
-      },
     },
   },
   component: Countdown,

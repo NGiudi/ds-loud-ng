@@ -9,46 +9,29 @@ const meta = {
     color: {
       control: { type: "text" },
       description: "Establece el color del ícono",
-      table: {
-        defaultValue: { summary: "black_700" },
-      },
     },
     icon: {
       control: { type: "text" },
       description: "Recibe el nombre del ícono de fontawensome",
-      table: {
-        defaultValue: { summary: "home" },
-      },
     },
     margin: {
       control: { type: "text" },
       description: "Establece la distancia de los márgenes",
-      table: {
-        defaultValue: { summary: "a-0" },
-      },
     },
     onClick: {
       action: "clicked",
+      control: { type: "none" },
       description: "Función que se ejecuta al hacer click en el ícono",
-      table: {
-        defaultValue: { summary: null },
-      },
     },
     size: {
       control: { type: "select" },
       description: "Establece el tamaño del ícono",
       options: ["sm", "md", "lg"],
-      table: {
-        defaultValue: { summary: "md" },
-      },
     },
     spin: {
       control: { type: "boolean" },
       description:
         "Si este valor es verdadero, el ícono realizará una rotación",
-      table: {
-        defaultValue: { summary: false },
-      },
     },
   },
   component: Icon,
@@ -70,8 +53,11 @@ export const Model = (args) => {
 };
 
 Model.args = {
+  color: "black_700",
   icon: "home",
+  margin: "a-0",
   size: "md",
+  spin: false,
 };
 
 export const Sizes = () => {

@@ -9,23 +9,14 @@ const meta = {
     color: {
       control: { type: "text" },
       description: "Establece el color del fondo.",
-      table: {
-        defaultValue: { summary: "black_300" },
-      },
     },
     height: {
       control: { type: "text" },
       description: "Establece el espesor del divider",
-      table: {
-        defaultValue: { summary: "1px" },
-      },
     },
     margin: {
       control: { type: "text" },
       description: "Establece la distancia de los márgenes",
-      table: {
-        defaultValue: { summary: "a-0" },
-      },
     },
   },
   component: Divider,

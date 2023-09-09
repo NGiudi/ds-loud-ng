@@ -1,5 +1,7 @@
 import React from "react";
 
+import { IconButtonDocs } from "./IconButton.docs";
+
 import { IconButton, ThemeDS } from "../../..";
 
 const meta = {
@@ -9,7 +11,7 @@ const meta = {
       description: "Cuando se establece en true, el botón queda deshabilitado",
     },
     icon: {
-      control: { type: "text" },
+      control: { type: "object" },
       description: "Recibe el nombre del ícono de fontawensome",
     },
     margin: {
@@ -22,6 +24,11 @@ const meta = {
     },
   },
   component: IconButton,
+  parameters: {
+    docs: {
+      page: IconButtonDocs,
+    },
+  },
   tags: ["autodocs"],
   title: "Components/IconButton",
 };
@@ -42,8 +49,9 @@ export const Model = (args) => {
 
 Model.args = {
   children: "Apretame",
-  icon: { name: "award" },
-  kind: "solid",
+  disabled: false,
+  icon: { name: "pencil", size: "sm" },
+  margin: "a-0",
 };
 
 export const AllButtons = () => {

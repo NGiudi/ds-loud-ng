@@ -46,23 +46,26 @@ const meta = {
   title: "Components/Checkbox",
 };
 
-export const Model = () => {
+export const Model = (args) => {
   return (
     <ThemeDS>
       <Formik initialValues={{ email: false }}>
         <Form>
-          <Checkbox
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            label="Lorem ipsum"
-            name="email"
-          />
+          <Checkbox {...args} />
         </Form>
       </Formik>
     </ThemeDS>
   );
 };
 
-Model.args = {};
+Model.args = {
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  id: "story-checkbox",
+  label: "Lorem ipsum",
+  name: "email",
+  margin: "a-0",
+};
 
 export const FormExample = () => {
   return (

@@ -12,7 +12,7 @@ const meta = {
         "Este objeto define los estilos aplicados al borde del botón",
     },
     children: {
-      control: { type: "text" },
+      control: { type: "object" },
       description: "Texto del contenido del botón",
     },
     disabled: {
@@ -25,7 +25,7 @@ const meta = {
         "Cuando se establece en true, el botón ocupa todo el ancho del contenedor padre",
     },
     icon: {
-      control: { type: "text" },
+      control: { type: "object" },
       description: "Este objeto se pasa al componente Icon dentro del botón",
     },
     id: {
@@ -33,8 +33,9 @@ const meta = {
       description: "Identificador único para el componente",
     },
     kind: {
-      control: { type: "text" },
+      control: { type: "select" },
       description: "Recibe el nombre del tipo de botón",
+      options: ["outlined", "solid", "text"],
     },
     loading: {
       control: { type: "boolean" },
@@ -81,9 +82,17 @@ export const Model = (args) => {
 };
 
 Model.args = {
+  border: { radius: "4px" },
   children: "Apretame",
+  disabled: false,
+  fullWidth: false,
   icon: { name: "award" },
+  id: "button-story",
   kind: "solid",
+  loading: false,
+  margin: "a-0",
+  onCkick: null,
+  type: "button",
 };
 
 export const AllTypes = () => {
