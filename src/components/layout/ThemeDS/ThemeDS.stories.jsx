@@ -2,7 +2,7 @@ import React from "react";
 
 import { Text, ThemeDS } from "../../../";
 
-const story = {
+const meta = {
   title: "Layout/ThemeDS",
   component: ThemeDS,
   tags: ["autodocs"],
@@ -39,4 +39,4 @@ export const DinamicColumns = () => {
   );
 };
 
-export default story;
+export default meta;

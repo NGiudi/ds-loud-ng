@@ -6,7 +6,7 @@ import { AppLayout, Avatar, Flex, Image, Text, ThemeDS } from "../../..";
 /* import external components  */
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-const story = {
+const meta = {
   title: "Molecules/AppLayout",
   tags: ["autodocs"],
   parameters: {
@@ -224,4 +224,4 @@ export const LayoutExample = () => {
   );
 };
 
-export default story;
+export default meta;

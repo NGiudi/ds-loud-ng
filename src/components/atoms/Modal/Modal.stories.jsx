@@ -2,10 +2,7 @@ import React, { useState } from "react";
 
 import { Button, Modal, Text, ThemeDS } from "../../../";
 
-const story = {
-  title: "Components/Modal",
-  component: Modal,
-  tags: ["autodocs"],
+const meta = {
   argTypes: {
     cancelButton: {
       control: { type: "text" },
@@ -39,6 +36,9 @@ const story = {
         "Se puede setear el ancho del modal. Caso la pantalla sea menor al valor seteado, el modal se adapta a la pantalla.",
     },
   },
+  component: Modal,
+  tags: ["autodocs"],
+  title: "Components/Modal",
 };
 
 export const ConfirmationExample = () => {
@@ -102,4 +102,4 @@ export const EmailExample = () => {
   );
 };
 
-export default story;
+export default meta;

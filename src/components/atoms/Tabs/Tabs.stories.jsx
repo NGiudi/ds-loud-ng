@@ -2,7 +2,7 @@ import React from "react";
 
 import { Tabs, Tab, ThemeDS } from "../../../";
 
-const story = {
+const meta = {
   title: "Components/Tabs",
   component: Tabs,
   tags: ["autodocs"],
@@ -42,4 +42,4 @@ DinamicExample.args = {
   margin: "t-10 x-30",
 };
 
-export default story;
+export default meta;

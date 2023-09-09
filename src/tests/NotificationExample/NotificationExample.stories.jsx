@@ -4,7 +4,7 @@ import { Button, ThemeDS } from "../../";
 
 import { createNotify } from "../../utils/services/notificacions";
 
-const story = { title: "Test/Notification" };
+const meta = { title: "Test/Notification" };
 
 export const NotificationExample = () => {
   const handleClick = () => {
@@ -18,4 +18,4 @@ export const NotificationExample = () => {
   );
 };
 
-export default story;
+export default meta;

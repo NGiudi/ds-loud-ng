@@ -4,7 +4,7 @@ import { ThemeDS } from "../..";
 
 import { Styles } from "./Colors.styles";
 
-const story = {
+const meta = {
   title: "Theme/Colors",
 };
 
@@ -40,4 +40,4 @@ export const BlackPallete = () => {
   );
 };
 
-export default story;
+export default meta;

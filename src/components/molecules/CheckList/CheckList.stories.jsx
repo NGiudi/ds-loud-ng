@@ -5,7 +5,7 @@ import { Text, ThemeDS } from "../../..";
 
 import { CheckList } from "./CheckList";
 
-const story = {
+const meta = {
   title: "Molecules/CheckList",
   tags: ["autodocs"],
   parameters: {
@@ -58,4 +58,4 @@ export const Example = () => {
   );
 };
 
-export default story;
+export default meta;

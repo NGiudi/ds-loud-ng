@@ -4,10 +4,7 @@ import { Form, Formik } from "formik";
 
 import { Button, Input, Panel, ThemeDS } from "../../../";
 
-const story = {
-  title: "Components/Input",
-  component: Input,
-  tags: ["autodocs"],
+const meta = {
   argTypes: {
     autoComplete: {
       control: { type: "text" },
@@ -69,9 +66,12 @@ const story = {
       options: ["number", "password", "text"],
     },
   },
+  component: Input,
+  tags: ["autodocs"],
+  title: "Components/Input",
 };
 
-export const DinamicExample = (args) => {
+export const Model = (args) => {
   const values = { dinamic_example: "" };
 
   return (
@@ -195,4 +195,4 @@ export const FormExample = () => {
   );
 };
 
-export default story;
+export default meta;

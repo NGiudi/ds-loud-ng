@@ -2,7 +2,7 @@ import React from "react";
 
 import { Text, ThemeDS } from "../../../";
 
-const story = {
+const meta = {
   title: "Components/Text",
   component: Text,
   tags: ["autodocs"],
@@ -220,4 +220,4 @@ export const Colors = () => {
   );
 };
 
-export default story;
+export default meta;

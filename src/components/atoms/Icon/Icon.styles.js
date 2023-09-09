@@ -12,15 +12,15 @@ const IconItem = styled(FontAwesomeIcon)`
   `}
 `;
 
-const IconWrapper = styled.div`
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-
+const IconWrapper = styled("div")`
   ${(props) => css`
+    align-items: center;
     color: ${getColor(props.theme, props.$color)};
+    display: inline-flex;
     height: ${props.theme.components.icon.wrapperSizes[props.size]};
+    justify-content: center;
     width: ${props.theme.components.icon.wrapperSizes[props.size]};
+
     ${marginProperties(props)}
   `}
 `;

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Box, ThemeDS } from "../../..";
 
-const story = {
+const meta = {
   title: "Layout/Box",
   component: Box,
   tags: ["autodocs"],
@@ -30,4 +30,4 @@ DinamicExample.args = {
   margin: "a-50",
 };
 
-export default story;
+export default meta;

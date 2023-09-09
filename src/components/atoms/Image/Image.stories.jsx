@@ -1,16 +1,11 @@
 import React from "react";
 
-/* import components */
 import { Image, Text, ThemeDS } from "../../../";
 
-/* import images */
 import argentina from "../../../assets/countries flag/argentina.png";
 import fotoPerfil from "../../../assets/img/foto-perfil.jpg";
 
-const story = {
-  title: "Components/Image",
-  component: Image,
-  tags: ["autodocs"],
+const meta = {
   argTypes: {
     alt: {
       control: { type: "text" },
@@ -40,6 +35,9 @@ const story = {
       options: ["round", "square"],
     },
   },
+  component: Image,
+  tags: ["autodocs"],
+  title: "Components/Image",
 };
 
 const cellSize = {
@@ -48,12 +46,18 @@ const cellSize = {
   width: "200px",
 };
 
-export const DinamicExample = (args) => {
+export const Model = (args) => {
   return (
     <ThemeDS>
       <Image {...args} />
     </ThemeDS>
   );
+};
+
+Model.args = {
+  img: argentina,
+  type: "round",
+  size: "sm",
 };
 
 export const IconPlaceholder = () => {
@@ -384,10 +388,4 @@ export const WithImage = () => {
   );
 };
 
-DinamicExample.args = {
-  img: argentina,
-  type: "round",
-  size: "sm",
-};
-
-export default story;
+export default meta;

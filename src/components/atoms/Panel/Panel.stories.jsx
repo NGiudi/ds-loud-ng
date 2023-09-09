@@ -2,10 +2,7 @@ import React from "react";
 
 import { Panel, Text, ThemeDS } from "../../../";
 
-const story = {
-  title: "Components/Panel",
-  component: Panel,
-  tags: ["autodocs"],
+const meta = {
   argTypes: {
     align: {
       control: { type: "none" },
@@ -34,9 +31,12 @@ const story = {
       options: ["error", "info", "neutral", "success", "warning"],
     },
   },
+  component: Panel,
+  tags: ["autodocs"],
+  title: "Components/Panel",
 };
 
-export const DinamicExample = (args) => {
+export const Model = (args) => {
   return (
     <ThemeDS>
       <Panel {...args} />
@@ -44,7 +44,7 @@ export const DinamicExample = (args) => {
   );
 };
 
-DinamicExample.args = {
+Model.args = {
   children:
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   type: "neutral",
@@ -119,4 +119,4 @@ export const Types = () => {
   );
 };
 
-export default story;
+export default meta;

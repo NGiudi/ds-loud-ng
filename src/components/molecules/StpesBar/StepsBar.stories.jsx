@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Button, Flex, StepsBar, ThemeDS } from "../../../";
 
-const story = {
+const meta = {
   title: "Molecules/StepsBar",
   component: StepsBar,
   tags: ["autodocs"],
@@ -66,4 +66,4 @@ DinamicExample.args = {
   steps: 4,
 };
 
-export default story;
+export default meta;

@@ -4,7 +4,7 @@ import React from "react";
 import { Text } from "../../atoms";
 import { ThemeDS, Flex } from "../";
 
-const story = {
+const meta = {
   title: "Layout/Flex",
   component: Flex,
   tags: ["autodocs"],
@@ -78,4 +78,4 @@ export const Orientaciones = () => {
   );
 };
 
-export default story;
+export default meta;

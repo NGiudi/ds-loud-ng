@@ -2,17 +2,7 @@ import React, { useState } from "react";
 
 import { Button, Flex, ProgressBar, ThemeDS } from "../../../";
 
-const story = {
-  title: "Components/ProgressBar",
-  component: ProgressBar,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: "",
-      },
-    },
-  },
+const meta = {
   argTypes: {
     borderRound: {
       control: { type: "boolean" },
@@ -51,9 +41,19 @@ const story = {
         "Recibe la cantidad total de pasos para completar la barra. La cantidad mínima de steps es 1, si por alguna razón se pasa un valor menor se setea automáticamente a 1.",
     },
   },
+  component: ProgressBar,
+  parameters: {
+    docs: {
+      description: {
+        component: "",
+      },
+    },
+  },
+  tags: ["autodocs"],
+  title: "Components/ProgressBar",
 };
 
-export const DinamicExample = () => {
+export const Model = () => {
   return (
     <ThemeDS>
       <ProgressBar step={2} steps={5} />
@@ -110,4 +110,4 @@ export const useExample = () => {
   );
 };
 
-export default story;
+export default meta;

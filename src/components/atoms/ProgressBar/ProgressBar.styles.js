@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 import { marginProperties } from "../../../utils/styles";
 
-const BarWrapper = styled.div`
+const BarWrapper = styled("div")`
   ${(props) => css`
     background-color: ${props.theme.colors.orange._600};
     height: ${props.size &&
@@ -11,14 +11,13 @@ const BarWrapper = styled.div`
   `}
 `;
 
-const ProgressBarWrapper = styled.div`
-  overflow: hidden;
-  width: 100%;
-
+const ProgressBarWrapper = styled("div")`
   ${(props) => css`
     background-color: ${props.theme.colors.black._300};
     border-radius: ${props.$borderRound &&
     props.theme.components.progressBar.border.radius[props.size]};
+    overflow: hidden;
+    width: 100%;
 
     ${marginProperties(props)}
   `}

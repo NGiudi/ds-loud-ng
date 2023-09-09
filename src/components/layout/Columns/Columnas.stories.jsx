@@ -2,7 +2,7 @@ import React from "react";
 
 import { Columns, Panel, Text, ThemeDS } from "../../../";
 
-const story = {
+const meta = {
   title: "Layout/Columns",
   component: Columns,
   tags: ["autodocs"],
@@ -118,4 +118,4 @@ DinamicColumns.args = {
   minWidth: "1000px",
 };
 
-export default story;
+export default meta;

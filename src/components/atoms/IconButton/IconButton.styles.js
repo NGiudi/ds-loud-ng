@@ -2,17 +2,17 @@ import styled, { css } from "styled-components";
 
 import { marginProperties } from "../../../utils/styles";
 
-const IconButton = styled.button`
-  align-items: center;
-  background-color: transparent;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  height: 38px;
-  justify-content: center;
-  width: 38px;
-
+const IconButton = styled("button")`
   ${(props) => css`
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    height: 38px;
+    justify-content: center;
+    width: 38px;
+
     ${marginProperties(props)}
 
     &:hover:enabled {

@@ -4,7 +4,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 import { EmailValidationModal } from "./EmailValidationModal";
 
-const story = { title: "Test/EmailModal" };
+const meta = { title: "Test/EmailModal" };
 
 const COUTER_TIME = 5000 * 60; //? equal to 5 minutes.
 
@@ -81,4 +81,4 @@ export const EmailValidationModalStory = () => {
   );
 };
 
-export default story;
+export default meta;

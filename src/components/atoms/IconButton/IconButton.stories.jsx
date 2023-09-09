@@ -2,35 +2,48 @@ import React from "react";
 
 import { IconButton, ThemeDS } from "../../..";
 
-const story = {
-  title: "Components/IconButton",
-  component: IconButton,
-  tags: ["autodocs"],
+const meta = {
   argTypes: {
     disabled: {
       control: { type: "boolean" },
-      description: "Si es true el botón queda en estaba deshabilitado.",
+      description: "Cuando se establece en true, el botón queda deshabilitado",
     },
     icon: {
       control: { type: "text" },
-      description:
-        "Nombre del ícono que se agrega del lado izquierdo del botón.",
+      description: "Recibe el nombre del ícono de fontawensome",
     },
     margin: {
       control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Establece la distancia de los márgenes",
     },
     onClick: {
       action: "clicked",
-      description: "Función que se ejecuta al apretar el botón",
+      description: "Función que se ejecuta al presionar el IconButton",
     },
   },
+  component: IconButton,
+  tags: ["autodocs"],
+  title: "Components/IconButton",
 };
 
 const cellSize = {
   height: "50px",
   textAlign: "start",
   width: "120px",
+};
+
+export const Model = (args) => {
+  return (
+    <ThemeDS>
+      <IconButton {...args} />
+    </ThemeDS>
+  );
+};
+
+Model.args = {
+  children: "Apretame",
+  icon: { name: "award" },
+  kind: "solid",
 };
 
 export const AllButtons = () => {
@@ -59,18 +72,4 @@ export const AllButtons = () => {
   );
 };
 
-export const DinamicExample = (args) => {
-  return (
-    <ThemeDS>
-      <IconButton {...args} />
-    </ThemeDS>
-  );
-};
-
-DinamicExample.args = {
-  children: "Apretame",
-  icon: { name: "award" },
-  kind: "solid",
-};
-
-export default story;
+export default meta;

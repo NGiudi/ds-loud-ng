@@ -1,10 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/* import components */
 import { Button, IconButton, Panel } from "../../../";
 
-/* import styles */
 import { Styles } from "./Modal.styles";
 
 export const Modal = (props) => {

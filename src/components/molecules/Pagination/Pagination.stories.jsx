@@ -3,7 +3,7 @@ import React from "react";
 /* components */
 import { Pagination, ThemeDS } from "../../..";
 
-const story = {
+const meta = {
   title: "Molecules/Pagination",
   tags: ["autodocs"],
   parameters: {
@@ -62,4 +62,4 @@ export const ShortPagination = () => {
   );
 };
 
-export default story;
+export default meta;

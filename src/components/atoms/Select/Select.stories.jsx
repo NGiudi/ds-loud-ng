@@ -7,7 +7,7 @@ import { Button, Flex, Image, Select, Text, ThemeDS } from "../../../";
 import { carBrands } from "../../../constants/cars/brands";
 import { carModels } from "../../../constants/cars/models";
 
-const story = {
+const meta = {
   title: "Components/Select",
   component: Select,
   tags: ["autodocs"],
@@ -158,4 +158,4 @@ export const ComplexSelect = () => {
   );
 };
 
-export default story;
+export default meta;

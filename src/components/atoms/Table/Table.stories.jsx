@@ -2,7 +2,7 @@ import React from "react";
 
 import { Table, Text, ThemeDS } from "../../../";
 
-const story = {
+const meta = {
   title: "Components/Table",
   component: Table,
   tags: ["autodocs"],
@@ -148,4 +148,4 @@ DinamicExample.args = {
   ],
 };
 
-export default story;
+export default meta;

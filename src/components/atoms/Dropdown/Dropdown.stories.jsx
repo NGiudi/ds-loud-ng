@@ -18,7 +18,7 @@ import argentina from "../../../assets/countries flag/argentina.png";
 import brasil from "../../../assets/countries flag/brasil.png";
 import usa from "../../../assets/countries flag/usa.png";
 
-const story = {
+const meta = {
   title: "Components/Dropdown",
   component: Dropdown,
   tags: ["autodocs"],
@@ -203,4 +203,4 @@ export const UseExample = () => {
   );
 };
 
-export default story;
+export default meta;
