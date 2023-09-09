@@ -1,42 +1,67 @@
 import React from "react";
 
+import { IconDocs } from "./Icon.docs";
+
 import { Icon, ThemeDS } from "../../../";
 
-const story = {
-  title: "Components/Icon",
-  component: Icon,
-  tags: ["autodocs"],
+const meta = {
   argTypes: {
     color: {
       control: { type: "text" },
-      description:
-        "Se setea el color del fondo, se pasa el tono de color y la intensidad.",
+      description: "Establece el color del ícono",
+      table: {
+        defaultValue: { summary: "black_700" },
+      },
     },
     icon: {
       control: { type: "text" },
-      description: "Recibe el nombre del icono de fontawensome free.",
+      description: "Recibe el nombre del ícono de fontawensome",
+      table: {
+        defaultValue: { summary: "home" },
+      },
     },
     margin: {
       control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Establece la distancia de los márgenes",
+      table: {
+        defaultValue: { summary: "a-0" },
+      },
     },
     onClick: {
       action: "clicked",
-      description: "Función que se ejecuta al hacer click en el ícono.",
+      description: "Función que se ejecuta al hacer click en el ícono",
+      table: {
+        defaultValue: { summary: null },
+      },
     },
     size: {
       control: { type: "select" },
-      description: "Recibe el valor del tamaño del ícono.",
+      description: "Establece el tamaño del ícono",
       options: ["sm", "md", "lg"],
+      table: {
+        defaultValue: { summary: "md" },
+      },
     },
     spin: {
       control: { type: "boolean" },
-      description: "Si este valor es true el icono rota.",
+      description:
+        "Si este valor es verdadero, el ícono realizará una rotación",
+      table: {
+        defaultValue: { summary: false },
+      },
     },
   },
+  component: Icon,
+  parameters: {
+    docs: {
+      page: IconDocs,
+    },
+  },
+  tags: ["autodocs"],
+  title: "Components/Icon",
 };
 
-export const DinamicExample = (args) => {
+export const Model = (args) => {
   return (
     <ThemeDS>
       <Icon {...args} />
@@ -44,7 +69,7 @@ export const DinamicExample = (args) => {
   );
 };
 
-DinamicExample.args = {
+Model.args = {
   icon: "home",
   size: "md",
 };
@@ -80,4 +105,4 @@ export const Efects = () => {
   );
 };
 
-export default story;
+export default meta;

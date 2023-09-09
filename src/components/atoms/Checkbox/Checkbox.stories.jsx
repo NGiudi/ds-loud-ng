@@ -20,6 +20,9 @@ const meta = {
     label: {
       control: { type: "text" },
       description: "Un breve texto que describe la funcionalidad del checkbox",
+      table: {
+        defaultValue: { summary: "-" },
+      },
     },
     margin: {
       control: { type: "text" },
@@ -28,6 +31,9 @@ const meta = {
     name: {
       control: { type: "text" },
       description: "Nombre identificador del componente para su uso con Formik",
+      table: {
+        defaultValue: { summary: "-" },
+      },
     },
   },
   component: Checkbox,
