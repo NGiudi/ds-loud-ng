@@ -1,12 +1,10 @@
 import styled, { css } from "styled-components";
 
-/* import utils  */
 import { marginProperties } from "../../../utils/styles/spacing";
 
-export const Wrapper = styled.div`
-  display: grid;
-
+export const Wrapper = styled("div")`
   ${(props) => css`
+    display: grid;
     grid-template-columns: repeat(${props.children.length}, 1fr);
     grid-column-gap: ${props.$gap};
     grid-row-gap: ${props.$gap};

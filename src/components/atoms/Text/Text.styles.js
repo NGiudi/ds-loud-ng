@@ -30,13 +30,18 @@ const textStyles = (props) => {
   `;
 };
 
-const TextWrapper = styled.p`
-  ${(props) => textStyles(props)};
+const TextWrapper = styled("p")`
+  ${(props) => css`
+    ${textStyles(props)}
+  `}
 `;
 
-const LabelWrapper = styled.label`
-  display: inline-block;
-  ${(props) => textStyles(props)};
+const LabelWrapper = styled("label")`
+  ${(props) => css`
+    display: inline-block;
+
+    ${textStyles(props)}
+  `}
 `;
 
 export const Styles = {

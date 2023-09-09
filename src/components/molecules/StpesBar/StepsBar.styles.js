@@ -23,27 +23,26 @@ const getBgColor = (theme, type) => {
   }
 };
 
-export const Circle = styled.div`
-  align-items: center;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-
+export const Circle = styled("div")`
   ${(props) => css`
+    align-items: center;
     background-color: ${getBgColor(props.theme, props.type)};
     border: 3px solid ${getColor(props.theme, props.type)};
+    border-radius: 50%;
     color: ${props.theme.colors.black._100};
+    display: flex;
     height: ${props.theme.components.stepsBar.circle.diameter[props.size]};
+    justify-content: center;
     width: ${props.theme.components.stepsBar.circle.diameter[props.size]};
   `}
 `;
 
-export const ProgressBarWrapper = styled.div`
+export const ProgressBarWrapper = styled("div")`
   flex-grow: 1;
   padding: 0px 10px;
 `;
 
-export const StepsWrapper = styled.div`
+export const StepsWrapper = styled("div")`
   align-items: center;
   display: flex;
   margin: 0px 60px;

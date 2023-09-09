@@ -1,22 +1,21 @@
 import styled, { css } from "styled-components";
 
-const SelectPanel = styled.div`
-  border-style: solid;
-  box-sizing: border-box;
-  overflow: auto;
-  position: absolute;
-  z-index: 50;
-  width: 100%;
-
+const SelectPanel = styled("div")`
   ${(props) => css`
     background-color: ${props.theme.colors.black._100};
     border-color: ${props.theme.colors.black._400};
     border-radius: ${props.theme.components.select.border.radius};
+    border-style: solid;
     border-width: ${props.theme.components.select.border.width};
+    box-sizing: border-box;
     margin-top: ${props.theme.components.select.panel.margin.top};
     max-height: ${props.$maxHeight};
+    overflow: auto;
     padding: ${props.theme.components.select.panel.padding};
+    position: absolute;
     top: ${props.theme.components.select.height};
+    z-index: 50;
+    width: 100%;
 
     &::-webkit-scrollbar {
       width: ${props.theme.components.select.scroll.width};
@@ -32,28 +31,27 @@ const SelectPanel = styled.div`
   `};
 `;
 
-const SelectedOption = styled.div`
+const SelectedOption = styled("div")`
   flex-grow: 1;
 `;
 
-const SelectedOptionWrapper = styled.div`
-  align-items: center;
-  border-style: solid;
-  box-sizing: border-box;
-  display: flex;
-  width: 100%;
-
+const SelectedOptionWrapper = styled("div")`
   ${(props) => css`
+    align-items: center;
     background-color: ${props.theme.colors.black._100};
     border-color: ${props.theme.colors.black._400};
     border-radius: ${props.theme.components.select.border.radius};
+    border-style: solid;
     border-width: ${props.theme.components.select.border.width};
+    box-sizing: border-box;
+    display: flex;
     height: ${props.theme.components.select.height};
     opacity: ${props.disabled && "0.5"};
+    width: 100%;
   `};
 `;
 
-const SelectWrapper = styled.div`
+const SelectWrapper = styled("div")`
   position: relative;
   width: 100%;
 `;

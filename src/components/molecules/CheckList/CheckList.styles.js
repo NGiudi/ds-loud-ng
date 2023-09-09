@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 import { marginProperties } from "../../../utils/styles";
 
-const Wrapper = styled.div`
+const Wrapper = styled("div")`
   ${(props) => css`
     cursor: ${props.$clickable ? "pointer" : "auto"};
 
@@ -10,18 +10,17 @@ const Wrapper = styled.div`
   `}
 `;
 
-const ItemWrapper = styled.div`
+const ItemWrapper = styled("div")`
   display: table;
 `;
 
-const ListItem = styled.div`
-  align-items: center;
-  display: flex;
-
+const ListItem = styled("div")`
   ${(props) => css`
+    align-items: center;
     color: ${props.checked
       ? props.theme.colors.alert.colors.success
       : props.theme.colors.black._300};
+    display: flex;
   `}
 `;
 

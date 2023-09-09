@@ -2,24 +2,23 @@ import styled from "styled-components";
 
 import { marginProperties } from "../../../../../utils/styles";
 
-const Column = styled.div`
+const Column = styled("div")`
   ${(props) => `
     width: ${props.width};
   `}
 `;
 
-const Row = styled.div`
-  align-items: center;
-  border-bottom-style: solid;
-  box-sizing: border-box;
-  display: flex;
-  width: 100%;
-
+const Row = styled("div")`
   ${(props) => `
+    align-items: center;
     border-bottom-color: ${props.theme.colors.black._400};
+    border-bottom-style: solid;
     border-bottom-width: ${props.theme.components.table.row.borderBottom.width};
+    box-sizing: border-box;
     cursor: ${!props.$isHeader ? "pointer" : "default"};
+    display: flex;
     padding: ${props.theme.components.table.row.padding};
+    width: 100%;
 
     &:hover {
       background-color: ${
@@ -35,7 +34,7 @@ const Row = styled.div`
   `}
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled("div")`
   ${(props) => `
     ${marginProperties(props)}
   `}

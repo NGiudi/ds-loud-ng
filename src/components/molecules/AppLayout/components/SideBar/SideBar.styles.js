@@ -2,11 +2,10 @@ import styled, { css } from "styled-components";
 
 import { paddingProperties } from "../../../../../utils/styles";
 
-const BottomContentStyles = styled.div`
-  border-top-style: solid;
-
+const BottomContentStyles = styled("div")`
   ${(props) => css`
     border-top-color: ${props.theme.colors.black._200};
+    border-top-style: solid;
     border-top-width: ${props.theme.components.appLayout.sidebar.border.width};
 
     ${paddingProperties(
@@ -16,38 +15,35 @@ const BottomContentStyles = styled.div`
   `}
 `;
 
-const SideBarButton = styled.button`
-  background-color: transparent;
-  border: none;
-  box-sizing: border-box;
-  display: flex;
-
+const SideBarButton = styled("button")`
   ${(props) => css`
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
     color: ${props.$isSelectedSection
       ? props.theme.colors.orange._600
       : "inheret"};
-
+    display: flex;
     width: ${props.$isExpanded
       ? props.theme.components.appLayout.sidebar.width.expanded
       : props.theme.components.appLayout.sidebar.width.contracted};
-
-    &:hover {
-      background-color: ${props.theme.colors.black._200};
-    }
 
     ${paddingProperties(
       props,
       props.theme.components.appLayout.sidebar.button.padding,
     )}
+
+    &:hover {
+      background-color: ${props.theme.colors.black._200};
+    }
   `}
 `;
 
-const SideBarButtonsWrapper = styled.div`
-  overflow-y: auto;
-
+const SideBarButtonsWrapper = styled("div")`
   ${(props) => css`
     height: calc(100% - ${props.theme.components.appLayout.sidebar.content.height});
-    
+    overflow-y: auto;
+
     &::-webkit-scrollbar {
       width: ${props.theme.components.appLayout.scroll.width};
     }
@@ -63,16 +59,15 @@ const SideBarButtonsWrapper = styled.div`
   `}
 `;
 
-const SideBarStyles = styled.div`
-  border-right-style: solid;
-  height: 100%;
-  position: relative;
-
+const SideBarStyles = styled("div")`
   ${(props) => css`
     background-color: ${props.theme.colors.black._100};
     border-right-color: ${props.theme.colors.black._200};
+    border-right-style: solid;
     border-right-width: ${props.theme.components.appLayout.sidebar.border
       .width};
+    height: 100%;
+    position: relative;
   `}
 `;
 
