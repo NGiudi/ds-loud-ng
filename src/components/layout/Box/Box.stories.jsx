@@ -1,21 +1,28 @@
 import React from "react";
 
+import { BoxDocs } from "./Box.docs";
+
 import { Box, ThemeDS } from "../../..";
 
 const meta = {
-  title: "Layout/Box",
-  component: Box,
-  tags: ["autodocs"],
   argTypes: {
     children: {
       control: { type: "none" },
-      description: "Contenido del componente.",
+      description: "Contenido del componente",
     },
     margin: {
       control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Establece la distancia de los márgenes",
     },
   },
+  component: Box,
+  parameters: {
+    docs: {
+      page: BoxDocs,
+    },
+  },
+  tags: ["autodocs"],
+  title: "Layout/Box",
 };
 
 export const DinamicExample = (args) => {
