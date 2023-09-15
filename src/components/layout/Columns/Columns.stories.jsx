@@ -1,33 +1,40 @@
 import React from "react";
 
-import { Columns, Panel, Text, ThemeDS } from "../../../";
+import { ColumnsDocs } from "./Columns.docs";
+
+import { Columns, Panel, Text, ThemeDS } from "../../..";
 
 const meta = {
-  title: "Layout/Columns",
-  component: Columns,
-  tags: ["autodocs"],
   argTypes: {
     children: {
       control: { type: "none" },
-      description: "Contenido del componente.",
+      description: "Contenido del componente",
     },
     gap: {
       control: { type: "text" },
-      description: "Recibe el valor del espacio entre columnas.",
+      description: "Establece el espacio entre columnas",
     },
     margin: {
       control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Establece la distancia de los márgenes",
     },
     minWidth: {
       control: { type: "text" },
       description:
-        "Recibe el valor del ancho mínimo de cada columna. Si el ancho es menor, se pone un elemento abajo del otro.",
+        "Establece el ancho mínimo de cada columna. Si el ancho es menor a este valor, los elementos se alinean verticalmente",
     },
   },
+  component: Columns,
+  parameters: {
+    docs: {
+      page: ColumnsDocs,
+    },
+  },
+  tags: ["autodocs"],
+  title: "Layout/Columns",
 };
 
-export const DinamicColumns = (args) => {
+export const Model = (args) => {
   return (
     <ThemeDS>
       <Columns {...args}>
@@ -114,7 +121,7 @@ export const DinamicColumns = (args) => {
   );
 };
 
-DinamicColumns.args = {
+Model.args = {
   minWidth: "1000px",
 };
 

@@ -6,7 +6,7 @@ import { Icon } from "../../..";
 import { Styles } from "./IconButton.styles";
 
 export const IconButton = (props) => {
-  const { disabled, icon, margin, onClick } = props;
+  const { disabled, icon, id, margin, onClick } = props;
 
   const handleClick = () => {
     onClick && onClick();
@@ -15,6 +15,7 @@ export const IconButton = (props) => {
   return (
     <Styles.IconButton
       disabled={disabled}
+      id={id}
       $margin={margin}
       onClick={handleClick}
     >
@@ -29,6 +30,7 @@ IconButton.propTypes = {
     name: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     size: PropTypes.oneOf(["input", "lg", "md", "sm"]),
   }).isRequired,
+  id: PropTypes.string,
   margin: PropTypes.string,
   onClick: PropTypes.func,
 };
@@ -36,6 +38,7 @@ IconButton.propTypes = {
 IconButton.defaultProps = {
   disabled: false,
   icon: null, //? default value insert into javascript code.
+  id: null,
   margin: "a-0",
   onClick: null,
 };

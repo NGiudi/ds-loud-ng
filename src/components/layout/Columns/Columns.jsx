@@ -22,7 +22,7 @@ Columns.propTypes = {
 
 Columns.defaultProps = {
   children: null,
-  gap: "20px",
+  gap: "24px",
   margin: "a-0",
   minWidth: "600px",
 };
