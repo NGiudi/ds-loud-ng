@@ -8,10 +8,6 @@ El proyecto está publicado en github pages: https://ngiudi.github.io/ds-loud-ng
 
 * Diseño responsive.
 
-## Componentes finalizados:
-
-- Text
-
 ## Test
 Los métodos de utils cuentan con tests. Para ejecutarlos debemos usar el siguiente comando:
 
@@ -33,7 +29,12 @@ npm run deploy
 
 1. Actualizar la version en el package json, si no se hace esto, va a fallar al momento de intentar publicar en npm.
 
-2. Publicar el nuevo paquete
+2. Construir el nuevo proyecto
+```
+npm run build
+```
+
+3. Publicar el nuevo paquete
 ```
 npm publish
 ```
