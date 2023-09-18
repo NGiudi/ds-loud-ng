@@ -33,11 +33,7 @@ npm run deploy
 
 1. Actualizar la version en el package json, si no se hace esto, va a fallar al momento de intentar publicar en npm.
 
-2. Una vez finalizados los cambios ejecutamos el siguiente comando.
-```
-npm run build
-```
-3. Publicar el nuevo paquete
+2. Publicar el nuevo paquete
 ```
 npm publish
 ```
