@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 import { Field } from "formik";
 
-import checkImage from "./assets/check-mark.svg";
+import checkImage from "../../../../public/images/check-mark.svg";
 
 const CustomCheckbox = styled(Field)`
-  ${(props) => `  
+  ${(props) => `
     appearance: none;
     background-position: center;
     background-repeat: no-repeat;
