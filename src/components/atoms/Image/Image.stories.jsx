@@ -1,5 +1,7 @@
 import React from "react";
 
+import { ImageDocs } from "./Image.docs";
+
 import { Image, Text, ThemeDS } from "../../../";
 
 import argentina from "../../../assets/countries flag/argentina.png";
@@ -36,6 +38,11 @@ const meta = {
     },
   },
   component: Image,
+  parameters: {
+    docs: {
+      page: ImageDocs,
+    },
+  },
   tags: ["autodocs"],
   title: "Components/Image",
 };
