@@ -1,30 +1,30 @@
 const height = {
   round: {
-    avatar: "30px",
-    avatarSm: "24px",
-    sm: "48px",
-    md: "72px",
-    lg: "96px",
+    avatar: 30,
+    avatarSm: 24,
+    sm: 48,
+    md: 72,
+    lg: 96,
   },
   square: {
-    sm: "96px",
-    md: "144px",
-    lg: "192px",
+    sm: 96,
+    md: 144,
+    lg: 192,
   },
 };
 
 const width = {
   round: {
-    avatar: "30px",
-    avatarSm: "24px",
-    sm: "48px",
-    md: "72px",
-    lg: "96px",
+    avatar: 30,
+    avatarSm: 24,
+    sm: 48,
+    md: 72,
+    lg: 96,
   },
   square: {
-    sm: "77px",
-    md: "115px",
-    lg: "154px",
+    sm: 77,
+    md: 115,
+    lg: 154,
   },
 };
 

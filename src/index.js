@@ -43,4 +43,9 @@ export {
 } from "./components/atoms";
 
 //? molecules components
-export { AppLayout, Pagination, StepsBar } from "./components/molecules";
+export {
+  AppLayout,
+  ImageGroup,
+  Pagination,
+  StepsBar,
+} from "./components/molecules";
