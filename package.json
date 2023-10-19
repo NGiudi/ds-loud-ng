@@ -53,7 +53,7 @@
     "build": "npx babel src --out-dir dist",
     "deploy": "npm run build-storybook && gh-pages -d storybook-static",
     "start": "storybook dev -p 6006",
-    "test": "react-scripts test --watchAll=false .test.js"
+    "test": "react-scripts test --watchAll=true .test.js"
   },
   "eslintConfig": {
     "extends": [

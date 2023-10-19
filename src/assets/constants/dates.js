@@ -1,4 +1,4 @@
-export const holidays = [
+export const HOLIDAYS = [
   "1/1/2022",
   "2/28/2022",
   "3/1/2022",
@@ -30,4 +30,16 @@ export const holidays = [
   "12/8/2022",
   "12/9/2022",
   "12/25/2022",
+];
+
+export const MS_IN_A_DAY = 24 * 60 * 60 * 1000; //? hours * minutes * seconds * miliseconds.
+
+export const WEEK_DAY = [
+  "sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday",
 ];

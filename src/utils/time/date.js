@@ -1,16 +1,4 @@
-import { holidays } from "../../../assets/constants/holidays";
-
-const MS_IN_A_DAY = 24 * 60 * 60 * 1000; //? hours * minutes * seconds * miliseconds.
-
-const WEEK_DAY = [
-  "sunday",
-  "monday",
-  "tuesday",
-  "wednesday",
-  "thursday",
-  "friday",
-  "saturday",
-];
+import { HOLIDAYS, MS_IN_A_DAY, WEEK_DAY } from "../../assets/constants/dates";
 
 /**
  * @param {String} date date in string format.
@@ -37,8 +25,8 @@ export const isHolidayDate = (date) => {
   let dateObj;
   let i = 0;
 
-  while (i < holidays.length && !isHoliday) {
-    dateObj = new Date(holidays[i]);
+  while (i < HOLIDAYS.length && !isHoliday) {
+    dateObj = new Date(HOLIDAYS[i]);
 
     if (dateObj.toDateString() === date.toDateString()) {
       isHoliday = true;
