@@ -1,4 +1,4 @@
-import { pick } from "../object";
+import { pick } from "../../utils/objects/object";
 
 test("pick function no received parans.", () => {
   const result = pick();

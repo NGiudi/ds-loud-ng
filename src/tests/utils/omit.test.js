@@ -1,4 +1,4 @@
-import { omit } from "../object";
+import { omit } from "../../utils/objects/object";
 
 test("omit function no received parans.", () => {
   const result = omit();

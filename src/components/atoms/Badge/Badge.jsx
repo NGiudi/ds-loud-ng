@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Text } from "../";
+import { Text } from "../Text/Text";
 
 import { Styles } from "./Badge.styles";
 
