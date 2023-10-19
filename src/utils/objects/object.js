@@ -1,4 +1,7 @@
 /**
+ * Takes an object and an array, and returns a new object that contains only the
+ * properties whose names are present in the array.
+ *
  * @param {object} obj original object.
  * @param {array} fields properties to get.
  * @return {object} new object with filtered fields.
@@ -19,6 +22,9 @@ export const pick = (obj, fields) => {
 };
 
 /**
+ * Takes an object and an array, and returns a new object that contains all properties
+ * from the original object except for those whose names are included in the array.
+ *
  * @param {object} obj original object.
  * @param {array} fields properties to get out.
  * @return {object} new object with filtered fields.

@@ -1,4 +1,8 @@
 /**
+ * receives the theme and a color in string format. If it's identified as a theme
+ * color code, it decodes and returns that color. Otherwise, it's assumed to be a
+ * color in a CSS-compatible format.
+ *
  * @param {object} theme theme used in this moment.
  * @param {string} colorString color coded.
  * @return {string} decoded color.
