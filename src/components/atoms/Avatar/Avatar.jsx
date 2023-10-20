@@ -32,11 +32,11 @@ export const Avatar = (props) => {
   return (
     <Styles.Wrapper id={id} $margin={props.margin} ref={innerRef}>
       <Styles.AvatarWrapper $isSelected={isOpen} onClick={handleAvatarClick}>
-        <Image size={size} type="round" {...imageAttributes} />
+        <Image {...imageAttributes} size={size} type="round" />
       </Styles.AvatarWrapper>
 
       {isOpen && (
-        <Styles.PanelWrapper $margin="t-8" $pos={pos}>
+        <Styles.PanelWrapper $pos={pos}>
           <Panel padding="a-0">{props.children}</Panel>
         </Styles.PanelWrapper>
       )}

@@ -20,11 +20,11 @@ const AvatarWrapper = styled("div")`
 
 const PanelWrapper = styled("div")`
   ${(props) => css`
+    margin-top: 8px;
     position: absolute;
     ${props.$pos}: 0;
     top: 100%;
     width: 250px;
-    ${marginProperties(props)}
   `}
 `;
 
