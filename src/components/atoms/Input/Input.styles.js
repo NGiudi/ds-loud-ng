@@ -26,10 +26,10 @@ const InputStyles = styled(Field)`
     background-color: transparent;
     border: none;
     flex-grow: 1;
-    font-size: ${props.theme.components.text.sizes.md};
-    font-weight: ${props.theme.components.text.weights.regular};
+    font-size: ${props.theme.components.text.types.captionRegular.size};
+    font-weight: ${props.theme.components.text.types.captionRegular.weight};
     height: ${props.theme.components.input.height};
-    line-height: ${props.theme.components.text.lineHeights.md};
+    line-height: ${props.theme.components.text.types.captionRegular.lineHeight};
     outline: none;
     padding: 0;
   `};
