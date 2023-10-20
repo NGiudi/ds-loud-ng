@@ -20,7 +20,7 @@ export const EmailValidationModal = (props) => {
         }}
         width="650px"
       >
-        <Text margin="b-20" type="title" weight="bold">
+        <Text margin="b-20" type="title">
           Tu email necesita verificación
         </Text>
 
@@ -28,9 +28,7 @@ export const EmailValidationModal = (props) => {
           Te enviamos un correo para que lo verifiques y puedas continuar.
         </Text>
 
-        <Text margin="b-12" size="lg">
-          ¿No lo recibiste, ni siquiera en spam?
-        </Text>
+        <Text margin="b-12">¿No lo recibiste, ni siquiera en spam?</Text>
 
         {props.canResendEmail ? (
           <Button kind="text" onClick={props.handleResendEmail} size="md">

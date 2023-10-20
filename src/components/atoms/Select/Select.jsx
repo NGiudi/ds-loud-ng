@@ -18,13 +18,7 @@ export const Select = (props) => {
 
       <Styles.Wrapper $margin={margin}>
         {!!label && (
-          <Text
-            as="label"
-            htmlFor={name}
-            margin="b-4"
-            size="sm"
-            weight="semibold"
-          >
+          <Text as="label" htmlFor={name} margin="b-4" type="bodySemibold">
             {label}
           </Text>
         )}

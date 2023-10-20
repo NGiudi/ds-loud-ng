@@ -66,7 +66,7 @@ export const LayoutExample = () => {
         <Avatar pos="right">
           <Image margin="t-10 x-50" size="sm" type="round" />
 
-          <Text align="center" margin="y-20" size="lg" weight="semibold">
+          <Text align="center" margin="y-20" type="subtitle">
             Nicolás Giudice
           </Text>
         </Avatar>
@@ -82,7 +82,7 @@ export const LayoutExample = () => {
             <Route
               path="/games"
               element={
-                <Text margin="b-24" type="title" weight="bold">
+                <Text margin="b-24" type="title">
                   Juegos
                 </Text>
               }
@@ -91,21 +91,21 @@ export const LayoutExample = () => {
             <Route
               path="/settings"
               element={
-                <Text margin="b-24" type="title" weight="bold">
+                <Text margin="b-24" type="title">
                   Ajustes
                 </Text>
               }
             />
 
             <Route
-              path="/"
+              path="/home"
               element={
                 <>
-                  <Text margin="b-24" type="title" weight="bold">
+                  <Text margin="b-24" type="title">
                     Este es el titulo de la ventana
                   </Text>
 
-                  <Text margin="b-8" weight="bold">
+                  <Text margin="b-8" type="bodySemibold">
                     The standard Lorem Ipsum passage, used since the 1500s
                   </Text>
 
@@ -120,7 +120,7 @@ export const LayoutExample = () => {
                     deserunt mollit anim id est laborum.
                   </Text>
 
-                  <Text margin="b-8" weight="bold">
+                  <Text margin="b-8" type="bodySemibold">
                     Section 1.10.32 of &quot;de Finibus Bonorum et
                     Malorum&ldquo;, written by Cicero in 45 BC
                   </Text>
@@ -143,7 +143,7 @@ export const LayoutExample = () => {
                     illum qui dolorem eum fugiat quo voluptas nulla pariatur?
                   </Text>
 
-                  <Text margin="b-8" weight="bold">
+                  <Text margin="b-8" type="bodySemibold">
                     1914 translation by H. Rackham
                   </Text>
 
@@ -167,7 +167,7 @@ export const LayoutExample = () => {
                     avoids a pain that produces no resultant pleasure?
                   </Text>
 
-                  <Text margin="b-8" weight="bold">
+                  <Text margin="b-8" type="bodySemibold">
                     Section 1.10.33 of &quot;de Finibus Bonorum et
                     Malorum&ldquo;, written by Cicero in 45 BC
                   </Text>
@@ -190,7 +190,7 @@ export const LayoutExample = () => {
                     perferendis doloribus asperiores repellat.
                   </Text>
 
-                  <Text margin="b-8" weight="bold">
+                  <Text margin="b-8" type="bodySemibold">
                     1914 translation by H. Rackham
                   </Text>
 

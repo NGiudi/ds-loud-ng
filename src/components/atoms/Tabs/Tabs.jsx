@@ -34,7 +34,7 @@ export const Tabs = (props) => {
               onClick={handleBtnClick}
               value={tabName}
             >
-              <Text weight="semibold">{tabName}</Text>
+              <Text type="bodySemibold">{tabName}</Text>
             </Styles.TabButton>
           );
         })}

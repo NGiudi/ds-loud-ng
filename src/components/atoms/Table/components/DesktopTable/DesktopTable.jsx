@@ -19,7 +19,7 @@ export const DesktopTable = (props) => {
             key={`table-${name}-row-title-column-${idxC}`}
             width={column.width}
           >
-            <Text weight="semibold">{column.label}</Text>
+            <Text type="bodySemibold">{column.label}</Text>
           </Styles.Column>
         ))}
       </Styles.Row>

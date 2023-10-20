@@ -34,7 +34,7 @@ const meta = {
 export const DinamicColumns = () => {
   return (
     <ThemeDS name="loudLight">
-      <Text margin="a-20">Only documentatio</Text>
+      <Text margin="a-20">Only documentation</Text>
     </ThemeDS>
   );
 };

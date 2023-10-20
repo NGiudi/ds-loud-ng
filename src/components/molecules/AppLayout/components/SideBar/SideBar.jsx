@@ -38,7 +38,7 @@ export const SideBar = (props) => {
         {isExpanded && (
           <Text
             color={isSelected ? "orange_600" : "black_900"}
-            weight="semibold"
+            type="bodySemibold"
           >
             {btn.label}
           </Text>

@@ -110,7 +110,7 @@ DinamicExample.args = {
     {
       content: (data) => (
         <>
-          <Text weight="semibold">Nombre</Text>
+          <Text type="bodySemibold">Nombre</Text>
           <Text margin="y-10">{`${data.name} ${data.last_name}`}</Text>
         </>
       ),
@@ -119,12 +119,12 @@ DinamicExample.args = {
       content: (data) => (
         <>
           <div style={{ display: "inline-block", width: "50%" }}>
-            <Text weight="semibold">Email</Text>
+            <Text type="bodySemibold">Email</Text>
             <Text>{data.email}</Text>
           </div>
 
           <div style={{ display: "inline-block", width: "50%" }}>
-            <Text weight="semibold">Teléfono</Text>
+            <Text type="bodySemibold">Teléfono</Text>
             <Text>{data.phone}</Text>
           </div>
         </>
@@ -134,12 +134,12 @@ DinamicExample.args = {
       content: (data) => (
         <>
           <div style={{ display: "inline-block", width: "50%" }}>
-            <Text weight="semibold">Dirección</Text>
+            <Text type="bodySemibold">Dirección</Text>
             <Text>{data.address}</Text>
           </div>
 
           <div style={{ display: "inline-block", width: "50%" }}>
-            <Text weight="semibold">Estado</Text>
+            <Text type="bodySemibold">Estado</Text>
             <Text>{data.status}</Text>
           </div>
         </>

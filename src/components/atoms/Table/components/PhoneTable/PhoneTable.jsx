@@ -23,7 +23,7 @@ export const PhoneTable = (props) => {
               key={`table-${name}-column-${idx}`}
               mobile={column.mobile}
             >
-              <Text weight="semibold">{column.label}</Text>
+              <Text type="bodySemibold">{column.label}</Text>
 
               {column.content(row)}
             </Styles.Column>

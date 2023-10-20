@@ -15,9 +15,7 @@ export const OfflineBadge = () => {
         <Wrapper>
           <Icon icon="circle-exclamation" margin="r-4" size="sm" />
 
-          <Text size="sm" weight="semibold">
-            Sin internet
-          </Text>
+          <Text type="captionSemibold">Sin internet</Text>
         </Wrapper>
       ) : null}
     </>

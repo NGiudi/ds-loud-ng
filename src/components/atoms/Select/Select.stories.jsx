@@ -84,11 +84,9 @@ export const ComplexSelect = () => {
           <Image margin="r-8" size="avatar" type="round" />
 
           <div>
-            <Text size="lg" weight="semibold">
-              Title
-            </Text>
+            <Text type="bodySemibold">Title</Text>
 
-            <Text size="sm">Description</Text>
+            <Text>Description</Text>
           </div>
         </Flex>
       ),
@@ -101,11 +99,9 @@ export const ComplexSelect = () => {
           <Image margin="r-8" size="avatar" type="round" />
 
           <div>
-            <Text size="lg" weight="semibold">
-              Title
-            </Text>
+            <Text type="bodySemibold">Title</Text>
 
-            <Text size="sm">Description</Text>
+            <Text>Description</Text>
           </div>
         </Flex>
       ),
@@ -118,11 +114,9 @@ export const ComplexSelect = () => {
           <Image margin="r-8" size="avatar" type="round" />
 
           <div>
-            <Text size="lg" weight="semibold">
-              Title
-            </Text>
+            <Text type="bodySemibold">Title</Text>
 
-            <Text size="sm">Description</Text>
+            <Text>Description</Text>
           </div>
         </Flex>
       ),
