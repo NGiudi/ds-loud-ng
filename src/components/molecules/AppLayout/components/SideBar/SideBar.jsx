@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { useRouter } from "../../../../../hooks/useRouter";
-
 import { Icon, Text } from "../../../../../";
 
 import { Styles } from "./SideBar.styles";
 
 export const SideBar = (props) => {
   const { buttons } = props;
-
-  const router = useRouter();
 
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -20,10 +16,6 @@ export const SideBar = (props) => {
   };
 
   const handleClick = () => setIsExpanded((prev) => !prev);
-
-  const handleSidebarButtonClick = (to) => {
-    router.push(to);
-  };
 
   const renderButtonContent = (btn, isSelected) => {
     return (
@@ -53,14 +45,14 @@ export const SideBar = (props) => {
       <Styles.SideBarButtonsWrapper>
         {buttons &&
           buttons.map((btn, idx) => {
-            const isSelected = router.location.pathname.includes(btn.to);
+            const isSelected = window.location.pathname.includes(btn.to);
 
             return (
               <Styles.SideBarButton
                 $isExpanded={isExpanded}
                 $isSelectedSection={isSelected}
                 key={`sidebar-button-${idx}`}
-                onClick={() => handleSidebarButtonClick(btn.to)}
+                onClick={btn.onClick}
               >
                 {renderButtonContent(btn, isSelected)}
               </Styles.SideBarButton>
@@ -82,6 +74,7 @@ SideBar.propTypes = {
     PropTypes.shape({
       icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
       label: PropTypes.string.isRequired,
+      onClick: PropTypes.func.isRequired,
       to: PropTypes.string.isRequired,
     }),
   ),
