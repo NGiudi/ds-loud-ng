@@ -8,6 +8,11 @@ const preview = {
         date: /Date$/,
       },
     },
+    status: {
+      statuses: {
+        //? add custom statuses.
+      }
+    }
   },
 };
 

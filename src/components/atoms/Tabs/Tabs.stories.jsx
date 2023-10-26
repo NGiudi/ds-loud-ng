@@ -3,9 +3,6 @@ import React from "react";
 import { Tabs, Tab, ThemeDS } from "../../../";
 
 const meta = {
-  title: "Components/Tabs",
-  component: Tabs,
-  tags: ["autodocs"],
   argTypes: {
     children: {
       control: { type: "none" },
@@ -24,6 +21,14 @@ const meta = {
       description: "Se setea la distancia de los paddings.",
     },
   },
+  component: Tabs,
+  parameters: {
+    status: {
+      type: "beta",
+    },
+  },
+  tags: ["autodocs"],
+  title: "Components/Tabs",
 };
 
 export const DinamicExample = (args) => {

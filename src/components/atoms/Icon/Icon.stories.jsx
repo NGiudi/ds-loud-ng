@@ -39,6 +39,9 @@ const meta = {
     docs: {
       page: IconDocs,
     },
+    status: {
+      type: "stable",
+    },
   },
   tags: ["autodocs"],
   title: "Components/Icon",

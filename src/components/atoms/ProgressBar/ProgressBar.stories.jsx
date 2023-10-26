@@ -48,6 +48,9 @@ const meta = {
         component: "",
       },
     },
+    status: {
+      type: "stable",
+    },
   },
   tags: ["autodocs"],
   title: "Components/ProgressBar",

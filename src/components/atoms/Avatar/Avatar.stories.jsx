@@ -51,6 +51,9 @@ const meta = {
     docs: {
       page: AvatarDocs,
     },
+    status: {
+      type: "stable",
+    },
   },
   tags: ["autodocs"],
   title: "Components/Avatar",

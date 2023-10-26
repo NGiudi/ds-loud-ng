@@ -19,9 +19,6 @@ import brasil from "../../../assets/countries flag/brasil.png";
 import usa from "../../../assets/countries flag/usa.png";
 
 const meta = {
-  title: "Components/Dropdown",
-  component: Dropdown,
-  tags: ["autodocs"],
   argTypes: {
     childrem: {
       control: { type: "none" },
@@ -50,6 +47,14 @@ const meta = {
       options: ["sm", "md", "lg"],
     },
   },
+  component: Dropdown,
+  parameters: {
+    status: {
+      type: "beta",
+    },
+  },
+  tags: ["autodocs"],
+  title: "Components/Dropdown",
 };
 
 export const Positions = () => {

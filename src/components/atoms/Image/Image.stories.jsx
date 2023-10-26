@@ -42,6 +42,9 @@ const meta = {
     docs: {
       page: ImageDocs,
     },
+    status: {
+      type: "stable",
+    },
   },
   tags: ["autodocs"],
   title: "Components/Image",

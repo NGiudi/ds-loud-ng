@@ -37,6 +37,11 @@ const meta = {
     },
   },
   component: Modal,
+  parameters: {
+    status: {
+      type: "stable",
+    },
+  },
   tags: ["autodocs"],
   title: "Components/Modal",
 };

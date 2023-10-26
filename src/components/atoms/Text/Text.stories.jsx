@@ -3,9 +3,6 @@ import React from "react";
 import { Text, ThemeDS } from "../../../";
 
 const meta = {
-  title: "Components/Text",
-  component: Text,
-  tags: ["autodocs"],
   argTypes: {
     align: {
       control: { type: "select" },
@@ -63,6 +60,14 @@ const meta = {
       options: ["light", "regular", "semibold", "bold"],
     },
   },
+  component: Text,
+  parameters: {
+    status: {
+      type: "stable",
+    },
+  },
+  tags: ["autodocs"],
+  title: "Components/Text",
 };
 
 export const DinamicExample = (args) => {

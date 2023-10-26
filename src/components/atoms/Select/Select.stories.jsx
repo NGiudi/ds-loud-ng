@@ -8,9 +8,6 @@ import { carBrands } from "../../../constants/cars/brands";
 import { carModels } from "../../../constants/cars/models";
 
 const meta = {
-  title: "Components/Select",
-  component: Select,
-  tags: ["autodocs"],
   argTypes: {
     label: {
       control: { type: "text" },
@@ -33,6 +30,14 @@ const meta = {
       description: "Listado de opciones del select.",
     },
   },
+  component: Select,
+  parameters: {
+    status: {
+      type: "beta",
+    },
+  },
+  tags: ["autodocs"],
+  title: "Components/Select",
 };
 
 export const DinamicExample = () => {

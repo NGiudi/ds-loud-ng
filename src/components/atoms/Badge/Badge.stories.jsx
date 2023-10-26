@@ -28,6 +28,9 @@ const meta = {
     docs: {
       page: BadgeDocs,
     },
+    status: {
+      type: "stable",
+    },
   },
   tags: ["autodocs"],
   title: "Components/Badge",

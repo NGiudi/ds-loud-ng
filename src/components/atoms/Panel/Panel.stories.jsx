@@ -32,6 +32,11 @@ const meta = {
     },
   },
   component: Panel,
+  parameters: {
+    status: {
+      type: "beta",
+    },
+  },
   tags: ["autodocs"],
   title: "Components/Panel",
 };

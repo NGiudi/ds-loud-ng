@@ -28,6 +28,9 @@ const meta = {
     docs: {
       page: IconButtonDocs,
     },
+    status: {
+      type: "stable",
+    },
   },
   tags: ["autodocs"],
   title: "Components/IconButton",

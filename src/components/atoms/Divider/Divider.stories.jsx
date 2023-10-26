@@ -24,6 +24,9 @@ const meta = {
     docs: {
       page: DividerDocs,
     },
+    status: {
+      type: "stable",
+    },
   },
   title: "Components/Divider",
   tags: ["autodocs"],

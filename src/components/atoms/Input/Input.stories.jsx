@@ -67,6 +67,11 @@ const meta = {
     },
   },
   component: Input,
+  parameters: {
+    status: {
+      type: "stable",
+    },
+  },
   tags: ["autodocs"],
   title: "Components/Input",
 };

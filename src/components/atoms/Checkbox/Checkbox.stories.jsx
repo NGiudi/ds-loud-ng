@@ -41,6 +41,9 @@ const meta = {
     docs: {
       page: CheckboxDocs,
     },
+    status: {
+      type: "stable",
+    },
   },
   tags: ["autodocs"],
   title: "Components/Checkbox",

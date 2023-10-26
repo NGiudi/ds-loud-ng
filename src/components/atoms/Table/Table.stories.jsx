@@ -3,9 +3,6 @@ import React from "react";
 import { Table, Text, ThemeDS } from "../../../";
 
 const meta = {
-  title: "Components/Table",
-  component: Table,
-  tags: ["autodocs"],
   argTypes: {
     columns: {
       control: { type: "none" },
@@ -40,6 +37,14 @@ const meta = {
         "Función que se ejecuta al hacer click sobre una de las columnas de la tabla.",
     },
   },
+  component: Table,
+  parameters: {
+    status: {
+      type: "stable",
+    },
+  },
+  tags: ["autodocs"],
+  title: "Components/Table",
 };
 
 export const DinamicExample = (args) => {

@@ -62,6 +62,9 @@ const meta = {
     docs: {
       page: ButtonDocs,
     },
+    status: {
+      type: "stable",
+    },
   },
   tags: ["autodocs"],
   title: "Components/Button",

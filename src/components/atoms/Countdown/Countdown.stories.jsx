@@ -38,6 +38,9 @@ const meta = {
     docs: {
       page: CountdownDocs,
     },
+    status: {
+      type: "stable",
+    },
   },
   tags: ["autodocs"],
   title: "Components/Countdown",
