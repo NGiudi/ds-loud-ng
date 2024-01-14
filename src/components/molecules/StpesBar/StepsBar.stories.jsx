@@ -14,6 +14,10 @@ const meta = {
     },
   },
   argTypes: {
+    margin: {
+      control: { type: "text" },
+      description: "Establece la distancia de los márgenes",
+    },
     size: {
       control: { type: "select" },
       description:

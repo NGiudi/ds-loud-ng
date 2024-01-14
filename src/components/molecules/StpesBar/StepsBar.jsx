@@ -6,7 +6,7 @@ import { Icon, ProgressBar } from "../../../";
 import { Circle, ProgressBarWrapper, StepsWrapper } from "./StepsBar.styles";
 
 export const StepsBar = (props) => {
-  const { size, step, steps } = props;
+  const { margin, size, step, steps } = props;
 
   const [previousStep, setPreviousStep] = useState(step);
 
@@ -78,19 +78,21 @@ export const StepsBar = (props) => {
       stepsArray.push(renderStep(i));
     }
 
-    return <StepsWrapper>{stepsArray}</StepsWrapper>;
+    return <StepsWrapper $margin={margin}>{stepsArray}</StepsWrapper>;
   };
 
   return renderColumnSteps();
 };
 
 StepsBar.propTypes = {
+  margin: PropTypes.string,
   size: PropTypes.oneOf(["md"]),
   steps: PropTypes.number.isRequired,
   step: PropTypes.number,
 };
 
 StepsBar.defaultProps = {
+  margin: "a-0",
   size: "md",
   steps: 5,
   step: 1,

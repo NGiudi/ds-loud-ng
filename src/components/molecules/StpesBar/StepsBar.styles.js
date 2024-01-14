@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+import { marginProperties } from "../../../utils/styles";
+
 const getColor = (theme, type) => {
   switch (type) {
     case "pendingCircle":
@@ -43,7 +45,10 @@ export const ProgressBarWrapper = styled("div")`
 `;
 
 export const StepsWrapper = styled("div")`
-  align-items: center;
-  display: flex;
-  margin: 0px 60px;
+  ${(props) => css`
+    align-items: center;
+    display: flex;
+
+    ${marginProperties(props)}
+  `}
 `;
