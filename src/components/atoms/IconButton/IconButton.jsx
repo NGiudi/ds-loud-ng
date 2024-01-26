@@ -12,6 +12,8 @@ export const IconButton = (props) => {
     onClick && onClick();
   };
 
+  console.log(disabled);
+
   return (
     <Styles.IconButton
       disabled={disabled}
@@ -19,7 +21,11 @@ export const IconButton = (props) => {
       $margin={margin}
       onClick={handleClick}
     >
-      <Icon icon={icon.name} size={icon.size} />
+      <Icon
+        color={disabled ? "black_500" : "black_900"}
+        icon={icon.name}
+        size={icon.size}
+      />
     </Styles.IconButton>
   );
 };
