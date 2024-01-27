@@ -13,6 +13,11 @@ const meta = {
       control: { type: "none" },
       description: "Contenido del componente.",
     },
+    direction: {
+      control: { type: "select" },
+      description: "Se setea la orientación del contenedor flexible.",
+      options: ["column", "row"],
+    },
     hAlign: {
       control: { type: "select" },
       description: "Se setea la alineación horizontal.",

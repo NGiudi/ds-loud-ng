@@ -15,6 +15,7 @@ export const Flex = (props) => {
 
 Flex.propTypes = {
   children: PropTypes.node,
+  direction: PropTypes.oneOf(["column", "row"]),
   hAlign: PropTypes.oneOf([
     "center",
     "end",
@@ -28,6 +29,7 @@ Flex.propTypes = {
 
 Flex.defaultProps = {
   children: null,
+  direction: "row",
   hAlign: "start",
   margin: "a-0",
   vAlign: "center",
