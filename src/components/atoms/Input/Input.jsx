@@ -17,14 +17,12 @@ export const Input = (props) => {
 
   return (
     <Styles.Wrapper $margin={props.margin}>
-      {/* label */}
       {!!label && (
         <Text as="label" htmlFor={id} margin="b-4" type="bodySemibold">
           {label}
         </Text>
       )}
 
-      {/* label */}
       {!!description && (
         <Text color="black_400" margin="b-4" type="captionRegular">
           {description}

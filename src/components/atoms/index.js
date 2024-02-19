@@ -21,3 +21,4 @@ export { Table } from "./Table/Table";
 export { Tab } from "./Tabs/components/Tab/Tab";
 export { Tabs } from "./Tabs/Tabs";
 export { Text } from "./Text/Text";
+export { TextArea } from "./TextArea/TextArea";

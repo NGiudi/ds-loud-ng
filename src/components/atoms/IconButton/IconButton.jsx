@@ -12,8 +12,6 @@ export const IconButton = (props) => {
     onClick && onClick();
   };
 
-  console.log(disabled);
-
   return (
     <Styles.IconButton
       disabled={disabled}

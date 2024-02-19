@@ -16,6 +16,7 @@ import { stepsBar } from "./stepsBar";
 import { table } from "./table";
 import { tabs } from "./tabs";
 import { text } from "./text";
+import { textArea } from "./textArea";
 
 export const components = {
   appLayout,
@@ -36,4 +37,5 @@ export const components = {
   table,
   tabs,
   text,
+  textArea,
 };
