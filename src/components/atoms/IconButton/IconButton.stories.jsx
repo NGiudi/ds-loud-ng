@@ -22,6 +22,11 @@ const meta = {
       action: "clicked",
       description: "Función que se ejecuta al presionar el IconButton",
     },
+    type: {
+      control: { type: "select" },
+      description: "Establece si el botón actua como un botón submit o no.",
+      options: ["button", "submit"],
+    },
   },
   component: IconButton,
   parameters: {

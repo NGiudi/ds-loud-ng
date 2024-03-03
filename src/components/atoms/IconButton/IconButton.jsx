@@ -18,6 +18,7 @@ export const IconButton = (props) => {
       id={id}
       $margin={margin}
       onClick={handleClick}
+      type={props.type}
     >
       <Icon
         color={disabled ? "black_500" : "black_900"}
@@ -37,6 +38,7 @@ IconButton.propTypes = {
   id: PropTypes.string,
   margin: PropTypes.string,
   onClick: PropTypes.func,
+  type: PropTypes.oneOf(["button", "submit"]),
 };
 
 IconButton.defaultProps = {
@@ -45,4 +47,5 @@ IconButton.defaultProps = {
   id: null,
   margin: "a-0",
   onClick: null,
+  type: "button",
 };
