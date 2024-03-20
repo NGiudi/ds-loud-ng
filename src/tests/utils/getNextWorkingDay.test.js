@@ -1,4 +1,4 @@
-import { getNextWorkingDay } from "../date";
+import { getNextWorkingDay } from "../../utils/time/date";
 
 test("get next working day.", () => {
   let result = getNextWorkingDay(new Date("9/2/2022")).toDateString();

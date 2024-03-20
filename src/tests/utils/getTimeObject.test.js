@@ -1,4 +1,4 @@
-import { getTimeObject } from "../clock";
+import { getTimeObject } from "../../utils/time/clock";
 
 const neutral = {
   days: 0,
@@ -23,7 +23,7 @@ test("getTimeObject function received an old date.", () => {
   expect(result).toStrictEqual(neutral);
 });
 
-test("getTimeObject function received an date.", () => {
+test("getTimeObject function received an date 1.", () => {
   const result = getTimeObject(10000);
   expect(result).toStrictEqual({
     days: 0,
@@ -34,7 +34,7 @@ test("getTimeObject function received an date.", () => {
   });
 });
 
-test("getTimeObject function received an date.", () => {
+test("getTimeObject function received an date 2.", () => {
   const result = getTimeObject(5000000);
   expect(result).toStrictEqual({
     days: 0,

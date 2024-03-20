@@ -1,4 +1,4 @@
-import { HOLIDAYS, MS_IN_A_DAY, WEEK_DAY } from "../../assets/constants/dates";
+import { HOLIDAYS, MS_IN_A_DAY, WEEK_DAY } from "../../constants/dates";
 
 /**
  * @param {String} date date in string format.

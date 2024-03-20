@@ -8,6 +8,7 @@ const preview = {
         date: /Date$/,
       },
     },
+    layout: "fullscreen",
     status: {
       statuses: {
         //? add custom statuses.

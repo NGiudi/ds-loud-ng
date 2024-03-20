@@ -1,4 +1,4 @@
-import { timeElapsed } from "../clock";
+import { timeElapsed } from "../../utils/time/clock";
 
 test("timeElapsed function no received params.", () => {
   const result = timeElapsed();

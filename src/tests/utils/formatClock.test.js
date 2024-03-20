@@ -1,4 +1,4 @@
-import { formatClock } from "../clock";
+import { formatClock } from "../../utils/time/clock";
 
 const objTime = {
   days: 0,
