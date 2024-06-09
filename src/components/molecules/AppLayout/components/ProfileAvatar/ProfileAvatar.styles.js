@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { marginProperties } from "../../../utils/styles";
+import { marginProperties } from "../../../../../utils/styles";
 
 const AvatarWrapper = styled("div")`
   ${(props) => css`
@@ -19,13 +19,11 @@ const AvatarWrapper = styled("div")`
 `;
 
 const PanelWrapper = styled("div")`
-  ${(props) => css`
-    margin-top: 8px;
-    position: absolute;
-    ${props.$pos}: 0;
-    top: 100%;
-    width: 250px;
-  `}
+  margin-top: 8px;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 250px;
 `;
 
 const Wrapper = styled("div")`

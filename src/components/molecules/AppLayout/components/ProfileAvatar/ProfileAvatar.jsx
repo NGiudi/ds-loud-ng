@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { useOuterClick } from "../../../hooks/useOuterClick";
+import { useOuterClick } from "../../../../../hooks/useOuterClick";
 
-import { Panel, Image } from "../../../";
+import { Panel, Image } from "../../../../..";
 
-import { Styles } from "./Avatar.styles";
+import { Styles } from "./ProfileAvatar.styles";
 
-export const Avatar = (props) => {
-  const { id, pos, size } = props;
+export const ProfileAvatar = (props) => {
+  const { id, size } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -36,7 +36,7 @@ export const Avatar = (props) => {
       </Styles.AvatarWrapper>
 
       {isOpen && (
-        <Styles.PanelWrapper $pos={pos}>
+        <Styles.PanelWrapper>
           <Panel padding="a-0">{props.children}</Panel>
         </Styles.PanelWrapper>
       )}
@@ -44,7 +44,7 @@ export const Avatar = (props) => {
   );
 };
 
-Avatar.propTypes = {
+ProfileAvatar.propTypes = {
   children: PropTypes.node,
   id: PropTypes.string,
   img: PropTypes.shape({
@@ -53,15 +53,13 @@ Avatar.propTypes = {
     placeholder: PropTypes.string,
   }),
   margin: PropTypes.string,
-  pos: PropTypes.oneOf(["left", "right"]),
   size: PropTypes.oneOf(["avatar", "avatarSm"]),
 };
 
-Avatar.defaultProps = {
+ProfileAvatar.defaultProps = {
   children: null,
   id: null,
   img: null,
   margin: "a-0",
-  pos: "left",
   size: "avatar",
 };

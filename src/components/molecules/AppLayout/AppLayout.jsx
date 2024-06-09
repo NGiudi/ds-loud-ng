@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { OfflineBadge } from "./components/OfflineBadge/OfflineBadge";
-import { SideBar } from "./components/SideBar/SideBar";
+import { OfflineBadge, ProfileAvatar, SideBar } from "./components";
+import { Flex } from "../../../";
 
 import { ContentBox, MainContent, TopBar } from "./AppLayout.styles";
 
@@ -14,7 +14,21 @@ export const AppLayout = (props) => {
   return (
     <>
       <TopBar $padding="x-24 y-8">
-        {topbar ? topbar.content : null}
+        {topbar && (
+          <Flex hAlign="space-between">
+            <div>
+              {topbar.startContent}
+            </div>
+
+            <div>
+              {topbar.endContent}
+
+              <ProfileAvatar pos="right">
+                {topbar.avatarPanel}
+              </ProfileAvatar>
+            </div>
+          </Flex>
+        )}
 
         <OfflineBadge />
       </TopBar>
@@ -41,7 +55,8 @@ AppLayout.propTypes = {
     ),
   }),
   topbar: PropTypes.shape({
-    content: PropTypes.node,
+    endContent: PropTypes.node,
+    startContent: PropTypes.node,
   }),
 };
 

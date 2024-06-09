@@ -4,7 +4,7 @@ import { useRouter } from "../../../hooks/useRouter";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { AppLayout, Avatar, Flex, Image, Text, ThemeDS } from "../../..";
+import { AppLayout, Image, Text, ThemeDS } from "../../..";
 
 const meta = {
   title: "Molecules/AppLayout",
@@ -64,23 +64,21 @@ const PageContent = () => {
     ],
   };
 
-  const TopbarContent = () => {
-    return (
-      <Flex hAlign="space-between">
-        Logotipo
-        <Avatar pos="right">
-          <Image margin="t-10 x-50" size="sm" type="round" />
+  const topbar = {
+    avatarPanel: (
+     <>
+        <Image margin="t-10 x-50" size="sm" type="round" />
 
-          <Text align="center" margin="y-20" type="subtitle">
-            Nicolás Giudice
-          </Text>
-        </Avatar>
-      </Flex>
-    );
+        <Text align="center" margin="y-20" type="subtitle">
+          Nicolás Giudice
+        </Text>
+      </>
+    ),
+    startContent: "Logotipo",
   };
 
   return (
-    <AppLayout sidebar={sidebar} topbar={{ content: <TopbarContent /> }}>
+    <AppLayout sidebar={sidebar} topbar={topbar}>
       <Routes>
         <Route
           path="/games"
