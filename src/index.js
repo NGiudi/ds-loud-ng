@@ -5,11 +5,16 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 //? fontawensome icons.
 library.add(fas, far);
 
-//? layout components
-export * from "./components/layout";
-
-//? atoms components
+//? components
 export * from "./components/atoms";
-
-//? molecules components
+export * from "./components/layout";
 export * from "./components/molecules";
+
+//? hooks
+export { useLocalStorage } from "./hooks/useLocalStorage";
+export { useNotify } from "./hooks/useNotify";
+export { useOnlineStatus } from "./hooks/useOnlineStatus";
+export { useOuterClick } from "./hooks/useOuterClick";
+export { usePrevious } from "./hooks/usePrevious";
+export { useRouter } from "./hooks/useRouter";
+export { useWindowSize } from "./hooks/useWindowSize";

@@ -34,7 +34,7 @@ export const DinamicExample = (args) => {
 };
 
 DinamicExample.args = {
-  margin: "a-50",
+  margin: "a-0",
 };
 
 export default meta;
