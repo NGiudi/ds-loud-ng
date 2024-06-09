@@ -1,12 +1,16 @@
 import React from "react";
 
-import { Button, ThemeDS } from "../../";
+import { useNotify } from "../hooks/useNotify";
 
-import { createNotify } from "../../utils/services/notificacions";
+import { Button, ThemeDS } from "..";
 
-const meta = { title: "Test/Notification" };
+const meta = {
+  title: "hooks/Notification",
+};
 
 export const NotificationExample = () => {
+  const { createNotify } = useNotify();
+ 
   const handleClick = () => {
     createNotify("Esta es la mejor notificación del mundo");
   };
