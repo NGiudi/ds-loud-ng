@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { Icon, Text } from "../../../../../";
+import { SidebarButton } from "./components/SidebarButton";
 
 import { Styles } from "./SideBar.styles";
 
@@ -10,62 +10,40 @@ export const SideBar = (props) => {
 
   const [isExpanded, setIsExpanded] = useState(true);
 
-  const contractedButton = {
-    icon: isExpanded ? "angles-left" : "angles-right",
-    label: "Contraer",
-  };
-
   const handleClick = () => setIsExpanded((prev) => !prev);
 
-  const renderButtonContent = (btn, isSelected) => {
-    return (
-      <>
-        <Icon
-          color={isSelected ? "orange_600" : "black_900"}
-          icon={btn.icon}
-          margin="r-8"
-          size="sm"
-        />
-
-        {isExpanded && (
-          <Text
-            color={isSelected ? "orange_600" : "black_900"}
-            type="bodySemibold"
-          >
-            {btn.label}
-          </Text>
-        )}
-      </>
-    );
+  const contractedButton = {
+    icon: isExpanded ? "angles-left" : "angles-right",
+    label: isExpanded ? "Contraer" : "Expandir",
+    onClick: handleClick,
   };
 
   return (
-    <Styles.SideBarStyles>
+    <Styles.SidebarStyles>
       {/* button list */}
-      <Styles.SideBarButtonsWrapper>
+      <Styles.SidebarButtonsWrapper>
         {buttons &&
           buttons.map((btn, idx) => {
             const isSelected = window.location.pathname.includes(btn.to);
-
+            
             return (
-              <Styles.SideBarButton
-                $isExpanded={isExpanded}
-                $isSelectedSection={isSelected}
+              <SidebarButton
+                btn={btn}
                 key={`sidebar-button-${idx}`}
-                onClick={btn.onClick}
-              >
-                {renderButtonContent(btn, isSelected)}
-              </Styles.SideBarButton>
+                isExpanded={isExpanded}
+                isSelected={isSelected}
+              />
             );
           })}
-      </Styles.SideBarButtonsWrapper>
+      </Styles.SidebarButtonsWrapper>
 
       <Styles.BottomContentStyles>
-        <Styles.SideBarButton $isExpanded={isExpanded} onClick={handleClick}>
-          {renderButtonContent(contractedButton)}
-        </Styles.SideBarButton>
+        <SidebarButton
+          btn={contractedButton}
+          isExpanded={isExpanded}
+        />
       </Styles.BottomContentStyles>
-    </Styles.SideBarStyles>
+    </Styles.SidebarStyles>
   );
 };
 

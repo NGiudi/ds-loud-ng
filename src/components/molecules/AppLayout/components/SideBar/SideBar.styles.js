@@ -15,15 +15,13 @@ const BottomContentStyles = styled("div")`
   `}
 `;
 
-const SideBarButton = styled("button")`
+const SidebarButton = styled("button")`
   ${(props) => css`
     background-color: transparent;
     border: none;
     box-sizing: border-box;
-    color: ${props.$isSelectedSection
-      ? props.theme.colors.orange._600
-      : "inheret"};
     display: flex;
+    position: relative;
     width: ${props.$isExpanded
       ? props.theme.components.appLayout.sidebar.width.expanded
       : props.theme.components.appLayout.sidebar.width.contracted};
@@ -36,13 +34,33 @@ const SideBarButton = styled("button")`
     &:hover {
       background-color: ${props.theme.colors.black._200};
     }
+    
+    /* this is the SidebarButtonTooltip */
+    &:hover div {
+      visibility: visible;
+    }
   `}
 `;
 
-const SideBarButtonsWrapper = styled("div")`
+const SidebarButtonTooltip = styled("div")`
+  ${(props) => css`
+    background-color: ${props.theme.colors.black._200};
+    border-color: ${props.theme.colors.black._400};
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    left: calc(100% + 8px);
+    padding: 6px 8px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    visibility: hidden;
+  `}
+`;
+
+const SidebarButtonsWrapper = styled("div")`
   ${(props) => css`
     height: calc(100% - ${props.theme.components.appLayout.sidebar.content.height});
-    overflow-y: auto;
 
     &::-webkit-scrollbar {
       width: ${props.theme.components.appLayout.scroll.width};
@@ -59,13 +77,12 @@ const SideBarButtonsWrapper = styled("div")`
   `}
 `;
 
-const SideBarStyles = styled("div")`
+const SidebarStyles = styled("div")`
   ${(props) => css`
     background-color: ${props.theme.colors.black._100};
     border-right-color: ${props.theme.colors.black._200};
     border-right-style: solid;
-    border-right-width: ${props.theme.components.appLayout.sidebar.border
-      .width};
+    border-right-width: ${props.theme.components.appLayout.sidebar.border.width};
     height: 100%;
     position: relative;
   `}
@@ -73,7 +90,8 @@ const SideBarStyles = styled("div")`
 
 export const Styles = {
   BottomContentStyles,
-  SideBarButton,
-  SideBarButtonsWrapper,
-  SideBarStyles,
+  SidebarButton,
+  SidebarButtonTooltip,
+  SidebarButtonsWrapper,
+  SidebarStyles,
 };
