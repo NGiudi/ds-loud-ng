@@ -58,7 +58,7 @@ Panel.defaultProps = {
   align: "start",
   children: null,
   margin: "a-0",
-  onSizeH: null,
+  onSizeH: () => {},
   padding: "a-8",
   type: "neutral",
 };

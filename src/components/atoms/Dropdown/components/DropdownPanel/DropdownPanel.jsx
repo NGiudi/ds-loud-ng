@@ -36,6 +36,6 @@ DropdownPanel.defaultProps = {
   children: null,
   direction: "right",
   name: null,
-  onSelect: null,
+  onSelect: () => {},
   showPanel: false,
 };

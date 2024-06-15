@@ -48,7 +48,7 @@ ProgressBar.defaultProps = {
   borderRound: false,
   margin: "a-0",
   noShowAnimationOnFirstLoad: false,
-  onFinish: null,
+  onFinish: () => {},
   size: "md",
   step: 0,
   stepTime: 10,

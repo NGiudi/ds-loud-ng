@@ -46,6 +46,6 @@ IconButton.defaultProps = {
   icon: null, //? default value insert into javascript code.
   id: null,
   margin: "a-0",
-  onClick: null,
+  onClick: () => {},
   type: "button",
 };

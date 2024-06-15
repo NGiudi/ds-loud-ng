@@ -68,7 +68,7 @@ Countdown.propTypes = {
 Countdown.defaultProps = {
   endTime: null,
   formatTime: "hh:mm:ss",
-  onFinish: null,
+  onFinish: () => {},
   showZero: true,
   text: {},
 };

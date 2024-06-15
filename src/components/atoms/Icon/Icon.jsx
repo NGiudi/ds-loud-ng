@@ -43,7 +43,7 @@ Icon.defaultProps = {
   color: "black_700",
   icon: "home",
   margin: "a-0",
-  onClick: null,
+  onClick: () => {},
   size: "md",
   spin: false,
 };

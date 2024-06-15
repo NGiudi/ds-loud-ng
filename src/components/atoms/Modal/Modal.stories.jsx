@@ -58,8 +58,14 @@ export const ConfirmationExample = () => {
       <Button onClick={handleShowModal}>Mostrar Modal</Button>
 
       <Modal
-        cancelButton={{ text: "No, cancelar" }}
-        confirmButton={{ text: "Sí, avanzar" }}
+        cancelButton={{
+          onClick: () => {},
+          text: "No, cancelar"
+        }}
+        confirmButton={{
+          onClick: () => {},
+          text: "Sí, avanzar"
+        }}
         onClose={handleShowModal}
         show={showModal}
         width="600px"

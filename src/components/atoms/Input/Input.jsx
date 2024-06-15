@@ -88,7 +88,7 @@ Input.defaultProps = {
   label: "",
   margin: "a-0",
   name: "",
-  onKeyPress: null,
+  onKeyPress: () => {},
   placeholder: "",
   readOnly: false,
   reference: null,

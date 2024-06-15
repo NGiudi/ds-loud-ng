@@ -26,5 +26,5 @@ PaginateButton.propTypes = {
 PaginateButton.defaultProps = {
   children: 0,
   kind: "outlined",
-  onClick: null,
+  onClick: () => {},
 };

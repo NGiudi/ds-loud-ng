@@ -96,6 +96,6 @@ Button.defaultProps = {
   kind: "solid",
   loading: false,
   margin: "a-0",
-  onClick: null,
+  onClick: () => {},
   type: "button",
 };

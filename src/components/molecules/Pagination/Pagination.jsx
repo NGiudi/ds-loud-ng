@@ -73,7 +73,7 @@ Pagination.propTypes = {
 Pagination.defaultProps = {
   margin: "a-0",
   nButtons: 9,
-  onChange: null,
+  onChange: () => {},
   page: 1,
   pages: 1,
 };

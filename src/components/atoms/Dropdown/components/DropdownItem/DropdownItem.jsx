@@ -25,6 +25,6 @@ DropdownItem.propTypes = {
 DropdownItem.defaultProps = {
   disabled: false,
   name: null,
-  onSelect: null,
+  onSelect: () => {},
   value: null,
 };

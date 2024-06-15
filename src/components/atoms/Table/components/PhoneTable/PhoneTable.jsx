@@ -49,5 +49,5 @@ PhoneTable.defaultProps = {
   margin: "a-0",
   mobileColumns: [],
   name: "",
-  onClick: null,
+  onClick: () => {},
 };

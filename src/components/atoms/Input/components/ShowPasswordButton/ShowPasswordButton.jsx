@@ -23,6 +23,6 @@ ShowPasswordButton.propTypes = {
 };
 
 ShowPasswordButton.defaultProps = {
-  onClick: null,
+  onClick: () => {},
   show: false,
 };

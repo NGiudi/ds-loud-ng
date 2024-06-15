@@ -57,5 +57,5 @@ Dropdown.propTypes = {
 Dropdown.defaultProps = {
   children: null,
   name: null,
-  onSelect: null,
+  onSelect: () => {},
 };

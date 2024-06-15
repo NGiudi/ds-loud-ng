@@ -58,5 +58,5 @@ DesktopTable.defaultProps = {
   desktopColumns: [],
   margin: "a-0",
   name: "",
-  onClick: null,
+  onClick: () => {},
 };

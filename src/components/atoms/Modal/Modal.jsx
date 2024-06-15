@@ -1,49 +1,95 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
+
+import { useKeyboardActions } from "../../../hooks/useKeyboardActions";
 
 import { Button, IconButton, Panel } from "../../../";
 
 import { Styles } from "./Modal.styles";
 
 export const Modal = (props) => {
-  const { onClose, show } = props;
+  const { cancelButton, confirmButton, onClose, show } = props;
 
-  if (!show) return null;
+  const [showModal, setShowModal] = useState(false);
+  const showModalRef = useRef(false);
 
-  return (
-    <Styles.Overlay>
-      <Styles.PanelWrapper width={props.width}>
-        <Panel padding="a-20">
-          <Styles.CloseBtnWrapper>
-            <IconButton icon={{ name: "times" }} onClick={onClose} />
-          </Styles.CloseBtnWrapper>
+  const handleCancel = () => {
+    if (showModalRef.current) { 
+      cancelButton.onClick();
+      onClose();
+      setShowModal(false);
+    }
+  };
 
-          <Styles.ContentBox $padding="r-28">
-            {props.children}
-          </Styles.ContentBox>
+  const handleClose = () => {
+    if (showModalRef.current) {
+      onClose();
+      setShowModal(false);
+    }
+  }
 
-          <Styles.ButtonsWrapper>
-            {!props.cancelButton.hide && (
-              <Button kind="outlined" onClick={onClose}>
-                {props.cancelButton.text}
-              </Button>
-            )}
+  const handleConfirm = () => {
+    if (showModalRef.current) {
+      confirmButton.onClick();    
+      onClose();
+      setShowModal(false);
+    }
+  }
 
-            {!props.confirmButton.hide && (
-              <Button margin="l-8" onClick={props.confirmButton.onClick}>
-                {props.confirmButton.text}
-              </Button>
-            )}
-          </Styles.ButtonsWrapper>
-        </Panel>
-      </Styles.PanelWrapper>
-    </Styles.Overlay>
-  );
+  useKeyboardActions({
+    onClose: handleClose,
+    onConfirm: handleConfirm,
+  });
+
+  //? When the show is modified through the props, the internal state is updated.
+  useEffect(() => {
+    setShowModal(show);
+  }, [show]);
+  
+  //? Reference for using with the useKeyboardActions hook to keep the state updated.
+  useEffect(() => {
+    showModalRef.current = showModal;
+  }, [showModal]);
+
+  if (showModal) {
+    return (
+      <Styles.Overlay>
+        <Styles.PanelWrapper width={props.width}>
+          <Panel padding="a-20">
+            <Styles.CloseBtnWrapper>
+              <IconButton icon={{ name: "times" }} onClick={handleClose} />
+            </Styles.CloseBtnWrapper>
+  
+            <Styles.ContentBox $padding="r-28">
+              {props.children}
+            </Styles.ContentBox>
+  
+            <Styles.ButtonsWrapper>
+              {!props.cancelButton.hide && (
+                <Button kind="outlined" onClick={handleCancel}>
+                  {props.cancelButton.text}
+                </Button>
+              )}
+  
+              {!props.confirmButton.hide && (
+                <Button margin="l-8" onClick={handleConfirm}>
+                  {props.confirmButton.text}
+                </Button>
+              )}
+            </Styles.ButtonsWrapper>
+          </Panel>
+        </Styles.PanelWrapper>
+      </Styles.Overlay>
+    );
+  }
+
+  return null;
 };
 
 Modal.propTypes = {
   cancelButton: PropTypes.shape({
     hide: PropTypes.bool,
+    onClick: PropTypes.func,
     text: PropTypes.string,
   }),
   children: PropTypes.node,
@@ -60,15 +106,16 @@ Modal.propTypes = {
 Modal.defaultProps = {
   cancelButton: {
     hide: false,
+    onClick: () => {},
     text: "Cancelar",
   },
   children: null,
   confirmButton: {
     hide: false,
-    onClick: null,
+    onClick: () => {},
     text: "Continuar",
   },
-  onClose: null,
+  onClose: () => {},
   show: false,
   width: "auto",
 };

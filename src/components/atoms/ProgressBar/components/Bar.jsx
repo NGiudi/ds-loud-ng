@@ -75,7 +75,7 @@ Bar.propTypes = {
 
 Bar.defaultProps = {
   noShowAnimationOnFirstLoad: false,
-  onFinish: null,
+  onFinish: () => {},
   size: "md",
   step: 0,
   stepTime: 10,
