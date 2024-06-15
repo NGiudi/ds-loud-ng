@@ -6,7 +6,7 @@ import { Icon } from "../../../";
 import { Styles } from "./Button.styles";
 
 export const Button = (props) => {
-  const { children, id, fullWidth, loading, onClick } = props;
+  const { children, id, fullWidth, loading } = props;
 
   const isIconButton = props.kind === "icon";
 
@@ -31,22 +31,16 @@ export const Button = (props) => {
     }
   };
 
-  const handleClick = () => {
-    if (!loading) {
-      onClick && onClick();
-    }
-  };
-
   return (
     <CustomButton
       $border={props.border}
-      disabled={props.disabled}
+      disabled={props.disabled || props.loading}
       id={id}
       $fullWidth={fullWidth}
       kind={props.kind}
       $loading={loading}
       $margin={props.margin}
-      onClick={handleClick}
+      onClick={props.onClick}
       type={props.type}
     >
       {/* loading view */}
