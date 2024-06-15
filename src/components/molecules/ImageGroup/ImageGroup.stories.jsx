@@ -4,7 +4,7 @@ import { ImageGroupDocs } from "./ImageGroup.docs";
 
 import { ImageGroup, ThemeDS } from "../../..";
 
-import profileImg from "../../../assets/img/foto-perfil.jpg";
+import profileImg from "../../../assets/images/profile_photo.jpg";
 
 const meta = {
   argTypes: {

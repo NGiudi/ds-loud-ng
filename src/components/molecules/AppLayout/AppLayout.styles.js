@@ -25,7 +25,7 @@ export const ContentBox = styled("div")`
 
     &::-webkit-scrollbar-thumb {
       background-color: ${props.theme.colors.black._400};
-      border-radius: ${props.theme.components.appLayout.scroll.radious});
+      border-radius: ${props.theme.components.appLayout.scroll.radious};
     }
   `}}
 `;
