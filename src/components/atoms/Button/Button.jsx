@@ -5,20 +5,33 @@ import { Icon } from "../../../";
 
 import { Styles } from "./Button.styles";
 
-export const Button = (props) => {
-  const { children, id, fullWidth, loading } = props;
-
-  const isIconButton = props.kind === "icon";
-
-  const iconAttributes = {
-    //? default values.
-    name: null,
+const defaultProps = {
+  children: null,
+  disabled: false,
+  fullWidth: false,
+  icon: {
+    name: "",
     size: "sm",
-    //? component values.
-    ...props.icon,
+  },
+  id: "",
+  kind: "solid",
+  loading: false,
+  margin: "a-0",
+  onClick: () => {},
+  type: "button",
+};
+
+export const Button = (props) => {
+  const attrs = {
+    ...defaultProps,
+    ...props,
+    icon: {
+      ...defaultProps.icon,
+      ...props.icon,
+    }
   };
 
-  const CustomButton = ({ kind, ...others }) => {
+  const ButtonSelector = ({ kind, ...others }) => {
     switch (kind) {
       case "outlined":
         return <Styles.OutlinedButton {...others} />;
@@ -32,43 +45,39 @@ export const Button = (props) => {
   };
 
   return (
-    <CustomButton
-      $border={props.border}
-      disabled={props.disabled || props.loading}
-      id={id}
-      $fullWidth={fullWidth}
-      kind={props.kind}
-      $loading={loading}
-      $margin={props.margin}
-      onClick={props.onClick}
-      type={props.type}
+    <ButtonSelector
+      disabled={attrs.disabled || attrs.loading}
+      id={attrs.id}
+      $fullWidth={attrs.fullWidth}
+      kind={attrs.kind}
+      $loading={attrs.loading}
+      $margin={attrs.margin}
+      onClick={attrs.onClick}
+      type={attrs.type}
     >
       {/* loading view */}
-      <Styles.LoaderWrapper $loading={loading} data-testid="loading">
+      <Styles.LoaderWrapper $loading={attrs.loading} data-testid="loading">
         <Icon color="inheret" icon="spinner" size="sm" />
       </Styles.LoaderWrapper>
 
       {/* content view */}
-      <Styles.ContentWrapper $loading={loading}>
-        {iconAttributes.name && (
+      <Styles.ContentWrapper $loading={attrs.loading}>
+        {attrs.icon.name && (
           <Icon
             color="inheret"
-            icon={iconAttributes.name}
-            margin={isIconButton ? "" : "r-4"}
-            size={iconAttributes.size}
+            icon={attrs.icon.name}
+            margin="r-4"
+            size={attrs.icon.size}
           />
         )}
 
-        {children}
+        {attrs.children}
       </Styles.ContentWrapper>
-    </CustomButton>
+    </ButtonSelector>
   );
 };
 
 Button.propTypes = {
-  border: PropTypes.shape({
-    radius: PropTypes.string,
-  }),
   children: PropTypes.node,
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
@@ -82,20 +91,4 @@ Button.propTypes = {
   margin: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.oneOf(["button", "submit"]),
-};
-
-Button.defaultProps = {
-  border: {
-    radius: "4px",
-  },
-  children: null,
-  disabled: false,
-  fullWidth: false,
-  icon: null, //? default value insert into javascript code.
-  id: null,
-  kind: "solid",
-  loading: false,
-  margin: "a-0",
-  onClick: () => {},
-  type: "button",
 };

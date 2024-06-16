@@ -7,15 +7,15 @@ import { marginProperties, paddingProperties } from "../../../utils/styles";
 const Error = styled(ErrorMessage)`
   ${(props) => css`
     color: ${props.theme.colors.alert.colors.error};
-    font-size: ${props.theme.components.text.sizes.sm};
-    font-weight: ${props.theme.components.text.weights.regular};
-    line-height: ${props.theme.components.text.lineHeights.sm};
+    font-size: ${props.theme.components.text.types.bodyRegular.size};
+    font-weight: ${props.theme.components.text.types.bodyRegular.weight};
+    line-height: ${props.theme.components.text.types.bodyRegular.lineHeight};
   `};
 `;
 
 const ErrorWrapper = styled("div")`
   ${(props) => css`
-    height: ${props.theme.components.text.lineHeights.sm};
+    height: ${props.theme.components.text.types.bodyRegular.lineHeight};
 
     ${marginProperties(props)}
   `};

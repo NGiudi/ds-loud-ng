@@ -11,16 +11,16 @@ const textStyles = (props) => {
     color: ${getColor(props.theme, props.$color)};
     font-family: "Source Sans 3", sans-serif;
     font-size: ${() => {
-      const { sizes, types } = props.theme.components.text;
-      return types[props.$type]?.size || sizes[props.$size];
+      const { types } = props.theme.components.text;
+      return types[props.$type]?.size;
     }};
     font-weight: ${() => {
-      const { weights, types } = props.theme.components.text;
-      return types[props.$type]?.weight || weights[props.$weight];
+      const { types } = props.theme.components.text;
+      return types[props.$type]?.weight;
     }};
     line-height: ${() => {
-      const { lineHeights, types } = props.theme.components.text;
-      return types[props.$type]?.lineHeight || lineHeights[props.$size];
+      const { types } = props.theme.components.text;
+      return types[props.$type]?.lineHeight;
     }};
     text-align: ${props.$align};
     text-decoration: ${props.$decoration};

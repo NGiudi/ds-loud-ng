@@ -5,12 +5,28 @@ import { Text } from "../Text/Text";
 
 import { Styles } from "./Badge.styles";
 
+const defaultProps = {
+  children: null,
+  color: "orange_700",
+  id: "",
+  margin: "a-0",
+};
+
 export const Badge = (props) => {
-  const { id, color, margin } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   return (
-    <Styles.Wrapper $color={color} id={id} $margin={margin}>
-      <Text type="bodySemibold">{props.children}</Text>
+    <Styles.Wrapper
+      $color={attrs.color}
+      id={attrs.id}
+      $margin={attrs.margin}
+    >
+      <Text type="bodySemibold">
+        {attrs.children}
+      </Text>
     </Styles.Wrapper>
   );
 };
@@ -20,11 +36,4 @@ Badge.propTypes = {
   color: PropTypes.string,
   id: PropTypes.string,
   margin: PropTypes.string,
-};
-
-Badge.defaultProps = {
-  children: null,
-  color: "orange_700",
-  id: null,
-  margin: "a-0",
 };

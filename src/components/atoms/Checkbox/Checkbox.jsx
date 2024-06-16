@@ -5,19 +5,34 @@ import { Flex, Text } from "../../../";
 
 import { Styles } from "./Checkbox.styles";
 
+const defaultProps = {
+  id: "",
+  description: "",
+  label: "",
+  margin: "a-0",
+  name: "",
+};
+
 export const Checkbox = (props) => {
-  const { description, id, label, margin, name } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   return (
-    <Flex margin={margin} vAlign="start">
-      <Styles.CustomCheckbox id={id} name={name} type="checkbox" />
+    <Flex margin={attrs.margin} vAlign="start">
+      <Styles.CustomCheckbox
+        id={attrs.id}
+        name={attrs.name}
+        type="checkbox"
+      />
 
       <div style={{ flexGrow: "0" }}>
-        <Text as="label" htmlFor={id} margin="b-4" type="bodySemibold">
-          {label}
+        <Text as="label" htmlFor={attrs.id} margin="b-4" type="bodySemibold">
+          {attrs.label}
         </Text>
 
-        {description && <Text type="captionRegular">{description}</Text>}
+        {attrs.description && <Text type="captionRegular">{attrs.description}</Text>}
       </div>
     </Flex>
   );
@@ -29,12 +44,4 @@ Checkbox.propTypes = {
   label: PropTypes.string.isRequired,
   margin: PropTypes.string,
   name: PropTypes.string,
-};
-
-Checkbox.defaultProps = {
-  id: null,
-  description: null,
-  label: "",
-  margin: "a-0",
-  name: "",
 };

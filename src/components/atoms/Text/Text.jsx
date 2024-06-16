@@ -3,27 +3,39 @@ import PropTypes from "prop-types";
 
 import { Styles } from "./Text.styles";
 
+const defaultProps = {
+  align: "start",
+  as: "p",
+  color: "black_900",
+  decoration: "none",
+  htmlFor: "",
+  margin: "a-0",
+  padding: "a-0",
+  type: "bodyRegular",
+};
+
 export const Text = (props) => {
-  const { as, htmlFor } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   const textOptions = {
-    $align: props.align,
-    children: props.children,
-    $color: props.color,
-    $decoration: props.decoration,
-    $margin: props.margin,
-    $padding: props.padding,
-    $size: props.size,
-    $type: props.type,
-    $weight: props.weight,
+    $align: attrs.align,
+    children: attrs.children,
+    $color: attrs.color,
+    $decoration: attrs.decoration,
+    $margin: attrs.margin,
+    $padding: attrs.padding,
+    $type: attrs.type,
   };
 
   const getTextType = () => {
-    switch (as) {
+    switch (attrs.as) {
       case "label":
-        return <Styles.LabelWrapper htmlFor={htmlFor} {...textOptions} />;
+        return <Styles.LabelWrapper htmlFor={attrs.htmlFor} {...textOptions} />;
       default:
-        return <Styles.TextWrapper as={as} {...textOptions} />;
+        return <Styles.TextWrapper as={attrs.as} {...textOptions} />;
     }
   };
 
@@ -34,11 +46,14 @@ Text.propTypes = {
   align: PropTypes.oneOf(["center", "end", "start"]),
   as: PropTypes.oneOf(["label", "p", "span"]),
   color: PropTypes.string,
-  decoration: PropTypes.oneOf(["underline", "line-through"]),
+  decoration: PropTypes.oneOf([
+    "line-through",
+    "none",
+    "underline",
+  ]),
   htmlFor: PropTypes.string, //? used only for label type.
   margin: PropTypes.string,
   padding: PropTypes.string,
-  size: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl", "xxl "]),
   type: PropTypes.oneOf([
     "bodyRegular",
     "bodySemibold",
@@ -48,18 +63,4 @@ Text.propTypes = {
     "subtitle",
     "title",
   ]),
-  weight: PropTypes.oneOf(["bold", "regular", "semibold"]),
-};
-
-Text.defaultProps = {
-  align: "start",
-  as: "p",
-  color: "black_900",
-  decoration: null,
-  htmlFor: "",
-  margin: "a-0",
-  padding: "a-0",
-  size: "sm",
-  type: null,
-  weight: "regular",
 };

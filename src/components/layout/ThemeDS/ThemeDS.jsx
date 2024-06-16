@@ -6,21 +6,39 @@ import { Helmet } from "react-helmet";
 
 import { getTheme } from "./utils/theme";
 
+const defaultProps = {
+  children: null,
+  name: "loudLight",
+  theme: null,
+};
+
 export const ThemeDS = (props) => {
-  const { children, name, theme } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  }; 
 
   return (
-    <ThemeProvider theme={theme || getTheme(name)}>
+    <ThemeProvider theme={attrs.theme || getTheme(attrs.name)}>
       <Helmet>
-        <link href="https://fonts.googleapis.com" rel="preconnect" />
-        <link crossOrigin href="https://fonts.gstatic.com" rel="preconnect" />
+        <link
+          href="https://fonts.googleapis.com"
+          rel="preconnect"
+        />
+        
+        <link
+          crossOrigin
+          href="https://fonts.gstatic.com"
+          rel="preconnect"
+        />
+        
         <link
           href="https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap"
           rel="stylesheet"
         />
       </Helmet>
 
-      {children}
+      {attrs.children}
     </ThemeProvider>
   );
 };
@@ -29,10 +47,4 @@ ThemeDS.propTypes = {
   children: PropTypes.node,
   name: PropTypes.oneOf(["loudLight"]),
   theme: PropTypes.object,
-};
-
-ThemeDS.defaultProps = {
-  children: null,
-  name: "loudLight",
-  theme: null,
 };

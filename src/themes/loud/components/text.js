@@ -1,19 +1,3 @@
-const lineHeights = {
-  xs: "18px",
-  sm: "20px",
-  md: "28px",
-  lg: "32px",
-  xl: "42px",
-};
-
-const sizes = {
-  xs: "12px",
-  sm: "14px",
-  md: "18px",
-  lg: "22px",
-  xl: "28px",
-};
-
 export const weights = {
   bold: 800,
   regular: 400,
@@ -22,45 +6,42 @@ export const weights = {
 
 const types = {
   bodyRegular: {
-    lineHeight: lineHeights.sm,
-    size: sizes.sm,
-    weight: weights.regular,
+    lineHeight: "20px",
+    size: "14px",
+    weight: 400,
   },
   bodySemibold: {
-    lineHeight: lineHeights.sm,
-    size: sizes.sm,
-    weight: weights.semibold,
+    lineHeight: "20px",
+    size: "14px",
+    weight: 600,
   },
   captionRegular: {
-    lineHeight: lineHeights.xs,
-    size: sizes.xs,
-    weight: weights.regular,
+    lineHeight: "18px",
+    size: "12px",
+    weight: 400,
   },
   captionSemibold: {
-    lineHeight: lineHeights.xs,
-    size: sizes.xs,
-    weight: weights.semibold,
+    lineHeight: "18px",
+    size: "12px",
+    weight: 600,
   },
   pageTitle: {
-    lineHeight: lineHeights.xl,
-    size: sizes.xl,
-    weight: weights.bold,
+    lineHeight: "42px",
+    size: "28px",
+    weight: 600,
   },
   subtitle: {
-    lineHeight: lineHeights.md,
-    size: sizes.md,
-    weight: weights.semibold,
+    lineHeight: "28px",
+    size: "18px",
+    weight: 600,
   },
   title: {
-    lineHeight: lineHeights.lg,
-    size: sizes.lg,
-    weight: weights.bold,
+    lineHeight: "32px",
+    size: "22px",
+    weight: 800,
   },
 };
 
 export const text = {
-  lineHeights,
-  sizes,
   types,
-  weights,
 };

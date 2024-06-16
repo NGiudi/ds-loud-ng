@@ -3,17 +3,28 @@ import PropTypes from "prop-types";
 
 import { Styles } from "./Flex.styles";
 
+const defaultProps = {
+  children: null,
+  direction: "row",
+  hAlign: "start",
+  margin: "a-0",
+  vAlign: "center",
+};
+
 export const Flex = (props) => {
-  const { direction, hAlign, margin, vAlign } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   return (
     <Styles.Wrapper
-      $direction={direction}
-      $margin={margin}
-      $hAlign={hAlign}
-      $vAlign={vAlign}
+      $direction={attrs.direction}
+      $margin={attrs.margin}
+      $hAlign={attrs.hAlign}
+      $vAlign={attrs.vAlign}
     >
-      {props.children}
+      {attrs.children}
     </Styles.Wrapper>
   );
 };
@@ -30,12 +41,4 @@ Flex.propTypes = {
   ]),
   margin: PropTypes.string,
   vAlign: PropTypes.oneOf(["center", "end", "start"]),
-};
-
-Flex.defaultProps = {
-  children: null,
-  direction: "row",
-  hAlign: "start",
-  margin: "a-0",
-  vAlign: "center",
 };
