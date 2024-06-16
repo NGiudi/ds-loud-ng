@@ -7,38 +7,51 @@ import { Box, Text } from "../../../";
 
 import { Styles } from "./TextArea.styles";
 
+const defaultProps = {
+  description: "",
+  disabled: false,
+  id: "",
+  label: "",
+  name: "",
+  margin: "a-0",
+  rows: 5,
+};
+
 export const TextArea = (props) => {
-  const { description, id, label, name, margin, rows } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   const { setFieldValue, values } = useFormikContext();
 
   const handleChange = (e) => {
-    setFieldValue(name, e.target.value);
+    setFieldValue(attrs.name, e.target.value);
   };
 
   return (
-    <Box margin={margin}>
-      {label && (
-        <Text as="label" htmlFor={id} margin="b-4" type="bodySemibold">
-          {label}
+    <Box margin={attrs.margin}>
+      {attrs.label && (
+        <Text as="label" htmlFor={attrs.id} margin="b-4" type="bodySemibold">
+          {attrs.label}
         </Text>
       )}
 
-      {!!description && (
+      {!!attrs.description && (
         <Text color="black_400" margin="b-4" type="captionRegular">
-          {description}
+          {attrs.description}
         </Text>
       )}
 
       <Styles.TextArea
         as="textarea"
         disabled={props.disabled}
-        id={id}
-        name={name}
+        id={attrs.id}
+        name={attrs.name}
         onChange={handleChange}
-        rows={rows}
-        spellcheck="false"
-        value={values[name]}
+        rows={attrs.rows}
+        spellCheck="false"
+        value={values[attrs.name]}
       />
     </Box>
   );
@@ -52,14 +65,4 @@ TextArea.propTypes = {
   name: PropTypes.string.isRequired,
   margin: PropTypes.string,
   rows: PropTypes.number,
-};
-
-TextArea.defaultProps = {
-  description: "",
-  disabled: false,
-  id: "",
-  label: "",
-  name: "",
-  margin: "a-0",
-  rows: 5,
 };

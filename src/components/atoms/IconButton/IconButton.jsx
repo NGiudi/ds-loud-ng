@@ -5,25 +5,40 @@ import { Icon } from "../../..";
 
 import { Styles } from "./IconButton.styles";
 
-export const IconButton = (props) => {
-  const { disabled, icon, id, margin, onClick } = props;
+const defaultProps = {
+  disabled: false,
+  icon: {
+    name: "",
+    size: "sm",
+  },
+  id: null,
+  margin: "a-0",
+  onClick: () => {},
+  type: "button",
+};
 
-  const handleClick = () => {
-    onClick && onClick();
+export const IconButton = (props) => {
+  const attrs = {
+    ...defaultProps,
+    ...props,
+    icon: {
+      ...defaultProps.icon,
+      ...props.icon,
+    },
   };
 
   return (
     <Styles.IconButton
-      disabled={disabled}
-      id={id}
-      $margin={margin}
-      onClick={handleClick}
-      type={props.type}
+      disabled={attrs.disabled}
+      id={attrs.id}
+      $margin={attrs.margin}
+      onClick={attrs.onClick}
+      type={attrs.type}
     >
       <Icon
-        color={disabled ? "black_500" : "black_900"}
-        icon={icon.name}
-        size={icon.size}
+        color={attrs.disabled ? "black_500" : "black_900"}
+        icon={attrs.icon.name}
+        size={attrs.icon.size}
       />
     </Styles.IconButton>
   );
@@ -39,13 +54,4 @@ IconButton.propTypes = {
   margin: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.oneOf(["button", "submit"]),
-};
-
-IconButton.defaultProps = {
-  disabled: false,
-  icon: null, //? default value insert into javascript code.
-  id: null,
-  margin: "a-0",
-  onClick: () => {},
-  type: "button",
 };

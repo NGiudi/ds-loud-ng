@@ -5,13 +5,24 @@ import { Text } from "../../../";
 
 import { getTimeObject, formatClock } from "../../../utils/time/clock";
 
+const defaultProps = {
+  endTime: null,
+  formatTime: "hh:mm:ss",
+  onFinish: () => {},
+  showZero: true,
+  text: {},
+};
+
 export const Countdown = (props) => {
-  const { endTime, formatTime, onFinish, showZero, text } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   const [time, setTime] = useState(0);
 
   const [startWithoutTime] = useState(() => {
-    const firstTime = endTime - new Date().getTime();
+    const firstTime = attrs.endTime - new Date().getTime();
     return firstTime < 0;
   });
 
@@ -24,7 +35,7 @@ export const Countdown = (props) => {
 
       const id = setTimeout(() => {
         const now = new Date().getTime();
-        setTime(endTime - now);
+        setTime(attrs.endTime - now);
       }, 1000);
 
       timeoutRef.current = id;
@@ -40,21 +51,21 @@ export const Countdown = (props) => {
 
   //? update the countdown when the end date and time are changed.
   useEffect(() => {
-    setTime(endTime - new Date().getTime());
-  }, [endTime]);
+    setTime(attrs.endTime - new Date().getTime());
+  }, [attrs.endTime]);
 
   //? execute the callback when the time expires.
   //? if it starts without time it does not execute.
   useEffect(() => {
-    if (onFinish && !startWithoutTime && time < 1000) {
-      onFinish();
+    if (attrs.onFinish && !startWithoutTime && time < 1000) {
+      attrs.onFinish();
     }
-  }, [onFinish, startWithoutTime, time]);
+  }, [attrs.onFinish, startWithoutTime, time]);
 
   //? no show zero value.
-  if (time < 1000 && !showZero) return null;
+  if (time < 1000 && !attrs.showZero) return null;
 
-  return <Text {...text}>{formatClock(getTimeObject(time), formatTime)}</Text>;
+  return <Text {...attrs.text}>{formatClock(getTimeObject(time), attrs.formatTime)}</Text>;
 };
 
 Countdown.propTypes = {
@@ -63,12 +74,4 @@ Countdown.propTypes = {
   onFinish: PropTypes.func,
   showZero: PropTypes.bool,
   text: PropTypes.object,
-};
-
-Countdown.defaultProps = {
-  endTime: null,
-  formatTime: "hh:mm:ss",
-  onFinish: () => {},
-  showZero: true,
-  text: {},
 };
