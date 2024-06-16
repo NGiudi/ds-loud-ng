@@ -8,8 +8,20 @@ import { Styles } from "./Panel.styles";
 /* TODO: agregar al theme */
 import { icons } from "../../../themes/icons";
 
+const defaultProps = {
+  align: "start",
+  children: null,
+  margin: "a-0",
+  onSizeH: (p) => {},
+  padding: "a-8",
+  type: "neutral",
+};
+
 export const Panel = (props) => {
-  const { align, margin, padding, onSizeH, type } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   const ref = useRef(null);
 
@@ -22,23 +34,23 @@ export const Panel = (props) => {
 
   //? run when the height of the panel changes.
   useEffect(() => {
-    onSizeH && onSizeH(height);
+    attrs.onSizeH(height);
   }, [height]); // eslint-disable-line
 
   return (
     <Styles.PanelWrapper
-      $margin={margin}
-      $padding={padding}
+      $margin={attrs.margin}
+      $padding={attrs.padding}
       ref={ref}
-      type={type}
+      type={attrs.type}
     >
-      <Styles.PositionWrapper $align={align}>
-        {type !== "neutral" && (
-          <Icon icon={icons.fontawesome[type]} margin="r-16" />
+      <Styles.PositionWrapper $align={attrs.align}>
+        {attrs.type !== "neutral" && (
+          <Icon icon={icons.fontawesome[attrs.type]} margin="r-16" />
         )}
 
         <Styles.ContentWrapper $margin="t-4">
-          {props.children}
+          {attrs.children}
         </Styles.ContentWrapper>
       </Styles.PositionWrapper>
     </Styles.PanelWrapper>
@@ -52,13 +64,4 @@ Panel.propTypes = {
   onSizeH: PropTypes.func,
   padding: PropTypes.string,
   type: PropTypes.oneOf(["error", "info", "neutral", "success", "warning"]),
-};
-
-Panel.defaultProps = {
-  align: "start",
-  children: null,
-  margin: "a-0",
-  onSizeH: () => {},
-  padding: "a-8",
-  type: "neutral",
 };

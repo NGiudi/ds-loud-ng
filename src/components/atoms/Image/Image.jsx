@@ -5,27 +5,39 @@ import { ImagePlaceholder } from "./components";
 
 import { Styles } from "./Image.styles";
 
-export const Image = (props) => {
-  const { alt, img, margin, placeholder, size, type } = props;
+const defaultProps = {
+  alt: "",
+  img: "",
+  margin: "a-0",
+  placeholder: "",
+  size: "md",
+  type: "square",
+};
 
-  if (!img) {
+export const Image = (props) => {
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
+
+  if (!attrs.img) {
     return (
       <ImagePlaceholder
-        margin={margin}
-        placeholder={placeholder}
-        size={size}
-        type={type}
+        margin={attrs.margin}
+        placeholder={attrs.placeholder}
+        size={attrs.size}
+        type={attrs.type}
       />
     );
   }
 
   return (
     <Styles.ImageStyles
-      alt={alt}
-      $margin={margin}
-      $size={size}
-      src={img}
-      $type={type}
+      alt={attrs.alt}
+      $margin={attrs.margin}
+      $size={attrs.size}
+      src={attrs.img}
+      $type={attrs.type}
     />
   );
 };
@@ -37,13 +49,4 @@ Image.propTypes = {
   placeholder: PropTypes.string,
   size: PropTypes.oneOf(["avatar", "avatarSm", "lg", "md", "sm"]),
   type: PropTypes.oneOf(["round", "square"]),
-};
-
-Image.defaultProps = {
-  alt: null,
-  img: null,
-  margin: "a-0",
-  placeholder: "",
-  size: "md",
-  type: "square",
 };
