@@ -7,31 +7,59 @@ import { Button, IconButton, Panel } from "../../../";
 
 import { Styles } from "./Modal.styles";
 
+const defaultProps = {
+  cancelButton: {
+    hide: false,
+    onClick: () => {},
+    text: "Cancelar",
+  },
+  children: null,
+  confirmButton: {
+    hide: false,
+    onClick: () => {},
+    text: "Continuar",
+  },
+  onClose: () => {},
+  show: false,
+  width: "auto",
+};
+
 export const Modal = (props) => {
-  const { cancelButton, confirmButton, onClose, show } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+    cancelButton: {
+      ...defaultProps.cancelButton,
+      ...props.cancelButton,
+    },
+    confirmButton: {
+      ...defaultProps.confirmButton,
+      ...props.confirmButton,
+    },
+  };
 
   const [showModal, setShowModal] = useState(false);
   const showModalRef = useRef(false);
 
   const handleCancel = () => {
     if (showModalRef.current) { 
-      cancelButton.onClick();
-      onClose();
+      attrs.cancelButton.onClick();
+      attrs.onClose();
       setShowModal(false);
     }
   };
 
   const handleClose = () => {
     if (showModalRef.current) {
-      onClose();
+      attrs.onClose();
       setShowModal(false);
     }
   }
 
   const handleConfirm = () => {
     if (showModalRef.current) {
-      confirmButton.onClick();    
-      onClose();
+      attrs.confirmButton.onClick();    
+      attrs.onClose();
       setShowModal(false);
     }
   }
@@ -43,8 +71,8 @@ export const Modal = (props) => {
 
   //? When the show is modified through the props, the internal state is updated.
   useEffect(() => {
-    setShowModal(show);
-  }, [show]);
+    setShowModal(attrs.show);
+  }, [attrs.show]);
   
   //? Reference for using with the useKeyboardActions hook to keep the state updated.
   useEffect(() => {
@@ -54,26 +82,26 @@ export const Modal = (props) => {
   if (showModal) {
     return (
       <Styles.Overlay>
-        <Styles.PanelWrapper width={props.width}>
+        <Styles.PanelWrapper width={attrs.width}>
           <Panel padding="a-20">
             <Styles.CloseBtnWrapper>
               <IconButton icon={{ name: "times" }} onClick={handleClose} />
             </Styles.CloseBtnWrapper>
   
             <Styles.ContentBox $padding="r-28">
-              {props.children}
+              {attrs.children}
             </Styles.ContentBox>
   
             <Styles.ButtonsWrapper>
-              {!props.cancelButton.hide && (
+              {!attrs.cancelButton.hide && (
                 <Button kind="outlined" onClick={handleCancel}>
-                  {props.cancelButton.text}
+                  {attrs.cancelButton.text}
                 </Button>
               )}
   
-              {!props.confirmButton.hide && (
+              {!attrs.confirmButton.hide && (
                 <Button margin="l-8" onClick={handleConfirm}>
-                  {props.confirmButton.text}
+                  {attrs.confirmButton.text}
                 </Button>
               )}
             </Styles.ButtonsWrapper>
@@ -101,21 +129,4 @@ Modal.propTypes = {
   onClose: PropTypes.func,
   show: PropTypes.bool,
   width: PropTypes.string,
-};
-
-Modal.defaultProps = {
-  cancelButton: {
-    hide: false,
-    onClick: () => {},
-    text: "Cancelar",
-  },
-  children: null,
-  confirmButton: {
-    hide: false,
-    onClick: () => {},
-    text: "Continuar",
-  },
-  onClose: () => {},
-  show: false,
-  width: "auto",
 };
