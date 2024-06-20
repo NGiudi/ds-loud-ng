@@ -6,8 +6,29 @@ import { Icon, Text } from "../../../";
 
 import { Styles } from "./Input.styles";
 
+const defaultProps = {
+  autoComplete: "off",
+  autoFocus: false,
+  description: "",
+  disabled: false,
+  icon: null,
+  id: "",
+  innerRef: null,
+  label: "",
+  margin: "a-0",
+  name: "",
+  onKeyPress: () => {},
+  placeholder: "",
+  readOnly: false,
+  reference: null,
+  type: "text",
+};
+
 export const Input = (props) => {
-  const { description, icon, id, label, name, type } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -16,44 +37,44 @@ export const Input = (props) => {
   };
 
   return (
-    <Styles.Wrapper $margin={props.margin}>
-      {!!label && (
-        <Text as="label" htmlFor={id} margin="b-4" type="bodySemibold">
-          {label}
+    <Styles.Wrapper $margin={attrs.margin}>
+      {!!attrs.label && (
+        <Text as="label" htmlFor={attrs.id} margin="b-4" type="bodySemibold">
+          {attrs.label}
         </Text>
       )}
 
-      {!!description && (
+      {!!attrs.description && (
         <Text color="black_400" margin="b-4" type="captionRegular">
-          {description}
+          {attrs.description}
         </Text>
       )}
 
-      <Styles.InputWrapper ref={props.reference}>
+      <Styles.InputWrapper ref={attrs.reference}>
         {/* left icon */}
-        {!!icon && <Icon icon={icon} margin="r-8" size="sm" />}
+        {!!attrs.icon && <Icon icon={attrs.icon} margin="r-8" size="sm" />}
 
         <Styles.InputStyles
-          autoComplete={props.autoComplete}
-          autoFocus={props.autoFocus}
-          id={id}
-          disabled={props.disabled}
-          innerRef={props.innerRef}
-          name={name}
-          onKeyPress={props.onKeyPress}
-          placeholder={props.placeholder}
-          readOnly={props.readOnly}
-          type={showPassword ? "text" : type}
+          autoComplete={attrs.autoComplete}
+          autoFocus={attrs.autoFocus}
+          id={attrs.id}
+          disabled={attrs.disabled}
+          innerRef={attrs.innerRef}
+          name={attrs.name}
+          onKeyPress={attrs.onKeyPress}
+          placeholder={attrs.placeholder}
+          readOnly={attrs.readOnly}
+          type={showPassword ? "text" : attrs.type}
         />
 
-        {type === "password" && (
+        {attrs.type === "password" && (
           <ShowPasswordButton onClick={showPasswordValue} show={showPassword} />
         )}
       </Styles.InputWrapper>
 
       {/* error message */}
       <Styles.ErrorWrapper $margin="l-4 t-4">
-        <Styles.Error component="div" name={name} />
+        <Styles.Error component="div" name={attrs.name} />
       </Styles.ErrorWrapper>
     </Styles.Wrapper>
   );
@@ -75,22 +96,4 @@ Input.propTypes = {
   readOnly: PropTypes.bool,
   reference: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   type: PropTypes.oneOf(["number", "password", "text"]),
-};
-
-Input.defaultProps = {
-  autoComplete: "off",
-  autoFocus: false,
-  description: "",
-  disabled: false,
-  icon: null,
-  id: null,
-  innerRef: null,
-  label: "",
-  margin: "a-0",
-  name: "",
-  onKeyPress: () => {},
-  placeholder: "",
-  readOnly: false,
-  reference: null,
-  type: "text",
 };

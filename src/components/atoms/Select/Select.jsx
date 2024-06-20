@@ -9,21 +9,33 @@ import { Text } from "../../../";
 
 import { Styles } from "./Select.styles.js";
 
+const defaultProps = {
+  disabled: false,
+  label: "",
+  name: "",
+  margin: "",
+  maxHeight: "auto",
+  options: [],
+};
+
 export const Select = (props) => {
-  const { disabled, label, margin, maxHeight, name, options } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   return (
-    <SelectProvider name={name} options={options}>
-      <SelectValue name={name} />
+    <SelectProvider name={attrs.name} options={attrs.options}>
+      <SelectValue name={attrs.name} />
 
-      <Styles.Wrapper $margin={margin}>
-        {!!label && (
-          <Text as="label" htmlFor={name} margin="b-4" type="bodySemibold">
-            {label}
+      <Styles.Wrapper $margin={attrs.margin}>
+        {!!attrs.label && (
+          <Text as="label" htmlFor={attrs.name} margin="b-4" type="bodySemibold">
+            {attrs.label}
           </Text>
         )}
 
-        <SelectContent disabled={disabled} maxHeight={maxHeight} />
+        <SelectContent disabled={attrs.disabled} maxHeight={attrs.maxHeight} />
       </Styles.Wrapper>
     </SelectProvider>
   );
@@ -36,13 +48,4 @@ Select.propTypes = {
   margin: PropTypes.string,
   maxHeight: PropTypes.string, //? content panel height
   options: PropTypes.array,
-};
-
-Select.defaultProps = {
-  disabled: false,
-  label: "",
-  name: "",
-  margin: "",
-  maxHeight: "auto",
-  options: [],
 };

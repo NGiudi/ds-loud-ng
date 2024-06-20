@@ -6,31 +6,46 @@ import { useTheme } from "styled-components";
 
 import { DesktopTable, PhoneTable } from "./components";
 
+const defaultProps = {
+  columns: [],
+  data: [],
+  desktopColumns: [],
+  margin: "a-0",
+  mobileColumns: [],
+  name: "",
+  onClick: () => {},
+};
+
 export const Table = (props) => {
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
+
   const size = useWindowSize();
   const theme = useTheme();
 
   if (size.width > theme.breakpoints.mobile) {
     return (
       <DesktopTable
-        columns={props.columns}
-        data={props.data}
-        desktopColumns={props.desktopColumns}
-        margin={props.margin}
-        name={props.name}
-        onClick={props.onClick}
+        columns={attrs.columns}
+        data={attrs.data}
+        desktopColumns={attrs.desktopColumns}
+        margin={attrs.margin}
+        name={attrs.name}
+        onClick={attrs.onClick}
       />
     );
   }
 
   return (
     <PhoneTable
-      columns={props.columns}
-      data={props.data}
-      margin={props.margin}
-      mobileColumns={props.mobileColumns}
-      name={props.name}
-      onClick={props.onClick}
+      columns={attrs.columns}
+      data={attrs.data}
+      margin={attrs.margin}
+      mobileColumns={attrs.mobileColumns}
+      name={attrs.name}
+      onClick={attrs.onClick}
     />
   );
 };
@@ -43,14 +58,4 @@ Table.propTypes = {
   mobileColumns: PropTypes.array,
   name: PropTypes.string,
   onClick: PropTypes.func,
-};
-
-Table.defaultProps = {
-  columns: [],
-  data: [],
-  desktopColumns: [],
-  margin: "a-0",
-  mobileColumns: [],
-  name: "",
-  onClick: () => {},
 };

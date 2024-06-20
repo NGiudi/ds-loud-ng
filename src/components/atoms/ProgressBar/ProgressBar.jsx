@@ -5,10 +5,24 @@ import { Bar } from "./components/Bar";
 
 import { Styles } from "./ProgressBar.styles";
 
-export const ProgressBar = (props) => {
-  let { margin, size, steps } = props;
+const defaultProps = {
+  borderRound: false,
+  margin: "a-0",
+  noShowAnimationOnFirstLoad: false,
+  onFinish: () => {},
+  size: "md",
+  step: 0,
+  stepTime: 10,
+  steps: 100,
+};
 
-  const stepsRef = useRef(steps);
+export const ProgressBar = (props) => {
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
+
+  const stepsRef = useRef(attrs.steps);
 
   //? value out of range.
   useEffect(() => {
@@ -20,13 +34,13 @@ export const ProgressBar = (props) => {
   }, [stepsRef]);
 
   return (
-    <Styles.ProgressBarWrapper $margin={margin} size={size}>
+    <Styles.ProgressBarWrapper $margin={attrs.margin} size={attrs.size}>
       <Bar
-        noShowAnimationOnFirstLoad={props.noShowAnimationOnFirstLoad}
-        onFinish={props.onFinish}
-        size={props.size}
-        step={props.step}
-        stepTime={props.stepTime}
+        noShowAnimationOnFirstLoad={attrs.noShowAnimationOnFirstLoad}
+        onFinish={attrs.onFinish}
+        size={attrs.size}
+        step={attrs.step}
+        stepTime={attrs.stepTime}
         steps={stepsRef.current}
       />
     </Styles.ProgressBarWrapper>
@@ -42,15 +56,4 @@ ProgressBar.propTypes = {
   step: PropTypes.number,
   stepTime: PropTypes.number,
   steps: PropTypes.number,
-};
-
-ProgressBar.defaultProps = {
-  borderRound: false,
-  margin: "a-0",
-  noShowAnimationOnFirstLoad: false,
-  onFinish: () => {},
-  size: "md",
-  step: 0,
-  stepTime: 10,
-  steps: 100,
 };
