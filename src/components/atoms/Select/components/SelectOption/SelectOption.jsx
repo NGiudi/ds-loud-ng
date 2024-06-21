@@ -5,19 +5,27 @@ import { SelectContext } from "../../SelectContext";
 
 import { Styles } from "./SelectOption.styles";
 
+const defaultProps = {
+  children: null,
+  value: "",
+};
+
 export const SelectOption = (props) => {
-  const { value } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   const ctx = useContext(SelectContext);
 
   const handleClick = () => {
-    ctx.handleSelectedValue(value);
+    ctx.handleSelectedValue(attrs.value);
     ctx.closeSelect();
   };
 
   return (
     <Styles.SelectOption onClick={handleClick}>
-      {props.children}
+      {attrs.children}
     </Styles.SelectOption>
   );
 };
@@ -25,9 +33,4 @@ export const SelectOption = (props) => {
 SelectOption.propTypes = {
   children: PropTypes.node,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-};
-
-SelectOption.defaultProps = {
-  children: null,
-  value: "",
 };

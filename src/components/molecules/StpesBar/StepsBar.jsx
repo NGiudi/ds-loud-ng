@@ -19,8 +19,6 @@ export const StepsBar = (props) => {
     ...props,
   };
 
-  const { margin, size, step, steps } = props;
-
   const [previousStep, setPreviousStep] = useState(attrs.step);
 
   const finishStepChange = () => {
@@ -37,8 +35,8 @@ export const StepsBar = (props) => {
     if (renderStep < attrs.step) return "checkedCircle";
     if (renderStep > attrs.step) return "pendingCircle";
 
-    if (renderStep === attrs.step && attrs.previousStep > attrs.step) return "checkedCircle";
-    if (renderStep === attrs.step && attrs.previousStep < attrs.step) return "pendingCircle";
+    if (renderStep === attrs.step && previousStep > attrs.step) return "checkedCircle";
+    if (renderStep === attrs.step && previousStep < attrs.step) return "pendingCircle";
     if (renderStep === attrs.step) return "circle";
   };
 
@@ -87,7 +85,7 @@ export const StepsBar = (props) => {
   const renderColumnSteps = () => {
     let stepsArray = [];
 
-    for (let i = 1; i <= steps; i++) {
+    for (let i = 1; i <= attrs.steps; i++) {
       stepsArray.push(renderStep(i));
     }
 

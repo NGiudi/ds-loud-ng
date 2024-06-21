@@ -7,8 +7,19 @@ import { Panel, Image } from "../../../../..";
 
 import { Styles } from "./ProfileAvatar.styles";
 
+const defaultProps = {
+  children: null,
+  id: null,
+  img: null,
+  margin: "a-0",
+  size: "avatar",
+};
+
 export const ProfileAvatar = (props) => {
-  const { id, size } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +33,7 @@ export const ProfileAvatar = (props) => {
     img: null,
     placeholder: "L",
     //? component values.
-    ...props.img,
+    ...attrs.img,
   };
 
   const handleAvatarClick = () => {
@@ -30,14 +41,14 @@ export const ProfileAvatar = (props) => {
   };
 
   return (
-    <Styles.Wrapper id={id} $margin={props.margin} ref={innerRef}>
+    <Styles.Wrapper id={attrs.id} $margin={attrs.margin} ref={innerRef}>
       <Styles.AvatarWrapper $isSelected={isOpen} onClick={handleAvatarClick}>
-        <Image {...imageAttributes} size={size} type="round" />
+        <Image {...imageAttributes} size={attrs.size} type="round" />
       </Styles.AvatarWrapper>
 
       {isOpen && (
         <Styles.PanelWrapper>
-          <Panel padding="a-0">{props.children}</Panel>
+          <Panel padding="a-0">{attrs.children}</Panel>
         </Styles.PanelWrapper>
       )}
     </Styles.Wrapper>
@@ -54,12 +65,4 @@ ProfileAvatar.propTypes = {
   }),
   margin: PropTypes.string,
   size: PropTypes.oneOf(["avatar", "avatarSm"]),
-};
-
-ProfileAvatar.defaultProps = {
-  children: null,
-  id: null,
-  img: null,
-  margin: "a-0",
-  size: "avatar",
 };

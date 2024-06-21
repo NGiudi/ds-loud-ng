@@ -5,23 +5,34 @@ import { Flex, Text } from "../../../";
 
 import { Styles } from "./ImageGroup.styles";
 
+const defaultProps = {
+  images: [],
+  margin: "a-0",
+  max: 3,
+  name: "",
+  size: "md",
+};
+
 export const ImageGroup = (props) => {
-  const { images, margin, max, name, size } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
-  const displayedImages = images.slice(0, max);
+  const displayedImages = attrs.images.slice(0, attrs.max);
 
-  const extras = images.length - max;
+  const extras = attrs.images.length - attrs.max;
 
   return (
-    <Flex margin={margin}>
-      <Styles.Wrapper $quantity={displayedImages.length} $size={size}>
+    <Flex margin={attrs.margin}>
+      <Styles.Wrapper $quantity={displayedImages.length} $size={attrs.size}>
         {displayedImages.map((image, idx) => {
           return (
             <Styles.ImageItem
               alt={image.alt}
-              key={`${name}-inage-${idx}-group`}
+              key={`${attrs.name}-inage-${idx}-group`}
               $idx={idx}
-              $size={size}
+              $size={attrs.size}
               src={image.img}
             />
           );
@@ -43,12 +54,4 @@ ImageGroup.propTypes = {
   max: PropTypes.number,
   name: PropTypes.string.isRequired,
   size: PropTypes.string,
-};
-
-ImageGroup.defaultProps = {
-  images: [],
-  margin: "a-0",
-  max: 3,
-  name: "",
-  size: "md",
 };

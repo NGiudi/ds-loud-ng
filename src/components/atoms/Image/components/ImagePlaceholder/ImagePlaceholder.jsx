@@ -5,11 +5,21 @@ import { Icon, Text } from "../../../../..";
 
 import { Styles } from "./ImagePlaceholder.styles";
 
+const defaultProps = {
+  margin: "a-0",
+  placeholder: "",
+  size: "md",
+  type: "square",
+};
+
 export const ImagePlaceholder = (props) => {
-  const { placeholder, margin, size, type } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   const selectTextSize = () => {
-    if (["avatarSm", "sm"].includes(size)) {
+    if (["avatarSm", "sm"].includes(attrs.size)) {
       return "captionSemibold";
     }
 
@@ -17,13 +27,13 @@ export const ImagePlaceholder = (props) => {
   };
 
   return (
-    <Styles.IconPlaceholder $margin={margin} $size={size} $type={type}>
-      {placeholder ? (
+    <Styles.IconPlaceholder $margin={attrs.margin} $size={attrs.size} $type={attrs.type}>
+      {attrs.placeholder ? (
         <Text color="black_100" type={selectTextSize()}>
-          {placeholder.charAt(0).toUpperCase()}
+          {attrs.placeholder.charAt(0).toUpperCase()}
         </Text>
       ) : (
-        <Icon color="black_100" icon="camera" size={size} />
+        <Icon color="black_100" icon="camera" size={attrs.size} />
       )}
     </Styles.IconPlaceholder>
   );
@@ -34,11 +44,4 @@ ImagePlaceholder.propTypes = {
   placeholder: PropTypes.string,
   size: PropTypes.oneOf(["avatar", "avatarSm", "lg", "md", "sm"]),
   type: PropTypes.oneOf(["round", "square"]),
-};
-
-ImagePlaceholder.defaultProps = {
-  margin: "a-0",
-  placeholder: "",
-  size: "md",
-  type: "square",
 };

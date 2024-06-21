@@ -5,8 +5,15 @@ import { SidebarButton } from "./components/SidebarButton";
 
 import { Styles } from "./SideBar.styles";
 
+const defaultProps = {
+  buttons: [],  
+};
+
 export const SideBar = (props) => {
-  const { buttons } = props;
+  const attrs = {
+    ...defaultProps,
+    ...props,
+  };
 
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -22,8 +29,8 @@ export const SideBar = (props) => {
     <Styles.SidebarStyles>
       {/* button list */}
       <Styles.SidebarButtonsWrapper>
-        {buttons &&
-          buttons.map((btn, idx) => {
+        {attrs.buttons.length > 0 &&
+          attrs.buttons.map((btn, idx) => {
             const isSelected = window.location.pathname.includes(btn.to);
             
             return (
@@ -56,8 +63,4 @@ SideBar.propTypes = {
       to: PropTypes.string.isRequired,
     }),
   ),
-};
-
-SideBar.defaultProps = {
-  buttons: null,
 };

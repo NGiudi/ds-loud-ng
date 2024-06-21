@@ -34,7 +34,11 @@ export const ProgressBar = (props) => {
   }, [stepsRef]);
 
   return (
-    <Styles.ProgressBarWrapper $margin={attrs.margin} size={attrs.size}>
+    <Styles.ProgressBarWrapper
+      $borderRound={attrs.borderRound}
+      $margin={attrs.margin}
+      size={attrs.size}
+    >
       <Bar
         noShowAnimationOnFirstLoad={attrs.noShowAnimationOnFirstLoad}
         onFinish={attrs.onFinish}
