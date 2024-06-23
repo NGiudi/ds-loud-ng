@@ -14,9 +14,9 @@ import {
 } from "../../../";
 
 /* import images */
-import argentina from "../../../assets/countries flag/argentina.png";
-import brasil from "../../../assets/countries flag/brasil.png";
-import usa from "../../../assets/countries flag/usa.png";
+import argentina from "../../../assets/images/countries_flag/argentina.png";
+import brasil from "../../../assets/images/countries_flag/brasil.png";
+import usa from "../../../assets/images/countries_flag/usa.png";
 
 const meta = {
   argTypes: {

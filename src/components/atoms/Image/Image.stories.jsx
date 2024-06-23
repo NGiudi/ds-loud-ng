@@ -4,7 +4,7 @@ import { ImageDocs } from "./Image.docs";
 
 import { Image, Text, ThemeDS } from "../../../";
 
-import argentina from "../../../assets/countries flag/argentina.png";
+import argentina from "../../../assets/images/countries_flag/argentina.png";
 import fotoPerfil from "../../../assets/images/profile_photo.jpg";
 
 const meta = {
