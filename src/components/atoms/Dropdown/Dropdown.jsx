@@ -26,7 +26,6 @@ export const Dropdown = (props) => {
   });
 
   const toogleShowPanel = () => {
-    console.log("paso");
     setShowPanel((prev) => !prev);
   };
 

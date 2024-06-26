@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { DropzoneProvider } from './Dropzone.context';
 
 import { UploadFileBox } from "./components/UploadFileBox/UploadFileBox";
-import { ErrorsList } from "./components/ErrorsList/ErrorsList";
 import { FilesList } from "./components/FilesList/FilesList";
 
 import { Styles } from "./Dropzone.styles";
@@ -18,6 +17,7 @@ const defaultProps = {
   validTypes: [],
 };
 
+//TODO: ver como hago para agregar este tipo de "input" a formik.
 export const Dropzone = (props) => {
   const attrs = {
     ...defaultProps,
@@ -32,8 +32,6 @@ export const Dropzone = (props) => {
     >
       <Styles.Wraper $margin={attrs.margin}>
         <UploadFileBox accept={attrs.accept} maxSize={attrs.maxSize} />
-
-        <ErrorsList />
 
         <FilesList name={attrs.name} />
       </Styles.Wraper>

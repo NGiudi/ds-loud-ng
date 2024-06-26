@@ -54,7 +54,7 @@ export const fileTypesString = (array) => {
  * @param {string[]} validTypes - Array of valid MIME types to check against.
  * @returns {boolean} True if the file's MIME type matches any of the valid types, false otherwise.
  */
-export const validateTypeFile = (file, validTypes) => {
+export const isValidTypeFile = (file, validTypes) => {
   validTypes = listOfFileTypes(validTypes);
   
   return validTypes.length === 0 || validTypes.includes(file.type);
@@ -67,6 +67,6 @@ export const validateTypeFile = (file, validTypes) => {
  * @param {number} maxSize - The maximum allowed size for the file in bytes. A value of 0 indicates no size limit.
  * @returns {boolean} - Returns true if the file size is within the allowed limit or if maxSize is 0, otherwise false.
  */
-export const validateSizeFile = (file, maxSize) => {
+export const isValidSizeFile = (file, maxSize) => {
   return maxSize === 0 || file.size <= maxSize;
 }

@@ -1,59 +1,89 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import PropTypes from "prop-types";
 
-import { validateSizeFile, validateTypeFile } from "../../../utils/files/files";
+import { isValidSizeFile, isValidTypeFile } from "../../../utils/files/files";
 
 const DropzoneContext = createContext({});
 
 export const useDropzoneContext = () => useContext(DropzoneContext);
 
+const DELETE_FILE = "delete_file";
+const ADD_FILE = "add_file";
+
+const INITIAL_STATE = {
+  fileItems: [],
+  successCount: 0,
+};
+
 export const DropzoneProvider = (props) => {
   const { accept, children, maxCount, maxSize } = props;
 
-  const [selectedFiles, setSelectedFiles] = useState([]);
+  const fileReducer = (state, action) => {
+    let res = { ...state };
 
-  const [countMaxSizeError, setCountMaxSizeError] = useState(0);
-  const [maxFileError, setMaxFileError] = useState(false);
-  const [countErrors, setCountErrors] = useState(0);
+    switch (action.type) {
+      case ADD_FILE:
+        if (!isValidTypeFile(action.payload, accept)) {
+          //? type error.
+          res.fileItems = [...state.fileItems, {
+            code: 1,
+            file: action.payload,
+            status: "error",
+          }];
+        } else if (!isValidSizeFile(action.payload, maxSize)) {
+          //? size error.
+          res.fileItems = [...state.fileItems, {
+            code: 2,
+            file: action.payload,
+            status: "error",
+          }];
+        } else if (state.successCount >= maxCount) {
+          //? items error.
+          res.fileItems = [...state.fileItems, {
+            code: 3,
+            file: action.payload,
+            status: "error",
+          }];
+        } else {
+          //? success.
+          res.fileItems = [{
+            code: 0,
+            file: action.payload,
+            status: "success",
+          }, ...state.fileItems];
+  
+          res.successCount += 1;
+        }
+        
+        return res;
 
+      case DELETE_FILE:
+        if (action.payload > -1 && action.payload < state.fileItems.length) {
+          let deletedFiles = res.fileItems.splice(action.payload, 1);
+
+          if (deletedFiles[0].status === "success") {
+            res.successCount -= 1;
+          }
+        }
+
+        return res;
+      default:
+        return state;
+    }
+  };
+
+  const [state, dispatch] = useReducer(fileReducer, INITIAL_STATE);
+  
   const updateSelectedFiles = (files) => {
-    setSelectedFiles((prevFiles) => {
-      files = Array.from(files);
-      
-      const filesFiltered = files.filter((file) => validateTypeFile(file, accept));
-      const countTypeError = files.length - filesFiltered.length;
-
-      const filesFiltered2 = files.filter((file) => validateSizeFile(file, maxSize));
-      const countMaxSizeError = filesFiltered.length - filesFiltered2.length;
-
-      let allFiles = [...prevFiles, ...filesFiltered2]; 
-      
-      //? set errors
-      setCountErrors(countTypeError);
-      setCountMaxSizeError(countMaxSizeError);
-
-      if (maxCount > 0) {
-        setMaxFileError(allFiles.length > maxCount);
-        allFiles = allFiles.slice(0, maxCount);
-      }
-
-      return allFiles;
+    files = Array.from(files);
+    
+    files.forEach((file) => {
+      dispatch({ payload: file, type: ADD_FILE });
     });
   }
 
   const deleteSelectedFiles = (idx) => {
-    //? set errors
-    setCountErrors(0);
-    setMaxFileError(false);
-    setCountMaxSizeError(0);
-
-    setSelectedFiles((prevFiles) => {
-      if (idx > -1 && idx < prevFiles.length) {
-        prevFiles.splice(idx, 1);
-      }
-
-      return [...prevFiles];
-    });
+    dispatch({ payload: idx, type: DELETE_FILE });
   }
 
   const handleDrop = (e) => {
@@ -72,14 +102,11 @@ export const DropzoneProvider = (props) => {
   return (
     <DropzoneContext.Provider
       value={{
-        countErrors,
-        countMaxSizeError,
         deleteSelectedFiles,
         handleDragOver,
         handleDrop,
         handleFileChange,
-        maxFileError,
-        selectedFiles,
+        fileItems: state.fileItems,
       }}
     >
       {children}
