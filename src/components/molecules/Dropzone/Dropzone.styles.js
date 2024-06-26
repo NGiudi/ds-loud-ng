@@ -8,6 +8,7 @@ const ListWrapper = styled("div")`
     height: 304px;
     margin-top:16px;
     overflow: auto;
+    padding-left: 8px;
     padding-right: 8px;
     width: 100%;
 
