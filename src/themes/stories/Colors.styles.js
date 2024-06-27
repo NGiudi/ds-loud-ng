@@ -6,7 +6,7 @@ const ColorBox = styled("div")`
     background-color: ${props.theme.colors[props.$color][props.$intensity]};
     border-radius: 8px;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     padding: 12px 24px;
     margin: 20px auto;
     width: 90%;
