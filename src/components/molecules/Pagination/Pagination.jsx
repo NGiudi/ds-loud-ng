@@ -8,7 +8,7 @@ import { Styles } from "./Pagination.styles";
 
 import { createPaginateList } from "./utils/pages";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   margin: "a-0",
   nButtons: 9,
   onChange: () => {},
@@ -19,7 +19,7 @@ const defaultProps = {
 
 export const Pagination = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

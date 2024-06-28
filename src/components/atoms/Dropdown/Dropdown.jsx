@@ -5,7 +5,7 @@ import { useOuterClick } from "../../../hooks/useOuterClick";
 
 import { Styles } from "./Dropdown.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   name: null,
   onSelect: () => {},
@@ -14,7 +14,7 @@ const defaultProps = {
 //TODO: Agregar margin a este componente.
 export const Dropdown = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

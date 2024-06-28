@@ -5,7 +5,7 @@ import { useFormikContext } from "formik";
 
 export const SelectContext = createContext({});
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   name: "",
   options: [],
@@ -13,7 +13,7 @@ const defaultProps = {
 
 export const SelectProvider = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

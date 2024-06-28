@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Styles } from "./Text.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   align: "start",
   as: "p",
   color: "black_900",
@@ -16,7 +16,7 @@ const defaultProps = {
 
 export const Text = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

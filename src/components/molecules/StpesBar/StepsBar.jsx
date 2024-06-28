@@ -5,7 +5,7 @@ import { Icon, ProgressBar } from "../../../";
 
 import { Circle, ProgressBarWrapper, StepsWrapper } from "./StepsBar.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   margin: "a-0",
   size: "md",
   steps: 5,
@@ -15,7 +15,7 @@ const defaultProps = {
 
 export const StepsBar = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Styles } from "./Flex.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   direction: "row",
   hAlign: "start",
@@ -13,7 +13,7 @@ const defaultProps = {
 
 export const Flex = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

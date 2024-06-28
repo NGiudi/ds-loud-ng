@@ -7,7 +7,7 @@ import { Box, Text } from "../../../";
 
 import { Styles } from "./TextArea.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   description: "",
   disabled: false,
   id: "",
@@ -19,7 +19,7 @@ const defaultProps = {
 
 export const TextArea = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

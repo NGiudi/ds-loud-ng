@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Styles } from "./Icon.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   color: "black_700",
   icon: "home",
   margin: "a-0",
@@ -14,7 +14,7 @@ const defaultProps = {
 
 export const Icon = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

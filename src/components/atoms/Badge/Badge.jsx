@@ -5,7 +5,7 @@ import { Text } from "../Text/Text";
 
 import { Styles } from "./Badge.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   color: "orange_700",
   id: "",
@@ -14,7 +14,7 @@ const defaultProps = {
 
 export const Badge = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

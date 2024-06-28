@@ -5,7 +5,7 @@ import { Button } from "../../../../atoms";
 
 import { Styles } from "./PaginateButton.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: 0,
   kind: "outlined",
   onClick: () => {},
@@ -13,7 +13,7 @@ const defaultProps = {
 
 export const PaginateButton = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Wrapper } from "./Columns.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   gap: "24px",
   margin: "a-0",
@@ -12,7 +12,7 @@ const defaultProps = {
 
 export const Columns = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

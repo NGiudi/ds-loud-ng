@@ -8,7 +8,7 @@ import { FilesList } from "./components/FilesList/FilesList";
 
 import { Styles } from "./Dropzone.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   accept: [],
   margin: "a-0",
   maxCount: 0,
@@ -20,7 +20,7 @@ const defaultProps = {
 //TODO: ver como hago para agregar este tipo de "input" a formik.
 export const Dropzone = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
   

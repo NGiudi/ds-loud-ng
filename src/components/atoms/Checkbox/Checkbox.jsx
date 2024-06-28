@@ -5,7 +5,7 @@ import { Flex, Text } from "../../../";
 
 import { Styles } from "./Checkbox.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   id: "",
   description: "",
   label: "",
@@ -15,7 +15,7 @@ const defaultProps = {
 
 export const Checkbox = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

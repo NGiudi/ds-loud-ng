@@ -8,7 +8,7 @@ import { Styles } from "./Panel.styles";
 /* TODO: agregar al theme */
 import { icons } from "../../../themes/icons";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   align: "start",
   children: null,
   margin: "a-0",
@@ -19,7 +19,7 @@ const defaultProps = {
 
 export const Panel = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

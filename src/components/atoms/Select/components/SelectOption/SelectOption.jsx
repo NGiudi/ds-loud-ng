@@ -5,14 +5,14 @@ import { SelectContext } from "../../SelectContext";
 
 import { Styles } from "./SelectOption.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   value: "",
 };
 
 export const SelectOption = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

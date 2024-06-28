@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 
 import { Icon } from "../../../../../";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   onClick: () => {},
   show: false,
 };
 
 export const ShowPasswordButton = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

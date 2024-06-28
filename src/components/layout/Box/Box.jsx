@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Wrapper } from "./Box.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   margin: "a-0",
 };
@@ -11,7 +11,7 @@ const defaultProps = {
 
 export const Box = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

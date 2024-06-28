@@ -5,7 +5,7 @@ import { Text } from "../../..";
 
 import { Styles } from "./DesktopTable.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   columns: [],
   data: [],
   desktopColumns: [],
@@ -17,7 +17,7 @@ const defaultProps = {
 
 export const DesktopTable = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

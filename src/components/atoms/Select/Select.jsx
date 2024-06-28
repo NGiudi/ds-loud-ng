@@ -9,7 +9,7 @@ import { Text } from "../../../";
 
 import { Styles } from "./Select.styles.js";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   disabled: false,
   label: "",
   name: "",
@@ -20,7 +20,7 @@ const defaultProps = {
 
 export const Select = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

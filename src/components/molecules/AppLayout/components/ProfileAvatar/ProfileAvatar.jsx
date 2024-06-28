@@ -7,7 +7,7 @@ import { Panel, Image } from "../../../../..";
 
 import { Styles } from "./ProfileAvatar.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   id: null,
   img: null,
@@ -17,7 +17,7 @@ const defaultProps = {
 
 export const ProfileAvatar = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

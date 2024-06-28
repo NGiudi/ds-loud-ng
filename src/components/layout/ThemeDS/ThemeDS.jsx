@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 
 import { getTheme } from "./utils/theme";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   name: "loudLight",
   theme: null,
@@ -14,7 +14,7 @@ const defaultProps = {
 
 export const ThemeDS = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   }; 
 

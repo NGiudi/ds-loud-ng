@@ -5,7 +5,7 @@ import { ImagePlaceholder } from "./components";
 
 import { Styles } from "./Image.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   alt: "",
   img: "",
   margin: "a-0",
@@ -16,7 +16,7 @@ const defaultProps = {
 
 export const Image = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

@@ -5,7 +5,7 @@ import { Panel } from "../../../../../";
 
 import { PanelWrapper, TriangleWrapper } from "./DropdownPanel.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   direction: "right",
   name: null,
@@ -16,7 +16,7 @@ const defaultProps = {
 
 export const DropdownPanel = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

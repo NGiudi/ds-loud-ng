@@ -9,14 +9,14 @@ import { Styles } from "./SelectContent.styles";
 
 import { disclosureIcon } from "../../../../../utils/icons/icons";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   disabled: false,
   maxHeight: "auto",
 };
 
 export const SelectContent = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

@@ -5,7 +5,7 @@ import { Text } from "../../..";
 
 import { Styles } from "./PhoneTable.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   columns: [],
   data: [],
   margin: "a-0",
@@ -17,7 +17,7 @@ const defaultProps = {
 
 export const PhoneTable = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

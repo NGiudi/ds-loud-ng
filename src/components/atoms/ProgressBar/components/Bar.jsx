@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Styles } from "../ProgressBar.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   noShowAnimationOnFirstLoad: false,
   onFinish: () => {},
   size: "md",
@@ -15,7 +15,7 @@ const defaultProps = {
 
 export const Bar = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,  
   };
 

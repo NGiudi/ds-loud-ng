@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { PropTypes } from "prop-types";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   onClose: () => {},
   onConfirm: () => {},
 };
 
 export const useKeyboardActions = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

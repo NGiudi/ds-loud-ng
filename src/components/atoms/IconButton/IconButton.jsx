@@ -5,7 +5,7 @@ import { Icon } from "../../..";
 
 import { Styles } from "./IconButton.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   disabled: false,
   icon: {
     name: "",
@@ -19,10 +19,10 @@ const defaultProps = {
 
 export const IconButton = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
     icon: {
-      ...defaultProps.icon,
+      ...DEFAULT_PROPS.icon,
       ...props.icon,
     },
   };

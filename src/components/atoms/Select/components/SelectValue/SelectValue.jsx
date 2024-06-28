@@ -5,13 +5,13 @@ import { SelectContext } from "../../SelectContext";
 
 import { Field, useFormikContext } from "formik";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   name: "",
 };
 
 export const SelectValue = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

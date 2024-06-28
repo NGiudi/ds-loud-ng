@@ -6,7 +6,7 @@ import { Icon, Text } from "../../../";
 
 import { Styles } from "./Input.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   autoComplete: "off",
   autoFocus: false,
   description: "",
@@ -26,7 +26,7 @@ const defaultProps = {
 
 export const Input = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

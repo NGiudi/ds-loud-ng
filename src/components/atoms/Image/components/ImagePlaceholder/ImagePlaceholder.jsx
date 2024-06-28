@@ -5,7 +5,7 @@ import { Icon, Text } from "../../../../..";
 
 import { Styles } from "./ImagePlaceholder.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   margin: "a-0",
   placeholder: "",
   size: "md",
@@ -14,7 +14,7 @@ const defaultProps = {
 
 export const ImagePlaceholder = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

@@ -6,7 +6,7 @@ import { useTheme } from "styled-components";
 
 import { DesktopTable, PhoneTable } from "./components";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   columns: [],
   data: [],
   desktopColumns: [],
@@ -18,7 +18,7 @@ const defaultProps = {
 
 export const Table = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

@@ -7,7 +7,7 @@ import { Button, IconButton, Panel } from "../../../";
 
 import { Styles } from "./Modal.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   cancelButton: {
     hide: false,
     onClick: () => {},
@@ -26,14 +26,14 @@ const defaultProps = {
 
 export const Modal = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
     cancelButton: {
-      ...defaultProps.cancelButton,
+      ...DEFAULT_PROPS.cancelButton,
       ...props.cancelButton,
     },
     confirmButton: {
-      ...defaultProps.confirmButton,
+      ...DEFAULT_PROPS.confirmButton,
       ...props.confirmButton,
     },
   };

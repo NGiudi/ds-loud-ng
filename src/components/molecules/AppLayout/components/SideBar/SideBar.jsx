@@ -5,13 +5,13 @@ import { SidebarButton } from "./components/SidebarButton";
 
 import { Styles } from "./SideBar.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   buttons: [],  
 };
 
 export const SideBar = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

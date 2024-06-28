@@ -5,7 +5,7 @@ import { Bar } from "./components/Bar";
 
 import { Styles } from "./ProgressBar.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   borderRound: false,
   margin: "a-0",
   noShowAnimationOnFirstLoad: false,
@@ -18,7 +18,7 @@ const defaultProps = {
 
 export const ProgressBar = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

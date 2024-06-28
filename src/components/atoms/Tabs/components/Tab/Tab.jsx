@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
 };
 
 export const Tab = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

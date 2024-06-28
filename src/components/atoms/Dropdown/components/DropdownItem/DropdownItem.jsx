@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { ItemWrapper } from "./DropdownItem.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   disabled: false,
   name: null,
   onSelect: () => {},
@@ -13,7 +13,7 @@ const defaultProps = {
 
 export const DropdownItem = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
   

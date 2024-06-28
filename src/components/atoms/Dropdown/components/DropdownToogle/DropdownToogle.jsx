@@ -5,7 +5,7 @@ import { Icon } from "../../../../../";
 
 import { ContentWrapper, ToogleWrapper } from "./DropdownToogle.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   onClick: () => {},
   openPanel: false,
@@ -13,7 +13,7 @@ const defaultProps = {
 
 export const DropdownToogle = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

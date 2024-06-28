@@ -6,7 +6,7 @@ import { Flex } from "../../../";
 
 import { ContentBox, MainContent, TopBar } from "./AppLayout.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   sidebar: null,
   topbar: null,
@@ -14,7 +14,7 @@ const defaultProps = {
 
 export const AppLayout = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

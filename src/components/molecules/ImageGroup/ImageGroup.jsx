@@ -5,7 +5,7 @@ import { Flex, Text } from "../../../";
 
 import { Styles } from "./ImageGroup.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   images: [],
   margin: "a-0",
   max: 3,
@@ -15,7 +15,7 @@ const defaultProps = {
 
 export const ImageGroup = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 
