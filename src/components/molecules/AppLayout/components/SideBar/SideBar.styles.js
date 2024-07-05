@@ -44,8 +44,8 @@ const SidebarButton = styled("button")`
 
 const SidebarButtonTooltip = styled("div")`
   ${(props) => css`
-    background-color: ${props.theme.colors.black._200};
-    border-color: ${props.theme.colors.black._400};
+    background-color: ${props.theme.colors.black._200}E0;
+    border-color: ${props.theme.colors.black._300};
     border-radius: 4px;
     border-style: solid;
     border-width: 1px;
