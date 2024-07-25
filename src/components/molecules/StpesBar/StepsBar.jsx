@@ -12,7 +12,6 @@ const DEFAULT_PROPS = {
   step: 1,
 };
 
-
 export const StepsBar = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,
@@ -35,8 +34,10 @@ export const StepsBar = (props) => {
     if (renderStep < attrs.step) return "checkedCircle";
     if (renderStep > attrs.step) return "pendingCircle";
 
-    if (renderStep === attrs.step && previousStep > attrs.step) return "checkedCircle";
-    if (renderStep === attrs.step && previousStep < attrs.step) return "pendingCircle";
+    if (renderStep === attrs.step && previousStep > attrs.step)
+      return "checkedCircle";
+    if (renderStep === attrs.step && previousStep < attrs.step)
+      return "pendingCircle";
     if (renderStep === attrs.step) return "circle";
   };
 
@@ -52,7 +53,10 @@ export const StepsBar = (props) => {
   };
 
   const renderIconInsideCircle = (renderStep) => {
-    if (renderStep < attrs.step || (renderStep === attrs.step && previousStep > attrs.step)) {
+    if (
+      renderStep < attrs.step ||
+      (renderStep === attrs.step && previousStep > attrs.step)
+    ) {
       return <Icon icon="check" size="sm" />;
     }
 

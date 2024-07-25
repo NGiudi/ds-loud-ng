@@ -6,7 +6,7 @@ const ListWrapper = styled("div")`
   ${(props) => css`
     box-sizing: border-box;
     height: 304px;
-    margin-top:16px;
+    margin-top: 16px;
     overflow: auto;
     padding-left: 8px;
     padding-right: 8px;

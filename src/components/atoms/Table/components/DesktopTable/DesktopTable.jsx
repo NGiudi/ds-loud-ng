@@ -14,18 +14,18 @@ const DEFAULT_PROPS = {
   onClick: () => {},
 };
 
-
 export const DesktopTable = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,
     ...props,
   };
 
-  const list =  attrs.desktopColumns.length > 0
-    ? attrs.desktopColumns
-    : attrs.columns.length
-    ? attrs.columns
-    : [];
+  const list =
+    attrs.desktopColumns.length > 0
+      ? attrs.desktopColumns
+      : attrs.columns.length
+        ? attrs.columns
+        : [];
 
   return (
     <Styles.Wrapper $margin={attrs.margin}>

@@ -10,7 +10,7 @@ const meta = {
 
 export const NotificationExample = () => {
   const { createNotify } = useNotify();
- 
+
   const handleClick = () => {
     createNotify("Esta es la mejor notificación del mundo");
   };

@@ -16,7 +16,6 @@ const DEFAULT_PROPS = {
   pages: 1,
 };
 
-
 export const Pagination = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,
@@ -28,7 +27,11 @@ export const Pagination = (props) => {
 
   useEffect(() => {
     //? create new buttons list.
-    const buttonsList = createPaginateList(currentPage, attrs.pages, attrs.nButtons);
+    const buttonsList = createPaginateList(
+      currentPage,
+      attrs.pages,
+      attrs.nButtons,
+    );
     setButtonsList(buttonsList);
 
     attrs.onChange && attrs.onChange(currentPage);

@@ -5,18 +5,29 @@
  * @returns {string[]} Array of corresponding MIME types.
  */
 const listOfFileTypes = (array) => {
-  return array.map((type) => {
-    switch(type) {
-      case "csv":
-        return "text/csv"
-      case "pdf":
-        return "application/pdf";
-      case "image":
-        return ["image/jpeg", "image/png", "image/gif", "image/bmp", "image/svg+xml", "image/webp", "image/tiff", "image/x-icon"];
-      default:
-        return "";
-    }
-  }).flat();
+  return array
+    .map((type) => {
+      switch (type) {
+        case "csv":
+          return "text/csv";
+        case "pdf":
+          return "application/pdf";
+        case "image":
+          return [
+            "image/jpeg",
+            "image/png",
+            "image/gif",
+            "image/bmp",
+            "image/svg+xml",
+            "image/webp",
+            "image/tiff",
+            "image/x-icon",
+          ];
+        default:
+          return "";
+      }
+    })
+    .flat();
 };
 
 /**
@@ -31,11 +42,11 @@ export const convertBytes = (value) => {
   const megabytes = kilobytes / 1024;
 
   if (kilobytes >= 1024) {
-      return megabytes.toFixed(2) + ' MB';
+    return megabytes.toFixed(2) + " MB";
   } else {
-      return kilobytes.toFixed(2) + ' KB';
+    return kilobytes.toFixed(2) + " KB";
   }
-}
+};
 
 /**
  * Converts an array of file types into a comma-separated string of MIME types.
@@ -56,17 +67,17 @@ export const fileTypesString = (array) => {
  */
 export const isValidTypeFile = (file, validTypes) => {
   validTypes = listOfFileTypes(validTypes);
-  
+
   return validTypes.length === 0 || validTypes.includes(file.type);
-}
+};
 
 /**
  * Validates the size of a file against a maximum allowed size.
- * 
+ *
  * @param {Object} file - The file object to be validated.
  * @param {number} maxSize - The maximum allowed size for the file in bytes. A value of 0 indicates no size limit.
  * @returns {boolean} - Returns true if the file size is within the allowed limit or if maxSize is 0, otherwise false.
  */
 export const isValidSizeFile = (file, maxSize) => {
   return maxSize === 0 || file.size <= maxSize;
-}
+};

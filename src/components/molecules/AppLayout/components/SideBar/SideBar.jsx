@@ -6,7 +6,7 @@ import { SidebarButton } from "./components/SidebarButton";
 import { Styles } from "./SideBar.styles";
 
 const DEFAULT_PROPS = {
-  buttons: [],  
+  buttons: [],
 };
 
 export const SideBar = (props) => {
@@ -32,7 +32,7 @@ export const SideBar = (props) => {
         {attrs.buttons.length > 0 &&
           attrs.buttons.map((btn, idx) => {
             const isSelected = window.location.pathname.includes(btn.to);
-            
+
             return (
               <SidebarButton
                 btn={btn}
@@ -45,10 +45,7 @@ export const SideBar = (props) => {
       </Styles.SidebarButtonsWrapper>
 
       <Styles.BottomContentStyles>
-        <SidebarButton
-          btn={contractedButton}
-          isExpanded={isExpanded}
-        />
+        <SidebarButton btn={contractedButton} isExpanded={isExpanded} />
       </Styles.BottomContentStyles>
     </Styles.SidebarStyles>
   );

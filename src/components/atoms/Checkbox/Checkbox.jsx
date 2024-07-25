@@ -21,18 +21,16 @@ export const Checkbox = (props) => {
 
   return (
     <Flex margin={attrs.margin} vAlign="start">
-      <Styles.CustomCheckbox
-        id={attrs.id}
-        name={attrs.name}
-        type="checkbox"
-      />
+      <Styles.CustomCheckbox id={attrs.id} name={attrs.name} type="checkbox" />
 
       <div style={{ flexGrow: "0" }}>
         <Text as="label" htmlFor={attrs.id} margin="b-4" type="bodySemibold">
           {attrs.label}
         </Text>
 
-        {attrs.description && <Text type="captionRegular">{attrs.description}</Text>}
+        {attrs.description && (
+          <Text type="captionRegular">{attrs.description}</Text>
+        )}
       </div>
     </Flex>
   );

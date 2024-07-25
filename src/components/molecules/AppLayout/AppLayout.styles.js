@@ -9,7 +9,7 @@ export const ContentBox = styled("div")`
     flex-grow: 1;
     height: 100%;
     overflow: auto;
-    
+
     ${paddingProperties(
       props,
       props.theme.components.appLayout.content.padding,

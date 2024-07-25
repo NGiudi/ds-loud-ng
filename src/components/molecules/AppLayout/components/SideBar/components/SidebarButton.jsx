@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+import PropTypes from "prop-types";
 
 import { Icon, Text } from "../../../../../../";
 
@@ -28,10 +29,19 @@ export const SidebarButton = (props) => {
           {btn.label}
         </Text>
       ) : (
-        <Styles.SidebarButtonTooltip>
-          {btn.label}
-        </Styles.SidebarButtonTooltip>
+        <Styles.SidebarButtonTooltip>{btn.label}</Styles.SidebarButtonTooltip>
       )}
     </Styles.SidebarButton>
-  )
-}
+  );
+};
+
+SidebarButton.propTypes = {
+  btn: PropTypes.shape({
+    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+    label: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+    to: PropTypes.string.isRequired,
+  }),
+  isExpanded: PropTypes.bool,
+  isSelected: PropTypes.bool,
+};

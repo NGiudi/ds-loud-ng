@@ -3,9 +3,7 @@ import React from "react";
 import { Dropzone, ThemeDS } from "../../../";
 
 const meta = {
-  argTypes: {
-
-  },
+  argTypes: {}, //TODO completar este campo.
   component: Dropzone,
   parameters: {
     status: {
@@ -19,12 +17,7 @@ const meta = {
 export const Example = () => {
   return (
     <ThemeDS>
-      <Dropzone
-        accept={["image"]}
-        margin="a-20"
-        maxSize={20480}
-        maxCount={3}
-      />
+      <Dropzone accept={["image"]} margin="a-20" maxSize={20480} maxCount={3} />
     </ThemeDS>
   );
 };

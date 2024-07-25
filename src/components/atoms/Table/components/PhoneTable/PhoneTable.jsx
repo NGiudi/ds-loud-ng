@@ -14,18 +14,18 @@ const DEFAULT_PROPS = {
   onClick: () => {},
 };
 
-
 export const PhoneTable = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,
     ...props,
   };
 
-  const list = attrs.mobileColumns.length > 0
-    ? attrs.mobileColumns
-    : attrs.columns.length
-    ? attrs.columns
-    : [];
+  const list =
+    attrs.mobileColumns.length > 0
+      ? attrs.mobileColumns
+      : attrs.columns.length
+        ? attrs.columns
+        : [];
 
   return (
     <Styles.Wrapper $margin={attrs.margin}>

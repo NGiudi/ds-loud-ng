@@ -10,13 +10,12 @@ const DEFAULT_PROPS = {
   value: null,
 };
 
-
 export const DropdownItem = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,
     ...props,
   };
-  
+
   const handleClick = () => {
     if (!attrs.disabled) {
       attrs.onSelect && attrs.onSelect(attrs.value, attrs.name);

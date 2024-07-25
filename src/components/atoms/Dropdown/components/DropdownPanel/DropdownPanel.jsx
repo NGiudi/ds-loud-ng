@@ -13,7 +13,6 @@ const DEFAULT_PROPS = {
   showPanel: false,
 };
 
-
 export const DropdownPanel = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,

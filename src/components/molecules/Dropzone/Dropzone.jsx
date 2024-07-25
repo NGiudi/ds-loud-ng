@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
 
-import { DropzoneProvider } from './Dropzone.context';
+import { DropzoneProvider } from "./Dropzone.context";
 
 import { UploadFileBox } from "./components/UploadFileBox/UploadFileBox";
 import { FilesList } from "./components/FilesList/FilesList";
@@ -23,7 +23,7 @@ export const Dropzone = (props) => {
     ...DEFAULT_PROPS,
     ...props,
   };
-  
+
   return (
     <DropzoneProvider
       accept={attrs.accept}

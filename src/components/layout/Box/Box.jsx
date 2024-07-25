@@ -8,7 +8,6 @@ const DEFAULT_PROPS = {
   margin: "a-0",
 };
 
-
 export const Box = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,

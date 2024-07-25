@@ -65,7 +65,11 @@ export const Countdown = (props) => {
   //? no show zero value.
   if (time < 1000 && !attrs.showZero) return null;
 
-  return <Text {...attrs.text}>{formatClock(getTimeObject(time), attrs.formatTime)}</Text>;
+  return (
+    <Text {...attrs.text}>
+      {formatClock(getTimeObject(time), attrs.formatTime)}
+    </Text>
+  );
 };
 
 Countdown.propTypes = {

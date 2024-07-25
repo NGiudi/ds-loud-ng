@@ -42,7 +42,7 @@ export const Modal = (props) => {
   const showModalRef = useRef(false);
 
   const handleCancel = () => {
-    if (showModalRef.current) { 
+    if (showModalRef.current) {
       attrs.cancelButton.onClick();
       attrs.onClose();
       setShowModal(false);
@@ -54,15 +54,15 @@ export const Modal = (props) => {
       attrs.onClose();
       setShowModal(false);
     }
-  }
+  };
 
   const handleConfirm = () => {
     if (showModalRef.current) {
-      attrs.confirmButton.onClick();    
+      attrs.confirmButton.onClick();
       attrs.onClose();
       setShowModal(false);
     }
-  }
+  };
 
   useKeyboardActions({
     onClose: handleClose,
@@ -73,7 +73,7 @@ export const Modal = (props) => {
   useEffect(() => {
     setShowModal(attrs.show);
   }, [attrs.show]);
-  
+
   //? Reference for using with the useKeyboardActions hook to keep the state updated.
   useEffect(() => {
     showModalRef.current = showModal;
@@ -87,18 +87,18 @@ export const Modal = (props) => {
             <Styles.CloseBtnWrapper>
               <IconButton icon={{ name: "times" }} onClick={handleClose} />
             </Styles.CloseBtnWrapper>
-  
+
             <Styles.ContentBox $padding="r-28">
               {attrs.children}
             </Styles.ContentBox>
-  
+
             <Styles.ButtonsWrapper>
               {!attrs.cancelButton.hide && (
                 <Button kind="outlined" onClick={handleCancel}>
                   {attrs.cancelButton.text}
                 </Button>
               )}
-  
+
               {!attrs.confirmButton.hide && (
                 <Button margin="l-8" onClick={handleConfirm}>
                   {attrs.confirmButton.text}

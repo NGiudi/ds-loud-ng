@@ -20,14 +20,14 @@ export const useKeyboardActions = (props) => {
         }
         break;
       case "Escape":
-        if (typeof attrs.onClose === "function") {  
+        if (typeof attrs.onClose === "function") {
           attrs.onClose();
         }
         break;
     }
   };
-  
-  useEffect(() => {    
+
+  useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {

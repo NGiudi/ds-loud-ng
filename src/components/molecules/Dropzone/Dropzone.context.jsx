@@ -25,36 +25,48 @@ export const DropzoneProvider = (props) => {
       case ADD_FILE:
         if (!isValidTypeFile(action.payload, accept)) {
           //? type error.
-          res.fileItems = [...state.fileItems, {
-            code: 1,
-            file: action.payload,
-            status: "error",
-          }];
+          res.fileItems = [
+            ...state.fileItems,
+            {
+              code: 1,
+              file: action.payload,
+              status: "error",
+            },
+          ];
         } else if (!isValidSizeFile(action.payload, maxSize)) {
           //? size error.
-          res.fileItems = [...state.fileItems, {
-            code: 2,
-            file: action.payload,
-            status: "error",
-          }];
+          res.fileItems = [
+            ...state.fileItems,
+            {
+              code: 2,
+              file: action.payload,
+              status: "error",
+            },
+          ];
         } else if (state.successCount >= maxCount) {
           //? items error.
-          res.fileItems = [...state.fileItems, {
-            code: 3,
-            file: action.payload,
-            status: "error",
-          }];
+          res.fileItems = [
+            ...state.fileItems,
+            {
+              code: 3,
+              file: action.payload,
+              status: "error",
+            },
+          ];
         } else {
           //? success.
-          res.fileItems = [{
-            code: 0,
-            file: action.payload,
-            status: "success",
-          }, ...state.fileItems];
-  
+          res.fileItems = [
+            {
+              code: 0,
+              file: action.payload,
+              status: "success",
+            },
+            ...state.fileItems,
+          ];
+
           res.successCount += 1;
         }
-        
+
         return res;
 
       case DELETE_FILE:
@@ -73,18 +85,18 @@ export const DropzoneProvider = (props) => {
   };
 
   const [state, dispatch] = useReducer(fileReducer, INITIAL_STATE);
-  
+
   const updateSelectedFiles = (files) => {
     files = Array.from(files);
-    
+
     files.forEach((file) => {
       dispatch({ payload: file, type: ADD_FILE });
     });
-  }
+  };
 
   const deleteSelectedFiles = (idx) => {
     dispatch({ payload: idx, type: DELETE_FILE });
-  }
+  };
 
   const handleDrop = (e) => {
     e.preventDefault();
@@ -115,5 +127,8 @@ export const DropzoneProvider = (props) => {
 };
 
 DropzoneProvider.propTypes = {
+  accept: PropTypes.array,
   children: PropTypes.node,
+  maxCount: PropTypes.number,
+  maxSize: PropTypes.number,
 };

@@ -25,9 +25,7 @@ export const AppLayout = (props) => {
       <TopBar $padding="x-24 y-8">
         {attrs.topbar && (
           <Flex hAlign="space-between">
-            <div>
-              {attrs.topbar.startContent}
-            </div>
+            <div>{attrs.topbar.startContent}</div>
 
             <div>
               {attrs.topbar.endContent}

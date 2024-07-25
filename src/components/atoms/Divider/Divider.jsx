@@ -9,8 +9,7 @@ const DEFAULT_PROPS = {
   margin: "a-0",
 };
 
-
-export const Divider = (props) => {  
+export const Divider = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,
     ...props,

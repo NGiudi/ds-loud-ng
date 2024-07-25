@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-import { useDropzoneContext } from '../../Dropzone.context';
+import { useDropzoneContext } from "../../Dropzone.context";
 
 import { FileItem } from "../FileItem/FileItem";
 
@@ -15,11 +16,19 @@ export const FilesList = (props) => {
     return (
       <Styles.ListWrapper>
         {ctx.fileItems.map((fileItem, idx) => (
-          <FileItem fileItem={fileItem} idx={idx} key={`dropzone-${name}-file-${idx}`}/>
+          <FileItem
+            fileItem={fileItem}
+            idx={idx}
+            key={`dropzone-${name}-file-${idx}`}
+          />
         ))}
       </Styles.ListWrapper>
     );
   }
-  
+
   return null;
-}
+};
+
+FilesList.propTypes = {
+  name: PropTypes.string,
+};

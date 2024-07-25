@@ -37,7 +37,10 @@ export const SelectContent = (props) => {
 
   return (
     <Styles.SelectWrapper>
-      <Styles.SelectedOptionWrapper disabled={attrs.disabled} onClick={handleClick}>
+      <Styles.SelectedOptionWrapper
+        disabled={attrs.disabled}
+        onClick={handleClick}
+      >
         <Styles.SelectedOption>
           <Text margin="l-8">
             {getValue() || ctx.selectedValue || "- Seleccione una opción -"}

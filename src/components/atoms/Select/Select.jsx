@@ -30,7 +30,12 @@ export const Select = (props) => {
 
       <Styles.Wrapper $margin={attrs.margin}>
         {!!attrs.label && (
-          <Text as="label" htmlFor={attrs.name} margin="b-4" type="bodySemibold">
+          <Text
+            as="label"
+            htmlFor={attrs.name}
+            margin="b-4"
+            type="bodySemibold"
+          >
             {attrs.label}
           </Text>
         )}

@@ -17,4 +17,3 @@ export const Tab = (props) => {
 Tab.propTypes = {
   children: PropTypes.node,
 };
-

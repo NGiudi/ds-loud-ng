@@ -12,7 +12,7 @@ const DEFAULT_PROPS = {
   align: "start",
   children: null,
   margin: "a-0",
-  onSizeH: (p) => {},
+  onSizeH: () => {},
   padding: "a-8",
   type: "neutral",
 };

@@ -16,22 +16,15 @@ export const ThemeDS = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,
     ...props,
-  }; 
+  };
 
   return (
     <ThemeProvider theme={attrs.theme || getTheme(attrs.name)}>
       <Helmet>
-        <link
-          href="https://fonts.googleapis.com"
-          rel="preconnect"
-        />
-        
-        <link
-          crossOrigin
-          href="https://fonts.gstatic.com"
-          rel="preconnect"
-        />
-        
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+
+        <link crossOrigin href="https://fonts.gstatic.com" rel="preconnect" />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap"
           rel="stylesheet"

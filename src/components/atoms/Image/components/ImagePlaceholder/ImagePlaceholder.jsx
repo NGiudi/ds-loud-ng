@@ -27,7 +27,11 @@ export const ImagePlaceholder = (props) => {
   };
 
   return (
-    <Styles.IconPlaceholder $margin={attrs.margin} $size={attrs.size} $type={attrs.type}>
+    <Styles.IconPlaceholder
+      $margin={attrs.margin}
+      $size={attrs.size}
+      $type={attrs.type}
+    >
       {attrs.placeholder ? (
         <Text color="black_100" type={selectTextSize()}>
           {attrs.placeholder.charAt(0).toUpperCase()}

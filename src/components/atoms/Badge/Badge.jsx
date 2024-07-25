@@ -19,14 +19,8 @@ export const Badge = (props) => {
   };
 
   return (
-    <Styles.Wrapper
-      $color={attrs.color}
-      id={attrs.id}
-      $margin={attrs.margin}
-    >
-      <Text type="bodySemibold">
-        {attrs.children}
-      </Text>
+    <Styles.Wrapper $color={attrs.color} id={attrs.id} $margin={attrs.margin}>
+      <Text type="bodySemibold">{attrs.children}</Text>
     </Styles.Wrapper>
   );
 };

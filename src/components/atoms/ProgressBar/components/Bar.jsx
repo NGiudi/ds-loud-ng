@@ -12,11 +12,10 @@ const DEFAULT_PROPS = {
   steps: 0,
 };
 
-
 export const Bar = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,
-    ...props,  
+    ...props,
   };
 
   const [width, setWidth] = useState(0);

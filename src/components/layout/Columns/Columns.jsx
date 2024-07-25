@@ -17,11 +17,7 @@ export const Columns = (props) => {
   };
 
   return (
-    <Wrapper
-      $gap={attrs.gap}
-      $margin={attrs.margin}
-      $minWidth={attrs.minWidth}
-    >
+    <Wrapper $gap={attrs.gap} $margin={attrs.margin} $minWidth={attrs.minWidth}>
       {attrs.children}
     </Wrapper>
   );

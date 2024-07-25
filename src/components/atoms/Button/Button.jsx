@@ -28,7 +28,7 @@ export const Button = (props) => {
     icon: {
       ...DEFAULT_PROPS.icon,
       ...props.icon,
-    }
+    },
   };
 
   const ButtonSelector = ({ kind, ...others }) => {
