@@ -85,7 +85,7 @@ export const Modal = (props) => {
         <Styles.PanelWrapper width={attrs.width}>
           <Panel padding="a-20">
             <Styles.CloseBtnWrapper>
-              <IconButton icon={{ name: "times" }} onClick={handleClose} />
+              <IconButton icon={{ icon: "times" }} onClick={handleClose} />
             </Styles.CloseBtnWrapper>
 
             <Styles.ContentBox $padding="r-28">
@@ -114,6 +114,7 @@ export const Modal = (props) => {
   return null;
 };
 
+//TODO: usar las propTypes de los botones.
 Modal.propTypes = {
   cancelButton: PropTypes.shape({
     hide: PropTypes.bool,

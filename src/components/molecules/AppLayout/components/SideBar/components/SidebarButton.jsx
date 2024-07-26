@@ -35,6 +35,7 @@ export const SidebarButton = (props) => {
   );
 };
 
+//TODO: agregar en la constantes.
 SidebarButton.propTypes = {
   btn: PropTypes.shape({
     icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,

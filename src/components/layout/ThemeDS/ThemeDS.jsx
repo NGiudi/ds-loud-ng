@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 
 import { getTheme } from "./utils/theme";
 
+//TODO: eliminar la opcion de tener otro tema. Por ahora va a ser solo el que mío.
 const DEFAULT_PROPS = {
   children: null,
   name: "loudLight",

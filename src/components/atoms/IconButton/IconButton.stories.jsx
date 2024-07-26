@@ -58,7 +58,7 @@ export const Model = (args) => {
 Model.args = {
   children: "Apretame",
   disabled: false,
-  icon: { name: "pencil", size: "sm" },
+  icon: { icon: "pencil", size: "sm" },
   margin: "a-0",
 };
 
@@ -75,11 +75,11 @@ export const AllButtons = () => {
         <tbody>
           <tr>
             <th style={cellSize}>
-              <IconButton icon={{ name: "cog" }} onClick={() => {}} />
+              <IconButton icon={{ icon: "cog" }} onClick={() => {}} />
             </th>
 
             <th style={cellSize}>
-              <IconButton disabled icon={{ name: "cog" }} onClick={() => {}} />
+              <IconButton disabled icon={{ icon: "cog" }} onClick={() => {}} />
             </th>
           </tr>
         </tbody>

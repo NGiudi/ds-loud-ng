@@ -1,7 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { Styles } from "./Icon.styles";
+
+import { ICON_PROP_TYPES } from "../../../constants/prop_types";
 
 const DEFAULT_PROPS = {
   color: "black_700",
@@ -34,19 +35,4 @@ export const Icon = (props) => {
   );
 };
 
-Icon.propTypes = {
-  color: PropTypes.string,
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
-  margin: PropTypes.string,
-  onClick: PropTypes.func,
-  size: PropTypes.oneOf([
-    "avatar",
-    "avatarSm",
-    "input",
-    "lg",
-    "md",
-    "sm",
-    "xl",
-  ]),
-  spin: PropTypes.bool,
-};
+Icon.propTypes = ICON_PROP_TYPES;

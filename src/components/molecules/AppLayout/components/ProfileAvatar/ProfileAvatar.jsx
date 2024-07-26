@@ -55,6 +55,7 @@ export const ProfileAvatar = (props) => {
   );
 };
 
+//TODO: usar las propTypes de la imagen.
 ProfileAvatar.propTypes = {
   children: PropTypes.node,
   id: PropTypes.string,

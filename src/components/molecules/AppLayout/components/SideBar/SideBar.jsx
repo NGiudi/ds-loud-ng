@@ -51,6 +51,7 @@ export const SideBar = (props) => {
   );
 };
 
+//TODO: agregar esta propTypes en la carpeta de constantes.
 SideBar.propTypes = {
   buttons: PropTypes.arrayOf(
     PropTypes.shape({

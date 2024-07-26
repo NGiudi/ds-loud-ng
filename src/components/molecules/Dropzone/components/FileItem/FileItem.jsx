@@ -47,11 +47,12 @@ export const FileItem = (props) => {
         </div>
       </Flex>
 
-      <IconButton icon={{ name: "close" }} onClick={handleDelete} />
+      <IconButton icon={{ icon: "close" }} onClick={handleDelete} />
     </Styles.FileItem>
   );
 };
 
+//TODO: el file item tiene que estar en una constante?
 FileItem.propTypes = {
   fileItem: PropTypes.shape({
     code: PropTypes.number,

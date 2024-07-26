@@ -49,6 +49,7 @@ export const AppLayout = (props) => {
   );
 };
 
+//TODO: usar las propTypes de los componentes internos para los botones, etc.
 AppLayout.propTypes = {
   children: PropTypes.node,
   sidebar: PropTypes.shape({

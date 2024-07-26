@@ -41,7 +41,7 @@ export const Pagination = (props) => {
     <Styles.Wrapper $margin={attrs.margin}>
       <IconButton
         disabled={currentPage === 1}
-        icon={{ name: "chevron-left" }}
+        icon={{ icon: "chevron-left" }}
         onClick={() => setCurrentPage((prev) => prev - 1)}
       />
 
@@ -70,7 +70,7 @@ export const Pagination = (props) => {
 
       <IconButton
         disabled={currentPage === attrs.pages}
-        icon={{ name: "chevron-right" }}
+        icon={{ icon: "chevron-right" }}
         onClick={() => setCurrentPage((prev) => prev + 1)}
       />
     </Styles.Wrapper>
