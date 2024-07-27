@@ -9,10 +9,7 @@ import { Styles } from "./ProfileAvatar.styles";
 
 const DEFAULT_PROPS = {
   children: null,
-  id: null,
   img: null,
-  margin: "a-0",
-  size: "avatar",
 };
 
 export const ProfileAvatar = (props) => {
@@ -41,9 +38,9 @@ export const ProfileAvatar = (props) => {
   };
 
   return (
-    <Styles.Wrapper id={attrs.id} $margin={attrs.margin} ref={innerRef}>
+    <Styles.Wrapper ref={innerRef}>
       <Styles.AvatarWrapper $isSelected={isOpen} onClick={handleAvatarClick}>
-        <Image {...imageAttributes} size={attrs.size} type="round" />
+        <Image {...imageAttributes} size="avatar" type="round" />
       </Styles.AvatarWrapper>
 
       {isOpen && (
@@ -58,12 +55,9 @@ export const ProfileAvatar = (props) => {
 //TODO: usar las propTypes de la imagen.
 ProfileAvatar.propTypes = {
   children: PropTypes.node,
-  id: PropTypes.string,
   img: PropTypes.shape({
     alt: PropTypes.string,
     img: PropTypes.string,
     placeholder: PropTypes.string,
   }),
-  margin: PropTypes.string,
-  size: PropTypes.oneOf(["avatar", "avatarSm"]),
 };

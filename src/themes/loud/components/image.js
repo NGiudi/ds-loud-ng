@@ -1,7 +1,6 @@
 const height = {
   round: {
     avatar: 30,
-    avatarSm: 24,
     sm: 48,
     md: 72,
     lg: 96,
@@ -16,7 +15,6 @@ const height = {
 const width = {
   round: {
     avatar: 30,
-    avatarSm: 24,
     sm: 48,
     md: 72,
     lg: 96,

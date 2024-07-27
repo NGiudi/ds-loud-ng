@@ -1,7 +1,5 @@
 import styled, { css } from "styled-components";
 
-import { marginProperties } from "../../../../../utils/styles";
-
 const AvatarWrapper = styled("div")`
   ${(props) => css`
     border-color: ${props.$isSelected
@@ -27,13 +25,9 @@ const PanelWrapper = styled("div")`
 `;
 
 const Wrapper = styled("div")`
-  ${(props) => css`
-    display: inline-block;
-    position: relative;
-    width: fit-content;
-
-    ${marginProperties(props)}
-  `}
+  display: inline-block;
+  position: relative;
+  width: fit-content;
 `;
 
 export const Styles = {

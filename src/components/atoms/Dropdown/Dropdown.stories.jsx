@@ -72,7 +72,6 @@ export const Positions = () => {
                 <Image
                   img={argentina}
                   margin="a-4 r-8"
-                  size="avatarSm"
                   type="round"
                 />
 
@@ -85,7 +84,6 @@ export const Positions = () => {
                 <Image
                   img={usa}
                   margin="a-4 r-8"
-                  size="avatarSm"
                   type="round"
                 />
 
@@ -106,7 +104,6 @@ export const Positions = () => {
                 <Image
                   img={argentina}
                   margin="a-4 r-8"
-                  size="avatarSm"
                   type="round"
                 />
 
@@ -119,7 +116,6 @@ export const Positions = () => {
                 <Image
                   img={usa}
                   margin="a-4 r-8"
-                  size="avatarSm"
                   type="round"
                 />
 
@@ -173,7 +169,6 @@ export const UseExample = () => {
               <Image
                 img={argentina}
                 margin="a-4 r-8"
-                size="avatarSm"
                 type="round"
               />
 
@@ -183,7 +178,7 @@ export const UseExample = () => {
 
           <DropdownItem value="usa">
             <Flex vAlign="center">
-              <Image img={usa} margin="a-4 r-8" size="avatarSm" type="round" />
+              <Image img={usa} margin="a-4 r-8" type="round" />
               <Text>Estados Unidos</Text>
             </Flex>
           </DropdownItem>
@@ -193,7 +188,6 @@ export const UseExample = () => {
               <Image
                 img={brasil}
                 margin="a-4 r-8"
-                size="avatarSm"
                 type="round"
               />
 

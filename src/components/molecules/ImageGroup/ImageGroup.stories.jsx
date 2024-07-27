@@ -27,7 +27,7 @@ const meta = {
     size: {
       control: { type: "select" },
       description: "Establece el tamaño de las imágenes.",
-      options: ["avatar", "avatarSm", "lg", "md", "sm"],
+      options: ["avatar", "lg", "md", "sm"],
     },
   },
   component: ImageGroup,

@@ -29,7 +29,7 @@ const meta = {
     size: {
       control: { type: "select" },
       description: "Recibe el tamaño del componente.",
-      options: ["avatar", "avatarSm", "lg", "md", "sm"],
+      options: ["avatar", "lg", "md", "sm"],
     },
     type: {
       control: { type: "select" },
@@ -125,10 +125,6 @@ export const IconPlaceholder = () => {
             <th style={cellSize}>
               <Text>Avatar</Text>
             </th>
-
-            <th style={cellSize}>
-              <Text>Avatar small</Text>
-            </th>
           </tr>
         </thead>
 
@@ -148,10 +144,6 @@ export const IconPlaceholder = () => {
 
             <th style={cellSize}>
               <Image alt="foto de perfil" size="avatar" type="round" />
-            </th>
-
-            <th style={cellSize}>
-              <Image alt="foto de perfil" size="avatarSm" type="round" />
             </th>
           </tr>
         </tbody>
@@ -215,10 +207,6 @@ export const LetterPlaceholder = () => {
             <th style={cellSize}>
               <Text>Avatar</Text>
             </th>
-
-            <th style={cellSize}>
-              <Text>Avatar small</Text>
-            </th>
           </tr>
         </thead>
 
@@ -256,15 +244,6 @@ export const LetterPlaceholder = () => {
                 alt="foto de perfil"
                 placeholder="load"
                 size="avatar"
-                type="round"
-              />
-            </th>
-
-            <th style={cellSize}>
-              <Image
-                alt="foto de perfil"
-                placeholder="load"
-                size="avatarSm"
                 type="round"
               />
             </th>
@@ -338,10 +317,6 @@ export const WithImage = () => {
             <th style={cellSize}>
               <Text>Avatar</Text>
             </th>
-
-            <th style={cellSize}>
-              <Text>Avatar small</Text>
-            </th>
           </tr>
         </thead>
 
@@ -379,15 +354,6 @@ export const WithImage = () => {
                 alt="foto de perfil"
                 img={fotoPerfil}
                 size="avatar"
-                type="round"
-              />
-            </th>
-
-            <th style={cellSize}>
-              <Image
-                alt="foto de perfil"
-                img={fotoPerfil}
-                size="avatarSm"
                 type="round"
               />
             </th>

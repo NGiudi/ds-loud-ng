@@ -47,6 +47,6 @@ Image.propTypes = {
   img: PropTypes.string,
   margin: PropTypes.string,
   placeholder: PropTypes.string,
-  size: PropTypes.oneOf(["avatar", "avatarSm", "lg", "md", "sm"]),
+  size: PropTypes.oneOf(["avatar", "lg", "md", "sm"]),
   type: PropTypes.oneOf(["round", "square"]),
 };

@@ -18,14 +18,6 @@ export const ImagePlaceholder = (props) => {
     ...props,
   };
 
-  const selectTextSize = () => {
-    if (["avatarSm", "sm"].includes(attrs.size)) {
-      return "captionSemibold";
-    }
-
-    return "bodySemibold";
-  };
-
   return (
     <Styles.IconPlaceholder
       $margin={attrs.margin}
@@ -33,7 +25,7 @@ export const ImagePlaceholder = (props) => {
       $type={attrs.type}
     >
       {attrs.placeholder ? (
-        <Text color="black_100" type={selectTextSize()}>
+        <Text color="black_100" type="captionSemibold">
           {attrs.placeholder.charAt(0).toUpperCase()}
         </Text>
       ) : (
@@ -46,6 +38,6 @@ export const ImagePlaceholder = (props) => {
 ImagePlaceholder.propTypes = {
   margin: PropTypes.string,
   placeholder: PropTypes.string,
-  size: PropTypes.oneOf(["avatar", "avatarSm", "lg", "md", "sm"]),
+  size: PropTypes.oneOf(["avatar", "lg", "md", "sm"]),
   type: PropTypes.oneOf(["round", "square"]),
 };

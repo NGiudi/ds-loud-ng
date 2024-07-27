@@ -7,8 +7,6 @@ export const ICON_PROP_TYPES = {
   onClick: PropTypes.func,
   size: PropTypes.oneOf([
     "avatar",
-    "avatarSm",
-    "input",
     "lg",
     "md",
     "sm",
