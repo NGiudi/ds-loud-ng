@@ -122,6 +122,7 @@ export const Model = (args) => {
 };
 
 Model.args = {
+  margin: "t-20",
   minWidth: "1000px",
 };
 

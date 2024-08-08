@@ -9,7 +9,6 @@ import { icon } from "./icon";
 import { image } from "./image";
 import { input } from "./input";
 import { modal } from "./modal";
-import { panel } from "./panel";
 import { progressBar } from "./progressBar";
 import { select } from "./select";
 import { stepsBar } from "./stepsBar";
@@ -30,7 +29,6 @@ export const components = {
   image,
   input,
   modal,
-  panel,
   progressBar,
   select,
   stepsBar,

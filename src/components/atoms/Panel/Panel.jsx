@@ -1,12 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
-import { Icon } from "../../../";
-
 import { Styles } from "./Panel.styles";
-
-/* TODO: agregar al theme */
-import { icons } from "../../../themes/icons";
 
 const DEFAULT_PROPS = {
   align: "start",
@@ -14,7 +9,6 @@ const DEFAULT_PROPS = {
   margin: "a-0",
   onSizeH: () => {},
   padding: "a-8",
-  type: "neutral",
 };
 
 export const Panel = (props) => {
@@ -39,20 +33,12 @@ export const Panel = (props) => {
 
   return (
     <Styles.PanelWrapper
+      $align={attrs.align}
       $margin={attrs.margin}
       $padding={attrs.padding}
       ref={ref}
-      type={attrs.type}
     >
-      <Styles.PositionWrapper $align={attrs.align}>
-        {attrs.type !== "neutral" && (
-          <Icon icon={icons.fontawesome[attrs.type]} margin="r-16" />
-        )}
-
-        <Styles.ContentWrapper $margin="t-4">
-          {attrs.children}
-        </Styles.ContentWrapper>
-      </Styles.PositionWrapper>
+      {attrs.children}
     </Styles.PanelWrapper>
   );
 };
@@ -63,5 +49,4 @@ Panel.propTypes = {
   margin: PropTypes.string,
   onSizeH: PropTypes.func,
   padding: PropTypes.string,
-  type: PropTypes.oneOf(["error", "info", "neutral", "success", "warning"]),
 };
