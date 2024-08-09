@@ -6,7 +6,6 @@ import { Styles } from "../ProgressBar.styles";
 const DEFAULT_PROPS = {
   noShowAnimationOnFirstLoad: false,
   onFinish: () => {},
-  size: "md",
   step: 0,
   stepTime: 10,
   steps: 0,
@@ -73,13 +72,12 @@ export const Bar = (props) => {
     return `${porcent}%`;
   };
 
-  return <Styles.BarWrapper size={attrs.size} $porcent={porcentString()} />;
+  return <Styles.BarWrapper $porcent={porcentString()} />;
 };
 
 Bar.propTypes = {
   noShowAnimationOnFirstLoad: PropTypes.bool,
   onFinish: PropTypes.func,
-  size: PropTypes.oneOf(["sm", "md", "lg"]),
   step: PropTypes.number,
   stepTime: PropTypes.number,
   steps: PropTypes.number,

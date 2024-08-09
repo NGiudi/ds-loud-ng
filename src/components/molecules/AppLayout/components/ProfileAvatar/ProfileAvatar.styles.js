@@ -7,7 +7,7 @@ const AvatarWrapper = styled("div")`
       : "transparent"};
     border-radius: 50%;
     border-style: solid;
-    border-width: ${props.theme.components.avatar.thickShadow};
+    border-width: 4px;
     display: inline-block;
 
     &:hover {

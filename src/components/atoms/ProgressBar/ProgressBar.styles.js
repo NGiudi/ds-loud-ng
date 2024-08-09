@@ -5,8 +5,7 @@ import { marginProperties } from "../../../utils/styles";
 const BarWrapper = styled("div")`
   ${(props) => css`
     background-color: ${props.theme.colors.orange._600};
-    height: ${props.size &&
-    props.theme.components.progressBar.height[props.size]};
+    height: 6px;
     width: ${props.$porcent ? props.$porcent : "0%"};
   `}
 `;
@@ -14,8 +13,7 @@ const BarWrapper = styled("div")`
 const ProgressBarWrapper = styled("div")`
   ${(props) => css`
     background-color: ${props.theme.colors.black._300};
-    border-radius: ${props.$borderRound &&
-    props.theme.components.progressBar.border.radius[props.size]};
+    border-radius: ${props.$borderRound && "3px"};
     overflow: hidden;
     width: 100%;
 

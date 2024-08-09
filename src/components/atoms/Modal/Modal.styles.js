@@ -7,11 +7,9 @@ const ButtonsWrapper = styled("div")`
 `;
 
 const CloseBtnWrapper = styled("div")`
-  ${(props) => css`
-    position: absolute;
-    right: ${props.theme.components.modal.closeButton.position.right};
-    top: ${props.theme.components.modal.closeButton.position.top};
-  `}
+  position: absolute;
+  right: 12px;
+  top: 12px;
 `;
 
 const ContentBox = styled("div")`
@@ -36,10 +34,7 @@ const PanelWrapper = styled("div")`
   ${(props) => css`
     margin: auto;
     max-width: ${props.width};
-    padding: ${paddingProperties(
-      props,
-      props.theme.components.modal.panel.padding,
-    )};
+    padding: ${paddingProperties(props, "x-16 y-0")};
     width: 100%;
   `}
 `;

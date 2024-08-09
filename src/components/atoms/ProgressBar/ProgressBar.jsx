@@ -10,7 +10,6 @@ const DEFAULT_PROPS = {
   margin: "a-0",
   noShowAnimationOnFirstLoad: false,
   onFinish: () => {},
-  size: "md",
   step: 0,
   stepTime: 10,
   steps: 100,
@@ -37,12 +36,10 @@ export const ProgressBar = (props) => {
     <Styles.ProgressBarWrapper
       $borderRound={attrs.borderRound}
       $margin={attrs.margin}
-      size={attrs.size}
     >
       <Bar
         noShowAnimationOnFirstLoad={attrs.noShowAnimationOnFirstLoad}
         onFinish={attrs.onFinish}
-        size={attrs.size}
         step={attrs.step}
         stepTime={attrs.stepTime}
         steps={stepsRef.current}
@@ -56,7 +53,6 @@ ProgressBar.propTypes = {
   margin: PropTypes.string,
   noShowAnimationOnFirstLoad: PropTypes.bool,
   onFinish: PropTypes.func,
-  size: PropTypes.oneOf(["sm", "md", "lg"]),
   step: PropTypes.number,
   stepTime: PropTypes.number,
   steps: PropTypes.number,
