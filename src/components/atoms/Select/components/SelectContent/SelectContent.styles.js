@@ -4,21 +4,21 @@ const SelectPanel = styled("div")`
   ${(props) => css`
     background-color: ${props.theme.colors.black._100};
     border-color: ${props.theme.colors.black._400};
-    border-radius: ${props.theme.components.select.border.radius};
+    border-radius: 4px;
     border-style: solid;
-    border-width: ${props.theme.components.select.border.width};
+    border-width: 1px;
     box-sizing: border-box;
-    margin-top: ${props.theme.components.select.panel.margin.top};
+    margin-top: 4px;
     max-height: ${props.$maxHeight};
     overflow: auto;
-    padding: ${props.theme.components.select.panel.padding};
+    padding: 4px 0;
     position: absolute;
-    top: ${props.theme.components.select.height};
+    top: 30px;
     z-index: 50;
     width: 100%;
 
     &::-webkit-scrollbar {
-      width: ${props.theme.components.select.scroll.width};
+      width: 6px;
     }
 
     &::-webkit-scrollbar-track {
@@ -40,12 +40,12 @@ const SelectedOptionWrapper = styled("div")`
     align-items: center;
     background-color: ${props.theme.colors.black._100};
     border-color: ${props.theme.colors.black._400};
-    border-radius: ${props.theme.components.select.border.radius};
+    border-radius: 4px;
     border-style: solid;
-    border-width: ${props.theme.components.select.border.width};
+    border-width: 1px;
     box-sizing: border-box;
     display: flex;
-    height: ${props.theme.components.select.height};
+    height: 30px;
     opacity: ${props.disabled && "0.5"};
     width: 100%;
   `};

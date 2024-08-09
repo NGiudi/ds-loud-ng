@@ -7,11 +7,11 @@ import { marginProperties } from "../../../utils/styles";
 const TextArea = styled(Field)`
   ${(props) => css`
     border-color: ${props.theme.colors.black._400};
-    border-radius: ${props.theme.components.textArea.border.radius};
+    border-radius: 4px;
     border-style: solid;
-    border-width: ${props.theme.components.textArea.border.width};
+    border-width: 1px;
     box-sizing: border-box;
-    padding: ${props.theme.components.textArea.padding};
+    padding: 8px;
     resize: none;
     width: 100%;
 
