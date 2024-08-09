@@ -2,7 +2,6 @@ import { appLayout } from "./appLayout";
 import { avatar } from "./avatar";
 import { badge } from "./badge";
 import { button } from "./button";
-import { checkbox } from "./checkbox";
 import { divider } from "./divider";
 import { dropdown } from "./dropdown";
 import { icon } from "./icon";
@@ -22,7 +21,6 @@ export const components = {
   avatar,
   badge,
   button,
-  checkbox,
   divider,
   dropdown,
   icon,

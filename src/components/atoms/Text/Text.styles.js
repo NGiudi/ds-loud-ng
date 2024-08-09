@@ -39,6 +39,7 @@ const TextWrapper = styled("p")`
 const LabelWrapper = styled("label")`
   ${(props) => css`
     display: inline-block;
+    user-select: none;
 
     ${textStyles(props)}
   `}
