@@ -13,7 +13,6 @@ import { select } from "./select";
 import { stepsBar } from "./stepsBar";
 import { table } from "./table";
 import { tabs } from "./tabs";
-import { text } from "./text";
 import { textArea } from "./textArea";
 
 export const components = {
@@ -32,6 +31,5 @@ export const components = {
   stepsBar,
   table,
   tabs,
-  text,
   textArea,
 };
