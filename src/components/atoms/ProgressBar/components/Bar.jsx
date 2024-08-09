@@ -3,8 +3,20 @@ import PropTypes from "prop-types";
 
 import { Styles } from "../ProgressBar.styles";
 
+const DEFAULT_PROPS = {
+  noShowAnimationOnFirstLoad: false,
+  onFinish: () => {},
+  size: "md",
+  step: 0,
+  stepTime: 10,
+  steps: 0,
+};
+
 export const Bar = (props) => {
-  const { onFinish, step, stepTime, steps } = props;
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
 
   const [width, setWidth] = useState(0);
 
@@ -15,7 +27,7 @@ export const Bar = (props) => {
 
     timer.current = setTimeout(() => {
       setWidth((previusWidth) => previusWidth + 1);
-    }, stepTime);
+    }, attrs.stepTime);
   };
 
   const animationSubtractStep = () => {
@@ -23,7 +35,7 @@ export const Bar = (props) => {
 
     timer.current = setTimeout(() => {
       setWidth((previusWidth) => previusWidth - 1);
-    }, stepTime);
+    }, attrs.stepTime);
   };
 
   //? clear timer when unmounted component.
@@ -35,9 +47,9 @@ export const Bar = (props) => {
 
   //? animation controller.
   useEffect(() => {
-    const finishWidth = Math.floor((step * 100) / steps);
+    const finishWidth = Math.floor((attrs.step * 100) / attrs.steps);
 
-    if (props.noShowAnimationOnFirstLoad) {
+    if (attrs.noShowAnimationOnFirstLoad) {
       setWidth(finishWidth);
     } else {
       if (finishWidth > width) {
@@ -47,10 +59,10 @@ export const Bar = (props) => {
       }
     }
 
-    if (finishWidth === width) {
-      onFinish && onFinish();
+    if (attrs.onFinish && finishWidth === width) {
+      attrs.onFinish();
     }
-  }, [step, steps, width]); // eslint-disable-line
+  }, [attrs.step, attrs.steps, width]); // eslint-disable-line
 
   const porcentString = () => {
     let porcent = width;
@@ -61,7 +73,7 @@ export const Bar = (props) => {
     return `${porcent}%`;
   };
 
-  return <Styles.BarWrapper size={props.size} $porcent={porcentString()} />;
+  return <Styles.BarWrapper size={attrs.size} $porcent={porcentString()} />;
 };
 
 Bar.propTypes = {
@@ -71,13 +83,4 @@ Bar.propTypes = {
   step: PropTypes.number,
   stepTime: PropTypes.number,
   steps: PropTypes.number,
-};
-
-Bar.defaultProps = {
-  noShowAnimationOnFirstLoad: false,
-  onFinish: () => {},
-  size: "md",
-  step: 0,
-  stepTime: 10,
-  steps: 0,
 };

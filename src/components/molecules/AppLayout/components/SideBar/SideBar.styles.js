@@ -34,7 +34,7 @@ const SidebarButton = styled("button")`
     &:hover {
       background-color: ${props.theme.colors.black._200};
     }
-    
+
     /* this is the SidebarButtonTooltip */
     &:hover div {
       visibility: visible;
@@ -44,8 +44,8 @@ const SidebarButton = styled("button")`
 
 const SidebarButtonTooltip = styled("div")`
   ${(props) => css`
-    background-color: ${props.theme.colors.black._200};
-    border-color: ${props.theme.colors.black._400};
+    background-color: ${props.theme.colors.black._200}E0;
+    border-color: ${props.theme.colors.black._300};
     border-radius: 4px;
     border-style: solid;
     border-width: 1px;
@@ -60,7 +60,9 @@ const SidebarButtonTooltip = styled("div")`
 
 const SidebarButtonsWrapper = styled("div")`
   ${(props) => css`
-    height: calc(100% - ${props.theme.components.appLayout.sidebar.content.height});
+    height: calc(
+      100% - ${props.theme.components.appLayout.sidebar.content.height}
+    );
 
     &::-webkit-scrollbar {
       width: ${props.theme.components.appLayout.scroll.width};
@@ -72,7 +74,7 @@ const SidebarButtonsWrapper = styled("div")`
 
     &::-webkit-scrollbar-thumb {
       background-color: ${props.theme.colors.black._400};
-      border-radius: ${props.theme.components.appLayout.scroll.radious});
+      border-radius: ${props.theme.components.appLayout.scroll.radius};
     }
   `}
 `;
@@ -82,7 +84,8 @@ const SidebarStyles = styled("div")`
     background-color: ${props.theme.colors.black._100};
     border-right-color: ${props.theme.colors.black._200};
     border-right-style: solid;
-    border-right-width: ${props.theme.components.appLayout.sidebar.border.width};
+    border-right-width: ${props.theme.components.appLayout.sidebar.border
+      .width};
     height: 100%;
     position: relative;
   `}

@@ -66,7 +66,7 @@ const PageContent = () => {
 
   const topbar = {
     avatarPanel: (
-     <>
+      <>
         <Image margin="t-10 x-50" size="sm" type="round" />
 
         <Text align="center" margin="y-20" type="subtitle">

@@ -5,8 +5,7 @@ import { Text } from "../../../";
 
 import { Styles } from "./Tabs.styles";
 
-
-const defaultProps = {
+const DEFAULT_PROPS = {
   children: null,
   margin: "a-0",
   name: "",
@@ -15,10 +14,10 @@ const defaultProps = {
 
 export const Tabs = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
-  
+
   const [tabsName, setTabsName] = useState([]);
   const [posTabSelected, setPosTabSelected] = useState(0);
 

@@ -3,16 +3,26 @@ import PropTypes from "prop-types";
 
 import { ItemWrapper } from "./DropdownItem.styles";
 
+const DEFAULT_PROPS = {
+  disabled: false,
+  name: null,
+  onSelect: () => {},
+  value: null,
+};
+
 export const DropdownItem = (props) => {
-  const { disabled, name, onSelect, value } = props;
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
 
   const handleClick = () => {
-    if (!disabled) {
-      onSelect && onSelect(value, name);
+    if (!attrs.disabled) {
+      attrs.onSelect && attrs.onSelect(attrs.value, attrs.name);
     }
   };
 
-  return <ItemWrapper onClick={handleClick} {...props} />;
+  return <ItemWrapper onClick={handleClick} {...attrs} />;
 };
 
 DropdownItem.propTypes = {
@@ -20,11 +30,4 @@ DropdownItem.propTypes = {
   name: PropTypes.string,
   onSelect: PropTypes.func,
   value: PropTypes.any,
-};
-
-DropdownItem.defaultProps = {
-  disabled: false,
-  name: null,
-  onSelect: () => {},
-  value: null,
 };

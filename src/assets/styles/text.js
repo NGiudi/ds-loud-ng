@@ -1,10 +1,4 @@
-export const weights = {
-  bold: 800,
-  regular: 400,
-  semibold: 600,
-};
-
-const types = {
+export const TEXT_TYPES = {
   bodyRegular: {
     lineHeight: "20px",
     size: "14px",
@@ -40,8 +34,4 @@ const types = {
     size: "22px",
     weight: 800,
   },
-};
-
-export const text = {
-  types,
 };

@@ -6,25 +6,32 @@ import { Flex } from "../../../";
 
 import { ContentBox, MainContent, TopBar } from "./AppLayout.styles";
 
-export const AppLayout = (props) => {
-  const { sidebar, topbar } = props;
+const DEFAULT_PROPS = {
+  children: null,
+  sidebar: null,
+  topbar: null,
+};
 
-  const sidebarButtons = sidebar ? sidebar.buttons : null;
+export const AppLayout = (props) => {
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
+
+  const sidebarButtons = attrs.sidebar ? attrs.sidebar.buttons : null;
 
   return (
     <>
       <TopBar $padding="x-24 y-8">
-        {topbar && (
+        {attrs.topbar && (
           <Flex hAlign="space-between">
-            <div>
-              {topbar.startContent}
-            </div>
+            <div>{attrs.topbar.startContent}</div>
 
             <div>
-              {topbar.endContent}
+              {attrs.topbar.endContent}
 
               <ProfileAvatar pos="right">
-                {topbar.avatarPanel}
+                {attrs.topbar.avatarPanel}
               </ProfileAvatar>
             </div>
           </Flex>
@@ -42,6 +49,7 @@ export const AppLayout = (props) => {
   );
 };
 
+//TODO: usar las propTypes de los componentes internos para los botones, etc.
 AppLayout.propTypes = {
   children: PropTypes.node,
   sidebar: PropTypes.shape({
@@ -58,10 +66,4 @@ AppLayout.propTypes = {
     endContent: PropTypes.node,
     startContent: PropTypes.node,
   }),
-};
-
-AppLayout.defaultProps = {
-  children: null,
-  sidebar: null,
-  topbar: null,
 };

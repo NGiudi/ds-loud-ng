@@ -5,13 +5,23 @@ import { Icon, ProgressBar } from "../../../";
 
 import { Circle, ProgressBarWrapper, StepsWrapper } from "./StepsBar.styles";
 
-export const StepsBar = (props) => {
-  const { margin, size, step, steps } = props;
+const DEFAULT_PROPS = {
+  margin: "a-0",
+  size: "md",
+  steps: 5,
+  step: 1,
+};
 
-  const [previousStep, setPreviousStep] = useState(step);
+export const StepsBar = (props) => {
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
+
+  const [previousStep, setPreviousStep] = useState(attrs.step);
 
   const finishStepChange = () => {
-    const diff = step - previousStep;
+    const diff = attrs.step - previousStep;
 
     if (diff > 0) {
       setPreviousStep((prev) => prev + 1);
@@ -21,27 +31,32 @@ export const StepsBar = (props) => {
   };
 
   const selectTypeCircle = (renderStep) => {
-    if (renderStep < step) return "checkedCircle";
-    if (renderStep > step) return "pendingCircle";
+    if (renderStep < attrs.step) return "checkedCircle";
+    if (renderStep > attrs.step) return "pendingCircle";
 
-    if (renderStep === step && previousStep > step) return "checkedCircle";
-    if (renderStep === step && previousStep < step) return "pendingCircle";
-    if (renderStep === step) return "circle";
+    if (renderStep === attrs.step && previousStep > attrs.step)
+      return "checkedCircle";
+    if (renderStep === attrs.step && previousStep < attrs.step)
+      return "pendingCircle";
+    if (renderStep === attrs.step) return "circle";
   };
 
   const noShowOldAnaimation = (renderStep) => {
-    const diff = step - previousStep;
+    const diff = attrs.step - previousStep;
 
     const prueba = !(
-      (diff > 0 && renderStep === step) ||
-      (diff < 0 && renderStep === step + 1)
+      (diff > 0 && renderStep === attrs.step) ||
+      (diff < 0 && renderStep === attrs.step + 1)
     );
 
     return prueba;
   };
 
   const renderIconInsideCircle = (renderStep) => {
-    if (renderStep < step || (renderStep === step && previousStep > step)) {
+    if (
+      renderStep < attrs.step ||
+      (renderStep === attrs.step && previousStep > attrs.step)
+    ) {
       return <Icon icon="check" size="sm" />;
     }
 
@@ -58,13 +73,13 @@ export const StepsBar = (props) => {
               noShowAnimationOnFirstLoad={noShowOldAnaimation(renderStep)}
               onFinish={finishStepChange}
               size="sm"
-              step={renderStep <= step ? 100 : 0}
+              step={renderStep <= attrs.step ? 100 : 0}
               style={{ flexGrow: "1" }}
             />
           </ProgressBarWrapper>
         )}
 
-        <Circle size={size} type={selectTypeCircle(renderStep)}>
+        <Circle size={attrs.size} type={selectTypeCircle(renderStep)}>
           {renderIconInsideCircle(renderStep)}
         </Circle>
       </React.Fragment>
@@ -74,11 +89,11 @@ export const StepsBar = (props) => {
   const renderColumnSteps = () => {
     let stepsArray = [];
 
-    for (let i = 1; i <= steps; i++) {
+    for (let i = 1; i <= attrs.steps; i++) {
       stepsArray.push(renderStep(i));
     }
 
-    return <StepsWrapper $margin={margin}>{stepsArray}</StepsWrapper>;
+    return <StepsWrapper $margin={attrs.margin}>{stepsArray}</StepsWrapper>;
   };
 
   return renderColumnSteps();
@@ -89,11 +104,4 @@ StepsBar.propTypes = {
   size: PropTypes.oneOf(["md"]),
   steps: PropTypes.number.isRequired,
   step: PropTypes.number,
-};
-
-StepsBar.defaultProps = {
-  margin: "a-0",
-  size: "md",
-  steps: 5,
-  step: 1,
 };

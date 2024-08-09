@@ -1,4 +1,3 @@
-/** @type { import('@storybook/react-webpack5').StorybookConfig } */
 const config = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -7,13 +6,12 @@ const config = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/preset-create-react-app",
   ],
-  framework: {
-    name: "@storybook/react-webpack5",
-    options: {},
-  },
+  framework: "@storybook/react-webpack5",
   docs: {
     autodocs: "tag",
   },
 };
+
 export default config;

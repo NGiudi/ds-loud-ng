@@ -1,30 +1,31 @@
 import React, { useContext, useEffect } from "react";
 import { PropTypes } from "prop-types";
 
-/* context */
 import { SelectContext } from "../../SelectContext";
 
-/* external components */
 import { Field, useFormikContext } from "formik";
 
+const DEFAULT_PROPS = {
+  name: "",
+};
+
 export const SelectValue = (props) => {
-  const { name } = props;
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
 
   const ctx = useContext(SelectContext);
 
   const { setFieldValue } = useFormikContext();
 
   useEffect(() => {
-    setFieldValue(name, ctx.selectedValue);
+    setFieldValue(attrs.name, ctx.selectedValue);
   }, [ctx.selectedValue]); // eslint-disable-line
 
-  return <Field name={name} type="hidden" />;
+  return <Field name={attrs.name} type="hidden" />;
 };
 
 SelectValue.propTypes = {
   name: PropTypes.string,
-};
-
-SelectValue.defaultProps = {
-  name: "",
 };

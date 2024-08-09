@@ -6,7 +6,8 @@ import { Helmet } from "react-helmet";
 
 import { getTheme } from "./utils/theme";
 
-const defaultProps = {
+//TODO: eliminar la opcion de tener otro tema. Por ahora va a ser solo el que mío.
+const DEFAULT_PROPS = {
   children: null,
   name: "loudLight",
   theme: null,
@@ -14,24 +15,17 @@ const defaultProps = {
 
 export const ThemeDS = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
-  }; 
+  };
 
   return (
     <ThemeProvider theme={attrs.theme || getTheme(attrs.name)}>
       <Helmet>
-        <link
-          href="https://fonts.googleapis.com"
-          rel="preconnect"
-        />
-        
-        <link
-          crossOrigin
-          href="https://fonts.gstatic.com"
-          rel="preconnect"
-        />
-        
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+
+        <link crossOrigin href="https://fonts.gstatic.com" rel="preconnect" />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap"
           rel="stylesheet"

@@ -5,15 +5,24 @@ import { Icon } from "../../../../../";
 
 import { ContentWrapper, ToogleWrapper } from "./DropdownToogle.styles";
 
-export const DropdownToogle = (props) => {
-  const { children, openPanel, ...others } = props;
+const DEFAULT_PROPS = {
+  children: null,
+  onClick: () => {},
+  openPanel: false,
+};
 
-  const icon = openPanel ? "angle-up" : "angle-down";
+export const DropdownToogle = (props) => {
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
+
+  const icon = attrs.openPanel ? "angle-up" : "angle-down";
 
   return (
-    <ToogleWrapper {...others}>
+    <ToogleWrapper onClick={attrs.onClick}>
       <ContentWrapper>
-        {children}
+        {attrs.children}
         <Icon icon={icon} margin="l-4" size="sm" />
       </ContentWrapper>
     </ToogleWrapper>
@@ -22,10 +31,6 @@ export const DropdownToogle = (props) => {
 
 DropdownToogle.propTypes = {
   children: PropTypes.node,
+  onClick: PropTypes.func,
   openPanel: PropTypes.bool,
-};
-
-DropdownToogle.defaultProps = {
-  children: null,
-  openPanel: false,
 };

@@ -16,7 +16,7 @@ const TextArea = styled(Field)`
     width: 100%;
 
     &::-webkit-scrollbar {
-      width: ${props.theme.components.panel.scroll.width};
+      width: 6px;
     }
 
     &::-webkit-scrollbar-track {

@@ -89,7 +89,7 @@ Model.args = {
   children: "Apretame",
   disabled: false,
   fullWidth: false,
-  icon: { name: "award" },
+  icon: { icon: "award" },
   id: "button-story",
   kind: "solid",
   loading: false,
@@ -117,7 +117,7 @@ export const AllTypes = () => {
             </th>
 
             <th style={cellSize}>
-              <Button icon={{ name: "cog" }} onClick={() => {}}>
+              <Button icon={{ icon: "cog" }} onClick={() => {}}>
                 Button
               </Button>
             </th>
@@ -143,7 +143,7 @@ export const AllTypes = () => {
             </th>
 
             <th style={cellSize}>
-              <Button icon={{ name: "cog" }} kind="outlined" onClick={() => {}}>
+              <Button icon={{ icon: "cog" }} kind="outlined" onClick={() => {}}>
                 Button
               </Button>
             </th>
@@ -169,7 +169,7 @@ export const AllTypes = () => {
             </th>
 
             <th style={cellSize}>
-              <Button icon={{ name: "cog" }} kind="text" onClick={() => {}}>
+              <Button icon={{ icon: "cog" }} kind="text" onClick={() => {}}>
                 Button
               </Button>
             </th>

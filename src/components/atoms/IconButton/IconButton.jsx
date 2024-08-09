@@ -1,14 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Icon } from "../../..";
+import { Icon } from "../../../";
 
 import { Styles } from "./IconButton.styles";
 
-const defaultProps = {
+import { ICON_PROP_TYPES } from "../../../constants/prop_types";
+
+const DEFAULT_PROPS = {
   disabled: false,
   icon: {
-    name: "",
+    color: "black_900",
+    icon: "home",
     size: "sm",
   },
   id: null,
@@ -19,10 +22,10 @@ const defaultProps = {
 
 export const IconButton = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
     icon: {
-      ...defaultProps.icon,
+      ...DEFAULT_PROPS.icon,
       ...props.icon,
     },
   };
@@ -36,9 +39,8 @@ export const IconButton = (props) => {
       type={attrs.type}
     >
       <Icon
-        color={attrs.disabled ? "black_500" : "black_900"}
-        icon={attrs.icon.name}
-        size={attrs.icon.size}
+        {...attrs.icon}
+        color={attrs.disabled ? "black_500" : attrs.icon.color}
       />
     </Styles.IconButton>
   );
@@ -46,10 +48,7 @@ export const IconButton = (props) => {
 
 IconButton.propTypes = {
   disabled: PropTypes.bool,
-  icon: PropTypes.shape({
-    name: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-    size: PropTypes.oneOf(["input", "lg", "md", "sm"]),
-  }).isRequired,
+  icon: PropTypes.shape(ICON_PROP_TYPES),
   id: PropTypes.string,
   margin: PropTypes.string,
   onClick: PropTypes.func,

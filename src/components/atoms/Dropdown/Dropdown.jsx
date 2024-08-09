@@ -5,9 +5,18 @@ import { useOuterClick } from "../../../hooks/useOuterClick";
 
 import { Styles } from "./Dropdown.styles";
 
+const DEFAULT_PROPS = {
+  children: null,
+  name: null,
+  onSelect: () => {},
+};
+
 //TODO: Agregar margin a este componente.
 export const Dropdown = (props) => {
-  const { children, name, onSelect } = props;
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
 
   const [optionSelected, setOptionSelected] = useState(null);
   const [showPanel, setShowPanel] = useState(false);
@@ -24,13 +33,13 @@ export const Dropdown = (props) => {
     toogleShowPanel();
 
     if (value !== optionSelected) {
-      onSelect && onSelect(value, name);
+      attrs.onSelect && attrs.onSelect(value, name);
       setOptionSelected(value);
     }
   };
 
-  const getPanel = React.Children.toArray(children)[1];
-  const getToggle = React.Children.toArray(children)[0];
+  const getPanel = React.Children.toArray(attrs.children)[1];
+  const getToggle = React.Children.toArray(attrs.children)[0];
 
   return (
     <Styles.DropdownWrapper ref={innerRef}>
@@ -40,7 +49,7 @@ export const Dropdown = (props) => {
       })}
 
       {React.cloneElement(getPanel, {
-        name,
+        name: attrs.name,
         onSelect: handleSelect,
         showPanel,
       })}
@@ -52,10 +61,4 @@ Dropdown.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   onSelect: PropTypes.func,
-};
-
-Dropdown.defaultProps = {
-  children: null,
-  name: null,
-  onSelect: () => {},
 };

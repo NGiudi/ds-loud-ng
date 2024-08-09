@@ -7,8 +7,16 @@ import { Panel, Image } from "../../../../..";
 
 import { Styles } from "./ProfileAvatar.styles";
 
+const DEFAULT_PROPS = {
+  children: null,
+  img: null,
+};
+
 export const ProfileAvatar = (props) => {
-  const { id, size } = props;
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +30,7 @@ export const ProfileAvatar = (props) => {
     img: null,
     placeholder: "L",
     //? component values.
-    ...props.img,
+    ...attrs.img,
   };
 
   const handleAvatarClick = () => {
@@ -30,36 +38,26 @@ export const ProfileAvatar = (props) => {
   };
 
   return (
-    <Styles.Wrapper id={id} $margin={props.margin} ref={innerRef}>
+    <Styles.Wrapper ref={innerRef}>
       <Styles.AvatarWrapper $isSelected={isOpen} onClick={handleAvatarClick}>
-        <Image {...imageAttributes} size={size} type="round" />
+        <Image {...imageAttributes} size="avatar" type="round" />
       </Styles.AvatarWrapper>
 
       {isOpen && (
         <Styles.PanelWrapper>
-          <Panel padding="a-0">{props.children}</Panel>
+          <Panel padding="a-0">{attrs.children}</Panel>
         </Styles.PanelWrapper>
       )}
     </Styles.Wrapper>
   );
 };
 
+//TODO: usar las propTypes de la imagen.
 ProfileAvatar.propTypes = {
   children: PropTypes.node,
-  id: PropTypes.string,
   img: PropTypes.shape({
     alt: PropTypes.string,
     img: PropTypes.string,
     placeholder: PropTypes.string,
   }),
-  margin: PropTypes.string,
-  size: PropTypes.oneOf(["avatar", "avatarSm"]),
-};
-
-ProfileAvatar.defaultProps = {
-  children: null,
-  id: null,
-  img: null,
-  margin: "a-0",
-  size: "avatar",
 };

@@ -12,7 +12,7 @@ const content = {
 
 const scroll = {
   width: "8px",
-  radious: "4px",
+  radius: "4px",
 };
 
 const sidebar = {

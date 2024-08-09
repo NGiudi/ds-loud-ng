@@ -5,12 +5,16 @@ import { Icon } from "../../../";
 
 import { Styles } from "./Button.styles";
 
-const defaultProps = {
+import { ICON_PROP_TYPES } from "../../../constants/prop_types";
+
+const DEFAULT_PROPS = {
   children: null,
   disabled: false,
   fullWidth: false,
   icon: {
-    name: "",
+    color: "inheret",
+    margin: "r-4",
+    icon: "",
     size: "sm",
   },
   id: "",
@@ -23,12 +27,12 @@ const defaultProps = {
 
 export const Button = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
     icon: {
-      ...defaultProps.icon,
+      ...DEFAULT_PROPS.icon,
       ...props.icon,
-    }
+    },
   };
 
   const ButtonSelector = ({ kind, ...others }) => {
@@ -62,14 +66,7 @@ export const Button = (props) => {
 
       {/* content view */}
       <Styles.ContentWrapper $loading={attrs.loading}>
-        {attrs.icon.name && (
-          <Icon
-            color="inheret"
-            icon={attrs.icon.name}
-            margin="r-4"
-            size={attrs.icon.size}
-          />
-        )}
+        {attrs.icon.icon && <Icon {...attrs.icon} />}
 
         {attrs.children}
       </Styles.ContentWrapper>
@@ -81,10 +78,7 @@ Button.propTypes = {
   children: PropTypes.node,
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
-  icon: PropTypes.shape({
-    name: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-    size: PropTypes.oneOf(["input", "lg", "md", "sm"]),
-  }),
+  icon: PropTypes.shape(ICON_PROP_TYPES),
   id: PropTypes.string,
   kind: PropTypes.oneOf(["outlined", "solid", "text"]),
   loading: PropTypes.bool,

@@ -5,22 +5,38 @@ import { Text } from "../../..";
 
 import { Styles } from "./PhoneTable.styles";
 
+const DEFAULT_PROPS = {
+  columns: [],
+  data: [],
+  margin: "a-0",
+  mobileColumns: [],
+  name: "",
+  onClick: () => {},
+};
+
 export const PhoneTable = (props) => {
-  const { columns, data, mobileColumns, margin, name, onClick } = props;
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
 
   const list =
-    mobileColumns.length > 0 ? mobileColumns : columns.length ? columns : [];
+    attrs.mobileColumns.length > 0
+      ? attrs.mobileColumns
+      : attrs.columns.length
+        ? attrs.columns
+        : [];
 
   return (
-    <Styles.Wrapper $margin={margin}>
-      {data.map((row, idx) => (
+    <Styles.Wrapper $margin={attrs.margin}>
+      {attrs.data.map((row, idx) => (
         <Styles.Row
-          key={`table-${name}-row-${idx}`}
-          onClick={() => onClick && onClick(row)}
+          key={`table-${attrs.name}-row-${idx}`}
+          onClick={() => attrs.onClick && attrs.onClick(row)}
         >
           {list.map((column, idx) => (
             <Styles.Column
-              key={`table-${name}-column-${idx}`}
+              key={`table-${attrs.name}-column-${idx}`}
               mobile={column.mobile}
             >
               <Text type="bodySemibold">{column.label}</Text>
@@ -41,13 +57,4 @@ PhoneTable.propTypes = {
   mobileColumns: PropTypes.array,
   name: PropTypes.string,
   onClick: PropTypes.func,
-};
-
-PhoneTable.defaultProps = {
-  columns: [],
-  data: [],
-  margin: "a-0",
-  mobileColumns: [],
-  name: "",
-  onClick: () => {},
 };

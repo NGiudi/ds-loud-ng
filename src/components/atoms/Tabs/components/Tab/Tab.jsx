@@ -1,18 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const Tab = (props) => {
-  const { children } = props;
+const DEFAULT_PROPS = {
+  children: null,
+};
 
-  return <div>{children}</div>;
+export const Tab = (props) => {
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
+
+  return <div>{attrs.children}</div>;
 };
 
 Tab.propTypes = {
   children: PropTypes.node,
-  name: PropTypes.string,
-};
-
-Tab.defaultProps = {
-  children: null,
-  name: "",
 };

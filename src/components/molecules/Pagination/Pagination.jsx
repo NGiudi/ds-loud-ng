@@ -8,25 +8,40 @@ import { Styles } from "./Pagination.styles";
 
 import { createPaginateList } from "./utils/pages";
 
-export const Pagination = (props) => {
-  const { margin, nButtons, onChange, page, pages } = props;
+const DEFAULT_PROPS = {
+  margin: "a-0",
+  nButtons: 9,
+  onChange: () => {},
+  page: 1,
+  pages: 1,
+};
 
-  const [currentPage, setCurrentPage] = useState(page);
+export const Pagination = (props) => {
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
+
+  const [currentPage, setCurrentPage] = useState(attrs.page);
   const [buttonsList, setButtonsList] = useState([]);
 
   useEffect(() => {
     //? create new buttons list.
-    const buttonsList = createPaginateList(currentPage, pages, nButtons);
+    const buttonsList = createPaginateList(
+      currentPage,
+      attrs.pages,
+      attrs.nButtons,
+    );
     setButtonsList(buttonsList);
 
-    onChange && onChange(currentPage);
+    attrs.onChange && attrs.onChange(currentPage);
   }, [currentPage]); // eslint-disable-line
 
   return (
-    <Styles.Wrapper $margin={margin}>
+    <Styles.Wrapper $margin={attrs.margin}>
       <IconButton
         disabled={currentPage === 1}
-        icon={{ name: "chevron-left" }}
+        icon={{ icon: "chevron-left" }}
         onClick={() => setCurrentPage((prev) => prev - 1)}
       />
 
@@ -54,8 +69,8 @@ export const Pagination = (props) => {
       })}
 
       <IconButton
-        disabled={currentPage === pages}
-        icon={{ name: "chevron-right" }}
+        disabled={currentPage === attrs.pages}
+        icon={{ icon: "chevron-right" }}
         onClick={() => setCurrentPage((prev) => prev + 1)}
       />
     </Styles.Wrapper>
@@ -68,12 +83,4 @@ Pagination.propTypes = {
   onChange: PropTypes.func,
   page: PropTypes.number.isRequired,
   pages: PropTypes.number.isRequired,
-};
-
-Pagination.defaultProps = {
-  margin: "a-0",
-  nButtons: 9,
-  onChange: () => {},
-  page: 1,
-  pages: 1,
 };

@@ -60,11 +60,11 @@ export const ConfirmationExample = () => {
       <Modal
         cancelButton={{
           onClick: () => {},
-          text: "No, cancelar"
+          text: "No, cancelar",
         }}
         confirmButton={{
           onClick: () => {},
-          text: "Sí, avanzar"
+          text: "Sí, avanzar",
         }}
         onClose={handleShowModal}
         show={showModal}

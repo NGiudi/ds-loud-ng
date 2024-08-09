@@ -5,13 +5,22 @@ import { useFormikContext } from "formik";
 
 export const SelectContext = createContext({});
 
+const DEFAULT_PROPS = {
+  children: null,
+  name: "",
+  options: [],
+};
+
 export const SelectProvider = (props) => {
-  const { children, name, options } = props;
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
 
   const { values } = useFormikContext();
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(values[name]);
+  const [selectedValue, setSelectedValue] = useState(values[attrs.name]);
 
   const closeSelect = () => setIsOpen(false);
   const openSelect = () => setIsOpen(true);
@@ -32,14 +41,14 @@ export const SelectProvider = (props) => {
     <SelectContext.Provider
       value={{
         isOpen,
-        options,
+        options: attrs.options,
         selectedValue,
         closeSelect,
         handleSelectedValue,
         toogleSelect,
       }}
     >
-      {children}
+      {attrs.children}
     </SelectContext.Provider>
   );
 };
@@ -48,10 +57,4 @@ SelectProvider.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   options: PropTypes.array,
-};
-
-SelectProvider.defaultProps = {
-  children: null,
-  name: "",
-  options: [],
 };

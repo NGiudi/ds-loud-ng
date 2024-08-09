@@ -9,13 +9,21 @@ import { Styles } from "./SelectContent.styles";
 
 import { disclosureIcon } from "../../../../../utils/icons/icons";
 
+const DEFAULT_PROPS = {
+  disabled: false,
+  maxHeight: "auto",
+};
+
 export const SelectContent = (props) => {
-  const { disabled, maxHeight } = props;
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
 
   const ctx = useContext(SelectContext);
 
   const handleClick = () => {
-    if (!disabled) {
+    if (!attrs.disabled) {
       ctx.toogleSelect();
     }
   };
@@ -29,7 +37,10 @@ export const SelectContent = (props) => {
 
   return (
     <Styles.SelectWrapper>
-      <Styles.SelectedOptionWrapper disabled={disabled} onClick={handleClick}>
+      <Styles.SelectedOptionWrapper
+        disabled={attrs.disabled}
+        onClick={handleClick}
+      >
         <Styles.SelectedOption>
           <Text margin="l-8">
             {getValue() || ctx.selectedValue || "- Seleccione una opción -"}
@@ -42,7 +53,7 @@ export const SelectContent = (props) => {
 
       {/* panel */}
       {ctx.isOpen ? (
-        <Styles.SelectPanel $margin="t-8" $maxHeight={maxHeight}>
+        <Styles.SelectPanel $margin="t-8" $maxHeight={attrs.maxHeight}>
           {ctx.options.map((option) => (
             <SelectOption key={`option-${option.value}`} value={option.value}>
               {option.children}
@@ -57,9 +68,4 @@ export const SelectContent = (props) => {
 SelectContent.propTypes = {
   disabled: PropTypes.bool,
   maxHeight: PropTypes.string,
-};
-
-SelectContent.defaultProps = {
-  disabled: false,
-  maxHeight: "auto",
 };

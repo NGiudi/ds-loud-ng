@@ -5,8 +5,15 @@ import { SidebarButton } from "./components/SidebarButton";
 
 import { Styles } from "./SideBar.styles";
 
+const DEFAULT_PROPS = {
+  buttons: [],
+};
+
 export const SideBar = (props) => {
-  const { buttons } = props;
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
 
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -22,10 +29,10 @@ export const SideBar = (props) => {
     <Styles.SidebarStyles>
       {/* button list */}
       <Styles.SidebarButtonsWrapper>
-        {buttons &&
-          buttons.map((btn, idx) => {
+        {attrs.buttons.length > 0 &&
+          attrs.buttons.map((btn, idx) => {
             const isSelected = window.location.pathname.includes(btn.to);
-            
+
             return (
               <SidebarButton
                 btn={btn}
@@ -38,15 +45,13 @@ export const SideBar = (props) => {
       </Styles.SidebarButtonsWrapper>
 
       <Styles.BottomContentStyles>
-        <SidebarButton
-          btn={contractedButton}
-          isExpanded={isExpanded}
-        />
+        <SidebarButton btn={contractedButton} isExpanded={isExpanded} />
       </Styles.BottomContentStyles>
     </Styles.SidebarStyles>
   );
 };
 
+//TODO: agregar esta propTypes en la carpeta de constantes.
 SideBar.propTypes = {
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
@@ -56,8 +61,4 @@ SideBar.propTypes = {
       to: PropTypes.string.isRequired,
     }),
   ),
-};
-
-SideBar.defaultProps = {
-  buttons: null,
 };

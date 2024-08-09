@@ -8,9 +8,11 @@ const FileItem = styled("div")`
     border-style: solid;
     border-width: 1px;
     box-sizing: border-box;
+    box-shadow: inset 4px 0 0 0
+      ${props.theme.colors.alert.colors[props.$status]};
     display: flex;
     justify-content: space-between;
-    margin-top: 16px; 
+    margin-bottom: ${props.$isLastItem ? "0px" : "16px"};
     padding: 12px;
     position: relative;
     text-align: center;

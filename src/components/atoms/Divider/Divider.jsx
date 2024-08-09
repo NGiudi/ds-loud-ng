@@ -3,16 +3,15 @@ import PropTypes from "prop-types";
 
 import { Styles } from "./Divider.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   color: "black_300",
   height: "",
   margin: "a-0",
 };
 
-
-export const Divider = (props) => {  
+export const Divider = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 

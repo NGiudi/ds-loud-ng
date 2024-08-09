@@ -4,18 +4,20 @@ import { ErrorMessage, Field } from "formik";
 
 import { marginProperties, paddingProperties } from "../../../utils/styles";
 
+import { TEXT_TYPES } from "../../../assets/styles/text";
+
 const Error = styled(ErrorMessage)`
   ${(props) => css`
     color: ${props.theme.colors.alert.colors.error};
-    font-size: ${props.theme.components.text.types.bodyRegular.size};
-    font-weight: ${props.theme.components.text.types.bodyRegular.weight};
-    line-height: ${props.theme.components.text.types.bodyRegular.lineHeight};
+    font-size: ${TEXT_TYPES.bodyRegular.size};
+    font-weight: ${TEXT_TYPES.bodyRegular.weight};
+    line-height: ${TEXT_TYPES.bodyRegular.lineHeight};
   `};
 `;
 
 const ErrorWrapper = styled("div")`
   ${(props) => css`
-    height: ${props.theme.components.text.types.bodyRegular.lineHeight};
+    height: ${TEXT_TYPES.bodyRegular.lineHeight};
 
     ${marginProperties(props)}
   `};
@@ -26,10 +28,10 @@ const InputStyles = styled(Field)`
     background-color: transparent;
     border: none;
     flex-grow: 1;
-    font-size: ${props.theme.components.text.types.captionRegular.size};
-    font-weight: ${props.theme.components.text.types.captionRegular.weight};
+    font-size: ${TEXT_TYPES.captionRegular.size};
+    font-weight: ${TEXT_TYPES.captionRegular.weight};
     height: ${props.theme.components.input.height};
-    line-height: ${props.theme.components.text.types.captionRegular.lineHeight};
+    line-height: ${TEXT_TYPES.captionRegular.lineHeight};
     outline: none;
     padding: 0;
   `};

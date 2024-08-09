@@ -1,6 +1,6 @@
 const blackColors = {
   _900: "#18181B",
-  _800: "#27272A",
+  _800: "#262626",
   _700: "#363636",
   _600: "#52525B",
   _500: "#71717A",
@@ -17,9 +17,21 @@ const orangeColors = {
   _600: "#F47A1D",
   _500: "#F78223",
   _400: "#F79A51",
-  _300: "#faad82",
+  _300: "#FAAD82",
   _200: "#FBBD89",
   _100: "#FEE4CD",
+};
+
+const redColors = {
+  _900: "#7B1E1E",
+  _800: "#B70404",
+  _700: "#CE2A2A",
+  _600: "#F41D1D",
+  _500: "#F72323",
+  _400: "#F75151",
+  _300: "#FA8282",
+  _200: "#FB8989",
+  _100: "#FECDCD",
 };
 
 const alertColors = {
@@ -43,4 +55,5 @@ export const whiteTheme = {
   alert: alertColors,
   black: blackColors,
   orange: orangeColors,
+  red: redColors,
 };

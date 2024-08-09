@@ -5,18 +5,34 @@ import { Text } from "../../..";
 
 import { Styles } from "./DesktopTable.styles";
 
+const DEFAULT_PROPS = {
+  columns: [],
+  data: [],
+  desktopColumns: [],
+  margin: "a-0",
+  name: "",
+  onClick: () => {},
+};
+
 export const DesktopTable = (props) => {
-  const { columns, data, desktopColumns, margin, name, onClick } = props;
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
 
   const list =
-    desktopColumns.length > 0 ? desktopColumns : columns.length ? columns : [];
+    attrs.desktopColumns.length > 0
+      ? attrs.desktopColumns
+      : attrs.columns.length
+        ? attrs.columns
+        : [];
 
   return (
-    <Styles.Wrapper $margin={margin}>
+    <Styles.Wrapper $margin={attrs.margin}>
       <Styles.Row $isHeader>
         {list.map((column, idxC) => (
           <Styles.Column
-            key={`table-${name}-row-title-column-${idxC}`}
+            key={`table-${attrs.name}-row-title-column-${idxC}`}
             width={column.width}
           >
             <Text type="bodySemibold">{column.label}</Text>
@@ -24,14 +40,14 @@ export const DesktopTable = (props) => {
         ))}
       </Styles.Row>
 
-      {data.map((row, idxR) => (
+      {attrs.data.map((row, idxR) => (
         <Styles.Row
           key={`table-row-${idxR}`}
-          onClick={() => onClick && onClick(row)}
+          onClick={() => attrs.onClick && attrs.onClick(row)}
         >
           {list.map((column, idxC) => (
             <Styles.Column
-              key={`table-${name}-row-${idxR}-column-${idxC}`}
+              key={`table-${attrs.name}-row-${idxR}-column-${idxC}`}
               width={column.width}
             >
               {column.content(row)}
@@ -50,13 +66,4 @@ DesktopTable.propTypes = {
   margin: PropTypes.string,
   name: PropTypes.string,
   onClick: PropTypes.func,
-};
-
-DesktopTable.defaultProps = {
-  columns: [],
-  data: [],
-  desktopColumns: [],
-  margin: "a-0",
-  name: "",
-  onClick: () => {},
 };

@@ -10,10 +10,10 @@ const Wrapper = styled("div")`
   ${(props) => css`
     display: inline-block;
     background-color: ${getColor(props.theme, props.$color)};
-    border-radius: ${props.theme.components.badge.border.radius};
+    border-radius: 4px;
 
     ${marginProperties(props)}
-    ${paddingProperties(props, props.theme.components.badge.padding)}
+    ${paddingProperties(props, "x-8 y-4")}
   `}
 `;
 

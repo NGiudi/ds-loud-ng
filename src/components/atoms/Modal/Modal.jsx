@@ -7,7 +7,7 @@ import { Button, IconButton, Panel } from "../../../";
 
 import { Styles } from "./Modal.styles";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   cancelButton: {
     hide: false,
     onClick: () => {},
@@ -26,14 +26,14 @@ const defaultProps = {
 
 export const Modal = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
     cancelButton: {
-      ...defaultProps.cancelButton,
+      ...DEFAULT_PROPS.cancelButton,
       ...props.cancelButton,
     },
     confirmButton: {
-      ...defaultProps.confirmButton,
+      ...DEFAULT_PROPS.confirmButton,
       ...props.confirmButton,
     },
   };
@@ -42,7 +42,7 @@ export const Modal = (props) => {
   const showModalRef = useRef(false);
 
   const handleCancel = () => {
-    if (showModalRef.current) { 
+    if (showModalRef.current) {
       attrs.cancelButton.onClick();
       attrs.onClose();
       setShowModal(false);
@@ -54,15 +54,15 @@ export const Modal = (props) => {
       attrs.onClose();
       setShowModal(false);
     }
-  }
+  };
 
   const handleConfirm = () => {
     if (showModalRef.current) {
-      attrs.confirmButton.onClick();    
+      attrs.confirmButton.onClick();
       attrs.onClose();
       setShowModal(false);
     }
-  }
+  };
 
   useKeyboardActions({
     onClose: handleClose,
@@ -73,7 +73,7 @@ export const Modal = (props) => {
   useEffect(() => {
     setShowModal(attrs.show);
   }, [attrs.show]);
-  
+
   //? Reference for using with the useKeyboardActions hook to keep the state updated.
   useEffect(() => {
     showModalRef.current = showModal;
@@ -85,20 +85,20 @@ export const Modal = (props) => {
         <Styles.PanelWrapper width={attrs.width}>
           <Panel padding="a-20">
             <Styles.CloseBtnWrapper>
-              <IconButton icon={{ name: "times" }} onClick={handleClose} />
+              <IconButton icon={{ icon: "times" }} onClick={handleClose} />
             </Styles.CloseBtnWrapper>
-  
+
             <Styles.ContentBox $padding="r-28">
               {attrs.children}
             </Styles.ContentBox>
-  
+
             <Styles.ButtonsWrapper>
               {!attrs.cancelButton.hide && (
                 <Button kind="outlined" onClick={handleCancel}>
                   {attrs.cancelButton.text}
                 </Button>
               )}
-  
+
               {!attrs.confirmButton.hide && (
                 <Button margin="l-8" onClick={handleConfirm}>
                   {attrs.confirmButton.text}
@@ -114,6 +114,7 @@ export const Modal = (props) => {
   return null;
 };
 
+//TODO: usar las propTypes de los botones.
 Modal.propTypes = {
   cancelButton: PropTypes.shape({
     hide: PropTypes.bool,

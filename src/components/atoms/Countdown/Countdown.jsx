@@ -5,7 +5,7 @@ import { Text } from "../../../";
 
 import { getTimeObject, formatClock } from "../../../utils/time/clock";
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   endTime: null,
   formatTime: "hh:mm:ss",
   onFinish: () => {},
@@ -15,7 +15,7 @@ const defaultProps = {
 
 export const Countdown = (props) => {
   const attrs = {
-    ...defaultProps,
+    ...DEFAULT_PROPS,
     ...props,
   };
 
@@ -65,7 +65,11 @@ export const Countdown = (props) => {
   //? no show zero value.
   if (time < 1000 && !attrs.showZero) return null;
 
-  return <Text {...attrs.text}>{formatClock(getTimeObject(time), attrs.formatTime)}</Text>;
+  return (
+    <Text {...attrs.text}>
+      {formatClock(getTimeObject(time), attrs.formatTime)}
+    </Text>
+  );
 };
 
 Countdown.propTypes = {

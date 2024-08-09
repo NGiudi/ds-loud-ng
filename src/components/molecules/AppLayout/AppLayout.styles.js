@@ -9,7 +9,7 @@ export const ContentBox = styled("div")`
     flex-grow: 1;
     height: 100%;
     overflow: auto;
-    
+
     ${paddingProperties(
       props,
       props.theme.components.appLayout.content.padding,
@@ -25,7 +25,7 @@ export const ContentBox = styled("div")`
 
     &::-webkit-scrollbar-thumb {
       background-color: ${props.theme.colors.black._400};
-      border-radius: ${props.theme.components.appLayout.scroll.radious};
+      border-radius: ${props.theme.components.appLayout.scroll.radius};
     }
   `}}
 `;

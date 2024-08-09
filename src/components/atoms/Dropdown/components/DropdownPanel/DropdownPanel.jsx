@@ -5,18 +5,29 @@ import { Panel } from "../../../../../";
 
 import { PanelWrapper, TriangleWrapper } from "./DropdownPanel.styles";
 
+const DEFAULT_PROPS = {
+  children: null,
+  direction: "right",
+  name: null,
+  onSelect: () => {},
+  showPanel: false,
+};
+
 export const DropdownPanel = (props) => {
-  const { children, direction, name, onSelect, showPanel } = props;
+  const attrs = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
 
   return (
-    <PanelWrapper direction={direction} $showPanel={showPanel}>
+    <PanelWrapper direction={attrs.direction} $showPanel={attrs.showPanel}>
       <Panel margin="t-8" padding="y-4 x-0">
-        <TriangleWrapper direction={direction} />
-        {children.map((item, index) => {
+        <TriangleWrapper direction={attrs.direction} />
+        {attrs.children.map((item, index) => {
           return React.cloneElement(item, {
             key: `listItem-${index + 1}`,
-            name,
-            onSelect,
+            name: attrs.name,
+            onSelect: attrs.onSelect,
           });
         })}
       </Panel>
@@ -30,12 +41,4 @@ DropdownPanel.propTypes = {
   name: PropTypes.string,
   onSelect: PropTypes.func,
   showPanel: PropTypes.bool,
-};
-
-DropdownPanel.defaultProps = {
-  children: null,
-  direction: "right",
-  name: null,
-  onSelect: () => {},
-  showPanel: false,
 };

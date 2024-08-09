@@ -6,21 +6,20 @@ import {
   paddingProperties,
 } from "../../../utils/styles";
 
+import { TEXT_TYPES } from "../../../assets/styles/text";
+
 const textStyles = (props) => {
   return css`
     color: ${getColor(props.theme, props.$color)};
     font-family: "Source Sans 3", sans-serif;
     font-size: ${() => {
-      const { types } = props.theme.components.text;
-      return types[props.$type]?.size;
+      return TEXT_TYPES[props.$type]?.size;
     }};
     font-weight: ${() => {
-      const { types } = props.theme.components.text;
-      return types[props.$type]?.weight;
+      return TEXT_TYPES[props.$type]?.weight;
     }};
     line-height: ${() => {
-      const { types } = props.theme.components.text;
-      return types[props.$type]?.lineHeight;
+      return TEXT_TYPES[props.$type]?.lineHeight;
     }};
     text-align: ${props.$align};
     text-decoration: ${props.$decoration};
@@ -39,6 +38,7 @@ const TextWrapper = styled("p")`
 const LabelWrapper = styled("label")`
   ${(props) => css`
     display: inline-block;
+    user-select: none;
 
     ${textStyles(props)}
   `}
