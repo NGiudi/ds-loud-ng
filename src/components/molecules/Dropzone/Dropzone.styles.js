@@ -13,17 +13,17 @@ const ListWrapper = styled("div")`
     width: 100%;
 
     &::-webkit-scrollbar {
-      width: ${props.theme.components.appLayout.scroll.width};
+      width: 6px;
     }
 
     &::-webkit-scrollbar-track {
       background: ${props.theme.colors.black._200};
-      border-radius: ${props.theme.components.appLayout.scroll.radius};
+      border-radius: 4px;
     }
 
     &::-webkit-scrollbar-thumb {
       background-color: ${props.theme.colors.black._400};
-      border-radius: ${props.theme.components.appLayout.scroll.radius};
+      border-radius: 4px;
     }
   `}
 `;
