@@ -12,7 +12,7 @@ const DEFAULT_PROPS = {
   description: "",
   disabled: false,
   icon: null,
-  id: "",
+  id: null,
   innerRef: null,
   label: "",
   margin: "a-0",

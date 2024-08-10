@@ -51,7 +51,7 @@ export const Table = (props) => {
 };
 
 Table.propTypes = {
-  columns: PropTypes.array.isRequired,
+  columns: PropTypes.array,
   data: PropTypes.array.isRequired,
   desktopColumns: PropTypes.array,
   margin: PropTypes.string,

@@ -10,7 +10,6 @@ const DEFAULT_PROPS = {
   margin: "a-0",
   max: 3,
   name: "",
-  size: "md",
 };
 
 export const ImageGroup = (props) => {
@@ -25,14 +24,13 @@ export const ImageGroup = (props) => {
 
   return (
     <Flex margin={attrs.margin}>
-      <Styles.Wrapper $quantity={displayedImages.length} $size={attrs.size}>
+      <Styles.Wrapper $quantity={displayedImages.length}>
         {displayedImages.map((image, idx) => {
           return (
             <Styles.ImageItem
               alt={image.alt}
               key={`${attrs.name}-inage-${idx}-group`}
               $idx={idx}
-              $size={attrs.size}
               src={image.img}
             />
           );
@@ -53,5 +51,4 @@ ImageGroup.propTypes = {
   margin: PropTypes.string,
   max: PropTypes.number,
   name: PropTypes.string.isRequired,
-  size: PropTypes.string,
 };
