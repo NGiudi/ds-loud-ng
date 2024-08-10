@@ -4,13 +4,11 @@ import PropTypes from "prop-types";
 import { ThemeProvider } from "styled-components";
 import { Helmet } from "react-helmet";
 
-import { getTheme } from "./utils/theme";
+import { WHITE_THEME } from "../../../assets/styles/colors/whiteTheme";
+import { BREAKPOINTS, SHADOWS } from "../../../assets/styles/common";
 
-//TODO: eliminar la opcion de tener otro tema. Por ahora va a ser solo el que mío.
 const DEFAULT_PROPS = {
   children: null,
-  name: "loudLight",
-  theme: null,
 };
 
 export const ThemeDS = (props) => {
@@ -19,8 +17,15 @@ export const ThemeDS = (props) => {
     ...props,
   };
 
+  const THEME = {
+    breakpoints: BREAKPOINTS,
+    colors: WHITE_THEME,
+    name: "loudLight",
+    shadows: SHADOWS,
+  };
+
   return (
-    <ThemeProvider theme={attrs.theme || getTheme(attrs.name)}>
+    <ThemeProvider theme={THEME}>
       <Helmet>
         <link href="https://fonts.googleapis.com" rel="preconnect" />
 
@@ -39,6 +44,4 @@ export const ThemeDS = (props) => {
 
 ThemeDS.propTypes = {
   children: PropTypes.node,
-  name: PropTypes.oneOf(["loudLight"]),
-  theme: PropTypes.object,
 };

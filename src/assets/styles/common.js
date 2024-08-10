@@ -1,8 +1,8 @@
-export const breakpoints = {
+export const BREAKPOINTS = {
   mobile: 768,
 };
 
-export const shadows = {
+export const SHADOWS = {
   level1: "0px 1px 2px rgba(15, 15, 15, 0.25)",
   level2: "0px 2px 4px rgba(15, 15, 15, 0.25)",
   level3: "0px 4px 8px rgba(15, 15, 15, 0.25)",

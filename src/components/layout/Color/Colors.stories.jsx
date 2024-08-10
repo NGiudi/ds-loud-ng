@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Text, ThemeDS } from "../..";
+import { Text, ThemeDS } from "../../../";
 
 import { Styles } from "./Colors.styles";
 

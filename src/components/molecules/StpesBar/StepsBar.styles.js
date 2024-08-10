@@ -33,9 +33,9 @@ export const Circle = styled("div")`
     border-radius: 50%;
     color: ${props.theme.colors.black._100};
     display: flex;
-    height: ${props.theme.components.stepsBar.circle.diameter[props.size]};
+    height: 30px;
     justify-content: center;
-    width: ${props.theme.components.stepsBar.circle.diameter[props.size]};
+    width: 30px;
   `}
 `;
 

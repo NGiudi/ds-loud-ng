@@ -51,7 +51,7 @@ const alertColors = {
   },
 };
 
-export const whiteTheme = {
+export const WHITE_THEME = {
   alert: alertColors,
   black: blackColors,
   orange: orangeColors,

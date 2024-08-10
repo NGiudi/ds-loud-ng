@@ -6,9 +6,9 @@ const TabsBar = styled("div")`
   ${(props) => css`
     border-bottom-color: ${props.theme.colors.black._200};
     border-bottom-style: solid;
-    border-bottom-width: ${props.theme.components.tabs.bar.border.width};
+    border-bottom-width: 1px;
 
-    ${paddingProperties(props, props.theme.components.tabs.bar.padding)}
+    ${paddingProperties(props, "b-1")}
   `};
 `;
 
@@ -20,9 +20,9 @@ const TabButton = styled("div")`
       ? props.theme.colors.orange._600
       : "transparent"};
     border-bottom-style: solid;
-    border-bottom-width: ${props.theme.components.tabs.button.border.width};
+    border-bottom-width: 2px;
 
-    ${paddingProperties(props, props.theme.components.tabs.button.padding)}
+    ${paddingProperties(props, "x-20 y-8")}
 
     &:hover {
       border-bottom-color: ${props.theme.colors.orange._300};
