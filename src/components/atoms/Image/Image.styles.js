@@ -2,13 +2,15 @@ import styled, { css } from "styled-components";
 
 import { marginProperties } from "../../../utils/styles";
 
+import { IMAGE_HEIGHTS, IMAGE_WIDTHS } from "../../../assets/styles/image";
+
 const ImageStyles = styled("img")`
   ${(props) => css`
     border-radius: ${props.$type === "round" ? "50%" : "0px"};
     display: block;
-    height: ${props.theme.components.image.height[props.$type][props.$size]}px;
+    height: ${IMAGE_HEIGHTS[props.$type][props.$size]};
     object-fit: cover;
-    width: ${props.theme.components.image.width[props.$type][props.$size]}px;
+    width: ${IMAGE_WIDTHS[props.$type][props.$size]};
 
     ${marginProperties(props)}
   `};

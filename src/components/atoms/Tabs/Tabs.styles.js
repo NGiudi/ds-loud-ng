@@ -32,7 +32,7 @@ const TabButton = styled("div")`
 
 const TabContent = styled("div")`
   ${(props) => css`
-    ${paddingProperties(props, props.theme.components.tabs.content.padding)}
+    ${paddingProperties(props, "a-20")}
   `};
 `;
 

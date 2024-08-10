@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const ItemWrapper = styled("div")`
   ${(props) => css`
-    width: ${props.theme.components.dropdown.panelSize.width};
+    width: 200px;
 
     &:hover:not([disabled]) {
       background-color: ${props.theme.colors.black._200};

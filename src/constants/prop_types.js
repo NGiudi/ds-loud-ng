@@ -5,12 +5,6 @@ export const ICON_PROP_TYPES = {
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   margin: PropTypes.string,
   onClick: PropTypes.func,
-  size: PropTypes.oneOf([
-    "avatar",
-    "lg",
-    "md",
-    "sm",
-    "xl",
-  ]),
+  size: PropTypes.oneOf(["avatar", "lg", "md", "sm", "xl"]),
   spin: PropTypes.bool,
 };

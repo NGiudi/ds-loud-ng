@@ -34,12 +34,12 @@ const OutlinedButton = styled("button")`
     align-items: center;
     background-color: transparent;
     border: 1px solid ${props.theme.colors.orange._600};
-    border-radius: ${props.theme.components.button.outlined.borderRadius};
+    border-radius: 4px;
     color: ${props.theme.colors.orange._600};
     display: inline-flex;
-    height: ${props.theme.components.button.outlined.height};
+    height: 38px;
     justify-content: center;
-    padding: ${props.theme.components.button.outlined.padding};
+    padding: 8px 12px;
     position: relative;
     width: ${props.$fullWidth ? "100%" : "auto"};
 
@@ -68,13 +68,13 @@ const SolidButton = styled("button")`
     align-items: center;
     background-color: ${props.theme.colors.orange._600};
     border: none;
-    border-radius: ${props.theme.components.button.outlined.borderRadius};
+    border-radius: 4px;
     box-shadow: ${props.theme.shadows.level1};
     color: white;
     display: inline-flex;
-    height: ${props.theme.components.button.solid.height};
+    height: 38px;
     justify-content: center;
-    padding: ${props.theme.components.button.solid.padding};
+    padding: 8px 12px;
     position: relative;
     width: ${props.$fullWidth ? "100%" : "auto"};
 
@@ -102,11 +102,11 @@ const TextButton = styled("button")`
     align-items: center;
     background-color: transparent;
     border: none;
-    border-radius: ${props.theme.components.button.outlined.borderRadius};
+    border-radius: 4px;
     display: inline-flex;
-    height: ${props.theme.components.button.solid.height};
+    height: 38px;
     justify-content: center;
-    padding: ${props.theme.components.button.solid.padding};
+    padding: 8px 12px;
     position: relative;
     width: ${props.$fullWidth ? "100%" : "auto"};
 

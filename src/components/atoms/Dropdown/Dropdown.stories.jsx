@@ -72,6 +72,7 @@ export const Positions = () => {
                 <Image
                   img={argentina}
                   margin="a-4 r-8"
+                  size="avatar"
                   type="round"
                 />
 
@@ -81,11 +82,7 @@ export const Positions = () => {
 
             <DropdownItem value="usa">
               <Flex vAlign="center">
-                <Image
-                  img={usa}
-                  margin="a-4 r-8"
-                  type="round"
-                />
+                <Image img={usa} margin="a-4 r-8" size="avatar" type="round" />
 
                 <Text>Estados Unidos</Text>
               </Flex>
@@ -104,6 +101,7 @@ export const Positions = () => {
                 <Image
                   img={argentina}
                   margin="a-4 r-8"
+                  size="avatar"
                   type="round"
                 />
 
@@ -113,11 +111,7 @@ export const Positions = () => {
 
             <DropdownItem value="usa">
               <Flex vAlign="center">
-                <Image
-                  img={usa}
-                  margin="a-4 r-8"
-                  type="round"
-                />
+                <Image img={usa} margin="a-4 r-8" size="avatar" type="round" />
 
                 <Text>Estados Unidos</Text>
               </Flex>
@@ -169,6 +163,7 @@ export const UseExample = () => {
               <Image
                 img={argentina}
                 margin="a-4 r-8"
+                size="avatar"
                 type="round"
               />
 
@@ -178,18 +173,14 @@ export const UseExample = () => {
 
           <DropdownItem value="usa">
             <Flex vAlign="center">
-              <Image img={usa} margin="a-4 r-8" type="round" />
+              <Image img={usa} margin="a-4 r-8" size="avatar" type="round" />
               <Text>Estados Unidos</Text>
             </Flex>
           </DropdownItem>
 
           <DropdownItem disabled value="br">
             <Flex vAlign="center">
-              <Image
-                img={brasil}
-                margin="a-4 r-8"
-                type="round"
-              />
+              <Image img={brasil} margin="a-4 r-8" size="avatar" type="round" />
 
               <Text>Brasil</Text>
 

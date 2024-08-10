@@ -19,7 +19,7 @@ export const PanelWrapper = styled("div")`
     display: ${props.$showPanel ? "block" : "none"};
     position: absolute;
     top: 100%;
-    width: ${props.theme.components.dropdown.panelSize.width};
+    width: 200px;
 
     ${props.direction === "right" && "left: 0;"}
     ${props.direction === "left" && "right: 0;"}

@@ -13,11 +13,11 @@ const Row = styled("div")`
     align-items: center;
     border-bottom-color: ${props.theme.colors.black._400};
     border-bottom-style: solid;
-    border-bottom-width: ${props.theme.components.table.row.borderBottom.width};
+    border-bottom-width: 1px;
     box-sizing: border-box;
     cursor: ${!props.$isHeader ? "pointer" : "default"};
     display: flex;
-    padding: ${props.theme.components.table.row.padding};
+    padding: 8px 16px;
     width: 100%;
 
     &:hover {

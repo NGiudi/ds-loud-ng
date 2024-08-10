@@ -13,9 +13,9 @@ const Row = styled("div")`
   ${(props) => `
     border-bottom-color: ${props.theme.colors.black._400};
     border-bottom-style: solid;
-    border-bottom-width: ${props.theme.components.table.row.borderBottom.width};
+    border-bottom-width: 1px;
     box-sizing: content-box;
-    padding: ${props.theme.components.table.row.padding};
+    padding: 8px 16px;
 
     &:hover {
       background-color: ${props.theme.colors.black._200};
