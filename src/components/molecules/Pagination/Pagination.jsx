@@ -81,6 +81,6 @@ Pagination.propTypes = {
   margin: PropTypes.string,
   nButtons: PropTypes.number,
   onChange: PropTypes.func,
-  page: PropTypes.number.isRequired,
+  page: PropTypes.number,
   pages: PropTypes.number.isRequired,
 };

@@ -22,7 +22,7 @@ const meta = {
     },
     name: {
       control: { type: "text" },
-      description: "Establece la cantidad máxima de imágenes que se muestran.",
+      description: "Nombre de la colección de imágenes.",
     },
     size: {
       control: { type: "select" },
@@ -71,6 +71,7 @@ ImageGroupModel.args = {
       img: profileImg,
     },
   ],
+  name: "users",
   size: "sm",
 };
 
