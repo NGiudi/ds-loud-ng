@@ -13,9 +13,9 @@ const IconPlaceholder = styled("div")`
     background-color: ${props.theme.colors.orange._600};
     border-radius: ${props.$type === "round" ? "50%" : "0"};
     display: inline-flex;
-    height: ${IMAGE_HEIGHTS[props.$type][props.$size]}px;
+    height: ${IMAGE_HEIGHTS[props.$type][props.$size]};
     justify-content: center;
-    width: ${IMAGE_WIDTHS[props.$type][props.$size]}px;
+    width: ${IMAGE_WIDTHS[props.$type][props.$size]};
 
     ${marginProperties(props)}
   `};
