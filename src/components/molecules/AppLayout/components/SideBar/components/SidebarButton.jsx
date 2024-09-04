@@ -41,7 +41,6 @@ SidebarButton.propTypes = {
     icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
     label: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
-    to: PropTypes.string.isRequired,
   }),
   isExpanded: PropTypes.bool,
   isSelected: PropTypes.bool,
