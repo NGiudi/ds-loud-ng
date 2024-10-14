@@ -5,10 +5,9 @@ import { marginProperties } from "../../../utils/styles";
 const ListWrapper = styled("div")`
   ${(props) => css`
     box-sizing: border-box;
-    height: 304px;
     margin-top: 16px;
+    max-height: 304px;
     overflow: auto;
-    padding-left: 8px;
     padding-right: 8px;
     width: 100%;
 

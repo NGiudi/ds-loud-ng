@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Dropzone, ThemeDS } from "../../../";
+import { Button, Dropzone, Flex, ThemeDS } from "../../../";
+import { Formik, Form } from "formik";
 
 const meta = {
   argTypes: {}, //TODO completar este campo.
@@ -17,7 +18,28 @@ const meta = {
 export const Example = () => {
   return (
     <ThemeDS>
-      <Dropzone accept={["image"]} margin="a-20" maxSize={20480} maxCount={3} />
+      <Formik
+        initialValues={{ files: [] }}
+        onSubmit={(values) => {
+          console.log(values);
+        }}
+      >
+        <Form>
+          <Dropzone
+            accept={["image"]}
+            margin="a-20"
+            maxSize={20971520}
+            maxCount={3}
+            name="files"
+          />
+
+          <Flex margin="x-20" hAlign="end">
+            <Button margin="b-32" type="submit">
+              Guardar
+            </Button>
+          </Flex>
+        </Form>
+      </Formik>
     </ThemeDS>
   );
 };

@@ -14,21 +14,17 @@ const DEFAULT_PROPS = {
   maxCount: 0,
   maxSize: 0,
   name: "",
-  validTypes: [],
 };
 
-//TODO: ver como hago para agregar este tipo de "input" a formik.
 export const Dropzone = (props) => {
-  const attrs = {
-    ...DEFAULT_PROPS,
-    ...props,
-  };
+  const attrs = Object.assign({}, DEFAULT_PROPS, props);
 
   return (
     <DropzoneProvider
       accept={attrs.accept}
       maxCount={attrs.maxCount}
       maxSize={attrs.maxSize}
+      name={attrs.name}
     >
       <Styles.Wraper $margin={attrs.margin}>
         <UploadFileBox accept={attrs.accept} maxSize={attrs.maxSize} />

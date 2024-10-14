@@ -1,11 +1,13 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 import PropTypes from "prop-types";
+
+import { useFormikContext } from "formik";
 
 import { isValidSizeFile, isValidTypeFile } from "../../../utils/files/files";
 
 const DropzoneContext = createContext({});
 
-export const useDropzoneContext = () => useContext(DropzoneContext);
+export const useDropzoneContext = () => React.useContext(DropzoneContext);
 
 const DELETE_FILE = "delete_file";
 const ADD_FILE = "add_file";
@@ -16,7 +18,9 @@ const INITIAL_STATE = {
 };
 
 export const DropzoneProvider = (props) => {
-  const { accept, children, maxCount, maxSize } = props;
+  const { accept, children, maxCount, maxSize, name } = props;
+
+  const { setFieldValue } = useFormikContext();
 
   const fileReducer = (state, action) => {
     let res = { ...state };
@@ -86,6 +90,11 @@ export const DropzoneProvider = (props) => {
 
   const [state, dispatch] = useReducer(fileReducer, INITIAL_STATE);
 
+  React.useEffect(() => {
+    const successfulFiles = state.fileItems.slice(0, state.successCount);
+    setFieldValue(name, successfulFiles);
+  }, [state.fileItems, state.successCount]);
+
   const updateSelectedFiles = (files) => {
     files = Array.from(files);
 
@@ -131,4 +140,5 @@ DropzoneProvider.propTypes = {
   children: PropTypes.node,
   maxCount: PropTypes.number,
   maxSize: PropTypes.number,
+  name: PropTypes.string,
 };
