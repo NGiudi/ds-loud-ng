@@ -23,7 +23,9 @@ export const SelectValue = (props) => {
     setFieldValue(attrs.name, ctx.selectedValue);
   }, [ctx.selectedValue]); // eslint-disable-line
 
-  return <Field name={attrs.name} type="hidden" />;
+  return (
+    <Field data-cy={`select_${attrs.name}`} name={attrs.name} type="hidden" />
+  );
 };
 
 SelectValue.propTypes = {
