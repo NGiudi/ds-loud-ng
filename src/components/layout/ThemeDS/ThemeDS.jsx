@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { ThemeProvider } from "styled-components";
-import { Helmet } from "react-helmet";
 
 import { WHITE_THEME } from "../../../assets/styles/colors/whiteTheme";
 import { BREAKPOINTS, SHADOWS } from "../../../assets/styles/common";
@@ -26,16 +25,14 @@ export const ThemeDS = (props) => {
 
   return (
     <ThemeProvider theme={THEME}>
-      <Helmet>
-        <link href="https://fonts.googleapis.com" rel="preconnect" />
+      <link href="https://fonts.googleapis.com" rel="preconnect" />
 
-        <link crossOrigin href="https://fonts.gstatic.com" rel="preconnect" />
+      <link crossOrigin href="https://fonts.gstatic.com" rel="preconnect" />
 
-        <link
-          href="https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap"
-          rel="stylesheet"
-        />
-      </Helmet>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap"
+        rel="stylesheet"
+      />
 
       {attrs.children}
     </ThemeProvider>
