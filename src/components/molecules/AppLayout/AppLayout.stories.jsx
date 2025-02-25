@@ -4,7 +4,7 @@ import { useRouter } from "../../../hooks/useRouter";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { AppLayout, Image, Text, ThemeDS } from "../../..";
+import { AppLayout, Image, Flex, Text, ThemeDS } from "../../..";
 
 const meta = {
   title: "Molecules/AppLayout",
@@ -17,14 +17,14 @@ const meta = {
     },
   },
   argTypes: {
-    img: {
-      control: { type: "text" },
-      description:
-        "Recibe un objeto con las propiedas que se pasan al componente Image.",
-    },
     children: {
       control: { type: "none" },
       description: "Contenido del componente",
+    },
+    imageProps: {
+      control: { type: "text" },
+      description:
+        "Recibe un objeto con las propiedas que se pasan al componente Image.",
     },
     sidebar: {
       control: { type: "none" },
@@ -65,15 +65,24 @@ const PageContent = () => {
   };
 
   const topbar = {
-    avatarPanel: (
-      <>
-        <Image margin="t-10 x-50" size="sm" type="round" />
+    avatarProps: {
+      children: (
+        <Flex margin="a-16">
+          <Image
+            size="sm"
+            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+            type="round"
+          />
 
-        <Text align="center" margin="y-20" type="subtitle">
-          Nicolás Giudice
-        </Text>
-      </>
-    ),
+          <Text margin="l-16" type="subtitle">
+            Nicolás Giudice
+          </Text>
+        </Flex>
+      ),
+      imageProps: {
+        src: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+      },
+    },
     startContent: "Logotipo",
   };
 

@@ -9,7 +9,7 @@ import { Styles } from "./ProfileAvatar.styles";
 
 const DEFAULT_PROPS = {
   children: null,
-  img: null,
+  src: null,
 };
 
 export const ProfileAvatar = (props) => {
@@ -27,10 +27,10 @@ export const ProfileAvatar = (props) => {
   const imageAttributes = {
     //? default values.
     alt: "default-alt",
-    img: null,
+    src: null,
     placeholder: "L",
     //? component values.
-    ...attrs.img,
+    ...attrs.imageProps,
   };
 
   const handleAvatarClick = () => {
@@ -55,9 +55,9 @@ export const ProfileAvatar = (props) => {
 //TODO: usar las propTypes de la imagen.
 ProfileAvatar.propTypes = {
   children: PropTypes.node,
-  img: PropTypes.shape({
+  imageProps: PropTypes.shape({
     alt: PropTypes.string,
-    img: PropTypes.string,
+    src: PropTypes.string,
     placeholder: PropTypes.string,
   }),
 };

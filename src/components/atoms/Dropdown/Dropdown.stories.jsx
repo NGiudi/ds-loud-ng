@@ -63,14 +63,14 @@ export const Positions = () => {
       <Flex hAlign="space-around">
         <Dropdown>
           <DropdownToogle>
-            <Image img={argentina} size="avatar" type="round" />
+            <Image src={argentina} size="avatar" type="round" />
           </DropdownToogle>
 
           <DropdownPanel>
             <DropdownItem value="ar">
               <Flex vAlign="center">
                 <Image
-                  img={argentina}
+                  src={argentina}
                   margin="a-4 r-8"
                   size="avatar"
                   type="round"
@@ -82,7 +82,7 @@ export const Positions = () => {
 
             <DropdownItem value="usa">
               <Flex vAlign="center">
-                <Image img={usa} margin="a-4 r-8" size="avatar" type="round" />
+                <Image src={usa} margin="a-4 r-8" size="avatar" type="round" />
 
                 <Text>Estados Unidos</Text>
               </Flex>
@@ -92,14 +92,14 @@ export const Positions = () => {
 
         <Dropdown>
           <DropdownToogle>
-            <Image img={argentina} size="avatar" type="round" />
+            <Image src={argentina} size="avatar" type="round" />
           </DropdownToogle>
 
           <DropdownPanel direction="left">
             <DropdownItem value="ar">
               <Flex vAlign="center">
                 <Image
-                  img={argentina}
+                  src={argentina}
                   margin="a-4 r-8"
                   size="avatar"
                   type="round"
@@ -111,7 +111,7 @@ export const Positions = () => {
 
             <DropdownItem value="usa">
               <Flex vAlign="center">
-                <Image img={usa} margin="a-4 r-8" size="avatar" type="round" />
+                <Image src={usa} margin="a-4 r-8" size="avatar" type="round" />
 
                 <Text>Estados Unidos</Text>
               </Flex>
@@ -154,14 +154,14 @@ export const UseExample = () => {
     <ThemeDS>
       <Dropdown name="dropdown" onSelect={handleChange}>
         <DropdownToogle>
-          <Image img={getImage(language)} size="avatar" type="round" />
+          <Image src={getImage(language)} size="avatar" type="round" />
         </DropdownToogle>
 
         <DropdownPanel>
           <DropdownItem value="ar">
             <Flex vAlign="center">
               <Image
-                img={argentina}
+                src={argentina}
                 margin="a-4 r-8"
                 size="avatar"
                 type="round"
@@ -173,14 +173,14 @@ export const UseExample = () => {
 
           <DropdownItem value="usa">
             <Flex vAlign="center">
-              <Image img={usa} margin="a-4 r-8" size="avatar" type="round" />
+              <Image src={usa} margin="a-4 r-8" size="avatar" type="round" />
               <Text>Estados Unidos</Text>
             </Flex>
           </DropdownItem>
 
           <DropdownItem disabled value="br">
             <Flex vAlign="center">
-              <Image img={brasil} margin="a-4 r-8" size="avatar" type="round" />
+              <Image src={brasil} margin="a-4 r-8" size="avatar" type="round" />
 
               <Text>Brasil</Text>
 

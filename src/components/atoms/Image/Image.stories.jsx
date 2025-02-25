@@ -13,7 +13,7 @@ const meta = {
       control: { type: "text" },
       description: "Se pasa el texto alternativo de la imagen.",
     },
-    img: {
+    src: {
       control: { type: "text" },
       description: "Se pasa la url de la imagen.",
     },
@@ -65,7 +65,7 @@ export const Model = (args) => {
 };
 
 Model.args = {
-  img: argentina,
+  src: argentina,
   type: "round",
   size: "sm",
 };
@@ -281,15 +281,15 @@ export const WithImage = () => {
         <tbody>
           <tr>
             <th style={cellSize}>
-              <Image alt="foto de perfil" img={fotoPerfil} size="lg" />
+              <Image alt="foto de perfil" src={fotoPerfil} size="lg" />
             </th>
 
             <th style={cellSize}>
-              <Image alt="foto de perfil" img={fotoPerfil} size="md" />
+              <Image alt="foto de perfil" src={fotoPerfil} size="md" />
             </th>
 
             <th style={cellSize}>
-              <Image alt="foto de perfil" img={fotoPerfil} size="sm" />
+              <Image alt="foto de perfil" src={fotoPerfil} size="sm" />
             </th>
           </tr>
         </tbody>
@@ -325,7 +325,7 @@ export const WithImage = () => {
             <th style={cellSize}>
               <Image
                 alt="foto de perfil"
-                img={fotoPerfil}
+                src={fotoPerfil}
                 size="lg"
                 type="round"
               />
@@ -334,7 +334,7 @@ export const WithImage = () => {
             <th style={cellSize}>
               <Image
                 alt="foto de perfil"
-                img={fotoPerfil}
+                src={fotoPerfil}
                 size="md"
                 type="round"
               />
@@ -343,7 +343,7 @@ export const WithImage = () => {
             <th style={cellSize}>
               <Image
                 alt="foto de perfil"
-                img={fotoPerfil}
+                src={fotoPerfil}
                 size="sm"
                 type="round"
               />
@@ -352,7 +352,7 @@ export const WithImage = () => {
             <th style={cellSize}>
               <Image
                 alt="foto de perfil"
-                img={fotoPerfil}
+                src={fotoPerfil}
                 size="avatar"
                 type="round"
               />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { ImagePlaceholder } from "./components";
@@ -7,7 +7,7 @@ import { Styles } from "./Image.styles";
 
 const DEFAULT_PROPS = {
   alt: "",
-  img: "",
+  src: "",
   margin: "a-0",
   placeholder: "",
   size: "md",
@@ -20,7 +20,27 @@ export const Image = (props) => {
     ...props,
   };
 
-  if (!attrs.img) {
+  const [imgSrc, setImgSrc] = React.useState(null);
+
+  useEffect(() => {
+    const checkImage = async () => {
+      try {
+        const response = await fetch(attrs.src);
+
+        if (response.ok) {
+          setImgSrc(attrs.src);
+        } else {
+          setImgSrc(null);
+        }
+      } catch {
+        setImgSrc(null);
+      }
+    };
+
+    checkImage();
+  }, [attrs.src]);
+
+  if (!imgSrc) {
     return (
       <ImagePlaceholder
         margin={attrs.margin}
@@ -36,7 +56,7 @@ export const Image = (props) => {
       alt={attrs.alt}
       $margin={attrs.margin}
       $size={attrs.size}
-      src={attrs.img}
+      src={imgSrc}
       $type={attrs.type}
     />
   );
@@ -44,7 +64,7 @@ export const Image = (props) => {
 
 Image.propTypes = {
   alt: PropTypes.string,
-  img: PropTypes.string,
+  src: PropTypes.string,
   margin: PropTypes.string,
   placeholder: PropTypes.string,
   size: PropTypes.oneOf(["avatar", "lg", "md", "sm"]),

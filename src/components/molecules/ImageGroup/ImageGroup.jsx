@@ -31,7 +31,7 @@ export const ImageGroup = (props) => {
               alt={image.alt}
               key={`${attrs.name}-inage-${idx}-group`}
               $idx={idx}
-              src={image.img}
+              src={image.src}
             />
           );
         })}

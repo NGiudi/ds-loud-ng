@@ -52,23 +52,23 @@ ImageGroupModel.args = {
   images: [
     {
       alt: "usuario_1",
-      img: profileImg,
+      src: profileImg,
     },
     {
       alt: "usuario_2",
-      img: profileImg,
+      src: profileImg,
     },
     {
       alt: "usuario_3",
-      img: profileImg,
+      src: profileImg,
     },
     {
       alt: "usuario_3",
-      img: profileImg,
+      src: profileImg,
     },
     {
       alt: "usuario_3",
-      img: profileImg,
+      src: profileImg,
     },
   ],
   name: "users",

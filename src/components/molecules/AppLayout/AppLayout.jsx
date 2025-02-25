@@ -30,9 +30,7 @@ export const AppLayout = (props) => {
             <div>
               {attrs.topbar.endContent}
 
-              <ProfileAvatar pos="right">
-                {attrs.topbar.avatarPanel}
-              </ProfileAvatar>
+              <ProfileAvatar {...attrs.topbar.avatarProps} pos="right" />
             </div>
           </Flex>
         )}
@@ -63,6 +61,7 @@ AppLayout.propTypes = {
     ),
   }),
   topbar: PropTypes.shape({
+    avatarProps: PropTypes.object,
     endContent: PropTypes.node,
     startContent: PropTypes.node,
   }),
