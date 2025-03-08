@@ -12,6 +12,7 @@ const PanelWrapper = styled("div")`
     flex-direction: column;
     justify-content: ${props.$align};
     position: relative;
+    z-index: 10;
 
     ${marginProperties(props)}
     ${paddingProperties(props, "a-20")}

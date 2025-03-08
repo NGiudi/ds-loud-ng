@@ -28,6 +28,7 @@ const Overlay = styled("div")`
   position: absolute;
   top: 0;
   width: 100%;
+  z-index: 100;
 `;
 
 const PanelWrapper = styled("div")`

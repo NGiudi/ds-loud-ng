@@ -43,7 +43,7 @@ export const TopBar = styled("div")`
     box-shadow: ${props.theme.shadows.level3};
     height: ${APP_LAYOUT_TOPBAR_HEIGHT}px;
     position: relative;
-    z-index: 100;
+    z-index: 80;
     width: 100vw;
 
     ${paddingProperties(props)}
