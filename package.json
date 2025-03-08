@@ -1,6 +1,6 @@
 {
   "name": "ds-loud-ng",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "description": "Design System implemented in React",
   "homepage": "https://ngiudi.github.io/ds-loud-ng",
   "main": "./dist/index.js",
