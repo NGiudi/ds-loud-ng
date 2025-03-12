@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { ThemeProvider } from "styled-components";
+import { Toaster } from "react-hot-toast";
 
 import { WHITE_THEME } from "../../../assets/styles/colors/whiteTheme";
 import { BREAKPOINTS, SHADOWS } from "../../../assets/styles/common";
@@ -35,6 +36,8 @@ export const ThemeDS = (props) => {
       />
 
       {attrs.children}
+
+      <Toaster position="bottom-right" />
     </ThemeProvider>
   );
 };
