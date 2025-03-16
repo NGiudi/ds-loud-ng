@@ -15,6 +15,7 @@ const DEFAULT_PROPS = {
   name: "",
   margin: "",
   maxHeight: "auto",
+  onSearchInputChange: null,
   options: [],
 };
 
@@ -40,7 +41,11 @@ export const Select = (props) => {
           </Text>
         )}
 
-        <SelectContent disabled={attrs.disabled} maxHeight={attrs.maxHeight} />
+        <SelectContent
+          disabled={attrs.disabled}
+          maxHeight={attrs.maxHeight}
+          onSearchInputChange={attrs.onSearchInputChange}
+        />
       </Styles.Wrapper>
     </SelectProvider>
   );
@@ -52,5 +57,6 @@ Select.propTypes = {
   name: PropTypes.string,
   margin: PropTypes.string,
   maxHeight: PropTypes.string, //? content panel height
+  onSearchInputChange: PropTypes.func,
   options: PropTypes.array,
 };

@@ -12,6 +12,7 @@ import { disclosureIcon } from "../../../../../utils/icons/icons";
 const DEFAULT_PROPS = {
   disabled: false,
   maxHeight: "auto",
+  onSearchInputChange: null,
 };
 
 export const SelectContent = (props) => {
@@ -54,6 +55,17 @@ export const SelectContent = (props) => {
       {/* panel */}
       {ctx.isOpen ? (
         <Styles.SelectPanel $margin="t-8" $maxHeight={attrs.maxHeight}>
+          {!!attrs.onSearchInputChange && (
+            <Styles.SearchInputWrapper>
+              <Icon color="black_400" icon="search" size="avatar" />
+
+              <Styles.SearchInput
+                onChange={(e) => attrs.onSearchInputChange(e.target.value)}
+                placeholder="Buscar"
+              />
+            </Styles.SearchInputWrapper>
+          )}
+
           {ctx.options.map((option) => (
             <SelectOption key={`option-${option.value}`} value={option.value}>
               {option.children}
@@ -68,4 +80,5 @@ export const SelectContent = (props) => {
 SelectContent.propTypes = {
   disabled: PropTypes.bool,
   maxHeight: PropTypes.string,
+  onSearchInputChange: PropTypes.func,
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
 
@@ -143,6 +143,46 @@ export const ComplexSelect = () => {
             label="Seleccione un elemento"
             margin="t-20"
             name="marca"
+            options={options}
+          />
+
+          <Flex hAlign="end">
+            <Button margin="t-8" type="submit">
+              Enviar Formulario
+            </Button>
+          </Flex>
+        </Form>
+      </Formik>
+    </ThemeDS>
+  );
+};
+
+export const SearcheableExample = () => {
+  const [options, setOptions] = useState(carBrands);
+
+  const handleSearchInputChange = (value) => {
+    const filteredOptions = carBrands.filter((carBrand) => {
+      return carBrand.value.toLowerCase().includes(value.toLowerCase());
+    });
+
+    setOptions(filteredOptions);
+  };
+
+  return (
+    <ThemeDS>
+      <Formik
+        initialValues={{ marca: "volvo" }}
+        onSubmit={(values) => {
+          alert(JSON.stringify(values, null, 2));
+        }}
+      >
+        <Form>
+          <Select
+            label="Seleccione un elemento"
+            margin="t-20"
+            maxHeight="200px"
+            name="marca"
+            onSearchInputChange={handleSearchInputChange}
             options={options}
           />
 

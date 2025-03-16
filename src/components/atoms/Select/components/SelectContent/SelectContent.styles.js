@@ -1,7 +1,39 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+
+import { TEXT_TYPES } from "../../../../../assets/styles/text";
+
+const SearchInput = styled("input")`
+  ${(props) => `  
+    background-color: ${props.theme.colors.black._100};  
+    border: none;
+    flex-grow: 1;
+    font-size: ${TEXT_TYPES.captionRegular.size};
+    font-weight: ${TEXT_TYPES.captionRegular.weight};
+    line-height: ${TEXT_TYPES.captionRegular.lineHeight};
+    outline: none;
+    padding-left: 4px;
+  `};
+`;
+
+const SearchInputWrapper = styled("div")`
+  ${(props) => `
+    align-items: center;
+    background-color: ${props.theme.colors.black._100};
+    border-bottom-color: ${props.theme.colors.black._300};
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: 4px;
+    padding: 6px 8px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+  `};
+`;
 
 const SelectPanel = styled("div")`
-  ${(props) => css`
+  ${(props) => `
     background-color: ${props.theme.colors.black._100};
     border-color: ${props.theme.colors.black._400};
     border-radius: 4px;
@@ -11,7 +43,6 @@ const SelectPanel = styled("div")`
     margin-top: 4px;
     max-height: ${props.$maxHeight};
     overflow: auto;
-    padding: 4px 0;
     position: absolute;
     top: 30px;
     z-index: 50;
@@ -36,7 +67,7 @@ const SelectedOption = styled("div")`
 `;
 
 const SelectedOptionWrapper = styled("div")`
-  ${(props) => css`
+  ${(props) => `
     align-items: center;
     background-color: ${props.theme.colors.black._100};
     border-color: ${props.theme.colors.black._400};
@@ -57,6 +88,8 @@ const SelectWrapper = styled("div")`
 `;
 
 export const Styles = {
+  SearchInput,
+  SearchInputWrapper,
   SelectPanel,
   SelectedOption,
   SelectedOptionWrapper,
