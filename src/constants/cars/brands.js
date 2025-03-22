@@ -6,6 +6,7 @@ export const carBrands = [
   {
     children: <Text>Acura</Text>,
     display: "Acura",
+    hide: true,
     value: "acura",
   },
   {

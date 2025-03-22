@@ -11,10 +11,11 @@ import { Styles } from "./Select.styles.js";
 
 const DEFAULT_PROPS = {
   disabled: false,
+  initialOption: null,
   label: "",
-  name: "",
   margin: "",
   maxHeight: "auto",
+  name: "",
   onSearchInputChange: null,
   options: [],
 };
@@ -26,7 +27,11 @@ export const Select = (props) => {
   };
 
   return (
-    <SelectProvider name={attrs.name} options={attrs.options}>
+    <SelectProvider
+      initialOption={attrs.initialOption}
+      name={attrs.name}
+      options={attrs.options}
+    >
       <SelectValue name={attrs.name} />
 
       <Styles.Wrapper $margin={attrs.margin}>
@@ -53,10 +58,11 @@ export const Select = (props) => {
 
 Select.propTypes = {
   disabled: PropTypes.bool,
+  initialOption: PropTypes.object,
   label: PropTypes.string,
-  name: PropTypes.string,
   margin: PropTypes.string,
   maxHeight: PropTypes.string, //? content panel height
+  name: PropTypes.string,
   onSearchInputChange: PropTypes.func,
   options: PropTypes.array,
 };

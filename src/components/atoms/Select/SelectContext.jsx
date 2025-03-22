@@ -7,6 +7,7 @@ export const SelectContext = createContext({});
 
 const DEFAULT_PROPS = {
   children: null,
+  initialOption: null,
   name: "",
   options: [],
 };
@@ -20,7 +21,33 @@ export const SelectProvider = (props) => {
   const { values } = useFormikContext();
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(values[attrs.name]);
+  const [options, setOptions] = useState([]);
+
+  const [selectedValue, setSelectedValue] = useState(() => {
+    let option = attrs.options.find((option) => {
+      return option.value === values[attrs.name];
+    });
+
+    return option ?? attrs.initialOption ?? { value: values[attrs.name] };
+  });
+
+  React.useEffect(() => {
+    const options = [...attrs.options];
+
+    const defaultOption = {
+      hide: true,
+      value: values[attrs.name],
+    };
+
+    if (attrs.initialOption) {
+      attrs.initialOption.hide = true;
+      options.unshift(attrs.initialOption);
+    } else {
+      options.unshift(defaultOption);
+    }
+
+    setOptions(options);
+  }, [attrs.options]);
 
   const closeSelect = () => setIsOpen(false);
   const openSelect = () => setIsOpen(true);
@@ -41,7 +68,7 @@ export const SelectProvider = (props) => {
     <SelectContext.Provider
       value={{
         isOpen,
-        options: attrs.options,
+        options,
         selectedValue,
         closeSelect,
         handleSelectedValue,
@@ -55,6 +82,7 @@ export const SelectProvider = (props) => {
 
 SelectProvider.propTypes = {
   children: PropTypes.node,
+  initialOption: PropTypes.object,
   name: PropTypes.string,
   options: PropTypes.array,
 };

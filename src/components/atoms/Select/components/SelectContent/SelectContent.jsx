@@ -29,13 +29,6 @@ export const SelectContent = (props) => {
     }
   };
 
-  const getValue = () => {
-    const option = ctx.options.find(
-      (option) => option.value === ctx.selectedValue,
-    );
-    return option ? option.display : null;
-  };
-
   return (
     <Styles.SelectWrapper>
       <Styles.SelectedOptionWrapper
@@ -44,7 +37,9 @@ export const SelectContent = (props) => {
       >
         <Styles.SelectedOption>
           <Text margin="l-8">
-            {getValue() || ctx.selectedValue || "- Seleccione una opción -"}
+            {ctx.selectedValue.display ||
+              ctx.selectedValue.value ||
+              "- Seleccione una opción -"}
           </Text>
         </Styles.SelectedOption>
 
@@ -66,11 +61,13 @@ export const SelectContent = (props) => {
             </Styles.SearchInputWrapper>
           )}
 
-          {ctx.options.map((option) => (
-            <SelectOption key={`option-${option.value}`} value={option.value}>
-              {option.children}
-            </SelectOption>
-          ))}
+          {ctx.options
+            .filter((option) => !option.hide)
+            .map((option) => (
+              <SelectOption key={`option-${option.value}`} option={option}>
+                {option.children}
+              </SelectOption>
+            ))}
         </Styles.SelectPanel>
       ) : null}
     </Styles.SelectWrapper>

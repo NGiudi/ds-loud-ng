@@ -7,7 +7,7 @@ import { Styles } from "./SelectOption.styles";
 
 const DEFAULT_PROPS = {
   children: null,
-  value: "",
+  option: {},
 };
 
 export const SelectOption = (props) => {
@@ -19,7 +19,7 @@ export const SelectOption = (props) => {
   const ctx = useContext(SelectContext);
 
   const handleClick = () => {
-    ctx.handleSelectedValue(attrs.value);
+    ctx.handleSelectedValue(attrs.option);
     ctx.closeSelect();
   };
 
@@ -32,5 +32,5 @@ export const SelectOption = (props) => {
 
 SelectOption.propTypes = {
   children: PropTypes.node,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  option: PropTypes.object,
 };

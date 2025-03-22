@@ -20,7 +20,7 @@ export const SelectValue = (props) => {
   const { setFieldValue } = useFormikContext();
 
   useEffect(() => {
-    setFieldValue(attrs.name, ctx.selectedValue);
+    setFieldValue(attrs.name, ctx.selectedValue.value);
   }, [ctx.selectedValue]); // eslint-disable-line
 
   return (

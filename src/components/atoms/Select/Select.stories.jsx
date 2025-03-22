@@ -171,7 +171,7 @@ export const SearcheableExample = () => {
   return (
     <ThemeDS>
       <Formik
-        initialValues={{ marca: "volvo" }}
+        initialValues={{ marca: "volvo", marca_2: "mclaren" }}
         onSubmit={(values) => {
           alert(JSON.stringify(values, null, 2));
         }}
@@ -184,6 +184,19 @@ export const SearcheableExample = () => {
             name="marca"
             onSearchInputChange={handleSearchInputChange}
             options={options}
+          />
+
+          <Select
+            initialOption={{
+              children: <Text>Mclaren</Text>,
+              display: "Mclaren",
+              value: "mclaren",
+            }}
+            label="Seleccione un elemento"
+            margin="t-20"
+            maxHeight="200px"
+            name="marca_2"
+            options={carBrands}
           />
 
           <Flex hAlign="end">
