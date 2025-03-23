@@ -115,53 +115,6 @@ export const Types = () => {
   );
 };
 
-export const Sizes = () => {
-  return (
-    <ThemeDS>
-      <Text margin="y-16" size="xl">
-        Lorem Ipsum is simply dummy text
-      </Text>
-
-      <Text margin="y-16" size="lg">
-        Lorem Ipsum is simply dummy text
-      </Text>
-
-      <Text margin="y-16" size="md">
-        Lorem Ipsum is simply dummy text
-      </Text>
-
-      <Text margin="y-16" size="sm">
-        Lorem Ipsum is simply dummy text
-      </Text>
-
-      <Text margin="y-16" size="xs">
-        Lorem Ipsum is simply dummy text
-      </Text>
-    </ThemeDS>
-  );
-};
-
-export const Weights = () => {
-  return (
-    <ThemeDS>
-      <Text margin="y-16" weight="bold">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
-      </Text>
-
-      <Text margin="y-16" weight="semibold">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
-      </Text>
-
-      <Text margin="y-16">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
-      </Text>
-    </ThemeDS>
-  );
-};
-
 export const Styles = () => {
   return (
     <ThemeDS>

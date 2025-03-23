@@ -1,17 +1,21 @@
+
+
+/** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
-  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: [
-    "@etchteam/storybook-addon-status",
-    "@storybook/addon-a11y",
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-    "@storybook/preset-create-react-app",
+  "stories": [
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
-  framework: "@storybook/react-webpack5",
-  docs: {
-    autodocs: "tag",
-  },
+  "addons": [
+    "@etchteam/storybook-addon-status",
+    "@storybook/addon-essentials",
+    "@chromatic-com/storybook",
+    "@storybook/experimental-addon-test"
+  ],
+  "framework": {
+    "name": "@storybook/react-vite",
+    "options": {}
+  }
 };
 
 export default config;
