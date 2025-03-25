@@ -35,7 +35,7 @@ export const Pagination = (props) => {
     setButtonsList(buttonsList);
 
     attrs.onChange && attrs.onChange(currentPage);
-  }, [currentPage]); // eslint-disable-line
+  }, [currentPage]);
 
   return (
     <Styles.Wrapper $margin={attrs.margin}>

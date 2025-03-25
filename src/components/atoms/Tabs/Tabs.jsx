@@ -25,7 +25,7 @@ export const Tabs = (props) => {
     attrs.children.forEach((elm) => {
       setTabsName((prev) => [...prev, elm.props.name]);
     });
-  }, []); // eslint-disable-line
+  }, []);
 
   const handleBtnClick = (e) => {
     const tabIdx = tabsName.indexOf(e.target.innerText);

@@ -21,7 +21,7 @@ export const SelectValue = (props) => {
 
   useEffect(() => {
     setFieldValue(attrs.name, ctx.selectedValue.value);
-  }, [ctx.selectedValue]); // eslint-disable-line
+  }, [ctx.selectedValue]);
 
   return (
     <Field data-cy={`select_${attrs.name}`} name={attrs.name} type="hidden" />

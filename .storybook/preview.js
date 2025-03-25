@@ -3,7 +3,7 @@ const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     backgrounds: {
-      default: 'light',
+      default: "light",
     },
     controls: {
       matchers: {

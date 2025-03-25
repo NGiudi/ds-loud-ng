@@ -29,7 +29,7 @@ export const Panel = (props) => {
   //? run when the height of the panel changes.
   useEffect(() => {
     attrs.onSizeH(height);
-  }, [height]); // eslint-disable-line
+  }, [height]);
 
   return (
     <Styles.PanelWrapper

@@ -61,7 +61,7 @@ export const Bar = (props) => {
     if (attrs.onFinish && finishWidth === width) {
       attrs.onFinish();
     }
-  }, [attrs.step, attrs.steps, width]); // eslint-disable-line
+  }, [attrs.step, attrs.steps, width]);
 
   const porcentString = () => {
     let porcent = width;
