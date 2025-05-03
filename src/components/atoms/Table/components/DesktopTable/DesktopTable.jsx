@@ -11,7 +11,7 @@ const DEFAULT_PROPS = {
   desktopColumns: [],
   margin: "a-0",
   name: "",
-  onClick: () => {},
+  onClick: null,
 };
 
 export const DesktopTable = (props) => {

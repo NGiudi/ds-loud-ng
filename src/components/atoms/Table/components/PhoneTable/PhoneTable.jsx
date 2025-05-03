@@ -11,7 +11,7 @@ const DEFAULT_PROPS = {
   margin: "a-0",
   mobileColumns: [],
   name: "",
-  onClick: () => {},
+  onClick: null,
 };
 
 export const PhoneTable = (props) => {
