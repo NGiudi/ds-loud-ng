@@ -167,6 +167,7 @@ DinamicExample.args = {
       ),
     },
   ],
+  onClick: (data) => alert(`Clicked on ${data.name} ${data.last_name}`),
 };
 
 export default meta;

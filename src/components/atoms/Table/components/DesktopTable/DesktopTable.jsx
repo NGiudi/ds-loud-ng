@@ -42,6 +42,7 @@ export const DesktopTable = (props) => {
 
       {attrs.data.map((row, idxR) => (
         <Styles.Row
+          $hasOnClick={!!attrs.onClick}
           key={`table-row-${idxR}`}
           onClick={() => attrs.onClick && attrs.onClick(row)}
         >

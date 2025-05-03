@@ -22,13 +22,13 @@ const Row = styled("div")`
 
     &:hover {
       background-color: ${
-        !props.$isHeader ? props.theme.colors.black._200 : "transparent"
+        props.$hasOnClick ? props.theme.colors.black._200 : "transparent"
       };
     }
 
     &:hover&:active {
       background-color: ${
-        !props.$isHeader ? props.theme.colors.black._300 : "transparent"
+        props.$hasOnClick ? props.theme.colors.black._300 : "transparent"
       };
     }
   `}
