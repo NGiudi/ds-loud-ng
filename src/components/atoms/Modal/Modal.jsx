@@ -9,12 +9,14 @@ import { Styles } from "./Modal.styles";
 
 const DEFAULT_PROPS = {
   cancelButton: {
+    disabled: false,
     hide: false,
     onClick: () => {},
     text: "Cancelar",
   },
   children: null,
   confirmButton: {
+    disabled: false,
     hide: false,
     onClick: () => {},
     text: "Continuar",
@@ -94,13 +96,21 @@ export const Modal = (props) => {
 
             <Styles.ButtonsWrapper>
               {!attrs.cancelButton.hide && (
-                <Button kind="outlined" onClick={handleCancel}>
+                <Button
+                  disabled={attrs.cancelButton.disabled}
+                  kind="outlined"
+                  onClick={handleCancel}
+                >
                   {attrs.cancelButton.text}
                 </Button>
               )}
 
               {!attrs.confirmButton.hide && (
-                <Button margin="l-8" onClick={handleConfirm}>
+                <Button
+                  disabled={attrs.confirmButton.disabled}
+                  margin="l-8"
+                  onClick={handleConfirm}
+                >
                   {attrs.confirmButton.text}
                 </Button>
               )}
@@ -117,12 +127,14 @@ export const Modal = (props) => {
 //TODO: usar las propTypes de los botones.
 Modal.propTypes = {
   cancelButton: PropTypes.shape({
+    disabled: PropTypes.bool,
     hide: PropTypes.bool,
     onClick: PropTypes.func,
     text: PropTypes.string,
   }),
   children: PropTypes.node,
   confirmButton: PropTypes.shape({
+    disabled: PropTypes.bool,
     hide: PropTypes.bool,
     onClick: PropTypes.func,
     text: PropTypes.string,
