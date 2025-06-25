@@ -21,7 +21,7 @@ const DEFAULT_PROPS = {
   kind: "solid",
   loading: false,
   margin: "a-0",
-  onClick: () => {},
+  onClick: null,
   type: "button",
 };
 
