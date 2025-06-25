@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { ButtonSelector } from "./components/ButtonSelector";
 import { Icon } from "../../../";
 
 import { Styles } from "./Button.styles";
@@ -33,19 +34,6 @@ export const Button = (props) => {
       ...DEFAULT_PROPS.icon,
       ...props.icon,
     },
-  };
-
-  const ButtonSelector = ({ kind, ...others }) => {
-    switch (kind) {
-      case "outlined":
-        return <Styles.OutlinedButton {...others} />;
-      case "solid":
-        return <Styles.SolidButton {...others} />;
-      case "text":
-        return <Styles.TextButton {...others} />;
-      default:
-        return <Styles.SolidButton {...others} />;
-    }
   };
 
   return (
