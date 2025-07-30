@@ -16,11 +16,21 @@ const IconButton = styled("button")`
     ${marginProperties(props)}
 
     &:hover:enabled {
-      background-color: ${props.theme.colors.black._200};
+      background-color: ${
+        props.$invert
+          ? props.theme.colors.black._500
+          : props.theme.colors.black._200
+      };
     }
 
     &:active:enabled {
-      background-color: ${!props.loading && props.theme.colors.black._300};
+      background-color: ${
+        props.loading
+          ? "transparent"
+          : props.$invert
+          ? props.theme.colors.black._600
+          : props.theme.colors.black._300
+      };
     }
 
     &:disabled {

@@ -2,7 +2,7 @@ import React from "react";
 
 import { IconButtonDocs } from "./IconButton.docs";
 
-import { IconButton, ThemeDS } from "../../..";
+import { IconButton, Text, ThemeDS } from "../../..";
 
 const meta = {
   argTypes: {
@@ -62,24 +62,82 @@ Model.args = {
   margin: "a-0",
 };
 
-export const AllButtons = () => {
+export const ButtonStatuses = () => {
   return (
     <ThemeDS>
       <table>
         <thead>
           <tr>
-            <th style={cellSize}>Defualt</th>
-            <th style={cellSize}>Disabled</th>
+            <th style={cellSize}>
+              <Text margin="l-8" type="bodySemibold">
+                Tipo
+              </Text>
+            </th>
+            
+            <th style={cellSize}>
+              <Text margin="l-8" type="bodySemibold">
+                Habilitado
+              </Text>
+            </th>
+            
+            <th style={cellSize}>
+              <Text margin="l-8" type="bodySemibold">
+                Deshabilitado
+              </Text>
+            </th>
           </tr>
         </thead>
+
         <tbody>
           <tr>
             <th style={cellSize}>
-              <IconButton icon={{ icon: "cog" }} onClick={() => {}} />
+              <Text margin="l-8" type="bodySemibold">
+                Default
+              </Text>
             </th>
 
             <th style={cellSize}>
-              <IconButton disabled icon={{ icon: "cog" }} onClick={() => {}} />
+              <IconButton
+                icon={{ icon: "cog" }}
+                margin="l-8"
+                onClick={() => {}}
+              />
+            </th>
+
+            <th style={cellSize}>
+              <IconButton
+                disabled
+                icon={{ icon: "cog" }}
+                margin="l-8"
+                onClick={() => {}}
+              />
+            </th>
+          </tr>
+
+          <tr style={{ backgroundColor: "#161616" }}>
+            <th style={cellSize}>
+              <Text color="white" margin="l-8" type="bodySemibold">
+                Invert
+              </Text>
+            </th>
+
+            <th style={cellSize}>
+              <IconButton
+                icon={{ icon: "cog" }}
+                invert
+                margin="l-8"
+                onClick={() => {}}
+              />
+            </th>
+
+            <th style={cellSize}>
+              <IconButton
+                disabled
+                icon={{ icon: "cog" }}
+                invert
+                margin="l-8"
+                onClick={() => {}}
+              />
             </th>
           </tr>
         </tbody>

@@ -4,7 +4,7 @@ import { useRouter } from "../../../hooks/useRouter";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { AppLayout, Image, Flex, Text, ThemeDS } from "../../..";
+import { AppLayout, IconButton, Image, Flex, Text, ThemeDS } from "../../..";
 
 const meta = {
   title: "Molecules/AppLayout",
@@ -83,6 +83,7 @@ const PageContent = () => {
         src: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       },
     },
+    endContent: <IconButton icon={{ icon: "bell"}} invert margin="r-8" />,
     startContent: "Logotipo",
   };
 

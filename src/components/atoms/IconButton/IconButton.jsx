@@ -15,6 +15,7 @@ const DEFAULT_PROPS = {
     size: "sm",
   },
   id: null,
+  invert: false,
   margin: "a-0",
   onClick: () => {},
   type: "button",
@@ -30,17 +31,26 @@ export const IconButton = (props) => {
     },
   };
 
+  const getIconColor = () => {
+    if (attrs.invert) {
+      return attrs.disabled ? "black_400" : "black_200";
+    }
+
+    return attrs.disabled ? "black_500" : "black_700";
+  };
+
   return (
     <Styles.IconButton
       disabled={attrs.disabled}
       id={attrs.id}
+      $invert={attrs.invert}
       $margin={attrs.margin}
       onClick={attrs.onClick}
       type={attrs.type}
     >
       <Icon
         {...attrs.icon}
-        color={attrs.disabled ? "black_500" : attrs.icon.color}
+        color={getIconColor()}
       />
     </Styles.IconButton>
   );
@@ -50,6 +60,7 @@ IconButton.propTypes = {
   disabled: PropTypes.bool,
   icon: PropTypes.shape(ICON_PROP_TYPES),
   id: PropTypes.string,
+  invert: PropTypes.bool,
   margin: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.oneOf(["button", "submit"]),

@@ -2,14 +2,14 @@ import styled, { css } from "styled-components";
 
 const AvatarWrapper = styled("div")`
   ${(props) => css`
+    
     border-color: ${props.$isSelected
       ? `${props.theme.colors.black._500}`
       : "transparent"};
     border-radius: 50%;
     border-style: solid;
     border-width: 4px;
-    display: inline-block;
-
+    
     &:hover {
       border-color: ${!props.$isSelected && props.theme.colors.black._600};
     }

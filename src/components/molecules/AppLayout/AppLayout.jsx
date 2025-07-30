@@ -27,11 +27,11 @@ export const AppLayout = (props) => {
           <Flex hAlign="space-between">
             <div>{attrs.topbar.startContent}</div>
 
-            <div>
+            <Flex>
               {attrs.topbar.endContent}
 
               <ProfileAvatar {...attrs.topbar.avatarProps} pos="right" />
-            </div>
+            </Flex>
           </Flex>
         )}
 
