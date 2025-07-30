@@ -2,6 +2,16 @@ import styled, { css } from "styled-components";
 
 import { marginProperties } from "../../../utils/styles";
 
+const Count = styled("div")`
+  border-radius: 50%;
+  background-color: red;
+  height: 16px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 16px;
+`;
+
 const IconButton = styled("button")`
   ${(props) => css`
     align-items: center;
@@ -11,6 +21,7 @@ const IconButton = styled("button")`
     display: flex;
     height: 38px;
     justify-content: center;
+    position: relative;
     width: 38px;
 
     ${marginProperties(props)}
@@ -42,5 +53,6 @@ const IconButton = styled("button")`
 `;
 
 export const Styles = {
+  Count,
   IconButton,
 };

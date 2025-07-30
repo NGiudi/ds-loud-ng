@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Icon } from "../../../";
+import { Icon, Text } from "../../../";
 
 import { Styles } from "./IconButton.styles";
 
 import { ICON_PROP_TYPES } from "../../../constants/prop_types";
 
 const DEFAULT_PROPS = {
+  count: 0,
   disabled: false,
   icon: {
     color: "black_900",
@@ -48,6 +49,14 @@ export const IconButton = (props) => {
       onClick={attrs.onClick}
       type={attrs.type}
     >
+      {attrs.count > 0 && (
+				<Styles.Count>
+					<Text align="center" color="white" type="captionRegular">
+						{attrs.count > 9 ? "+9" : attrs.count}
+					</Text>
+				</Styles.Count>
+			)}
+
       <Icon
         {...attrs.icon}
         color={getIconColor()}
@@ -57,6 +66,7 @@ export const IconButton = (props) => {
 };
 
 IconButton.propTypes = {
+  count: PropTypes.number,
   disabled: PropTypes.bool,
   icon: PropTypes.shape(ICON_PROP_TYPES),
   id: PropTypes.string,

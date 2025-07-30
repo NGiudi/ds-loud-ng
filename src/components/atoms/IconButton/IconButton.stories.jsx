@@ -85,6 +85,12 @@ export const ButtonStatuses = () => {
                 Deshabilitado
               </Text>
             </th>
+
+            <th style={cellSize}>
+              <Text margin="l-8" type="bodySemibold">
+                Con contador
+              </Text>
+            </th>
           </tr>
         </thead>
 
@@ -112,6 +118,15 @@ export const ButtonStatuses = () => {
                 onClick={() => {}}
               />
             </th>
+
+            <th style={cellSize}>
+              <IconButton
+                count={5}
+                icon={{ icon: "cog" }}
+                margin="l-8"
+                onClick={() => {}}
+              />
+            </th>
           </tr>
 
           <tr style={{ backgroundColor: "#161616" }}>
@@ -133,6 +148,16 @@ export const ButtonStatuses = () => {
             <th style={cellSize}>
               <IconButton
                 disabled
+                icon={{ icon: "cog" }}
+                invert
+                margin="l-8"
+                onClick={() => {}}
+              />
+            </th>
+
+            <th style={cellSize}>
+              <IconButton
+                count={11}
                 icon={{ icon: "cog" }}
                 invert
                 margin="l-8"
