@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { Field } from "formik";
 
-import checkImage from "../../../../public/images/check-mark.svg";
+import checkImage from "../../../assets/images/check-mark.svg";
 
 const CustomCheckbox = styled(Field)`
   ${(props) => `
@@ -23,7 +23,7 @@ const CustomCheckbox = styled(Field)`
     &:not(:disabled) {
       &:checked {
         background-color: ${props.theme.colors.orange._500};
-        background-image: url(${checkImage});
+        background-image: url("${checkImage}");
         border-color: ${props.theme.colors.orange._500};
       }
 

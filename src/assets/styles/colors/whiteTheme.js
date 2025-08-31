@@ -45,7 +45,7 @@ const alertColors = {
   colors: {
     error: "#822727",
     info: "#21618C",
-    neutral: blackColors,
+    neutral: blackColors._900,
     success: "#008F39",
     warning: "#B7950B",
   },

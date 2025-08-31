@@ -45,7 +45,6 @@ export * from "./components/molecules";
 
 //? hooks
 export { useLocalStorage } from "./hooks/useLocalStorage";
-export { useNotify } from "./hooks/useNotify";
 export { useOnlineStatus } from "./hooks/useOnlineStatus";
 export { useOuterClick } from "./hooks/useOuterClick";
 export { usePrevious } from "./hooks/usePrevious";
