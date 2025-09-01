@@ -11,6 +11,7 @@ import { disclosureIcon } from "../../../../../utils/icons/icons";
 
 const DEFAULT_PROPS = {
   disabled: false,
+  isLoading: false,
   maxHeight: "auto",
   onSearchInputChange: null,
 };
@@ -24,7 +25,7 @@ export const SelectContent = (props) => {
   const ctx = useContext(SelectContext);
 
   const handleClick = () => {
-    if (!attrs.disabled) {
+    if (!attrs.disabled && !attrs.isLoading) {
       ctx.toogleSelect();
     }
   };
@@ -32,19 +33,21 @@ export const SelectContent = (props) => {
   return (
     <Styles.SelectWrapper>
       <Styles.SelectedOptionWrapper
-        disabled={attrs.disabled}
+        disabled={attrs.disabled || attrs.isLoading}
         onClick={handleClick}
       >
         <Styles.SelectedOption>
           <Text margin="l-8">
-            {ctx.selectedValue.display ||
-              ctx.selectedValue.value ||
-              "- Seleccione una opción -"}
+            {ctx.selectedValue.display || "- Seleccione una opción -"}
           </Text>
         </Styles.SelectedOption>
 
-        {/* disclosure icon */}
-        <Icon icon={disclosureIcon(ctx.isOpen)} margin="r-8" size="sm" />
+        <Icon
+          icon={attrs.isLoading ? "spinner" : disclosureIcon(ctx.isOpen)}
+          margin="r-8"
+          size="sm"
+          spin={attrs.isLoading}
+        />
       </Styles.SelectedOptionWrapper>
 
       {/* panel */}
@@ -76,6 +79,7 @@ export const SelectContent = (props) => {
 
 SelectContent.propTypes = {
   disabled: PropTypes.bool,
+  isLoading: PropTypes.bool,
   maxHeight: PropTypes.string,
   onSearchInputChange: PropTypes.func,
 };

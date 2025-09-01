@@ -11,7 +11,7 @@ import { Styles } from "./Select.styles.js";
 
 const DEFAULT_PROPS = {
   disabled: false,
-  initialOption: null,
+  isLoading: false,
   label: "",
   margin: "",
   maxHeight: "auto",
@@ -28,7 +28,6 @@ export const Select = (props) => {
 
   return (
     <SelectProvider
-      initialOption={attrs.initialOption}
       name={attrs.name}
       options={attrs.options}
     >
@@ -48,6 +47,7 @@ export const Select = (props) => {
 
         <SelectContent
           disabled={attrs.disabled}
+          isLoading={attrs.isLoading}
           maxHeight={attrs.maxHeight}
           onSearchInputChange={attrs.onSearchInputChange}
         />
@@ -58,7 +58,7 @@ export const Select = (props) => {
 
 Select.propTypes = {
   disabled: PropTypes.bool,
-  initialOption: PropTypes.object,
+  isLoading: PropTypes.bool,
   label: PropTypes.string,
   margin: PropTypes.string,
   maxHeight: PropTypes.string, //? content panel height

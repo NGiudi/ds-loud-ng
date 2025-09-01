@@ -9,6 +9,14 @@ import { carModels } from "../../../constants/cars/models";
 
 const meta = {
   argTypes: {
+    disabled: {
+      control: { type: "boolean" },
+      description: "Indica si el select está deshabilitado.",
+    },
+    isLoading: {
+      control: { type: "boolean" },
+      description: "Indica si el select está en estado de carga.",
+    },
     label: {
       control: { type: "text" },
       description: "Texto de descripción en la parte superior del select.",
@@ -25,6 +33,10 @@ const meta = {
       control: { type: "text" },
       description: "Se usa para completar los campos del formulario de formik.",
     },
+    onSearchInputChange: {
+      control: { type: "function" },
+      description: "Función que se ejecuta al cambiar el texto de búsqueda.",
+    },
     options: {
       control: { type: "none" },
       description: "Listado de opciones del select.",
@@ -40,7 +52,36 @@ const meta = {
   title: "Components/Select",
 };
 
-export const DinamicExample = () => {
+export const DinamicExample = (args) => {
+  const values = { marca: "" };
+
+  return (
+    <ThemeDS>
+      <Formik
+        initialValues={values}
+        onSubmit={(values) => {
+          alert(JSON.stringify(values, null, 2));
+        }}
+      >
+        <Form>
+          <Select {...args}/>
+        </Form>
+      </Formik>
+    </ThemeDS>
+  );
+};
+
+DinamicExample.args = {
+  disabled: false,
+  isLoading: false,
+  label: "Seleccione un elemento",
+  margin: "t-20",
+  maxHeight: "200px",
+  name: "marca",
+  options: carBrands,
+};
+
+export const AllSelectVariants = () => {
   const values = { marca: "volvo", modelo: "fox" };
 
   return (
@@ -79,7 +120,7 @@ export const DinamicExample = () => {
   );
 };
 
-export const ComplexSelect = () => {
+export const ComplexSelectOption = () => {
   const values = { marca: "" };
 
   const options = [
@@ -157,7 +198,7 @@ export const ComplexSelect = () => {
   );
 };
 
-export const SearcheableExample = () => {
+export const SearcheableSelect = () => {
   const [options, setOptions] = useState(carBrands);
 
   const handleSearchInputChange = (value) => {
@@ -187,11 +228,6 @@ export const SearcheableExample = () => {
           />
 
           <Select
-            initialOption={{
-              children: <Text>Mclaren</Text>,
-              display: "Mclaren",
-              value: "mclaren",
-            }}
             label="Seleccione un elemento"
             margin="t-20"
             maxHeight="200px"
