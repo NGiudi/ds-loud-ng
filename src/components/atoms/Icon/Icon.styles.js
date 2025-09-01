@@ -4,8 +4,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { getColor, marginProperties } from "../../../utils/styles";
 
-import { ICON_SIZES, ICON_WRAPPER_SIZES } from "../../../assets/styles/icon";
+//? sizes declaration
+const ICON_WRAPPER_SIZES = {
+  avatar: "20px",
+  sm: "20px",
+  md: "24px",
+  lg: "36px",
+};
 
+const ICON_SIZES = {
+  avatar: "12px",
+  sm: "16px",
+  md: "20px",
+  lg: "32px",
+  xl: "48px",
+};
+
+//? styles declaration
 const IconItem = styled(FontAwesomeIcon)`
   ${(props) => css`
     font-size: ${ICON_SIZES[props.$customsize]};

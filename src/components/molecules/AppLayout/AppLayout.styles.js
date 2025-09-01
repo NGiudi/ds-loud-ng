@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 import { paddingProperties } from "../../../utils/styles";
 
-import { APP_LAYOUT_TOPBAR_HEIGHT } from "../../../assets/styles/app_layout";
+import { APP_LAYOUT_TOPBAR_HEIGHT } from "./constants/app_layout.consts";
 
 export const ContentBox = styled("div")`
   ${(props) => css`

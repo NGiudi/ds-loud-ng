@@ -7,7 +7,7 @@ import {
   APP_LAYOUT_BORDER_WIDTH,
   APP_LAYOUT_BOTTOM_CONTENT_PADDING,
   APP_LAYOUT_BUTTON_X_PADDING,
-} from "../../../../../assets/styles/app_layout";
+} from "../../constants/app_layout.consts";
 
 const BottomContentStyles = styled("div")`
   ${(props) => css`
