@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { TEXT_TYPES } from "../../../../../assets/styles/common";
+import { TEXT_TYPES } from "../../../../../assets/styles.const";
 
 const SearchInput = styled("input")`
   ${(props) => `  

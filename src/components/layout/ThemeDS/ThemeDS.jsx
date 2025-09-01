@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { Toaster } from "react-hot-toast";
 
 import { WHITE_THEME } from "../../../assets/styles/white_theme.consts";
-import { BREAKPOINTS, SHADOWS } from "../../../assets/styles/common";
+import { BREAKPOINTS, SHADOWS } from "../../../assets/styles/common.consts";
 
 const DEFAULT_PROPS = {
   children: null,
