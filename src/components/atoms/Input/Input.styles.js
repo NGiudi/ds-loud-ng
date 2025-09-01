@@ -4,7 +4,7 @@ import { ErrorMessage, Field } from "formik";
 
 import { marginProperties, paddingProperties } from "../../../utils/styles";
 
-import { TEXT_TYPES } from "../../../assets/styles/text";
+import { TEXT_TYPES } from "../../../assets/styles/common";
 
 const Error = styled(ErrorMessage)`
   ${(props) => css`

@@ -6,7 +6,7 @@ import {
   paddingProperties,
 } from "../../../utils/styles";
 
-import { TEXT_TYPES } from "../../../assets/styles/text";
+import { TEXT_TYPES } from "../../../assets/styles/common";
 
 const textStyles = (props) => {
   return css`

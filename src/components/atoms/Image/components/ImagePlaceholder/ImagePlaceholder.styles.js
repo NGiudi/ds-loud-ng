@@ -5,7 +5,7 @@ import { marginProperties } from "../../../../../utils/styles";
 import {
   IMAGE_HEIGHTS,
   IMAGE_WIDTHS,
-} from "../../../../../assets/styles/image";
+} from "../../constants/image";
 
 const IconPlaceholder = styled("div")`
   ${(props) => css`

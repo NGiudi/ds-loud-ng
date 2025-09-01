@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 import { marginProperties } from "../../../utils/styles";
 
-import { IMAGE_HEIGHTS, IMAGE_WIDTHS } from "../../../assets/styles/image";
+import { IMAGE_HEIGHTS, IMAGE_WIDTHS } from "./constants/image";
 
 const ImageStyles = styled("img")`
   ${(props) => css`
