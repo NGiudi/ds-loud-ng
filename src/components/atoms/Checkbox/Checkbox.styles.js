@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { Field } from "formik";
 
-import checkImage from "../../../assets/images/check_mark.svg";
+import checkImage from "../../../../public/check_mark.svg";
 
 const CustomCheckbox = styled(Field)`
   ${(props) => `
