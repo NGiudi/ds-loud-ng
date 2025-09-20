@@ -25,7 +25,7 @@ export const BadgeDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Contenido breve:{" "}
           </Text>
           Los badges suelen contener contenido breve, como números, letras o
@@ -35,7 +35,7 @@ export const BadgeDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Tamaño pequeño:{" "}
           </Text>
           Los badges son elementos pequeños y compactos que se colocan
@@ -44,7 +44,7 @@ export const BadgeDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Diseño distintivo:{" "}
           </Text>
           Los badges a menudo tienen un diseño distintivo que los hace destacar
@@ -53,7 +53,7 @@ export const BadgeDocs = () => {
         </Text>
 
         <Text margin="b-40">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Indicador visual:{" "}
           </Text>
           El propósito principal de un badge es servir como un indicador visual

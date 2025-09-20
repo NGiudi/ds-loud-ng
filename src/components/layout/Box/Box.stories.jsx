@@ -8,11 +8,15 @@ const meta = {
   argTypes: {
     children: {
       control: { type: "none" },
-      description: "Contenido del componente",
+      description: "Contenido que se renderiza dentro del componente Box.",
     },
     margin: {
       control: { type: "text" },
-      description: "Establece la distancia de los márgenes",
+      description: "Define el espacio exterior (margen) alrededor del componente.",
+    },
+    padding: {
+      control: { type: "text" },
+      description: "Define el espacio interior (relleno) dentro del componente.",
     },
   },
   component: Box,
@@ -25,16 +29,18 @@ const meta = {
   title: "Layout/Box",
 };
 
-export const DinamicExample = (args) => {
+export const Model = (args) => {
   return (
     <ThemeDS>
-      <Box {...args}>Este es un box donde se le puede pasar un margen.</Box>
+      <Box {...args} />
     </ThemeDS>
   );
 };
 
-DinamicExample.args = {
+Model.args = {
+  children: "Este es un box donde se le puede pasar un margen.",
   margin: "a-0",
+  padding: "b-40 t-20 x-20",
 };
 
 export default meta;

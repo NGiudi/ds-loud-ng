@@ -30,7 +30,7 @@ export const IconDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Simplicidad:{" "}
           </Text>
           Los iconos son inherentemente simples y concisos. Deben representar
@@ -39,7 +39,7 @@ export const IconDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Reconocibilidad:{" "}
           </Text>
           Un buen icono debe ser fácilmente reconocible y comprensible para los
@@ -48,7 +48,7 @@ export const IconDocs = () => {
         </Text>
 
         <Text margin="b-40">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Consistencia:{" "}
           </Text>
           Los iconos deben mantener una coherencia visual en todo el diseño de

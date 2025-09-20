@@ -23,7 +23,7 @@ const Overlay = styled("div")`
   backdrop-filter: blur(1px);
   background-color: rgba(0, 0, 0, 0.35); //TODO: agregar color al theme.
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   left: 0;
   position: absolute;
   top: 0;

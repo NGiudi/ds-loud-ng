@@ -6,6 +6,7 @@ import { Wrapper } from "./Box.styles";
 const DEFAULT_PROPS = {
   children: null,
   margin: "a-0",
+  padding: "a-0",
 };
 
 export const Box = (props) => {
@@ -14,10 +15,15 @@ export const Box = (props) => {
     ...props,
   };
 
-  return <Wrapper $margin={attrs.margin}>{attrs.children}</Wrapper>;
+  return (
+    <Wrapper $margin={attrs.margin} $padding={attrs.padding}>
+      {attrs.children}
+    </Wrapper>
+  );
 };
 
 Box.propTypes = {
   children: PropTypes.node,
   margin: PropTypes.string,
+  padding: PropTypes.string,
 };

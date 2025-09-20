@@ -6,11 +6,11 @@ const meta = {
   argTypes: {
     children: {
       control: { type: "input" },
-      description: "Mensaje que se mostrará en el toast.",
+      description: "Texto que se mostrará dentro del toast.",
     },
     type: {
       control: { type: "select" },
-      description: "Se setea el tipo de toast.",
+      description: "Define el tipo de mensaje que mostrará el toast.",
       options: ["error", "info", "success"],
     },
   },
@@ -24,14 +24,17 @@ const meta = {
   title: "Components/Toast",
 };
 
-export const Types = () => {
+export const Model = (args) => {
   return (
     <ThemeDS>
-      <Toast margin="b-32" type="pageTitle">
-        Lorem Ipsum is simply dummy text
-      </Toast>
+      <Toast {...args} />
     </ThemeDS>
   );
+};
+
+Model.args = {
+  children: "Lorem Ipsum is simply dummy text",
+  type: "error",
 };
 
 export default meta;

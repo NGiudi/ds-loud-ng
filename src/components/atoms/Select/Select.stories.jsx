@@ -2,44 +2,43 @@ import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
 
-import { Button, Flex, Image, Select, Text, ThemeDS } from "../../../";
+import { Box, Button, Flex, Image, Select, Text, ThemeDS } from "../../../";
 
 import { carBrands } from "../../../constants/cars/brands";
-import { carModels } from "../../../constants/cars/models";
 
 const meta = {
   argTypes: {
     disabled: {
       control: { type: "boolean" },
-      description: "Indica si el select está deshabilitado.",
+      description: "Indica si el select está deshabilitado, evitando la interacción del usuario.",
     },
     isLoading: {
       control: { type: "boolean" },
-      description: "Indica si el select está en estado de carga.",
+      description: "Muestra un estado de carga en el select mientras se obtienen los datos.",
     },
     label: {
       control: { type: "text" },
-      description: "Texto de descripción en la parte superior del select.",
+      description: "Texto que aparece como etiqueta descriptiva en la parte superior del select.",
     },
     margin: {
       control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Define los márgenes externos del componente para ajustar su posición.",
     },
     maxHeight: {
       control: { type: "text" },
-      description: "Setea el alto máximo en pixeles del panel.",
+      description: "Establece la altura máxima en píxeles del panel desplegable.",
     },
     name: {
       control: { type: "text" },
-      description: "Se usa para completar los campos del formulario de formik.",
+      description: "Nombre del campo utilizado para enlazar con los valores del formulario de Formik.",
     },
     onSearchInputChange: {
       control: { type: "function" },
-      description: "Función que se ejecuta al cambiar el texto de búsqueda.",
+      description: "Función que se ejecuta al modificar el texto en el campo de búsqueda.",
     },
     options: {
       control: { type: "none" },
-      description: "Listado de opciones del select.",
+      description: "Lista de opciones disponibles para seleccionar en el componente.",
     },
   },
   component: Select,
@@ -52,72 +51,35 @@ const meta = {
   title: "Components/Select",
 };
 
-export const DinamicExample = (args) => {
-  const values = { marca: "" };
+export const Model = (args) => {
+  const values = { marca: "volvo" };
 
   return (
     <ThemeDS>
-      <Formik
-        initialValues={values}
-        onSubmit={(values) => {
-          alert(JSON.stringify(values, null, 2));
-        }}
-      >
-        <Form>
-          <Select {...args}/>
-        </Form>
-      </Formik>
+      <Box padding="b-40 t-20 x-20">
+        <Formik
+          initialValues={values}
+          onSubmit={(values) => {
+            alert(JSON.stringify(values, null, 2));
+          }}
+          >
+          <Form>
+            <Select {...args}/>
+          </Form>
+        </Formik>
+      </Box>
     </ThemeDS>
   );
 };
 
-DinamicExample.args = {
+Model.args = {
   disabled: false,
   isLoading: false,
   label: "Seleccione un elemento",
-  margin: "t-20",
+  margin: "a-0",
   maxHeight: "200px",
   name: "marca",
   options: carBrands,
-};
-
-export const AllSelectVariants = () => {
-  const values = { marca: "volvo", modelo: "fox" };
-
-  return (
-    <ThemeDS>
-      <Formik
-        initialValues={values}
-        onSubmit={(values) => {
-          alert(JSON.stringify(values, null, 2));
-        }}
-      >
-        <Form>
-          <Select
-            label="Seleccione un elemento"
-            margin="t-20"
-            maxHeight="200px"
-            name="marca"
-            options={carBrands}
-          />
-
-          <Select
-            disabled
-            label="Seleccione un elemento"
-            margin="t-20"
-            name="modelo"
-            options={carModels}
-          />
-
-          <Flex hAlign="end">
-            <Button margin="t-8" type="submit">
-              Enviar Formulario
-            </Button>
-          </Flex>
-        </Form>
-      </Formik>
-    </ThemeDS>
-  );
 };
 
 export const ComplexSelectOption = () => {
@@ -173,27 +135,28 @@ export const ComplexSelectOption = () => {
 
   return (
     <ThemeDS>
-      <Formik
-        initialValues={values}
-        onSubmit={(values) => {
-          alert(JSON.stringify(values, null, 2));
-        }}
-      >
-        <Form>
-          <Select
-            label="Seleccione un elemento"
-            margin="t-20"
-            name="marca"
-            options={options}
-          />
+      <Box padding="b-40 t-20 x-20">
+        <Formik
+          initialValues={values}
+          onSubmit={(values) => {
+            alert(JSON.stringify(values, null, 2));
+          }}
+          >
+          <Form>
+            <Select
+              label="Seleccione un elemento"
+              name="marca"
+              options={options}
+              />
 
-          <Flex hAlign="end">
-            <Button margin="t-8" type="submit">
-              Enviar Formulario
-            </Button>
-          </Flex>
-        </Form>
-      </Formik>
+            <Flex hAlign="end">
+              <Button margin="t-24" type="submit">
+                Enviar Formulario
+              </Button>
+            </Flex>
+          </Form>
+        </Formik>
+      </Box>
     </ThemeDS>
   );
 };
@@ -211,37 +174,30 @@ export const SearcheableSelect = () => {
 
   return (
     <ThemeDS>
-      <Formik
-        initialValues={{ marca: "volvo", marca_2: "mclaren" }}
-        onSubmit={(values) => {
-          alert(JSON.stringify(values, null, 2));
-        }}
-      >
-        <Form>
-          <Select
-            label="Seleccione un elemento"
-            margin="t-20"
-            maxHeight="200px"
-            name="marca"
-            onSearchInputChange={handleSearchInputChange}
-            options={options}
-          />
+      <Box padding="b-40 t-20 x-20">
+        <Formik
+          initialValues={{ marca: "volvo" }}
+          onSubmit={(values) => {
+            alert(JSON.stringify(values, null, 2));
+          }}
+        >
+          <Form>
+            <Select
+              label="Seleccione un elemento"
+              maxHeight="200px"
+              name="marca"
+              onSearchInputChange={handleSearchInputChange}
+              options={options}
+              />
 
-          <Select
-            label="Seleccione un elemento"
-            margin="t-20"
-            maxHeight="200px"
-            name="marca_2"
-            options={carBrands}
-          />
-
-          <Flex hAlign="end">
-            <Button margin="t-8" type="submit">
-              Enviar Formulario
-            </Button>
-          </Flex>
-        </Form>
-      </Formik>
+            <Flex hAlign="end">
+              <Button margin="t-24" type="submit">
+                Enviar Formulario
+              </Button>
+            </Flex>
+          </Form>
+        </Formik>
+      </Box>
     </ThemeDS>
   );
 };

@@ -4,33 +4,36 @@ import { action } from "@storybook/addon-actions";
 
 import { CountdownDocs } from "./Countdown.docs";
 
-import { Countdown, ThemeDS } from "../../../";
+import { Box, Countdown, ThemeDS } from "../../../";
 
 const meta = {
   argTypes: {
     endTime: {
       control: { type: "date", required: true },
       description:
-        "Establece la fecha y hora de finalización de la cuenta regresiva.",
+        "Establece la fecha y hora objetivo para que termine la cuenta regresiva. Este campo es obligatorio.",
       type: { required: true },
     },
     formatTime: {
       control: { type: "select" },
       description:
-        "Establece el formato de como se muestra la cuenta regresiva.",
+        "Especifica el formato en el que se muestra el tiempo de la cuenta regresiva. Las opciones incluyen horas, minutos y segundos.",
       options: ["hh:mm:ss", "mm:ss", "ss"],
     },
     onFinish: {
       control: { type: "none" },
-      description: "Función que se ejecuta al finalizar la cuenta regresiva.",
+      description:
+        "Función de callback que se ejecuta cuando la cuenta regresiva llega a cero.",
     },
     showZero: {
       control: { type: "boolean" },
-      description: "Comienza la cuenta regresiva al pasar un valor true.",
+      description:
+        "Determina si la cuenta regresiva comienza cuando se establece en true, incluso si el valor inicial es cero.",
     },
     text: {
       control: { type: "object" },
-      description: "Este objeto se pasa al componente Text dentro del botón",
+      description:
+        "Un objeto pasado al componente Text dentro de la cuenta regresiva, que permite la personalización de las propiedades del texto.",
     },
   },
   component: Countdown,
@@ -39,7 +42,7 @@ const meta = {
       page: CountdownDocs,
     },
     status: {
-      type: "stable",
+      type: "deprecated",
     },
   },
   tags: ["autodocs"],
@@ -49,7 +52,9 @@ const meta = {
 export const Model = (args) => {
   return (
     <ThemeDS>
-      <Countdown {...args} />
+      <Box padding="b-40 t-20 x-20">
+        <Countdown {...args} />
+      </Box>
     </ThemeDS>
   );
 };

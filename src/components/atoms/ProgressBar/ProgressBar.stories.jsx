@@ -1,44 +1,44 @@
 import React, { useState } from "react";
 
-import { Button, Flex, ProgressBar, ThemeDS } from "../../../";
+import { Box, Button, Flex, ProgressBar, ThemeDS } from "../../../";
 
 const meta = {
   argTypes: {
     borderRound: {
       control: { type: "boolean" },
-      description: "Si se pasa esta propiedad se redondea los bordes.",
+      description: "Si se establece esta propiedad, los bordes de la barra de progreso se redondean.",
     },
     margin: {
       control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Permite configurar la distancia de los márgenes alrededor de la barra de progreso.",
     },
-    noShowAnimationOnFirstLoad: {
+    noShowAnimation: {
       control: { type: "boolean" },
-      description: "Si esta opción es true no se muestra la animación.",
+      description: "Si esta opción es verdadera, no se muestra la animación al cambiar de step.",
     },
     onFinish: {
       control: { type: "none" },
       description:
-        "Se pasa una función que se ejecuta al terminar la animación.",
+        "Función que se ejecuta automáticamente al finalizar la animación de la barra de progreso.",
     },
     size: {
       control: { type: "select" },
-      description: "Modifica el alto de la progressBar y el border radius.",
+      description: "Ajusta la altura de la barra de progreso y el radio de los bordes.",
       options: ["sm", "md", "lg"],
     },
     step: {
       control: { type: "number" },
-      description: "Recibe el valor numerico del paso en el que se encuentra.",
+      description: "Indica el paso actual en el que se encuentra la barra de progreso.",
     },
     stepTime: {
       control: { type: "number" },
       description:
-        "Se setea el tiempo que pasa en el incremente o decremento de una centecima de la barra.",
+        "Configura el tiempo en milisegundos que tarda en avanzar o retroceder una centésima de la barra.",
     },
     steps: {
       control: { type: "number" },
       description:
-        "Recibe la cantidad total de pasos para completar la barra. La cantidad mínima de steps es 1, si por alguna razón se pasa un valor menor se setea automáticamente a 1.",
+        "Define la cantidad total de pasos necesarios para completar la barra. El valor mínimo es 1; si se pasa un valor menor, se ajusta automáticamente a 1.",
     },
   },
   component: ProgressBar,
@@ -56,25 +56,40 @@ const meta = {
   title: "Components/ProgressBar",
 };
 
-export const Model = () => {
+export const Model = (args) => {
   return (
     <ThemeDS>
-      <ProgressBar step={2} steps={5} />
+      <Box padding="b-40 t-20 x-20">
+        <ProgressBar {...args} />
+      </Box>
     </ThemeDS>
   );
+};
+
+Model.args = {
+  borderRound: false,
+  margin: "a-0",
+  noShowAnimation: false,
+  onFinish: () => {},
+  step: 2,
+  stepTime: 10,
+  steps: 5,
+  size: "md",
 };
 
 export const Types = () => {
   return (
     <ThemeDS>
-      <ProgressBar
-        margin="b-20"
-        noShowAnimationOnFirstLoad
-        step={2}
-        steps={5}
-      />
+      <Box padding="b-40 t-20 x-20">
+        <ProgressBar
+          margin="b-20"
+          noShowAnimation
+          step={2}
+          steps={5}
+        />
 
-      <ProgressBar borderRound step={2} steps={5} />
+        <ProgressBar borderRound step={2} steps={5} />
+      </Box>
     </ThemeDS>
   );
 };
@@ -98,7 +113,7 @@ export const useExample = () => {
 
   return (
     <ThemeDS>
-      <div style={{ margin: "30px auto", width: "90%" }}>
+      <Box padding="b-40 t-20 x-20">
         <ProgressBar step={step} stepTime={5} steps={5} />
 
         <Flex hAlign="end" margin="t-10">
@@ -108,7 +123,7 @@ export const useExample = () => {
 
           <Button onClick={increment}>increment</Button>
         </Flex>
-      </div>
+      </Box>
     </ThemeDS>
   );
 };

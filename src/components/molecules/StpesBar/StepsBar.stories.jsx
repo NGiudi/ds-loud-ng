@@ -16,20 +16,15 @@ const meta = {
   argTypes: {
     margin: {
       control: { type: "text" },
-      description: "Establece la distancia de los márgenes",
-    },
-    size: {
-      control: { type: "select" },
-      description:
-        "Esta propiedad sirve para cambiarle el tamaño del componente.",
+      description: "Define la distancia de los márgenes del componente.",
     },
     step: {
       control: { type: "number" },
-      description: "Recibe el valor numerico del paso en el que se encuentra.",
+      description: "Indica el número del paso actual en el que se encuentra.",
     },
     steps: {
       control: { type: "array" },
-      description: "Se pasa un array con el nombre de los distintos steps.",
+      description: "Recibe un array con los nombres de los diferentes pasos.",
     },
   },
 };

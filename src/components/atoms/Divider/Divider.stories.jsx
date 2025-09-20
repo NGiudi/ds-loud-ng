@@ -2,21 +2,25 @@ import React from "react";
 
 import { DividerDocs } from "./Divider.docs";
 
-import { Divider, ThemeDS } from "../../../";
+import { Box, Divider, ThemeDS } from "../../../";
 
 const meta = {
   argTypes: {
     color: {
       control: { type: "text" },
-      description: "Establece el color del fondo.",
+      description: "Define el color de fondo del divisor.",
     },
     height: {
       control: { type: "text" },
-      description: "Establece el espesor del divider",
+      description: "Define el grosor del divisor.",
     },
     margin: {
       control: { type: "text" },
-      description: "Establece la distancia de los márgenes",
+      description: "Define el espacio alrededor del divisor.",
+    },
+    padding: {
+      control: { type: "text" },
+      description: "Define el espacio interior del divisor.",
     },
   },
   component: Divider,
@@ -35,7 +39,9 @@ const meta = {
 export const Model = (args) => {
   return (
     <ThemeDS>
-      <Divider {...args} />
+      <Box padding="b-40 t-20 x-20">
+        <Divider {...args} />
+      </Box>
     </ThemeDS>
   );
 };
@@ -43,7 +49,8 @@ export const Model = (args) => {
 Model.args = {
   color: "black_300",
   height: "1px",
-  margin: "y-10",
+  margin: "a-0",
+  padding: "a-0",
 };
 
 export default meta;

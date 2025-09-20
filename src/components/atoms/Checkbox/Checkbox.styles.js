@@ -40,7 +40,7 @@ const CustomCheckbox = styled(Field)`
     &:disabled {
       &:checked {
         background-color: ${props.theme.colors.black._400};
-        background-image: url(${checkImage});
+        background-image: url("${checkImage}");
         border-color: ${props.theme.colors.black._400};
       }
     }

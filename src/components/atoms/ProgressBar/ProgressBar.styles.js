@@ -13,7 +13,7 @@ const BarWrapper = styled("div")`
 const ProgressBarWrapper = styled("div")`
   ${(props) => css`
     background-color: ${props.theme.colors.black._300};
-    border-radius: ${props.$borderRound && "3px"};
+    border-radius: ${props.$borderRound ? "3px" : "0px"};
     overflow: hidden;
     width: 100%;
 

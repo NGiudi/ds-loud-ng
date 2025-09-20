@@ -8,3 +8,22 @@ export const ICON_PROP_TYPES = {
   size: PropTypes.oneOf(["avatar", "lg", "md", "sm", "xl"]),
   spin: PropTypes.bool,
 };
+
+export const TEXT_PROP_TYPES = {
+  align: PropTypes.oneOf(["center", "end", "start"]),
+  as: PropTypes.oneOf(["label", "p", "span"]),
+  color: PropTypes.string,
+  decoration: PropTypes.oneOf(["line-through", "none", "underline"]),
+  htmlFor: PropTypes.string, //? used only for label type.
+  margin: PropTypes.string,
+  padding: PropTypes.string,
+  type: PropTypes.oneOf([
+    "bodyRegular",
+    "bodySemibold",
+    "captionRegular",
+    "captionSemibold",
+    "pageTitle",
+    "subtitle",
+    "title",
+  ]),
+};

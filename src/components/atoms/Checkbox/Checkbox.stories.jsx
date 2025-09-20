@@ -2,7 +2,7 @@ import React from "react";
 
 import { CheckboxDocs } from "./Checkbox.docs";
 
-import { Button, Checkbox, ThemeDS } from "../../../";
+import { Box, Button, Checkbox, ThemeDS } from "../../../";
 
 import { Form, Formik } from "formik";
 
@@ -11,28 +11,32 @@ const meta = {
     description: {
       control: { type: "text" },
       description:
-        "Texto más detallado que describe la funcionalidad y contiene otras observaciones relevantes.",
+        "Texto detallado que explica la funcionalidad del checkbox y proporciona información adicional relevante.",
+    },
+    disabled: {
+      control: { type: "boolean" },
+      description: "Desactiva el checkbox, impidiendo la interacción del usuario.",
     },
     id: {
       control: { type: "text" },
-      description: "Identificador único para el componente",
+      description: "Identificador único del componente, utilizado para diferenciarlo de otros elementos.",
     },
     label: {
       control: { type: "text" },
-      description: "Un breve texto que describe la funcionalidad del checkbox",
+      description: "Texto breve que describe la funcionalidad del checkbox de manera clara y concisa.",
       table: {
-        defaultValue: { summary: "-" },
+        defaultValue: { summary: "N/A" },
       },
     },
     margin: {
       control: { type: "text" },
-      description: "Establece la distancia de los márgenes",
+      description: "Define el espacio exterior (márgenes) alrededor del componente.",
     },
     name: {
       control: { type: "text" },
-      description: "Nombre identificador del componente para su uso con Formik",
+      description: "Nombre único del componente, útil para su integración con Formik u otros formularios.",
       table: {
-        defaultValue: { summary: "-" },
+        defaultValue: { summary: "N/A" },
       },
     },
   },
@@ -52,28 +56,30 @@ const meta = {
 export const Model = (args) => {
   return (
     <ThemeDS>
-      <Formik initialValues={{ email: false }}>
-        <Form>
-          <Checkbox {...args} />
-        </Form>
-      </Formik>
+      <Box padding="b-40 t-20 x-20">
+        <Formik initialValues={{ email: false }}>
+          <Form>
+            <Checkbox {...args} />
+          </Form>
+        </Formik>
+      </Box>
     </ThemeDS>
   );
 };
 
 Model.args = {
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  disabled: false,
   id: "story-checkbox",
   label: "Lorem ipsum",
-  margin: "a-16",
+  margin: "a-0",
   name: "email",
 };
 
 export const FormExample = () => {
   return (
     <ThemeDS>
-      <div style={{ maxWidth: "500px" }}>
+      <Box padding="b-40 t-20 x-20">
         <Formik
           initialValues={{
             email: false,
@@ -82,7 +88,7 @@ export const FormExample = () => {
           onSubmit={(values) => {
             alert(JSON.stringify(values));
           }}
-        >
+          >
           <Form>
             <Checkbox
               description="Mantente al tanto de las últimas noticias, ofertas y actualizaciones de nuestra marca al marcar esta casilla. Recibirás correos electrónicos periódicos con información relevante sobre nuestros productos y servicios."
@@ -90,7 +96,7 @@ export const FormExample = () => {
               label="Suscribirse a boletines informativos"
               margin="b-24"
               name="email"
-            />
+              />
 
             <Checkbox
               description="Al marcar esta casilla, nos das permiso para analizar tus compras anteriores y preferencias de navegación. De esta forma, podremos ofrecerte sugerencias de productos y servicios que se adapten a tus gustos y necesidades."
@@ -98,14 +104,14 @@ export const FormExample = () => {
               id="checkbox-form-2"
               label="Recibe recomendaciones personalizadas"
               name="recommendations"
-            />
+              />
 
             <Button margin="t-20" type="submit">
               Submit
             </Button>
           </Form>
         </Formik>
-      </div>
+      </Box>
     </ThemeDS>
   );
 };

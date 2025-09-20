@@ -31,7 +31,7 @@ export const ContentBox = styled("div")`
 
 export const MainContent = styled("div")`
   display: flex;
-  height: calc(100vh - ${APP_LAYOUT_TOPBAR_HEIGHT}px);
+  height: calc(100dvh - ${APP_LAYOUT_TOPBAR_HEIGHT}px);
   width: 100vw;
 `;
 

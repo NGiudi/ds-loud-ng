@@ -8,7 +8,7 @@ import { Styles } from "./ProgressBar.styles";
 const DEFAULT_PROPS = {
   borderRound: false,
   margin: "a-0",
-  noShowAnimationOnFirstLoad: false,
+  noShowAnimation: false,
   onFinish: () => {},
   step: 0,
   stepTime: 10,
@@ -38,7 +38,7 @@ export const ProgressBar = (props) => {
       $margin={attrs.margin}
     >
       <Bar
-        noShowAnimationOnFirstLoad={attrs.noShowAnimationOnFirstLoad}
+        noShowAnimation={attrs.noShowAnimation}
         onFinish={attrs.onFinish}
         step={attrs.step}
         stepTime={attrs.stepTime}
@@ -51,7 +51,7 @@ export const ProgressBar = (props) => {
 ProgressBar.propTypes = {
   borderRound: PropTypes.bool,
   margin: PropTypes.string,
-  noShowAnimationOnFirstLoad: PropTypes.bool,
+  noShowAnimation: PropTypes.bool,
   onFinish: PropTypes.func,
   step: PropTypes.number,
   stepTime: PropTypes.number,

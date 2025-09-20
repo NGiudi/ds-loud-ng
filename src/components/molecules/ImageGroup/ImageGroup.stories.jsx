@@ -10,24 +10,19 @@ const meta = {
   argTypes: {
     images: {
       control: { type: "array" },
-      description: "Array de imágenes a mostrar.",
+      description: "Lista de imágenes que se mostrarán en el componente.",
     },
     margin: {
       control: { type: "text" },
-      description: "Establece la distancia de los márgenes",
+      description: "Define el espacio de los márgenes alrededor del componente.",
     },
     max: {
       control: { type: "number" },
-      description: "Establece la cantidad máxima de imágenes que se muestran.",
+      description: "Especifica la cantidad máxima de imágenes visibles.",
     },
     name: {
       control: { type: "text" },
-      description: "Nombre de la colección de imágenes.",
-    },
-    size: {
-      control: { type: "select" },
-      description: "Establece el tamaño de las imágenes.",
-      options: ["avatar", "lg", "md", "sm"],
+      description: "Identificador o nombre asociado al grupo de imágenes.",
     },
   },
   component: ImageGroup,

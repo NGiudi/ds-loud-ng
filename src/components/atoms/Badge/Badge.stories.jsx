@@ -2,25 +2,25 @@ import React from "react";
 
 import { BadgeDocs } from "./Badge.docs";
 
-import { Badge, ThemeDS } from "../../../";
+import { Badge, Box, ThemeDS } from "../../../";
 
 const meta = {
   argTypes: {
     children: {
       control: { type: "text" },
-      description: "Texto del contenido de la badge",
+      description: "Texto que se mostrará dentro del componente Badge.",
     },
     color: {
       control: { type: "text" },
-      description: "Establece el color del fondo",
+      description: "Define el color de fondo del Badge.",
     },
     id: {
       control: { type: "text" },
-      description: "Identificador único para el componente",
+      description: "Identificador único asignado al componente para facilitar su referencia.",
     },
     margin: {
       control: { type: "text" },
-      description: "Establece la distancia de los márgenes",
+      description: "Configura los márgenes alrededor del Badge.",
     },
   },
   component: Badge,
@@ -39,7 +39,9 @@ const meta = {
 export const Model = (args) => {
   return (
     <ThemeDS>
-      <Badge {...args} />
+      <Box padding="b-40 t-20 x-20">
+        <Badge {...args} />
+      </Box>
     </ThemeDS>
   );
 };
@@ -51,13 +53,54 @@ Model.args = {
   margin: "a-0",
 };
 
-export const Colors = () => {
+export const AllBadgesVariants = () => {
+  const intensities = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
   return (
     <ThemeDS>
-      <Badge margin="l-10 t-10">Prueba</Badge>
-      <Badge color="black_500" margin="l-10 t-10">
-        Prueba
-      </Badge>
+      <Box padding="b-40 t-20 x-20">
+        <Box>
+          {intensities.map((intensity, idx) => {
+            return (
+              <Badge
+                color={`orange_${intensity}`}
+                key={`badge_orange_${intensity}`}
+                margin={idx === 0 ? "a-0" : "l-10"}
+              >
+                Prueba
+              </Badge>
+            );
+          })}
+        </Box>
+        
+        <Box margin="t-24">
+          {intensities.map((intensity, idx) => {
+            return (
+              <Badge
+                color={`red_${intensity}`}
+                key={`badge_red_${intensity}`}
+                margin={idx === 0 ? "a-0" : "l-10"}
+              >
+                Prueba
+              </Badge>
+            );
+          })}
+        </Box>
+
+        <Box margin="t-24">
+          {intensities.map((intensity, idx) => {
+            return (
+              <Badge
+                color={`black_${intensity}`}
+                key={`badge_black_${intensity}`}
+                margin={idx === 0 ? "a-0" : "l-10"}
+              >
+                Prueba
+              </Badge>
+            );
+          })}
+        </Box>
+      </Box>
     </ThemeDS>
   );
 };

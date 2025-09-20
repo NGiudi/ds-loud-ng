@@ -2,67 +2,65 @@ import React from "react";
 
 import { Form, Formik } from "formik";
 
-import { Button, Input, Panel, ThemeDS } from "../../../";
+import { Box, Input, ThemeDS } from "../../../";
 
 const meta = {
   argTypes: {
     autoComplete: {
       control: { type: "text" },
-      description: "Es igual al atributo autocomplete de html.",
+      description: "Corresponde al atributo 'autocomplete' de HTML, que sugiere valores basados en entradas anteriores.",
     },
     autoFocus: {
-      control: { type: "text" },
-      description: "Es igual al atributo autofocus de html.",
+      control: { type: "boolean" },
+      description: "Corresponde al atributo 'autofocus' de HTML, que enfoca automáticamente el campo al cargar la página.",
     },
     description: {
       control: { type: "text" },
-      description: "Texte descriptivo que va por debajo del label",
+      description: "Texto descriptivo que se muestra debajo de la etiqueta (label) del input.",
     },
     disabled: {
       control: { type: "boolean" },
-      description: "Deshabilita el input si este valor es true.",
+      description: "Desactiva el input si este valor es 'true'.",
     },
     icon: {
       control: { type: "text" },
-      description: "Recibe el nombre del ícono de fontawesome.",
+      description: "Especifica el nombre del ícono de FontAwesome que se mostrará dentro del input.",
     },
     innerRef: {
-      control: { type: "text" },
-      description:
-        "Se puede pasar una variable para que haga referencia al iput.",
+      control: { type: "function" },
+      description: "Permite pasar una referencia al elemento input.",
     },
     label: {
       control: { type: "text" },
-      description: "Texto que identifica sobre que se trata el input.",
+      description: "Texto que describe o identifica el propósito del input.",
     },
     margin: {
       control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Define los márgenes alrededor del input.",
     },
     name: {
       control: { type: "text" },
-      description: "Se usa para completar los campos del formulario de formik.",
+      description: "Nombre del campo, utilizado para enlazar con Formik y manejar los valores del formulario.",
     },
     onKeyPress: {
       control: { type: "none" },
-      description: "Función que se ejecuta al hacer click en una tecla",
+      description: "Función que se ejecuta al presionar una tecla mientras el input está enfocado.",
     },
     placeholder: {
       control: { type: "text" },
-      description: "Es texto que va en el placeholder de html.",
+      description: "Texto que se muestra como sugerencia dentro del input cuando está vacío.",
     },
     readOnly: {
       control: { type: "boolean" },
-      description: "Es igual que el atributo readonly de html.",
+      description: "Corresponde al atributo 'readonly' de HTML, que hace que el input sea de solo lectura.",
     },
     reference: {
       control: { type: "none" },
-      description:
-        "Es similar al innerRef pero se hace referencia al contenedor padre del input.",
+      description: "Similar a 'innerRef', pero hace referencia al contenedor padre del input.",
     },
     type: {
       control: { type: "select" },
-      description: "Recibe el tipo de input que se usa.",
+      description: "Especifica el tipo de input que se utilizará (por ejemplo, texto, contraseña o número).",
       options: ["number", "password", "text"],
     },
   },
@@ -83,14 +81,34 @@ export const Model = (args) => {
     <ThemeDS>
       <Formik initialValues={values}>
         <Form>
-          <Input name="dinamic_example" {...args} />
+          <Box padding="b-40 t-20 x-20">
+            <Input name="dinamic_example" {...args} />
+          </Box>
         </Form>
       </Formik>
     </ThemeDS>
   );
 };
 
-export const ErrorExample = () => {
+Model.args = {
+  autoComplete: "off",
+  autoFocus: false,
+  description: "Esta es la descripción del input",
+  disabled: false,
+  icon: "search",
+  id: "input_id",
+  innerRef: null,
+  label: "Test input",
+  margin: "a-0",
+  name: "dinamic_example",
+  onKeyPress: () => {},
+  placeholder: "Placeholder",
+  readOnly: false,
+  reference: null,
+  type: "text",
+};
+
+export const Error = () => {
   const values = { error_example: "" };
 
   const handleValidate = (values) => {
@@ -109,38 +127,17 @@ export const ErrorExample = () => {
 
   return (
     <ThemeDS>
-      <Formik
-        initialValues={values}
-        onSubmit={handleSubmit}
-        validate={handleValidate}
-      >
-        <Form>
-          <Input name="error_example" />
-        </Form>
-      </Formik>
-    </ThemeDS>
-  );
-};
-
-export const Options = () => {
-  const values = { options_example: "" };
-
-  const handleSubmit = (values) => {
-    alert(JSON.stringify(values, null, 2));
-  };
-
-  return (
-    <ThemeDS>
-      <Formik initialValues={values} onSubmit={handleSubmit}>
-        <Form>
-          <Input
-            description="Esta es la descripción del input"
-            icon="search"
-            label="Input with icon"
-            name="options_example"
-          />
-        </Form>
-      </Formik>
+      <Box padding="b-40 t-20 x-20">
+        <Formik
+          initialValues={values}
+          onSubmit={handleSubmit}
+          validate={handleValidate}
+          >
+          <Form>
+            <Input name="error_example" />
+          </Form>
+        </Formik>
+      </Box>
     </ThemeDS>
   );
 };
@@ -157,45 +154,14 @@ export const Types = () => {
 
   return (
     <ThemeDS>
-      <Formik initialValues={values} onSubmit={handleSubmit}>
-        <Form>
-          <Input label="Text input" margin="b-20" name="text_type" />
-          <Input label="Password input" name="password_type" type="password" />
-        </Form>
-      </Formik>
-    </ThemeDS>
-  );
-};
-
-export const FormExample = () => {
-  return (
-    <ThemeDS>
-      <Panel padding="a-20">
-        <Formik
-          initialValues={{
-            fullName: "Nicolás Giudice",
-            password: "password1234",
-          }}
-          onSubmit={(values) => {
-            alert(JSON.stringify(values, null, 2));
-          }}
-        >
+      <Box padding="b-40 t-20 x-20">
+        <Formik initialValues={values} onSubmit={handleSubmit}>
           <Form>
-            <Input label="Nombre completo" margin="b-20" name="fullName" />
-
-            <Input
-              label="Contraseña"
-              margin="b-20"
-              name="password"
-              type="password"
-            />
-
-            <Button fullWidth onClick={() => {}} type="submit">
-              Submit
-            </Button>
+            <Input label="Text input" margin="b-8" name="text_type" />
+            <Input label="Password input" name="password_type" type="password" />
           </Form>
         </Formik>
-      </Panel>
+      </Box>
     </ThemeDS>
   );
 };

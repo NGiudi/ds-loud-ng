@@ -1,40 +1,40 @@
 import React from "react";
 
-import { Table, Text, ThemeDS } from "../../../";
+import { Box, Table, Text, ThemeDS } from "../../../";
 
 const meta = {
   argTypes: {
     columns: {
       control: { type: "none" },
       description:
-        "Se usa en lugar de desktopColums y mobileColumns y es para todas las dimensiones.",
+        "Se utiliza en lugar de desktopColumns y mobileColumns, y aplica para todas las dimensiones de pantalla.",
     },
     data: {
       control: { type: "none" },
-      description: "Array de objectos que compone las filas de la tabla.",
+      description: "Arreglo de objetos que define las filas de la tabla.",
     },
     desktopColumns: {
       control: { type: "none" },
       description:
-        "Array de columnas para pantallas más grandes. Caso no exista se usa las columnas pasadas en columns.",
+        "Arreglo de columnas para pantallas grandes. Si no se proporciona, se utilizan las columnas definidas en 'columns'.",
     },
     margin: {
       control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Define el margen alrededor de la tabla.",
     },
     mobileColumns: {
       control: { type: "none" },
       description:
-        "Array de columnas para pantallas más chicas. Caso no exista se usa las columnas pasadas en columns.",
+        "Arreglo de columnas para pantallas pequeñas. Si no se proporciona, se utilizan las columnas definidas en 'columns'.",
     },
     name: {
       control: { type: "text" },
-      description: "Nombre del atributo. Equivalente al atributo name de html.",
+      description: "Nombre del atributo, equivalente al atributo 'name' en HTML.",
     },
     onClick: {
       control: { type: "none" },
       description:
-        "Función que se ejecuta al hacer click sobre una de las columnas de la tabla.",
+        "Función que se ejecuta al hacer clic en una de las columnas de la tabla.",
     },
   },
   component: Table,
@@ -47,15 +47,18 @@ const meta = {
   title: "Components/Table",
 };
 
-export const DinamicExample = (args) => {
+export const Model = (args) => {
   return (
     <ThemeDS>
-      <Table {...args} />
+      <Box padding="b-40 t-20 x-20">
+        <Table {...args} />
+      </Box>
     </ThemeDS>
   );
 };
 
-DinamicExample.args = {
+Model.args = {
+  columns: null,
   data: [
     {
       name: "Juan",
@@ -167,7 +170,9 @@ DinamicExample.args = {
       ),
     },
   ],
-  onClick: null,
+  margin: "a-0",
+  name: "table_name",
+  onClick: () => {},
 };
 
 export default meta;

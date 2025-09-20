@@ -7,8 +7,23 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AppLayout, IconButton, Image, Flex, Text, ThemeDS } from "../../..";
 
 const meta = {
-  title: "Molecules/AppLayout",
-  tags: ["autodocs"],
+  argTypes: {
+    children: {
+      control: { type: "none" },
+      description: "Contenido principal que se renderiza dentro del componente AppLayout.",
+    },
+    sidebar: {
+      control: { type: "none" },
+      description:
+        "Objeto que define la configuración de la barra lateral, incluyendo el listado de botones y sus propiedades.",
+    },
+    topbar: {
+      control: { type: "none" },
+      description:
+        "Objeto que define el contenido de la barra superior, incluyendo avatar, contenido inicial y final.",
+    },
+  },
+  component: AppLayout,
   parameters: {
     docs: {
       description: {
@@ -16,26 +31,8 @@ const meta = {
       },
     },
   },
-  argTypes: {
-    children: {
-      control: { type: "none" },
-      description: "Contenido del componente",
-    },
-    imageProps: {
-      control: { type: "text" },
-      description:
-        "Recibe un objeto con las propiedas que se pasan al componente Image.",
-    },
-    sidebar: {
-      control: { type: "none" },
-      description:
-        "Objeto que recibe el listado de botones que van en la sidebar.",
-    },
-    topbar: {
-      control: { type: "Recibe un objeto con el contenido de la topbar." },
-      description: "Contenido del componente",
-    },
-  },
+  tags: ["autodocs"],
+  title: "Molecules/AppLayout",
 };
 
 const PageContent = () => {

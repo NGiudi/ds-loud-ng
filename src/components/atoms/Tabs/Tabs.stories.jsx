@@ -1,24 +1,24 @@
 import React from "react";
 
-import { Tabs, Tab, ThemeDS } from "../../../";
+import { Box, Tabs, Tab, ThemeDS } from "../../../";
 
 const meta = {
   argTypes: {
     children: {
       control: { type: "none" },
-      description: "Contenido de la tab",
+      description: "Contenido que se mostrará dentro de cada pestaña.",
     },
     margin: {
       control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Define la distancia de los márgenes externos del componente.",
     },
     name: {
       control: { type: "text" },
-      description: "Nombre que identifica el componente.",
+      description: "Identificador único para el componente.",
     },
     padding: {
       control: { type: "text" },
-      description: "Se setea la distancia de los paddings.",
+      description: "Define la distancia de los rellenos internos del componente.",
     },
   },
   component: Tabs,
@@ -31,20 +31,26 @@ const meta = {
   title: "Components/Tabs",
 };
 
-export const DinamicExample = (args) => {
+//TODO: revisar este componente porque no se ve bien
+export const Model = (args) => {
   return (
     <ThemeDS>
-      <Tabs {...args}>
-        <Tab name="uno">Página Uno</Tab>
-        <Tab name="dos">Página Dos</Tab>
-        <Tab name="tres">Página Tres</Tab>
-      </Tabs>
+      <Box padding="b-40 t-20 x-20">
+        <Tabs {...args}>
+          <Tab name="uno">Página Uno</Tab>
+          <Tab name="dos">Página Dos</Tab>
+          <Tab name="tres">Página Tres</Tab>
+        </Tabs>
+      </Box>
     </ThemeDS>
   );
 };
 
-DinamicExample.args = {
-  margin: "t-10 x-30",
+Model.args = {
+  children: null,
+  margin: "a-0",
+  name: "tabs_model",
+  padding: "a-0",
 };
 
 export default meta;

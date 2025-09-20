@@ -33,7 +33,7 @@ export const ColumnsDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Número de Columnas Personalizable:{" "}
           </Text>
           Este componente presenta un número de columnas idéntico a la cantidad
@@ -41,7 +41,7 @@ export const ColumnsDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Espaciado Entre Columnas:{" "}
           </Text>
           Se incluye la capacidad de definir el espaciado entre las columnas.
@@ -51,7 +51,7 @@ export const ColumnsDocs = () => {
         </Text>
 
         <Text margin="b-40">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Flexibilidad Responsiva:{" "}
           </Text>
           El componente Columns se adapta a diferentes tamaños de pantalla y

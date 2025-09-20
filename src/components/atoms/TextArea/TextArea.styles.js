@@ -6,6 +6,7 @@ import { marginProperties } from "../../../utils/styles";
 
 const TextArea = styled(Field)`
   ${(props) => css`
+    background-color: transparent;
     border-color: ${props.theme.colors.black._400};
     border-radius: 4px;
     border-style: solid;
@@ -14,19 +15,7 @@ const TextArea = styled(Field)`
     padding: 8px;
     resize: none;
     width: 100%;
-
-    &::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: ${props.theme.colors.black._200};
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: ${props.theme.colors.black._300};
-    }
-
+  
     ${marginProperties(props)}
   `}
 `;

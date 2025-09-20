@@ -63,8 +63,8 @@ export const Image = (props) => {
 };
 
 Image.propTypes = {
-  alt: PropTypes.string,
-  src: PropTypes.string,
+  alt: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
   margin: PropTypes.string,
   placeholder: PropTypes.string,
   size: PropTypes.oneOf(["avatar", "lg", "md", "sm"]),

@@ -44,7 +44,7 @@ export const ImageDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Formato adaptable:{" "}
           </Text>
           Este componente puede cambiar entre un formato rectangular y circular
@@ -53,7 +53,7 @@ export const ImageDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Dimensiones personalizables:{" "}
           </Text>
           Puede ajustarse a una amplia variedad de tamaños, desde miniaturas
@@ -62,7 +62,7 @@ export const ImageDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Adecuado para diversos tipos de imágenes:{" "}
           </Text>
           Funciona bien con imágenes de paisajes, retratos, ilustraciones,

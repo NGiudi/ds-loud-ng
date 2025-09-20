@@ -2,7 +2,7 @@ import React from "react";
 
 import { ImageDocs } from "./Image.docs";
 
-import { Image, Text, ThemeDS } from "../../../";
+import { Box, Image, Text, ThemeDS } from "../../../";
 
 import argentina from "../../../assets/images/countries_flag/argentina.png";
 import fotoPerfil from "../../../assets/images/profile_photo.jpg";
@@ -11,29 +11,29 @@ const meta = {
   argTypes: {
     alt: {
       control: { type: "text" },
-      description: "Se pasa el texto alternativo de la imagen.",
-    },
-    src: {
-      control: { type: "text" },
-      description: "Se pasa la url de la imagen.",
+      description: "Texto alternativo que describe la imagen para accesibilidad.",
     },
     margin: {
       control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Define los márgenes alrededor del componente.",
     },
     placeholder: {
       control: { type: "text" },
       description:
-        "Se puede pasar un string para mostrar la la primer letra en el placeholder.",
+        "Permite mostrar un texto o la primera letra como marcador de posición.",
     },
     size: {
       control: { type: "select" },
-      description: "Recibe el tamaño del componente.",
+      description: "Especifica el tamaño del componente.",
       options: ["avatar", "lg", "md", "sm"],
+    },
+    src: {
+      control: { type: "text" },
+      description: "URL de la imagen que se desea mostrar.",
     },
     type: {
       control: { type: "select" },
-      description: "Recibe el tipo de imagen que se desea utilizar.",
+      description: "Determina el estilo de la imagen (redonda o cuadrada).",
       options: ["round", "square"],
     },
   },
@@ -59,95 +59,78 @@ const cellSize = {
 export const Model = (args) => {
   return (
     <ThemeDS>
-      <Image {...args} />
+      <Box padding="b-40 t-20 x-20">
+        <Image {...args} />
+      </Box>
     </ThemeDS>
   );
 };
 
 Model.args = {
+  alt: "model_image",
+  margin: "a-0",
+  placeholder: "N",
+  size: "sm",
   src: argentina,
   type: "round",
-  size: "sm",
 };
 
 export const IconPlaceholder = () => {
   return (
     <ThemeDS>
-      <table style={{ marginBottom: "30px" }}>
-        <thead>
-          <tr>
-            <th style={cellSize}>
-              <Text>Large</Text>
-            </th>
+      <Box padding="b-40 t-20 x-20">
+        <table style={{ marginBottom: "30px" }}>
+          <thead>
+            <tr>
+              <th style={cellSize}>
+                <Text>Large</Text>
+              </th>
 
-            <th style={cellSize}>
-              <Text>Medium</Text>
-            </th>
+              <th style={cellSize}>
+                <Text>Medium</Text>
+              </th>
 
-            <th style={cellSize}>
-              <Text>Small</Text>
-            </th>
-          </tr>
-        </thead>
+              <th style={cellSize}>
+                <Text>Small</Text>
+              </th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <tr>
-            <th style={cellSize}>
-              <Image alt="foto de perfil" size="lg" />
-            </th>
+          <tbody>
+            <tr>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" size="lg" />
+              </th>
 
-            <th style={cellSize}>
-              <Image alt="foto de perfil" size="md" />
-            </th>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" size="md" />
+              </th>
 
-            <th style={cellSize}>
-              <Image alt="foto de perfil" size="sm" />
-            </th>
-          </tr>
-        </tbody>
-      </table>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" size="sm" />
+              </th>
+            </tr>
 
-      <table>
-        <thead>
-          <tr>
-            <th style={cellSize}>
-              <Text>Large</Text>
-            </th>
+            <tr>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" size="lg" type="round" />
+              </th>
 
-            <th style={cellSize}>
-              <Text>Medium</Text>
-            </th>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" size="md" type="round" />
+              </th>
 
-            <th style={cellSize}>
-              <Text>Small</Text>
-            </th>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" size="sm" type="round" />
+              </th>
 
-            <th style={cellSize}>
-              <Text>Avatar</Text>
-            </th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <th style={cellSize}>
-              <Image alt="foto de perfil" size="lg" type="round" />
-            </th>
-
-            <th style={cellSize}>
-              <Image alt="foto de perfil" size="md" type="round" />
-            </th>
-
-            <th style={cellSize}>
-              <Image alt="foto de perfil" size="sm" type="round" />
-            </th>
-
-            <th style={cellSize}>
-              <Image alt="foto de perfil" size="avatar" type="round" />
-            </th>
-          </tr>
-        </tbody>
-      </table>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" size="avatar" type="round" />
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </Box>
     </ThemeDS>
   );
 };
@@ -155,101 +138,70 @@ export const IconPlaceholder = () => {
 export const LetterPlaceholder = () => {
   return (
     <ThemeDS>
-      <table style={{ marginBottom: "30px" }}>
-        <thead>
-          <tr>
-            <th style={cellSize}>
-              <Text>Large</Text>
-            </th>
+      <Box padding="b-40 t-20 x-20">
+        <table style={{ marginBottom: "30px" }}>
+          <thead>
+            <tr>
+              <th style={cellSize}>
+                <Text>Large</Text>
+              </th>
 
-            <th style={cellSize}>
-              <Text>Medium</Text>
-            </th>
+              <th style={cellSize}>
+                <Text>Medium</Text>
+              </th>
 
-            <th style={cellSize}>
-              <Text>Small</Text>
-            </th>
-          </tr>
-        </thead>
+              <th style={cellSize}>
+                <Text>Small</Text>
+              </th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <tr>
-            <th style={cellSize}>
-              <Image alt="foto de perfil" placeholder="load" size="lg" />
-            </th>
+          <tbody>
+            <tr>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" placeholder="load" size="lg" />
+              </th>
 
-            <th style={cellSize}>
-              <Image alt="foto de perfil" placeholder="load" size="md" />
-            </th>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" placeholder="load" size="md" />
+              </th>
 
-            <th style={cellSize}>
-              <Image alt="foto de perfil" placeholder="load" size="sm" />
-            </th>
-          </tr>
-        </tbody>
-      </table>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" placeholder="load" size="sm" />
+              </th>
+            </tr>
 
-      <table>
-        <thead>
-          <tr>
-            <th style={cellSize}>
-              <Text>Large</Text>
-            </th>
+            <tr>
+              <th style={cellSize}>
+                <Image
+                  alt="foto de perfil"
+                  placeholder="load"
+                  size="lg"
+                  type="round"
+                />
+              </th>
 
-            <th style={cellSize}>
-              <Text>Medium</Text>
-            </th>
+              <th style={cellSize}>
+                <Image
+                  alt="foto de perfil"
+                  placeholder="load"
+                  size="md"
+                  type="round"
+                />
+              </th>
 
-            <th style={cellSize}>
-              <Text>Small</Text>
-            </th>
-
-            <th style={cellSize}>
-              <Text>Avatar</Text>
-            </th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <th style={cellSize}>
-              <Image
-                alt="foto de perfil"
-                placeholder="load"
-                size="lg"
-                type="round"
-              />
-            </th>
-
-            <th style={cellSize}>
-              <Image
-                alt="foto de perfil"
-                placeholder="load"
-                size="md"
-                type="round"
-              />
-            </th>
-
-            <th style={cellSize}>
-              <Image
-                alt="foto de perfil"
-                placeholder="load"
-                size="sm"
-                type="round"
-              />
-            </th>
-
-            <th style={cellSize}>
-              <Image
-                alt="foto de perfil"
-                placeholder="load"
-                size="avatar"
-                type="round"
-              />
-            </th>
-          </tr>
-        </tbody>
-      </table>
+              <th style={cellSize}>
+                <Image
+                  alt="foto de perfil"
+                  placeholder="load"
+                  size="sm"
+                  type="round"
+                />
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </Box>
     </ThemeDS>
   );
 };
@@ -257,109 +209,70 @@ export const LetterPlaceholder = () => {
 export const WithImage = () => {
   return (
     <ThemeDS>
-      <Text margin="b-12" type="title">
-        Tamaños de las imagenes tipo square
-      </Text>
+      <Box padding="b-40 t-20 x-20">
+        <table style={{ marginBottom: "30px" }}>
+          <thead>
+            <tr>
+              <th style={cellSize}>
+                <Text>Large</Text>
+              </th>
 
-      <table style={{ marginBottom: "30px" }}>
-        <thead>
-          <tr>
-            <th style={cellSize}>
-              <Text>Large</Text>
-            </th>
+              <th style={cellSize}>
+                <Text>Medium</Text>
+              </th>
 
-            <th style={cellSize}>
-              <Text>Medium</Text>
-            </th>
+              <th style={cellSize}>
+                <Text>Small</Text>
+              </th>
+            </tr>
+          </thead>
 
-            <th style={cellSize}>
-              <Text>Small</Text>
-            </th>
-          </tr>
-        </thead>
+          <tbody>
+            <tr>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" src={fotoPerfil} size="lg" />
+              </th>
 
-        <tbody>
-          <tr>
-            <th style={cellSize}>
-              <Image alt="foto de perfil" src={fotoPerfil} size="lg" />
-            </th>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" src={fotoPerfil} size="md" />
+              </th>
 
-            <th style={cellSize}>
-              <Image alt="foto de perfil" src={fotoPerfil} size="md" />
-            </th>
+              <th style={cellSize}>
+                <Image alt="foto de perfil" src={fotoPerfil} size="sm" />
+              </th>
+            </tr>
 
-            <th style={cellSize}>
-              <Image alt="foto de perfil" src={fotoPerfil} size="sm" />
-            </th>
-          </tr>
-        </tbody>
-      </table>
+            <tr>
+              <th style={cellSize}>
+                <Image
+                  alt="foto de perfil"
+                  src={fotoPerfil}
+                  size="lg"
+                  type="round"
+                />
+              </th>
 
-      <Text margin="b-20" type="title">
-        Tamaños de las imagenes tipo round
-      </Text>
+              <th style={cellSize}>
+                <Image
+                  alt="foto de perfil"
+                  src={fotoPerfil}
+                  size="md"
+                  type="round"
+                />
+              </th>
 
-      <table>
-        <thead>
-          <tr>
-            <th style={cellSize}>
-              <Text>Large</Text>
-            </th>
-
-            <th style={cellSize}>
-              <Text>Medium</Text>
-            </th>
-
-            <th style={cellSize}>
-              <Text>Small</Text>
-            </th>
-
-            <th style={cellSize}>
-              <Text>Avatar</Text>
-            </th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <th style={cellSize}>
-              <Image
-                alt="foto de perfil"
-                src={fotoPerfil}
-                size="lg"
-                type="round"
-              />
-            </th>
-
-            <th style={cellSize}>
-              <Image
-                alt="foto de perfil"
-                src={fotoPerfil}
-                size="md"
-                type="round"
-              />
-            </th>
-
-            <th style={cellSize}>
-              <Image
-                alt="foto de perfil"
-                src={fotoPerfil}
-                size="sm"
-                type="round"
-              />
-            </th>
-
-            <th style={cellSize}>
-              <Image
-                alt="foto de perfil"
-                src={fotoPerfil}
-                size="avatar"
-                type="round"
-              />
-            </th>
-          </tr>
-        </tbody>
-      </table>
+              <th style={cellSize}>
+                <Image
+                  alt="foto de perfil"
+                  src={fotoPerfil}
+                  size="sm"
+                  type="round"
+                />
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </Box>
     </ThemeDS>
   );
 };

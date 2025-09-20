@@ -31,7 +31,7 @@ export const CountdownDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Establecimiento de una fecha objetivo:{" "}
           </Text>
           La capacidad de establecer una fecha y hora específicas hacia las
@@ -40,7 +40,7 @@ export const CountdownDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Visualización:{" "}
           </Text>
           Un contador regresivo generalmente muestra de manera visible el tiempo
@@ -50,7 +50,7 @@ export const CountdownDocs = () => {
         </Text>
 
         <Text margin="b-40">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Finalización Automática:{" "}
           </Text>
           La capacidad de realizar una acción específica cuando el contador

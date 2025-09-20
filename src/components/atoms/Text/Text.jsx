@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import { Styles } from "./Text.styles";
 
+import { TEXT_PROP_TYPES } from "../../../constants/prop_types";
+
 const DEFAULT_PROPS = {
   align: "start",
   as: "p",
@@ -42,21 +44,4 @@ export const Text = (props) => {
   return getTextType();
 };
 
-Text.propTypes = {
-  align: PropTypes.oneOf(["center", "end", "start"]),
-  as: PropTypes.oneOf(["label", "p", "span"]),
-  color: PropTypes.string,
-  decoration: PropTypes.oneOf(["line-through", "none", "underline"]),
-  htmlFor: PropTypes.string, //? used only for label type.
-  margin: PropTypes.string,
-  padding: PropTypes.string,
-  type: PropTypes.oneOf([
-    "bodyRegular",
-    "bodySemibold",
-    "captionRegular",
-    "captionSemibold",
-    "pageTitle",
-    "subtitle",
-    "title",
-  ]),
-};
+Text.propTypes = PropTypes.shape(TEXT_PROP_TYPES);

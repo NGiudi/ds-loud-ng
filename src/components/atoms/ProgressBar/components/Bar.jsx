@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Styles } from "../ProgressBar.styles";
 
 const DEFAULT_PROPS = {
-  noShowAnimationOnFirstLoad: false,
+  noShowAnimation: false,
   onFinish: () => {},
   step: 0,
   stepTime: 10,
@@ -48,7 +48,7 @@ export const Bar = (props) => {
   useEffect(() => {
     const finishWidth = Math.floor((attrs.step * 100) / attrs.steps);
 
-    if (attrs.noShowAnimationOnFirstLoad) {
+    if (attrs.noShowAnimation) {
       setWidth(finishWidth);
     } else {
       if (finishWidth > width) {
@@ -76,7 +76,7 @@ export const Bar = (props) => {
 };
 
 Bar.propTypes = {
-  noShowAnimationOnFirstLoad: PropTypes.bool,
+  noShowAnimation: PropTypes.bool,
   onFinish: PropTypes.func,
   step: PropTypes.number,
   stepTime: PropTypes.number,

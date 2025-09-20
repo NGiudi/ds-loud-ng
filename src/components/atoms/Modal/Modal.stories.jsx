@@ -1,39 +1,39 @@
 import React, { useState } from "react";
 
-import { Button, Modal, Text, ThemeDS } from "../../../";
+import { Box, Button, Modal, Text, ThemeDS } from "../../../";
 
 const meta = {
   argTypes: {
     cancelButton: {
       control: { type: "text" },
-      description: "Props que se pasan al botón de cancelar.",
+      description: "Propiedades que se aplican al botón de cancelar.",
     },
     children: {
       control: { type: "none" },
-      description: "Contenido del modal.",
+      description: "Contenido que se muestra dentro del modal.",
     },
     confirmButton: {
       control: { type: "text" },
-      description: "Props que se pasan al botón de cancelar.",
+      description: "Propiedades que se aplican al botón de confirmar.",
     },
     onClose: {
       control: { type: "none" },
       description:
-        "Función que se ejecuta al apretar en cancelar o al apretar el botón para cerrar el modal.",
+        "Función que se ejecuta al hacer clic en cancelar o en el botón para cerrar el modal.",
     },
     padding: {
       control: { type: "text" },
-      description: "Se setea la distancia de los paddings.",
+      description: "Define el espaciado interno (padding) del modal.",
     },
     show: {
       control: { type: "boolean" },
       description:
-        "Controla la visualización del modal. Si es true muestra el modal.",
+        "Controla la visibilidad del modal. Si es true, el modal se muestra.",
     },
     width: {
       control: { type: "text" },
       description:
-        "Se puede setear el ancho del modal. Caso la pantalla sea menor al valor seteado, el modal se adapta a la pantalla.",
+        "Permite definir el ancho del modal. Si la pantalla es más pequeña que el ancho definido, el modal se ajustará automáticamente.",
     },
   },
   component: Modal,
@@ -46,7 +46,7 @@ const meta = {
   title: "Components/Modal",
 };
 
-export const ConfirmationExample = () => {
+export const ConfirmationModel = (args) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleShowModal = () => {
@@ -55,31 +55,36 @@ export const ConfirmationExample = () => {
 
   return (
     <ThemeDS>
-      <Button onClick={handleShowModal}>Mostrar Modal</Button>
+      <Box padding="b-40 t-20 x-20">
+        <Button onClick={handleShowModal}>Mostrar Modal</Button>
+      
+        <Modal {...args} onClose={handleShowModal} show={showModal}>
+          <Text margin="b-20" type="title">
+            ¿Quieres activar la cuenta X?
+          </Text>
 
-      <Modal
-        cancelButton={{
-          onClick: () => {},
-          text: "No, cancelar",
-        }}
-        confirmButton={{
-          onClick: () => {},
-          text: "Sí, avanzar",
-        }}
-        onClose={handleShowModal}
-        show={showModal}
-        width="600px"
-      >
-        <Text margin="b-20" type="title" weight="bold">
-          ¿Quieres activar la cuenta X?
-        </Text>
-
-        <Text margin="b-32">
-          Para activar una cuenta, debe tener completa la información fiscal.
-        </Text>
-      </Modal>
+          <Text margin="b-32">
+            Para activar una cuenta, debe tener completa la información fiscal.
+          </Text>
+        </Modal>
+      </Box>
+      
     </ThemeDS>
   );
+};
+
+ConfirmationModel.args = {
+  cancelButton: {
+    onClick: () => {},
+    text: "No, cancelar",
+  },
+  confirmButton: {
+    onClick: () => {},
+    text: "Sí, avanzar",
+  },
+  onClose: null,
+  show: false,
+  width: "600px"
 };
 
 export const EmailExample = () => {
@@ -91,24 +96,26 @@ export const EmailExample = () => {
 
   return (
     <ThemeDS>
-      <Button onClick={handleShowModal}>Mostrar Modal</Button>
+      <Box padding="b-40 t-20 x-20">
+        <Button onClick={handleShowModal}>Mostrar Modal</Button>
 
-      <Modal
-        cancelButton={{ hide: true, text: "No, cancelar" }}
-        confirmButton={{ text: "Entendido" }}
-        onClose={handleShowModal}
-        show={showModal}
-        width="540px"
-      >
-        <Text margin="b-20" type="title" weight="bold">
-          Confirma tu email para avanzar
-        </Text>
+        <Modal
+          cancelButton={{ hide: true, text: "No, cancelar" }}
+          confirmButton={{ text: "Entendido" }}
+          onClose={handleShowModal}
+          show={showModal}
+          width="540px"
+          >
+          <Text margin="b-20" type="title">
+            Confirma tu email para avanzar
+          </Text>
 
-        <Text margin="b-32">
-          Verifica tu cuenta desde el email que te enviamos. No olvides revisar
-          “Correo no deseado” y “Spam”.
-        </Text>
-      </Modal>
+          <Text margin="b-32">
+            Verifica tu cuenta desde el email que te enviamos. No olvides revisar
+            “Correo no deseado” y “Spam”.
+          </Text>
+        </Modal>
+      </Box>
     </ThemeDS>
   );
 };

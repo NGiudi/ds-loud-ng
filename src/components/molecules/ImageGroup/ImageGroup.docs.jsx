@@ -27,7 +27,7 @@ export const ImageGroupDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Visualización de Imágenes:{" "}
           </Text>
           El componente muestra un conjunto de imágenes de manera organizada y
@@ -35,7 +35,7 @@ export const ImageGroupDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Control de Cantidad de Imágenes:{" "}
           </Text>
           Puede limitar la cantidad máxima de imágenes que se mostrarán
@@ -44,7 +44,7 @@ export const ImageGroupDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Flexibilidad:{" "}
           </Text>
           Ofrece flexibilidad en la presentación y el diseño de las imágenes,

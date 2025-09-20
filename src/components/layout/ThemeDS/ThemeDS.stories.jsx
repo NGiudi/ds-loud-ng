@@ -1,40 +1,42 @@
 import React from "react";
 
-import { Text, ThemeDS } from "../../../";
+import { Box, Text, ThemeDS } from "../../../";
 
 const meta = {
-  title: "Layout/ThemeDS",
-  component: ThemeDS,
-  tags: ["autodocs"],
   argTypes: {
     children: {
       control: { type: "none" },
-      description: "Contenido del componente.",
+      description: "Contenido que será renderizado dentro del componente.",
     },
     name: {
       control: { type: "select" },
-      description: "Se pasa el nombre de un tema interno del DS.",
+      description: "Nombre de un tema predefinido del sistema de diseño (DS).",
       options: ["loudLight"],
     },
     theme: {
       control: { type: "text" },
-      description: "Sirve para pasar un theme personalizado por paramentro.",
+      description: "Permite pasar un tema personalizado como parámetro.",
     },
   },
+  component: ThemeDS,
   parameters: {
     docs: {
       description: {
         component:
-          "Se puede utilizar un theme personalizado o utilizar un theme ya creado. Si se desea usar uno personalizado se puede pasar por medio de la propiedad theme, pero si se desea usar un theme del DS se debe usar la propiedad name.",
+          "Este componente permite utilizar un tema personalizado o un tema predefinido del sistema de diseño (DS). Para usar un tema personalizado, se debe pasar mediante la propiedad 'theme'. Para usar un tema predefinido, se debe especificar mediante la propiedad 'name'.",
       },
     },
   },
+  tags: ["autodocs"],
+  title: "Layout/ThemeDS",
 };
 
 export const DinamicColumns = () => {
   return (
     <ThemeDS name="loudLight">
-      <Text margin="a-20">Only documentation</Text>
+      <Box padding="b-40 t-20 x-20">
+        <Text>Only documentation</Text>
+      </Box>
     </ThemeDS>
   );
 };

@@ -7,7 +7,6 @@ import { Circle, ProgressBarWrapper, StepsWrapper } from "./StepsBar.styles";
 
 const DEFAULT_PROPS = {
   margin: "a-0",
-  size: "md",
   steps: 5,
   step: 1,
 };
@@ -70,7 +69,7 @@ export const StepsBar = (props) => {
           <ProgressBarWrapper>
             <ProgressBar
               borderRound
-              noShowAnimationOnFirstLoad={noShowOldAnaimation(renderStep)}
+              noShowAnimation={noShowOldAnaimation(renderStep)}
               onFinish={finishStepChange}
               size="sm"
               step={renderStep <= attrs.step ? 100 : 0}
@@ -79,7 +78,7 @@ export const StepsBar = (props) => {
           </ProgressBarWrapper>
         )}
 
-        <Circle size={attrs.size} type={selectTypeCircle(renderStep)}>
+        <Circle type={selectTypeCircle(renderStep)}>
           {renderIconInsideCircle(renderStep)}
         </Circle>
       </React.Fragment>
@@ -101,7 +100,6 @@ export const StepsBar = (props) => {
 
 StepsBar.propTypes = {
   margin: PropTypes.string,
-  size: PropTypes.oneOf(["md"]),
   steps: PropTypes.number.isRequired,
   step: PropTypes.number,
 };

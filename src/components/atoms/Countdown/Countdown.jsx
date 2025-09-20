@@ -5,6 +5,8 @@ import { Text } from "../../../";
 
 import { getTimeObject, formatClock } from "../../../utils/time/clock";
 
+import { TEXT_PROP_TYPES } from "../../../constants/prop_types";
+
 const DEFAULT_PROPS = {
   endTime: null,
   formatTime: "hh:mm:ss",
@@ -77,5 +79,5 @@ Countdown.propTypes = {
   formatTime: PropTypes.oneOf(["hh:mm:ss", "mm:ss", "ss"]),
   onFinish: PropTypes.func,
   showZero: PropTypes.bool,
-  text: PropTypes.object,
+  text: PropTypes.shape(TEXT_PROP_TYPES),
 };

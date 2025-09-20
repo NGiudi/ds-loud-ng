@@ -6,9 +6,9 @@ import { Flex, Text } from "../../../";
 import { Styles } from "./Checkbox.styles";
 
 const DEFAULT_PROPS = {
-  id: "",
   description: "",
   disabled: false,
+  id: "",
   label: "",
   margin: "a-0",
   name: "",
@@ -53,10 +53,10 @@ export const Checkbox = (props) => {
 };
 
 Checkbox.propTypes = {
-  id: PropTypes.string,
   description: PropTypes.string,
   disabled: PropTypes.bool,
+  id: PropTypes.string,
   label: PropTypes.string.isRequired,
   margin: PropTypes.string,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
 };

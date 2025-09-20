@@ -68,10 +68,10 @@ export const IconButton = (props) => {
 IconButton.propTypes = {
   count: PropTypes.number,
   disabled: PropTypes.bool,
-  icon: PropTypes.shape(ICON_PROP_TYPES),
+  icon: PropTypes.shape(ICON_PROP_TYPES).isRequired,
   id: PropTypes.string,
   invert: PropTypes.bool,
   margin: PropTypes.string,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   type: PropTypes.oneOf(["button", "submit"]),
 };

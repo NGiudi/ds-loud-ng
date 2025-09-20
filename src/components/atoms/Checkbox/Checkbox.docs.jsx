@@ -27,7 +27,7 @@ export const CheckboxDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Etiqueta Descriptiva:{" "}
           </Text>
           Cada checkbox generalmente se asocia con una etiqueta descriptiva que
@@ -36,7 +36,7 @@ export const CheckboxDocs = () => {
         </Text>
 
         <Text margin="b-40">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Interacción Visual:{" "}
           </Text>
           Los checkboxes suelen representarse como una pequeña casilla que puede

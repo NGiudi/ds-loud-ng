@@ -2,36 +2,35 @@ import React from "react";
 
 import { IconDocs } from "./Icon.docs";
 
-import { Icon, ThemeDS } from "../../../";
+import { Box, Icon, ThemeDS } from "../../../";
 
 const meta = {
   argTypes: {
     color: {
       control: { type: "text" },
-      description: "Establece el color del ícono",
+      description: "Define el color del ícono. Acepta tokens de color.",
     },
     icon: {
       control: { type: "text" },
-      description: "Recibe el nombre del ícono de fontawensome",
+      description: "Especifica el nombre del ícono de FontAwesome a mostrar.",
     },
     margin: {
       control: { type: "text" },
-      description: "Establece la distancia de los márgenes",
+      description: "Establece el margen alrededor del ícono. Acepta tokens de espaciado.",
     },
     onClick: {
       action: "clicked",
       control: { type: "none" },
-      description: "Función que se ejecuta al hacer click en el ícono",
+      description: "Función de callback que se ejecuta cuando se hace clic en el ícono.",
     },
     size: {
       control: { type: "select" },
-      description: "Establece el tamaño del ícono",
+      description: "Determina el tamaño del ícono.",
       options: ["sm", "md", "lg"],
     },
     spin: {
       control: { type: "boolean" },
-      description:
-        "Si este valor es verdadero, el ícono realizará una rotación",
+      description: "Si es verdadero, el ícono girará continuamente.",
     },
   },
   component: Icon,
@@ -50,7 +49,9 @@ const meta = {
 export const Model = (args) => {
   return (
     <ThemeDS>
-      <Icon {...args} />
+      <Box padding="b-40 t-20 x-20">
+        <Icon {...args} />
+      </Box>
     </ThemeDS>
   );
 };
@@ -59,6 +60,7 @@ Model.args = {
   color: "black_700",
   icon: "home",
   margin: "a-0",
+  onClick: null,
   size: "md",
   spin: false,
 };
@@ -66,10 +68,12 @@ Model.args = {
 export const Sizes = () => {
   return (
     <ThemeDS>
-      <Icon icon="cog" margin="r-32" size="xl" />
-      <Icon icon="cog" margin="r-32" size="lg" />
-      <Icon icon="cog" margin="r-32" size="md" />
-      <Icon icon="cog" size="sm" />
+      <Box padding="b-40 t-20 x-20">
+        <Icon icon="cog" margin="r-32" size="xl" />
+        <Icon icon="cog" margin="r-32" size="lg" />
+        <Icon icon="cog" margin="r-32" size="md" />
+        <Icon icon="cog" size="sm" />
+      </Box>
     </ThemeDS>
   );
 };
@@ -77,11 +81,11 @@ export const Sizes = () => {
 export const Colors = () => {
   return (
     <ThemeDS>
-      <Icon color="orange" icon="cog" margin="r-32" />
-
-      <Icon color="orange_700" icon="cog" margin="r-32" />
-
-      <Icon color="#AEAEAE" icon="cog" />
+      <Box padding="b-40 t-20 x-20">
+        <Icon color="orange" icon="cog" margin="r-32" />
+        <Icon color="orange_700" icon="cog" margin="r-32" />
+        <Icon color="#AEAEAE" icon="cog" />
+      </Box>
     </ThemeDS>
   );
 };
@@ -89,7 +93,9 @@ export const Colors = () => {
 export const Efects = () => {
   return (
     <ThemeDS>
-      <Icon icon="cog" margin="r-32" spin />
+      <Box padding="b-40 t-20 x-20">
+        <Icon icon="cog" margin="r-32" spin />
+      </Box>
     </ThemeDS>
   );
 };

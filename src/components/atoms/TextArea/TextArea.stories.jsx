@@ -2,34 +2,34 @@ import React from "react";
 
 import { Form, Formik } from "formik";
 
-import { Button, Flex, TextArea, ThemeDS } from "../../../";
+import { Box, TextArea, ThemeDS } from "../../../";
 
 const meta = {
   argTypes: {
     description: {
       description:
-        "Una descripción adicional o información sobre el propósito o la función del componente.",
+        "Proporciona una descripción adicional o información sobre el propósito o la funcionalidad del componente.",
     },
     disabled: {
-      description: "Indica si el componente está deshabilitado o no.",
+      description: "Especifica si el componente está deshabilitado.",
     },
     id: {
-      description: "Identificador único del componente.",
+      description: "Identificador único asignado al componente.",
     },
     label: {
       description:
-        "Texto que describe el propósito o la función del componente.",
+        "Texto que explica el propósito o la funcionalidad del componente.",
     },
     margin: {
-      description: "Se setea la distancia de los margenes.",
+      description: "Define el espacio de los márgenes alrededor del componente.",
     },
     name: {
       description:
-        "Nombre del componente utilizado en la manipulación de datos o en la referencia a este.",
+        "Nombre del componente utilizado para la manipulación de datos o su referencia.",
     },
     rows: {
       description:
-        "Número de filas visibles en un componente de entrada de texto multilínea.",
+        "Cantidad de filas visibles en un campo de entrada de texto multilínea.",
     },
   },
   component: TextArea,
@@ -42,7 +42,7 @@ const meta = {
   title: "Components/TextArea",
 };
 
-export const DinamicExample = () => {
+export const Model = () => {
   const values = {
     description: "",
   };
@@ -53,15 +53,13 @@ export const DinamicExample = () => {
 
   return (
     <ThemeDS>
-      <Formik initialValues={values} onSubmit={handleSubmit}>
-        <Form>
-          <TextArea label="TextArea label" name="description" />
-
-          <Flex hAlign="end" margin="t-16">
-            <Button type="submit">Guardar</Button>
-          </Flex>
-        </Form>
-      </Formik>
+      <Box padding="b-40 t-20 x-20">
+        <Formik initialValues={values} onSubmit={handleSubmit}>
+          <Form>
+            <TextArea label="TextArea label" name="description" />
+          </Form>
+        </Formik>
+      </Box>
     </ThemeDS>
   );
 };

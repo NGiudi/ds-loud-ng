@@ -29,7 +29,7 @@ export const IconButtonDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Estilos Variados:{" "}
           </Text>
           Nuestro sistema de diseño ofrece una gama de estilos de botones que se
@@ -38,7 +38,7 @@ export const IconButtonDocs = () => {
         </Text>
 
         <Text margin="b-16">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Estados Interactivos:{" "}
           </Text>
           Los botones están diseñados para responder a diferentes estados
@@ -48,7 +48,7 @@ export const IconButtonDocs = () => {
         </Text>
 
         <Text margin="b-40">
-          <Text as="span" weight="semibold">
+          <Text as="span" type="bodySemibold">
             Accesibilidad y Responsividad:{" "}
           </Text>
           Nos preocupamos por la accesibilidad y la responsividad, por lo que

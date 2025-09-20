@@ -1,84 +1,88 @@
 import React from "react";
 
-/* import components */
-import { Text } from "../../atoms";
-import { ThemeDS, Flex } from "../";
+import { Box, Flex, ThemeDS, Text } from "../../../";
 
 const meta = {
-  title: "Layout/Flex",
-  component: Flex,
-  tags: ["autodocs"],
   argTypes: {
     children: {
       control: { type: "none" },
-      description: "Contenido del componente.",
+      description: "Define el contenido que será renderizado dentro del componente.",
     },
     direction: {
       control: { type: "select" },
-      description: "Se setea la orientación del contenedor flexible.",
+      description: "Establece la orientación del contenedor flexible (horizontal o vertical).",
       options: ["column", "row"],
     },
     hAlign: {
       control: { type: "select" },
-      description: "Se setea la alineación horizontal.",
+      description: "Configura la alineación horizontal de los elementos dentro del contenedor.",
       options: ["center", "end", "space-around", "space-between", "start"],
     },
     margin: {
       control: { type: "text" },
-      description: "Se setea la distancia de los margenes.",
+      description: "Especifica los márgenes alrededor del contenedor.",
     },
     vAlign: {
       control: { type: "select" },
-      description: "Se setea la alineación vertical.",
+      description: "Configura la alineación vertical de los elementos dentro del contenedor.",
       options: ["center", "end", "start"],
     },
   },
+  component: Flex,
+  tags: ["autodocs"],
+  title: "Layout/Flex",
 };
 
-export const DinamicExample = (args) => {
+export const Model = (args) => {
   return (
     <ThemeDS>
-      <Flex {...args}>
-        <Text>Elemento 1</Text>
-        <Text>Elemento 2</Text>
-      </Flex>
+      <Box padding="b-40 t-20 x-20">
+        <Flex {...args}>
+          <Text>Elemento 1</Text>
+          <Text>Elemento 2</Text>
+        </Flex>
+      </Box>
     </ThemeDS>
   );
 };
 
-DinamicExample.args = {
+Model.args = {
+  children: null,
+  direction: "row",
   hAlign: "space-around",
-  margin: "a-30",
+  margin: "a-0",
   vAlign: "center",
 };
 
 export const Orientaciones = () => {
   return (
     <ThemeDS>
-      <Flex hAlign="start" margin="a-30">
-        <Text margin="x-10">Elemento 1</Text>
-        <Text margin="x-10">Elemento 2</Text>
-      </Flex>
+      <Box padding="b-40 t-20 x-20">
+        <Flex hAlign="start" margin="a-30">
+          <Text margin="x-10">Elemento 1</Text>
+          <Text margin="x-10">Elemento 2</Text>
+        </Flex>
 
-      <Flex hAlign="space-around" margin="b-30 x-30">
-        <Text margin="x-10">Elemento 1</Text>
-        <Text margin="x-10">Elemento 2</Text>
-      </Flex>
+        <Flex hAlign="space-around" margin="b-30 x-30">
+          <Text margin="x-10">Elemento 1</Text>
+          <Text margin="x-10">Elemento 2</Text>
+        </Flex>
 
-      <Flex hAlign="space-between" margin="b-30 x-30">
-        <Text margin="x-10">Elemento 1</Text>
-        <Text margin="x-10">Elemento 2</Text>
-      </Flex>
+        <Flex hAlign="space-between" margin="b-30 x-30">
+          <Text margin="x-10">Elemento 1</Text>
+          <Text margin="x-10">Elemento 2</Text>
+        </Flex>
 
-      <Flex hAlign="center" margin="b-30 x-30">
-        <Text margin="x-10">Elemento 1</Text>
-        <Text margin="x-10">Elemento 2</Text>
-      </Flex>
+        <Flex hAlign="center" margin="b-30 x-30">
+          <Text margin="x-10">Elemento 1</Text>
+          <Text margin="x-10">Elemento 2</Text>
+        </Flex>
 
-      <Flex hAlign="end" margin="b-30 x-30">
-        <Text margin="x-10">Elemento 1</Text>
-        <Text margin="x-10">Elemento 2</Text>
-      </Flex>
+        <Flex hAlign="end" margin="b-30 x-30">
+          <Text margin="x-10">Elemento 1</Text>
+          <Text margin="x-10">Elemento 2</Text>
+        </Flex>
+      </Box>
     </ThemeDS>
   );
 };

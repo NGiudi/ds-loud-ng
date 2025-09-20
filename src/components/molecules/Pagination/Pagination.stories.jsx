@@ -1,18 +1,8 @@
 import React from "react";
 
-/* components */
 import { Pagination, ThemeDS } from "../../..";
 
 const meta = {
-  title: "Molecules/Pagination",
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: "",
-      },
-    },
-  },
   argTypes: {
     margin: {
       control: { type: "text" },
@@ -36,6 +26,16 @@ const meta = {
       description: "Cantidad total de páginas.",
     },
   },
+  component: Pagination,
+  parameters: {
+    docs: {
+      description: {
+        component: "",
+      },
+    },
+  },
+  tags: ["autodocs"],
+  title: "Molecules/Pagination",
 };
 
 export const SizesExamples = () => {
