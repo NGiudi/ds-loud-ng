@@ -6,9 +6,9 @@ const config = {
   ],
   "addons": [
     "@etchteam/storybook-addon-status",
-    "@storybook/addon-essentials",
     "@chromatic-com/storybook",
-    "@storybook/experimental-addon-test"
+    "@storybook/experimental-addon-test",
+    "@storybook/addon-docs"
   ],
   "framework": {
     "name": "@storybook/react-vite",

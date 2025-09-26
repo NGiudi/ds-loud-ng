@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Canvas, Controls, Unstyled } from "@storybook/blocks";
+import { Canvas, Controls, Unstyled } from "@storybook/addon-docs/blocks";
 
 import { Text, ThemeDS } from "../../../";
 
